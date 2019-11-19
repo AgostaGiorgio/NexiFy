@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+\author{Agosta, Belli, Emili, Giacchini, Luciani}
+
+\begin{document}
+
+\begin{center}
+    \sffamily{\fontsize{50}{48} \selectfont \textcolor{red}{Nexi}\textcolor{green}{Fy}}
+\end{center}
+
+\begin{center}
+    \itshape{\fontsize{20}{48} \selectfont streaming to your pocket}
+\end{center}
+
+\bigskip\bigskip\bigskip
+
+\begin{flushleft}
+    \includegraphics[scale=1]{images/worldCDN.png}
+\end{flushleft}
+
+\newpage
+\printindex
+
+\tableofcontents
+
+\newpage
+\section{\itshape{Visione del Sistema}}
+\input{VisioneDelSistema.tex}
+\index{Index}
+
+\section{\itshape{Studio di Fattibilità}}
+\input{StudioDiFattibilita.tex}
+\index{Index}
+
+\section{\itshape{Configurazione del Sistema alla Consegna}}
+\input{ConfigurazioneSistemaConsegna.tex}
+\index{Index}
+
+\end{document}
