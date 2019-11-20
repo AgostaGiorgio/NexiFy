@@ -10,6 +10,10 @@
 \usepackage[official]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro{}}
 
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
 \author{Agosta, Belli, Emili, Giacchini, Luciani}
 
 
@@ -37,8 +41,13 @@
 \tableofcontents
 
 \newpage
+\section{\itshape{Glossario}}
+\input{Contents/Glossario.tex}
+\index{Index}
+
+\newpage
 \section{\itshape{Visione del Sistema}}
-\input{VisioneDelSistema.tex}
+\input{Contents/VisioneDelSistema.tex}
 \index{Index}
 
 \newpage
@@ -47,11 +56,11 @@
 \index{Index}
 
 \section{\itshape{Studio di Fattibilità}}
-\input{StudioDiFattibilita.tex}
+\input{Contents/StudioDiFattibilita.tex}
 \index{Index}
 
 \section{\itshape{Configurazione del Sistema alla Consegna}}
-\input{ConfigurazioneSistemaConsegna.tex}
+\input{Contents/ConfigurazioneSistemaConsegna.tex}
 \index{Index}
 
 \end{document}
