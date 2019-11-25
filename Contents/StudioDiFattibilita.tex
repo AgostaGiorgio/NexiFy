@@ -1,10 +1,30 @@
-Per la realizzazione della piattaforma sarà necessario l'utilizzo di CDN per distribuire sul territorio contenuti multimediali mantenendo questi ultimi sempre accessibili in maniera ottimale da qualsiasi posizione geografica. Deve inoltre essere possibile, in maniera efficiente, estrarre dati e statistiche sugli accessi alla CDN. Si useranno basi di dati relazionali cloud-based per mantenere informazioni su dati utenti, e implementando funzionalità lato server per gestire le richieste degli utenti, la loro autenticazione e altro. Verrà inoltre utilizzato un ORM per garantire semplicità di migrazione ad un'altra tecnologia di memorizzazione dati permettendo di rendere indipendente il codice dalla base di dati.
-Il mantenimento dei dati riguardanti gli utenti sarà conforme alle politiche GDPR per garantire la privacy secondo le leggi europee.\\
+\subsection{Aspetto tecnologico}
+Per la realizzazione del sistema sarà necessario l'utilizzo di CDN, in modo da distribuire i contenuti multimediali in maniera efficiente e mantenendoli sempre accessibili per gli utenti. Deve inoltre essere possibile, in maniera efficiente, estrarre dati e statistiche dalla CDN (come per esempio quante volte è stato richiesto un certo video in una certa zona). Saranno necessarie basi di dati relazionali cloud-based per mantenere informazioni su dati utenti (oltre alle informazioni di base, anche le eventuali playlist musicali create, ecc), e implementando funzionalità lato server per gestire le richieste degli utenti, la loro autenticazione e altro. Verrà inoltre utilizzato un ORM per garantire semplicità di migrazione ad un'altra tecnologia di memorizzazione dati permettendo di rendere indipendente il codice dalla base di dati.\\
+La fattibilità del progetto dal punto di vista tecnologico segue dalla grande disponibilità di aziende che offrono servizi cloud, tra cui CDN: per esempio AWS CloudFront. Questi servizi includono anche delle API per interfacciarsi in maniera efficiente con la CDN. Notiamo che questi servizi vengono già usati da piattaforme simili a NexiFy, e che sono risultate in grado di scalare a livello mondiale (ad esempio Prime Video usa AWS CloudFront). Anche per quanto riguarda i database esistono numerose soluzioni cloud affidabili.
+%Il mantenimento dei dati riguardanti gli utenti sarà conforme alle politiche GDPR per garantire la privacy secondo le leggi europee.\\
 
-La fattibilità del progetto segue dalla grande disponibilità di aziende che offrono servizi cloud, tra cui CDN, a prezzi contenuti: per esempio AWS CloudFront. Questi servizi includono anche delle API per interfacciarsi in maniera efficiente con la CDN.
 
-La piattaforma acquisirà utenti sfruttando:
+%Per la realizzazione della piattaforma sarà necessario l’utilizzo di CDN per distribuire sul territorio contenuti multimediali mantenendo questi ultimi sempre accessibili in maniera ottimale da qualsiasi posizione geografica. Deve inoltre essere possibile, in maniera efficiente, estrarre dati e statistiche sugli accessi alla CDN. Si useranno basi di dati relazionali cloud-based per mantenere informazioni su dati utenti, e implementando funzionalità lato server per gestire le richieste degli utenti, la loro autenticazione e altro.Verrà inoltre utilizzato un ORM per garantire semplicità di migrazione ad un'altra tecnologia di memorizzazione dati permettendo di rendere indipendente il codice dalla base di dati.
+
+\subsection{Aspetto Economico}
+\subsubsection{Vantaggi del sistema}
+
+NexiFy sarà in grado di acquisire utenti grazie ai diversi vantaggi offerti:
     \begin{itemize}
-        \item La disponibilità di contenuti sia video che musicali, non presente in piattaforme quali Netflix e Spotify.
-        \item La possibilità per piccoli creatori di pubblicare autonomamente contenuti, ma senza degradare la qualità dei contenuti (come invece avviene in piattaforme quali YouTube), grazie alla quota annuale da pagare per poter pubblicare.
-    \end{itemize}
+       	\item La disponibilità di contenuti sia video che musicali, non presente in piattaforme quali Netflix e Spotify. Questo darà la possibilità agli utenti interessati di visualizzare film, serie tv e ascoltare brani musicali sottoscrivendo un singolo abbonamento, comportando un risparmio di denaro, in quanto non è necessario iscriversi a diversi servizi il cui costo totale ammonterebbe ad una quota mensile maggiore;
+        	\item La possibilità per piccoli creatori di pubblicare autonomamente contenuti, ma senza degradare la qualità dei contenuti (come invece avviene in piattaforme quali YouTube).
+	\item\label{VantaggioSistema_cambioPiano} Verrà data la possibilità agli utenti che fruiscono della
+	piattaforma di poter cambiare piano di abbonamento con un altro piano
+	offerto, mentre questo è ancora in corso di validità.
+	In questo modo, qualora l'utente avesse ripensamenti potrebbe cambiare piano evitando di rimanere insoddisfatto.
+	In seguito ad un cambiamento di piano, avverrà un'interruzione del rinnovo del piano
+	precedente e l'attivazione del nuovo piano scelto, con rinnovo che inizia nel giorno stesso. Tuttavia,
+	l'utente rimarrà in grado di beneficiare di tutti i servizi che il piano precedente includeva, fino alla scadenza
+	dell'ultimo rinnovo di quest'ultimo.
+	\end{itemize}
+\subsubsection{Stima dei costi}
+
+NexiFy inizialmente supporterà un numero modesto di utenti e di contenuti multimediali; questo per avere dei costi iniziali sostenibili, e man mano che si acquisiranno utenti (e quindi sottoscrizioni di abbonamenti) sarà possibile ampliare la CDN e i database (dal punto di vista software NexiFy sarà già progettato per supportare un carico maggiore del carico iniziale).\\
+In riferimento al vantaggio del cambio di piano l'utente riuscirà a cambiare abbonamento solo se il nuovo scelto sarà di costo maggiore (l'utente dovrà aggiungere una differenza) o uguale al costo dell'abbonamento in corso di validità. Questo non porterà alcuna perdita in termini di costi, al piu farà crescere il guadagno se il costo del nuovo abbonamento è superiore al costo di quello precedente. Inoltre il cambio sarà effettuabile una sola volta durante il periodo di validità prevenendo cambi repentini di abbonamento.
+
+% \textbf{TODO... conti precisi}
