@@ -1,5 +1,17 @@
 \subsection{Aspetto tecnologico}
-Per la realizzazione del sistema sarà necessario l'utilizzo di CDN, in modo da distribuire i contenuti multimediali in maniera efficiente e mantenendoli sempre accessibili per gli utenti. Saranno necessarie basi di dati NoSQL cloud-based per mantenere informazioni su dati utenti (oltre alle informazioni di base, anche le eventuali playlist musicali create, ecc), e implementando funzionalità lato server per gestire le richieste degli utenti, la loro autenticazione e altro. Sarà inoltre necessario poter accedere a diversi dati sulle richieste effettuate dagli utenti (per creare statistiche, classifiche, e altre funzionalità); alcune CDN mantengono già queste informazioni, ma per mantenere il sistema il più indipendente possibile dalla tecnologia utilizzata, sarà NexiFy stesso a tenere traccia di tali dati. \\
+Per la realizzazione del sistema sarà necessario l'utilizzo di CDN, in modo da distribuire i contenuti
+multimediali in maniera efficiente e mantenendoli sempre accessibili per gli utenti. Saranno anche necessarie
+basi di dati cloud-based di diversi tipi:
+\begin{itemize}
+	\item relazionali per mantenere informazioni su dati utenti
+	(oltre alle informazioni di base, anche le eventuali playlist musicali create, ecc) e sui listing dei contenuti.
+	\item NoSQL per mantenere dati sulle richieste effettuate dagli utenti
+	(per creare statistiche, classifiche, suggerimenti e altre funzionalità), anonimi ove possibile.
+\end{itemize}
+Questa suddivisione rende possibile trattare i dati personali degli utenti con maggiore sicurezza.
+Alcune CDN mantengono già informazioni sulle richieste degli utenti,
+ma per mantenere il sistema il più indipendente possibile dalla tecnologia utilizzata, sarà NexiFy stesso a
+tenere traccia di tali dati. \\
 La fattibilità del progetto dal punto di vista tecnologico segue dalla grande disponibilità di aziende che offrono servizi cloud, tra cui CDN: per esempio AWS CloudFront. Questi servizi includono anche delle API per interfacciarsi in maniera efficiente con la CDN. Notiamo che questi servizi vengono già usati da piattaforme simili a NexiFy, e che sono risultate in grado di scalare a livello mondiale (ad esempio Prime Video usa AWS CloudFront). Anche per quanto riguarda i database esistono numerose soluzioni cloud affidabili.
 %Il mantenimento dei dati riguardanti gli utenti sarà conforme alle politiche GDPR per garantire la privacy secondo le leggi europee.\\
 
