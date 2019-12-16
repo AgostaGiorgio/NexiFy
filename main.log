@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  3 DEC 2019 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  16 DEC 2019 20:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,37 +380,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 ) (./Contents/Vincoli.tex) (./Contents/Contratto.tex [7
 \indexentry{Index}{7}
 \indexentry{Index}{7}
-]) (./Contents/Revisioni.tex)
-Overfull \hbox (34.69437pt too wide) in paragraph at lines 1--72
-[]
+]) (./Contents/PianificazioneProgetto.tex
+<images/RUPplan.png, id=35, 857.2025pt x 515.9275pt>
+File: images/RUPplan.png Graphic file (type png)
+<use images/RUPplan.png>
+Package pdftex.def Info: images/RUPplan.png  used on input line 25.
+(pdftex.def)             Requested size: 341.43306pt x 205.50137pt.
+
+Overfull \hbox (11.43306pt too wide) in paragraph at lines 25--26
+[][] 
  []
 
 [8
 \indexentry{Index}{8}
-\indexentry{Index}{8}
-] (./main.aux) ) 
+]) (./Contents/Revisioni.tex)
+Overfull \hbox (34.69437pt too wide) in paragraph at lines 1--76
+[]
+ []
+
+[9
+\indexentry{Index}{9}
+\indexentry{Index}{9}
+ <./images/RUPplan.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2803 strings out of 493610
- 41512 string characters out of 6159292
+ 2814 strings out of 493610
+ 41783 string characters out of 6159292
  111482 words of memory out of 5000000
- 6864 multiletter control sequences out of 15000+600000
+ 6871 multiletter control sequences out of 15000+600000
  51845 words of font info for 36 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  43i,6n,40p,895b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-
-mathsy.enc}{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
-c}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/eurosym/feymr10.p
-fb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></
-usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/l
-ocal/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local
-/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texli
-ve/2019basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/20
-19basic/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2019bas
-ic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (8 pages, 252565 bytes).
+{/usr/local/texlive/2019basic/texmf-dist
+/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019basic/texmf-dist/font
+s/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/p
+ublic/eurosym/feymr10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/
+public/lm/lmbx10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/publi
+c/lm/lmbx12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/
+lmbxi10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmr1
+0.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb
+></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmss17.pfb></us
+r/local/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (9 pages, 553426 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
