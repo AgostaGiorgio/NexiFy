@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  15 DEC 2019 13:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.20)  16 DEC 2019 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,19 +381,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 \indexentry{Index}{7}
 \indexentry{Index}{7}
 ]) (./Contents/DescrizioneSistema.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--14
+Underfull \hbox (badness 10000) in paragraph at lines 7--18
 
- []
-
-) (./Contents/Revisioni.tex)
-Overfull \hbox (34.69437pt too wide) in paragraph at lines 1--76
-[]
  []
 
 [8
 \indexentry{Index}{8}
-\indexentry{Index}{8}
-\indexentry{Index}{8}
+]) (./Contents/Revisioni.tex)
+Overfull \hbox (34.69437pt too wide) in paragraph at lines 1--76
+[]
+ []
+
+[9
+\indexentry{Index}{9}
+\indexentry{Index}{9}
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  2807 strings out of 493610
@@ -413,10 +414,10 @@ ocal/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local
 ve/2019basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/20
 19basic/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2019bas
 ic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (8 pages, 255223 bytes).
+Output written on main.pdf (9 pages, 257973 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
