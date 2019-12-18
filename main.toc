@@ -13,4 +13,8 @@
 \contentsline {subsection}{\numberline {7.2}Interazione con gli utenti}{8}% 
 \contentsline {subsection}{\numberline {7.3}Accesso alla piattaforma}{8}% 
 \contentsline {subsection}{\numberline {7.4}Pubblicazione dei contenuti}{9}% 
-\contentsline {section}{\numberline {8}\itshape {Revisioni}}{9}% 
+\contentsline {section}{\numberline {8}\itshape {Pianificazione del Progetto}}{9}% 
+\contentsline {subsection}{\numberline {8.1}Introduzione}{9}% 
+\contentsline {subsection}{\numberline {8.2}Piano}{9}% 
+\contentsline {subsection}{\numberline {8.3}Iterazioni}{10}% 
+\contentsline {section}{\numberline {9}\itshape {Revisioni}}{16}% 
