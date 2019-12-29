@@ -11,7 +11,7 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 \subsection{Legenda}
 \large{\textbf{Attori}} \\
 \begin{itemize}[]
-	\item \textbf{ID}: rappresenta l'identificatore univoco di un attore. La sintassi è del tipo A\_X dove X è stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
+	\item \textbf{ID}: rappresenta l'identificatore univoco di un attore. La sintassi è del tipo A\_X dove X è una stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
 	\item \textbf{Nome}: nome dell'attore, deve essere comunque univoco e deve dare una prima idea di cosa rappresenta quel preciso attore.
 	\item \textbf{Genitore}: indica l'identificatore del primo antenato nella gerarchia degli attori.
 	\item \textbf{Livello}: indica il grado di rilevanza dell'attore all'interno dell'intero sistema. Può assumere il valore di {Primario, Secondario, Di Supporto}.
@@ -23,7 +23,7 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 
 \noindent \large{\textbf{Use Case}} \\
 \begin{itemize}[]
-	\item \textbf{ID}: identificativo univoco del caso d'uso, è della forma UC\_X dove X è stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
+	\item \textbf{ID}: identificativo univoco del caso d'uso, è della forma UC\_X dove X è una stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
 	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori {User, Subscriptions, Management}
 	\item \textbf{Nome}: Nome identificativo del caso d'uso, serve anche per dare un'idea del tipo di attività.
 	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {High, Medium, Low}. 
@@ -49,10 +49,9 @@ Nome & Utente\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
-Descrizione &  L' Utente è il ruolo assunto dagli utentei che usufruiranno del servizio di streaming offerto dalla piattaforma. \\\hline
+Descrizione &  L' Utente è il ruolo assunto da tutti coloro che usufruiranno del servizio di streaming offerto dalla piattaforma. \\\hline
 \end{tabular}
 \label{table_attore:1}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -61,10 +60,9 @@ Nome & UtenteNonRegistrato\\\hline
 Genitore & A\_1 \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
-Descrizione &  questo ruolo è assunto da tutti gli utenti che utilizzano la piattaforma senza aver effettuato l'accesso ad un profilo utente e dunque avrà accesso solo a determinate funzionalità \\\hline
+Descrizione &  Questo ruolo è assunto da tutti coloro che utilizzano la piattaforma senza aver effettuato l'accesso ad un profilo utente e che quindi avranno accesso solo a determinate funzionalità \\\hline
 \end{tabular}
 \label{table_attore:1.1}\newline
-%\label{table_attore:A\_1.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -73,10 +71,9 @@ Nome & UtenteRegistrato\\\hline
 Genitore & A\_1 \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
-Descrizione &  questo ruolo è assunto da tutti gli utenti che hanno sottoscritto un contratto con la piattaforma e si sono autenticati in fase di accesso ad essa. \\\hline
+Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritto un contratto con la piattaforma e si sono autenticati in fase di accesso ad essa. \\\hline
 \end{tabular}
 \label{table_attore:1.2}\newline
-%\label{table_attore:A\_1.2}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -88,7 +85,6 @@ Tipologia & Umano \\\hline
 Descrizione &  Rappresenta il ruolo di un amministratore della piattaforma \\\hline
 \end{tabular}
 \label{table_attore:1.3}\newline
-%\label{table_attore:A\_1.3}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -97,10 +93,9 @@ Nome & Pagamento\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
-Descrizione &  rappresenta il sistema di pagamento esterno al sistema della piattaforma \\\hline
+Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piattaforma \\\hline
 \end{tabular}
 \label{table_attore:2}\newline
-%\label{table_attore:A\_2}\newline
 
 % ============================== USE CASE ====================================
 
@@ -113,24 +108,23 @@ Categoria & User \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & registrazione persistente di un itente all'interno della piattaforma \\\hline
+Descrizione & Registrazione persistente di un itente all'interno della piattaforma \\\hline
 Flusso &  	\begin{enumerate}
-			\item l'utente richiede di registrarsi alla piattaforma,
-			\item Il sistema richiede all' utente non registrato le credenziali di accesso quali: email, password, conferma della password, tipo di abbonamento da sottoscrivere.
-			\item l'utente non registrato riempie i campi richiesti e li invia al sistema.
-			\item il sistema verifica la correttezza dei dati e richiede il metodo di pagamento desiderato tra quelli disponibili.
-			\item l'utente seleziona il metodo di pagamento desiderato.
-			\item il sistema verifica che il metodo selezionato sia valido e reinderizza l'utente al sistema esterno di pagamento, e attende risposta dal sistema esterno:
+			\item L'utente richiede di registrarsi alla piattaforma;
+			\item Il sistema richiede all' utente non registrato le credenziali di accesso quali: email, password, conferma della password, tipo di abbonamento da sottoscrivere;
+			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
+			\item Il sistema verifica la correttezza dei dati e richiede il metodo di pagamento desiderato tra quelli disponibili;
+			\item L'utente seleziona il metodo di pagamento desiderato;
+			\item Il sistema verifica che il metodo selezionato sia valido e reinderizza l'utente al sistema esterno di pagamento, e attende risposta dal sistema esterno:
 			\begin{enumerate}[  ]
 				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il pagamento è stato effettuato e l'utente viene registrato sulla piattaforma 
 				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il pagamento non è stato effettuato e si chiede all'utente di riprovare o rinunciare alla registrazione.
 			\end{enumerate}
 		\end{enumerate}\\\hline
 Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
-Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente, ed il suo account è identificato dalla email formita nel modulo di registrazione.\\\hline
+Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente, ed il suo account, identificato dalla email formita nel modulo di registrazione, è abbinato al pacchetto di servizi scelto.\\\hline
 \end{tabular}
 \label{table_use_case:1}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -141,20 +135,19 @@ Priorità & High \\\hline
 Attori &  ---- \\\hline
 Descrizione & Accesso al sistema identificandosi tramite credenziali \\\hline
 Flusso &  	\begin{enumerate}
-			\item l'utente richiede di accedere alla piattaforma,
-			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password.
-			\item l'utente riempie i campi richiesti e li invia al sistema.
-			\item il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con la base di dati degli utenti.
+			\item L'utente richiede di accedere alla piattaforma;
+			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
+			\item L'utente riempie i campi richiesti e li invia al sistema;
+			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con la base di dati degli utenti:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: l'utente è autenticato ed abilitato all'utilizzo della piattaforma 
+				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: l'utente è autenticato ed abilitato all'utilizzo dei servizi offerti dall'abbonamento in corso; 
 				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: l'utente non viene autenticato ed è reindirizzato alla pagina di login.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni &  L'utente esiste ed non è già autenticato\\\hline
-Post-condizioni &  L'utente è autenticato ed abilitato alle funzionalità che gli spettano secondo il contratto sottoscritto.\\\hline
+Pre-condizioni &  L'utente esiste e non è già autenticato\\\hline
+Post-condizioni &  L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
 \end{tabular}
 \label{table_use_case:2}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -163,12 +156,12 @@ Categoria & User \\\hline
 Nome & UC\_RicercaRisorsa\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & fornisce una lista filtrata di risorse disponibili. Le risorse vengono filtrate in base alla coerenza con la stringa di ricerca fornita.\\\hline
+Descrizione & Fornisce una lista filtrata di risorse disponibili. Le risorse vengono filtrate in base alla coerenza con la stringa di ricerca fornita.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'utente richiede di ricercare una risorsa,
-			\item Il sistema richiede all' utente la stringa di ricerca.
-			\item l'utente fornisce al sistema la stringa.
-			\item il sistema valida l'input e avvia la procedura di ricerca delle risorse sui server e la restituisce all'utente %%%.
+			\item L'utente richiede di ricercare una risorsa;
+			\item Il sistema richiede all' utente la stringa di ricerca;
+			\item L'utente fornisce al sistema la stringa;
+			\item Il sistema valida l'input e avvia la procedura di ricerca delle risorse sui server e la restituisce all'utente. %%%.
 			% da scrivere passaggi cdn 
 			
 		\end{enumerate}\\\hline
@@ -176,7 +169,6 @@ Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna\\\hline
 \end{tabular}
 \label{table_use_case:3}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -185,23 +177,22 @@ Categoria & Management\\\hline
 Nome & UC\_CreaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & crea un nuovo ruolo di abbonamento, inizializzandolo con nessuna funzionalità abbinata.\\\hline
+Descrizione & Crea un nuovo abbonamento senza nessun servizio usufruibile da questo.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede la creazione di un nuovo abbonamento,
-			\item Il sistema richiede all' amministratore il nomedel ruolo.
-			\item l'amministratore fornisce al sistema la stringa.
-			\item il sistema valida l'input e verifica che non esista già un ruolo con lo stesso nome e:
+			\item L'amministratore richiede la creazione di un nuovo abbonamento;
+			\item Il sistema richiede all' amministratore il nome del nuovo abbonamento;
+			\item L'amministratore fornisce al sistema la stringa;
+			\item Il sistema valida l'input e verifica che non esista già un abbonamento con lo stesso nome e:
 				\begin{enumerate}[  ]
-					\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il nuovo ruolo di abbonamento è stato creato e disponibile all'utilizzo.
-					\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il nuovo ruolo di abbonamento non è stato creato e dunque non utilizzabile sulla piattaforma.
+					\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il nuovo abbonamento è stato creato e disponibile all'utilizzo.
+					\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il nuovo abbonamento non è stato creato e dunque non utilizzabile sulla piattaforma.
 				\end{enumerate}
 			
 		\end{enumerate}\\\hline
-Pre-condizioni &  Non già un abbonamento con lo stesso nome di quello da creare\\\hline
-Post-condizioni &  Esiste un nuovo abbonamento con il nome richiesto\\\hline
+Pre-condizioni &  Non esiste già un abbonamento con lo stesso nome di quello da creare\\\hline
+Post-condizioni &  Esiste un nuovo abbonamento con il nome fornito\\\hline
 \end{tabular}
 \label{table_use_case:4}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -210,107 +201,320 @@ Categoria & Management\\\hline
 Nome & UC\_EliminaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & rende non piu sottoscrivibile un ruolo di abbonamento esistente.\\\hline
+Descrizione & Rende non più sottoscrivibile un abbonamento esistente.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede di invalidare un abbonamento.
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento.
-			\item l'amministratore fornisce al sistema la stringa.
-			\item il sistema valida l'input, verifica che esista un ruolo con quel nome e che non ci sia un'utente attivo con quell'abbonamento in corso di validità:
+			\item L'amministratore richiede di invalidare un abbonamento;
+			\item Il sistema richiede all' amministratore il nome dell' abbonamento;
+			\item L'amministratore fornisce al sistema la stringa;
+			\item Il sistema valida l'input, verifica che esista un abbonamento con quel nome e che non ci sia un'utente attivo con quell'abbonamento in corso di validità:
 				\begin{enumerate}[  ]
-					\item \textbf{\# alt1}: queste condizioni sono verificate: il ruolo di abbonamento è non sarà piu sottoscrivibile da quel momento in pioi.
-					\item \textbf{\# alt2}: queste condizioni non sono verificate: l'abbonamento rimane valido e l'amministratore viene informato del fallimento dell'invalidazione.
+					\item \textbf{\# alt1}: se queste condizioni sono verificate l' abbonamento non sarà piu sottoscrivibile da quel momento in poi.
+					\item \textbf{\# alt2}: se queste condizioni non sono verificate l'abbonamento rimane valido e l'amministratore viene informato del fallimento dell'invalidazione.
+%DA RIVEDERE-- MAGARI E' MEGLIO NON RENDERLO PIU SOTTOSCRIVIBILE E A QUELLI CHE GIA LO HANNO GLI SI ANNULLA IL RINNOVO AUTOMATICO%
 				\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni &  Il ruolo da eliminare è esistente\\\hline
-Post-condizioni &  Il ruolo con nome specificato non è piu sottoscrivibile\\\hline
+Pre-condizioni &  L'abbonamento da eliminare è presente sul sistema\\\hline
+Post-condizioni &   L'abbonamento con nome specificato non è piu sottoscrivibile\\\hline
 \end{tabular}
 \label{table_use_case:5}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_6 \\\hline
 Categoria & Management\\\hline
-Nome & UC\_AggiungiFunzioneAbbonamento\\\hline
+Nome & UC\_AggiungiServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & permette di estendere di un elemento l'insieme delle funzioni collegate ad un abbonamento con una funzionalità esistente.\\\hline
+Descrizione & Permette di estendere di un elemento l'insieme dei servizi collegati ad un abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede di estendere le funzionalità di  un abbonamento.
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento ed un elemento della lista delle funzionalità aggiungibili..
+			\item L'amministratore richiede di estendere i servizi offerti da un abbonamento;
+			\item Il sistema richiede all' amministratore il nome dell' abbonamento ed un elemento della lista dei servizi aggiungibili..
 			\begin{enumerate}
-				\item (UC\_6.1) Il sistema ricerca all'interno della base di dati tutti i nomi di funzionalità disponibili.
+				\item (UC\_7.1) Il sistema ricerca all'interno della base di dati tutti i nomi dei servizi disponibili.
 			\end{enumerate}
-			\item l'amministratore fornisce al sistema la stringa del nome e della funzionalità da aggiungere.
-			\item il sistema valida l'input e memorizza l'associazione tra l'abbonamento e la funzionalitò scelta.
+			\item L'amministratore fornisce al sistema il nome dell'abbonamento e del servizio da aggiungere;
+			\item Il sistema valida l'input e memorizza l'associazione tra l'abbonamento e il servizio scelto.
 		\end{enumerate}\\\hline
-Pre-condizioni &  l'abbonamento scelto e la funzionalità esistono.\newline 
+Pre-condizioni & L'abbonamento scelto e il servizio esistono;\newline 
 			L'abbonamento non è invalidato.\\\hline
-Post-condizioni &  L'abbonamento e la funzionalità sono associati.\\\hline
+Post-condizioni &  L'abbonamento e il servizio sono associati.\\\hline
 \end{tabular}
 \label{table_use_case:6}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_6.1 \\\hline
 Categoria & Management\\\hline
-Nome & UC\_RecuperaFunzioniAbbonamento\\\hline
+Nome & UC\_RecuperaServizi\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & permette dato un nome di abbonamento valido, di reperire tutte le funzionalitò ad esso associate.\\\hline
+Descrizione & Permette di recuperare la lista di tutti i servizi associabili ad un qualsiasi abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede di recuperare le funzionalità di un abbonamento.
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento.
-			\item l'amministratore fornisce al sistema la stringa del nome.
-			\item il sistema valida l'input e ricerca tutte le funzionalità associate all'abbonamento sulla base di dati.
+			\item L'amministratore richiede di recuperare i servizi disponibili.
+			\item Il sistema ricerca tutti i servizi sulla base di dati.
 		\end{enumerate}\\\hline
-Pre-condizioni &  l'abbonamento scelto esiste.\\\hline
+Pre-condizioni &  Nessuna.\\\hline
 Post-condizioni &  Nessuna.\\\hline
 \end{tabular}
 \label{table_use_case:6.1}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_7 \\\hline
 Categoria & Management\\\hline
-Nome & UC\_RimuoviFunzioneAbbonamento\\\hline
+Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & permette di ridurre di un elemento l'insieme delle funzioni collegate ad un abbonamento, di una funzionalità già associata ad esso.\\\hline
+Descrizione & Permette la rimozione di uno dei servizi collegati ad un abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede di ridurre le funzionalità di  un abbonamento.
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento ed un elemento della lista delle funzionalità associate all'abbonamento.
+			\item L'amministratore richiede di ridurre i servizi offerti da  un abbonamento.
+			\item Il sistema richiede all' amministratore il nome dell' abbonamento e un elemento della lista dei servizi associati all'abbonamento.
 			\begin{enumerate}
-				\item (UC\_7.1) Il sistema ricerca all'interno della base di dati tutti i nomi di funzionalità associati all'abbonamento specificato.
+				\item (UC\_6.1) Il sistema ricerca all'interno della base di dati tutti i nomi di servizi associati all'abbonamento specificato.
 			\end{enumerate}
-			\item l'amministratore fornisce al sistema la stringa del nome e della funzionalità da rimuovere.
-			\item il sistema valida l'input e rimuove l'associazione tra l'abbonamento e la funzionalitò scelta dalla base di dati.
+			\item L'amministratore fornisce al sistema il nome dell'abbonamento e del servizio da rimuovere.
+			\item Il sistema valida l'input e rimuove l'associazione tra l'abbonamento e il servizio scelto.
 		\end{enumerate}\\\hline
-Pre-condizioni &  l'abbonamento scelto e la funzionalità esistono e sono associati.\newline 
-			L'abbonamento non è invalidato.\\\hline
-Post-condizioni &  L'abbonamento e la funzionalità non sono associati.\\\hline
+Pre-condizioni &  L'abbonamento scelto e il servizio esistono e sono associati.\newline 
+			L'abbonamento è validato.\\\hline
+Post-condizioni &  L'abbonamento e il servizio non sono associati.\\\hline
 \end{tabular}
 \label{table_use_case:7}\newline
-%\label{table_attore:A\_1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_7.1 \\\hline
 Categoria & Management\\\hline
-Nome & UC\_RecuperaFunzioniAbbonamenti\\\hline
+Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ---- \\\hline
-Descrizione & permette di recuperare la lista di tutte le funzionalità associabili ad un abbonamento.\\\hline
+Descrizione & Permette, dato un nome di  un abbonamento, di reperire tutte i servizi usufruibili da esso.\\\hline
 Flusso &  	\begin{enumerate}
-			\item l'amministratore richiede di recuperare le funzionalità degli abbonamenti.
-			\item il sistema ricerca tutte le funzionalità sulla base di dati.
+			\item L'amministratore richiede di recuperare i servizi di un abbonamento;
+			\item Il sistema richiede all' amministratore il nome dell' abbonamento;
+			\item L'amministratore fornisce al sistema la stringa;
+			\item Il sistema valida l'input e ricerca tutte i servizi associati all'abbonamento sulla base di dati;
 		\end{enumerate}\\\hline
-Pre-condizioni &  Nessuna.\\\hline
+Pre-condizioni &  L'abbonamento scelto esiste.\\\hline
 Post-condizioni &  Nessuna.\\\hline
 \end{tabular}
 \label{table_use_case:7.1}\newline
-%\label{table_attore:A\_1}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_8 \\\hline
+Categoria & User\\\hline
+Nome & UC\_SottoscriviAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di sottoscrivere un piano di abbonamento;
+			\item Il sistema richiede il nome dell'abbonamento da sottoscrivere;
+			\item L'utente fornisce la stringa;
+			\item Il sistema valida l'input, verifica che esista un abbonamento sottoscrivibile con quel nome :
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: se queste condizioni sono verificate l'abbonamento verrà associato all'account dell'utente.
+				\item \textbf{\# alt2}: se queste condizioni non sono verificate non viene portata nessuna variazione nello stato dell'account dell'utente e questo viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma e ha effettuato con successo il Login.\\\hline
+Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
+\end{tabular}
+\label{table_use_case:8}\newline
+%DA DECIDERE BENE COME COMPORTARSI SE L'UTENTE HA GIA' IN CORSO UN ABBONAMENTO: DOPO LA SCADENZA DEL VECCHIO PARTE IL NUOVO ?%
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_9 \\\hline
+Categoria & User\\\hline
+Nome & UC\_DisdiciAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di disdire l'abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di disdire il piano di abbonamento a cui è associato;
+			\item Il sistema verifica sulla base di dati lo stato del rinnovo automatico dell'abbonamento per l'utente in questione:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: se il rinnovo automatico è attivo, lo disasttiva e avvisa l'utente che la modifica è stata apportata correttamente;
+				\item \textbf{\# alt2}: se il rinnovo automatico non è attivo avvisa l'utente che l'abbonamento era già stato disdetto;
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal piano di abbonamento basilare ( Free ).\\\hline
+\end{tabular}
+\label{table_use_case:9}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_10 \\\hline
+Categoria & User\\\hline
+Nome & UC\_CreaPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di creare una propria playlist, senza nessuna risorsa al suo interno.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di creare una nuova playlist;
+			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta la creazione di playlist:
+			\begin{enumerate}
+				\item Se l'abbonamento include il servizio:
+				\begin{enumerate}
+					\item Il sistema richiede il nome della playlist da creare;
+					\item L'utente fornisce la stringa;
+					\item Il sistema verifica sulla base di dati che l'utente non abbia già una playlist con lo stesso nome:
+					\begin{enumerate}
+						\item Se il sistema risponde in maniera positiva, allora la playlist viene creata;
+						\item Se il sistema risponde in maniera negativa, allora la playlist non viene creata e l'utente viene avvisato del fallimento dell'operazione.
+					\end{enumerate}
+				\end{enumerate}
+				\item Se l'abbonamento non include il servizio, allora la playlist non viene creata e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login,  l'abbonamento sottoscritto permette la creazione di playlist e non esiste già una playlist associato allo stesso utente con lo stesso nome.\\\hline
+Post-condizioni & Esiste una playlist con il nome specificato associata all'utente.\\\hline
+\end{tabular}
+\label{table_use_case:10}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_11 \\\hline
+Categoria & User\\\hline
+Nome & UC\_AggiungiRisorsaAPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di aggiungere una risorsa ad una sua playlist.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di aggiungere una risorsa ad una sua playlist;
+			\item Il sistema richiede il nome della risorsa e il nome della playlist;
+			\item L'utente invia le informazioni richieste;
+			\item Il sistema verifica sulla base di dati che tra le playlist associate all'utente sia presente quella con il nome comunicato:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il sistema risponde in maniera positiva, allora la risorsa viene agigunta alla playlist;
+				\item \textbf{\# alt2}: Se il sistema risponde in maniera negativa, allora la risorsa non viene  agigunta alla playlist e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login e ha almeno 1 playlist a se associata.\\\hline
+Post-condizioni & All'interno della playlist è presente un riferimento alla risorsa scelta.\\\hline
+\end{tabular}
+\label{table_use_case:11}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_12 \\\hline
+Categoria & User\\\hline
+Nome & UC\_RimuoveiRisorsaDaPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di rimuovere una risorsa da una sua playlist..\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di rimuovere una risorsa da una sua playlist;
+			\item Il sistema richiede il nome della risorsa e il nome della playlist;
+			\item L'utente invia le informazioni richieste;
+			\item Il sistema verifica sulla base di dati che tra le playlist associate all'utente sia presente quella con il nome comunicato:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il sistema risponde in maniera positiva, allora la risorsa viene agigunta alla playlist;
+				\item \textbf{\# alt2}: Se il sistema risponde in maniera negativa, allora la risorsa non viene  agigunta alla playlist e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login e ha almeno 1 playlist a se associata.\\\hline
+Post-condizioni & All'interno della playlist è presente un riferimento alla risorsa scelta.\\\hline
+\end{tabular}
+\label{table_use_case:12}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_13 \\\hline
+Categoria & User\\\hline
+Nome & UC\_PubblicaRisorsa\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di pubblicare sulla piattaforma una nuova risorsa.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di caricare una nuova risorsa sulla piattaforma;
+			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta la pubblicazione di nuove risorse:
+			\begin{enumerate}
+				\item Se l'abbonamento include il servizio:
+				\begin{enumerate}
+					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione (quest'ultima potrebbe non esserci);
+					\item L'utente fornisce i dati richiesti;
+					\item Il sistema verifica sulla base di dati che l'utente non abbia già pubblicato una risorsa gli stessi dati:
+					\begin{enumerate}
+						\item Se il sistema risponde in maniera positiva, allora la risorsa viene pubblicata;
+						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene pubblicata e l'utente viene avvisato del fallimento dell'operazione.
+					\end{enumerate}
+				\end{enumerate}
+				\item Se l'abbonamento non include il servizio, allora la risorsa non viene pubblicata e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Post-condizioni & La piattaforma fornisce una nuova Risorsa con i dati forniti dall'utente (ovviamente la risorsa è associata all'utente) .\\\hline
+\end{tabular}
+\label{table_use_case:13} \newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_14 \\\hline
+Categoria & User\\\hline
+Nome & UC\_RimuoviRisorsa\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di rimuoere dalla piattaforma una risorsa.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di rimuoere dalla piattaforma una risorsa;
+			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
+			\begin{enumerate}
+				\item Se l'abbonamento include il servizio:
+				\begin{enumerate}
+					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione;
+					\item L'utente fornisce i dati richiesti;
+					\item Il sistema verifica sulla base di dati che l'utente abbia pubblicato una risorsa gli stessi dati:
+					\begin{enumerate}
+						\item Se il sistema risponde in maniera positiva, allora la risorsa viene rimossa;
+						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene rimossa e l'utente viene avvisato del fallimento dell'operazione.
+					\end{enumerate}
+				\end{enumerate}
+				\item Se l'abbonamento non include il servizio, allora la risorsa non viene rimossa e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Post-condizioni & La risorsa non è più accessibile da nessun servizio e risulta inoltre rimossa da ogni playlist .\\\hline
+\end{tabular}
+\label{table_use_case:14}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_15 \\\hline
+Categoria & User\\\hline
+Nome & UC\_ModificaRisorsa\\\hline
+Priorità & High \\\hline
+Attori &  ---- \\\hline
+Descrizione & Permette a un utente di modificare una propria risorsa.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di modificare una risorsa;
+			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
+			\begin{enumerate}
+				\item Se l'abbonamento include il servizio:
+				\begin{enumerate}
+					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione;
+					\item L'utente fornisce i dati richiesti;
+					\item Il sistema verifica sulla base di dati che l'utente abbia pubblicato una risorsa gli stessi dati:
+					\begin{enumerate}
+						\item Se il sistema risponde in maniera positiva:
+							\subitem A.1. Il sistema chiede i nuovi valori dei dati;
+							\subitem A.2. L'utente fornisce i dati richiesti;
+							\subitem A.3. Il sistema aggiorna i dati della risorsa.
+						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene modificata e l'utente viene avvisato del fallimento dell'operazione.
+					\end{enumerate}
+				\end{enumerate}
+				\item Se l'abbonamento non include il servizio, allora la risorsa non viene modificata e l'utente viene avvisato del fallimento dell'operazione.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Post-condizioni & La risorsa è aggiornata con i nuovi dati.\\\hline
+\end{tabular}
+\label{table_use_case:15}\newline
+
+%DA PENSARE BENE SE E COME METTERE I SEGUENTI USE-CASE: %
+%NUOVO SERVIZIO - ELIMINA SERVIZIO - DOWNLOAD RISORSA%
 
 \end{center}
