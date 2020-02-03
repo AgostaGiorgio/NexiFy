@@ -30,6 +30,11 @@
 				\item Descrizione: permette agli amministratori di recuperare tutti i servizi associati ad un certo abbonamento
 			\end{itemize}
 	
+			\item REQ\_F\_RecuperaServiziUtente
+			\begin{itemize}	
+				\item Descrizione: permette di recuperare tutti i servizi di cui dispone un certo utente
+			\end{itemize}
+
 			\item REQ\_F\_RecuperaServizi
 			\begin{itemize}	
 				\item Descrizione: permette agli amministratori di recuperare tutti i servizi esistenti
@@ -38,6 +43,10 @@
 	\item REQ\_F\_EffettuaPagamento
 		\begin{itemize}	
 			\item Descrizione: permette agli amministratori di effettuare pagamenti verso utenti che hanno il servizio di pubblicare contenuti
+		\end{itemize}
+	\item REQ\_F\_SospendiAccount
+		\begin{itemize}	
+			\item Descrizione: permette agli amministratori di sospendere un account di un utente, per un certo periodo o permanentemente  (per svariate motivazioni)	
 		\end{itemize}
 
 	%requisiti relativi agli utenti
@@ -218,7 +227,45 @@
 				\item Descrizione: permette ad un utente di rimuovere un proprio commento su una risorsa
 			\end{itemize}
 		\end{enumerate}
+	
+	%segnalazioni
+	\item REQ\_F\_SegnalaUtente
+		\begin{itemize}	
+			\item Descrizione: permette di segnalare un utente (con relativa motivazione della segnalazione)
+		\end{itemize}
+		\begin{enumerate}[label*=\arabic*.]
+		\item REQ\_F\_OttieniSegnalazioni
+			\begin{itemize}	
+				\item Descrizione: ottiene le segnalazioni per un certo utente
+			\end{itemize}
+		\end{enumerate}
+
+	\item REQ\_F\_OttieniCronologia
+		\begin{itemize}	
+			\item Descrizione: ottiene gli ultimi contenuti guardati da un utente (si può specificare quanti contenuti si vogliono, o di quanti giorni si vogliono)
+		\end{itemize}
+
+	\item REQ\_F\_DownloadProdotto
+		\begin{itemize}	
+			\item Descrizione: effettua il download di un certo prodotto, in modo da poterlo riprodurre anche in assenza di connessione internet
+		\end{itemize}
+	
+	\item REQ\_F\_VisualizzaPubblicità
+		\begin{itemize}
+			\item Descrizione: riproduce uno spot pubblicitario (avviene solo per account che non hanno alcuni servizi, e in determinate situazioni)
+		\end{itemize}
+	
+	%requisiti svolti internamente dal sistema
+	\item REQ\_F\_SuggerisciContenuti
+		\begin{itemize}	
+			\item Descrizione: suggerisce dei contenuti ad un utente, in base agli ultimi contenuti guardati
+		\end{itemize}
 		
+	\item REQ\_F\_CalcolaQualitàProdotto
+		\begin{itemize}	
+			\item Descrizione: calcola il voto di un certo prodotto, in base ai voti ricevuti
+		\end{itemize}
+	
 
 
 \end{enumerate}
