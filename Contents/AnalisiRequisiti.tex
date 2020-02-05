@@ -74,9 +74,9 @@
 		\end{enumerate}
 
 	%ricerche
-	\item REQ\_F\_RicercaRisorsa
+	\item REQ\_F\_RicercaContenuto
 		\begin{itemize}	
-			\item Descrizione: permette la ricerca di contenuti coerenti con una stringa digitata dall'utente (eventualmente si può filtrare anche in base al tipo di risorsa: musica, film, ecc.)
+			\item Descrizione: permette la ricerca di contenuti coerenti con una stringa digitata dall'utente (eventualmente si può filtrare anche in base al tipo di risorsa: musica, film, playlist, ecc.)
 		\end{itemize}
 		\begin{enumerate}[label*=\arabic*.]
 			\item REQ\_F\_RicercaPopolari
@@ -199,6 +199,11 @@
 			\begin{itemize}	
 				\item Descrizione: riproduce le risorse della playlist, una dopo l'altra
 			\end{itemize}
+		
+		\item REQ\_F\_CambiaVisibilitàPlaylist
+			\begin{itemize}	
+				\item Descrizione: cambia la visibilità della playlist (può essere pubblica, visibile solo all'utente che l'ha creata, o visibile per alcuni account)
+			\end{itemize}
 		\end{enumerate}		
 	
 	%serie tv e album gestite come playlist, che però sono pubbliche
@@ -213,18 +218,18 @@
 		\end{itemize}
 
 	%commenti/votazioni
-	\item REQ\_F\_VotaRisorsa
+	\item REQ\_F\_VotaContenuto
 		\begin{itemize}	
-			\item Descrizione: permette di votare una risorsa (video/musica), agli utenti che l'hanno visionata
+			\item Descrizione: permette di votare un contenuto (singoli video/canzoni o anche playlist pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
 		\end{itemize}
 		\begin{enumerate}[label*=\arabic*.]
-		\item REQ\_F\_CommentaRisorsa
+		\item REQ\_F\_CommentaContenuto
 			\begin{itemize}	
-				\item Descrizione: permette di commentare una risorsa (video/musica), agli utenti che l'hanno visionata
+				\item Descrizione: permette di commentare un contenuto (singoli video/canzoni o anche playlist pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
 			\end{itemize}
 		\item REQ\_F\_RimuoviCommento
 			\begin{itemize}	
-				\item Descrizione: permette ad un utente di rimuovere un proprio commento su una risorsa
+				\item Descrizione: permette ad un utente di rimuovere un proprio commento su un contenuto
 			\end{itemize}
 		\end{enumerate}
 	
@@ -261,9 +266,9 @@
 			\item Descrizione: suggerisce dei contenuti ad un utente, in base agli ultimi contenuti guardati
 		\end{itemize}
 		
-	\item REQ\_F\_CalcolaQualitàProdotto
+	\item REQ\_F\_CalcolaQualitàContenuto
 		\begin{itemize}	
-			\item Descrizione: calcola il voto di un certo prodotto, in base ai voti ricevuti
+			\item Descrizione: calcola il voto di un certo contenuto, in base ai voti ricevuti
 		\end{itemize}
 	
 
@@ -296,6 +301,11 @@
 	\item REQ\_NF\_Backup
 		\begin{itemize}
 			\item Descrizione: la piattaforma deve effettuare backup dei contenuti caricati dagli utenti (insieme ai loro dati), in modo da garantire la disponibilità e la persistenza dei dati
+		\end{itemize}
+
+	\item REQ\_NF\_ContenutiNonAppropriati
+		\begin{itemize}
+			\item Descrizione: le segnalazioni inviate dagli utenti devono essere analizzate tempestivamente, in modo da rimuovere eventuali contenuti non appropriati
 		\end{itemize}
 
 \end{enumerate}
