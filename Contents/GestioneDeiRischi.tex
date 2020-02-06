@@ -1,0 +1,135 @@
+Identificheremo qui i vari rischi per il progetto.\\
+Ogni rischio ha una certa probabilità di verificarsi che varia tra: molto bassa, bassa, moderata, alta, molto alta; e provoca dei danni che possono essere: catastrofici, seri, tollerabili, insignificanti.\\
+Useremo la tecnica RMMM (Risk Mitigation, Monitoring, Management) per la gestione dei rischi. Per ogni rischio individuato, verrà quindi trovata: 
+\begin{itemize}
+	\item una strategia di mitigation, per abbassare la probabilità che il rischio si verifichi, e ridurre anche i danni provacati dal rischio
+	\item una strategia di monitoring per individuare cambiamenti nella probabilità del rischio
+	\item una strategia di management per gestire il rischio, assumendo che questo si sia verificato
+\end{itemize}
+Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da aspetti tecnologici, e con la convenzione RSC\_M\_\textit{nome} i rischi derivanti da aspetti manageriali \\
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
+ 	\hline
+	 \textbf{ID} & RSC\_T\_ SovraccaricoCDN\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & Le richieste effettuate dagli utenti superano il carico massimo sopportabile dalla CDN \\ 
+	\hline
+	\textbf{Probabilità} &  Moderata \\ 
+	\hline
+	\textbf{Impatto} &  Serio \\ 
+	\hline
+	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
+	\hline
+	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
+	\hline
+	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
+ 	\hline
+	 \textbf{ID} & RSC\_T\_ PerditaDati\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & In seguito alla rottura di hard disk dei server, si perdono dati caricati dagli utenti o dati relativi agli utenti \\ 
+	\hline
+	\textbf{Probabilità} &  Molto bassa \\ 
+	\hline
+	\textbf{Impatto} &  Serio \\ 
+	\hline
+	\textbf{Mitigation} & Distribuire i dati su più server ed effettuare backup (anche più di uno) di tutti i dati su server diversi. Sostituire hard disk difettosi. Progettare le varie funzionalità della piattaforma in modo che siano resistenti alle perdite di dati\\ 
+	\hline
+	\textbf{Monitoring} & Monitorare costantemente lo stato degli hard disk dei server, in modo da individuare eventuali problemi \\ 
+	\hline
+	\textbf{Management} & In caso di perdita di dati caricati dagli utenti, comunicarlo agli utenti in modo che possano eventualmente ricaricarli \\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
+ 	\hline
+	 \textbf{ID} & RSC\_T\_ DifficoltàIntegrazioneServizi\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & Diversi servizi esterni usati nella creazione della piattaforma (es: CDN, basi di dati, ecc), non si riescono a integrare come previsto\\ 
+	\hline
+	\textbf{Probabilità} &  Moderata\\ 
+	\hline
+	\textbf{Impatto} &  Seria\\ 
+	\hline
+	\textbf{Mitigation} & Prestare attenzione durante la fase di selezione dei servizi esterni, controllando che essi si integrino bene l'uno con l'altro\\ 
+	\hline
+	\textbf{Monitoring} & Controllare periodicamente eventuali aggiornamenti nei servizi effettuati dalle aziende esterne\\ 
+	\hline
+	\textbf{Management} & Contattare i fornitori per sapere se esistono soluzioni note per l'integrazione. In caso non esistessero soluzioni note per l'integrazione, si consideri di cambiare uno dei due servizi, in quanto implementare un'integrazione ad-hoc da zero in generale sarebbe più complicato e dispendioso\\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
+	\textbf{ID} & RSC\_M\_ IndisponibilitàPersonale\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & Alcuni elementi del personale potrebbero essere indisponibili in alcuni periodi del progetto\\ 
+	\hline
+	\textbf{Probabilità} &  Alta \\ 
+	\hline
+	\textbf{Impatto} &  Tollerabile \\ 
+	\hline
+	\textbf{Mitigation} & Incoraggiare i dipendenti a comunicare in anticipo eventuali indisponibilità già previste (tipicamente indisponibilità non dovute a malattie) \\ 
+	\hline
+	\textbf{Monitoring} & Mantenere una comunicazione tra dipendenti e resto dell'azienda, per venire a conoscenza il prima possibile di indisponibilità\\ 
+	\hline
+	\textbf{Management} & Se l'indisponibilità è per un breve periodo, distribuire il lavoro del personale assente sugli altri dipendenti. Se l'indisponibilità si protrae troppo a lungo, assumere nuovi dipendenti per un certo periodo\\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
+	\textbf{ID} & RSC\_M\_ CambiamentoRequisiti\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
+	\hline
+	\textbf{Probabilità} &  Alta \\ 
+	\hline
+	\textbf{Impatto} &  Serio \\ 
+	\hline
+	\textbf{Mitigation} & Revisione attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
+	\hline
+	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
+	\hline
+	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Altrimenti eliminare requisiti secondari per restare nei tempi \\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
+	\textbf{ID} & RSC\_M\_ DurataSottostimata\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & La durata di alcune iterazioni viene sottostimata \\ 
+	\hline
+	\textbf{Probabilità} & Basso\\ 
+	\hline
+	\textbf{Impatto} & Serio\\
+	\hline
+	\textbf{Mitigation} & Lasciare qualche giorno in più del previsto in ogni iterazione, in modo da far fronte a eventuali ritardi\\ 
+	\hline
+	\textbf{Monitoring} & Esaminare periodicamente l'andamento del progetto, in modo da individuare potenziali situazioni che portano a ritardi\\ 
+	\hline
+	\textbf{Management} & Se è stata sottostimata la durata di poche iterazioni, spostare il lavoro in eccesso su iterazioni successive. Se la durata è stata sottostimata di molto, considerare la rimozione di alcune funzionalità secondarie, al fine di rimpicciolire il progetto\\ 
+	\hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
+	\textbf{ID} & RSC\_M\_ RiduzioneBudget\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & Il budget disponibile viene ridotto durante il progetto\\ 
+	\hline
+	\textbf{Probabilità} & Molto basso\\ 
+	\hline
+	\textbf{Impatto} & Catastrofico\\
+	\hline
+	\textbf{Mitigation} & Usare meno del budget iniziale a disposizione, in modo da coprire eventuali, piccole, riduzioni\\
+	\hline
+	\textbf{Monitoring} & Controllare periodicamente che l'avanzamento del progetto segua i costi previsti, e sfruttare eventuali condizioni che portano a risparmio\\ 
+	\hline
+	\textbf{Management} & Ridimensionare il progetto in base al nuovo budget, rimuovendo le funzionalità meno importanti\\ 
+	\hline
+\end{tabular}
