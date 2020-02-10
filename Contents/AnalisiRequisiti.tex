@@ -1,99 +1,243 @@
 
+\subsection{Requisiti sui dati}
+\begin{enumerate}
+
+\item \hypertarget{AnReqUt}{Degli utenti registrati si vuole mantenere:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item Nome
+	\item Cognome
+	\item Data di nascita
+	\item Username
+	\item Password (hash)
+	\item Email di recupero
+	\item data di registrazione
+	\item La lista degli abbonamenti sottoscritti. Di ogni abbonamento sottoscritto interessa:
+		\begin{enumerate}[label*=\arabic*.]
+		\item Data di sottoscrizione
+		\item \hyperlink{AnReqPianiAbb}{Piano di abbonamento a cui fa riferimento}
+		\end{enumerate}
+	\end{enumerate}
+
+\item \hypertarget{AnReqPianiAbb}{Dei piani di abbonamento si vuole mantenere:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item Nome
+	\item Prezzo
+	\item Durata
+	\item \hyperlink{AnReqServizi}{Lista dei servizi offerti}
+	\end{enumerate}
+
+\item \hypertarget{AnReqServizi}{Dei servizi si vuole mantenere:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item Codice identificativo
+	\item Descrizione
+	\end{enumerate}
+
+\item  \hypertarget{AnReqProdMult}{Dei prodotti multimediali interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item Titolo
+	\item Descrizione
+	\item Età minima per visionarlo
+	\item Genere
+	\item Visibilità (può essere privato, visibile solamente ad alcuni utenti o pubblico)
+	\item \hyperlink{AnReqUt}{Proprietario del prodotto (utente che lo carica)}
+	\item Si dividono in:
+		\begin{enumerate}[label*=\arabic*.]
+		\item \hypertarget{AnReqVideo}{Prodotti video, di cui interessa:}
+			\begin{enumerate}[label*=\arabic*.]	
+			\item File del video vero e proprio
+			\item File dell'audio (eventualmente più di uno per supportare più lingue)
+			\item File dei sottotitoli (opzionali)
+			\end{enumerate}
+		\item \hypertarget{AnReqMusicali}{Prodotti musicali, di cui interessa:}
+			\begin{enumerate}[label*=\arabic*.]
+			\item File della musica
+			\item File delle lyrics (opzionale)
+			\item File del video musicale (opzionale)
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+
+\item \hypertarget{AnReqPlaylist}{Delle playlist interessa}:
+	\begin{enumerate}[label*=\arabic*.]
+	\item Nome
+	\item Descrizione
+	\item Visibilità (può essere privata, visibile solamente ad alcuni utenti o pubblica)
+	\item \hyperlink{AnReqUt}{Proprietario della playlist (utente che la crea)}
+	\item \hyperlink{AnReqProdMult}{Lista dei prodotti multimediali che contiene}
+	\end{enumerate}
+
+\item \hypertarget{AnReqSerieTv}{Delle serie tv interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item \hyperlink{AnReqPlaylist}{Sono delle playlist tali che:}
+		\begin{enumerate}[label*=\arabic*.]
+		\item Tutti i prodotti sono video
+		\item Il proprietario della playlist e il proprietario di tutti i prodotti che contiene, sono lo stesso utente
+		\item Ogni prodotto appartiene a una sola serie tv
+		\end{enumerate}
+	\item Genere
+	\end{enumerate}
+
+\item \hypertarget{AnReqAlbum}{Degli album interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item \hyperlink{AnReqPlaylist}{Sono delle playlist tali che:}
+		\begin{enumerate}[label*=\arabic*.]
+		\item Tutti i prodotti sono musicali
+		\item Il proprietario della playlist e il proprietario di tutti i prodotti che contiene, sono lo stesso utente
+		\end{enumerate}
+	\item Genere
+	\end{enumerate}
+
+\item \hypertarget{AnReqVisual}{Delle visualizzazioni interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item \hyperlink{AnReqProdMult}{Il prodotto multimediale visualizzato}
+	\item \hyperlink{AnReqUt}{L'utente che visualizza il prodotto}
+	\item L'istante in cui avviene la visualizzazione
+	\item Durante una visualizzazione è possibile:
+		\begin{enumerate}[label*=\arabic*.]
+		\item Dare un voto da 1 a 5 al prodotto visualizzato
+			\begin{enumerate}[label*=\arabic*.]
+			\item Se il prodotto fa parte di una serie tv o di un album, è possibile valutare la serie tv o l'album oltre che il singolo prodotto
+			\end{enumerate}
+		\item Commentare il prodotto visualizzato
+			\begin{enumerate}[label*=\arabic*.]
+			\item Se il prodotto fa parte di una serie tv o di un album, è possibile commentare la serie tv o l'album oltre che il singolo prodotto
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+
+\item \hypertarget{AnReqSegnalazioni}{Delle segnalazioni interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item \hyperlink{AnReqUt}{L'utente} che effettua la segnalazione
+	\item \hyperlink{AnReqProdMult}{Il prodotto} segnalato
+	\item Motivo della segnalazione
+	\end{enumerate} 
+
+\end{enumerate}
+
 
 \subsection{Requisiti Funzionali}
 \begin{enumerate}
 	
 	% requisiti relativi agli amministratori
 
-	\item REQ\_F\_CreaAbbonamento
-		\begin{itemize}	
-			\item Descrizione: permette agli amministratori di creare un nuovo piano di abbonamento (inizialmente con nessun servizio associato)
-		\end{itemize}
+	\item REQ\_F\_GestisciPianiAbbonamento
 		\begin{enumerate}[label*=\arabic*.]      
-			\item REQ\_F\_EliminaAbbonamento
+		\item REQ\_F\_CreaAbbonamento
 			\begin{itemize}	
-				\item Descrizione: permette agli amministratori di eliminare un piano di abbonamento
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di creare un nuovo piano di abbonamento (inizialmente con nessun servizio associato)
+			\end{itemize}
+		\item REQ\_F\_EliminaAbbonamento
+			\begin{itemize}	
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di eliminare un piano di abbonamento
 			\end{itemize}
 			
-			\item REQ\_F\_AggiungiServizioAbbonamento
+		\item REQ\_F\_AggiungiServizioAbbonamento
 			\begin{itemize}	
-				\item Descrizione: permette agli amministratori di aggiungere un certo servizio ad un certo piano di abbonamento
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di aggiungere un certo servizio ad un certo piano di abbonamento
 			\end{itemize}
 	
-			\item REQ\_F\_RimuoviServizioAbbonamento
+		\item REQ\_F\_RimuoviServizioAbbonamento
 			\begin{itemize}	
-				\item Descrizione: permette agli amministratori di rimuovere un certo servizio ad un certo piano di abbonamento
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di rimuovere un certo servizio ad un certo piano di abbonamento
 			\end{itemize}
 
-			\item REQ\_F\_RecuperaServiziAbbonamento
+		\item REQ\_F\_RecuperaServiziAbbonamento
 			\begin{itemize}	
-				\item Descrizione: permette agli amministratori di recuperare tutti i servizi associati ad un certo abbonamento
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di recuperare tutti i servizi associati ad un certo abbonamento
 			\end{itemize}
 	
-			\item REQ\_F\_RecuperaServiziUtente
+		\item REQ\_F\_RecuperaServiziUtente
 			\begin{itemize}	
-				\item Descrizione: permette di recuperare tutti i servizi di cui dispone un certo utente
+			\item Priorità: Primaria
+			\item Descrizione: permette di recuperare tutti i servizi di cui dispone un certo utente
 			\end{itemize}
 
-			\item REQ\_F\_RecuperaServizi
+		\item REQ\_F\_RecuperaServizi
 			\begin{itemize}	
-				\item Descrizione: permette agli amministratori di recuperare tutti i servizi esistenti
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di recuperare tutti i servizi esistenti
 			\end{itemize}
 		\end{enumerate}
+
 	\item REQ\_F\_EffettuaPagamento
 		\begin{itemize}	
-			\item Descrizione: permette agli amministratori di effettuare pagamenti verso utenti che hanno il servizio di pubblicare contenuti
+		\item Priorità: Primaria
+		\item Descrizione: permette agli amministratori di effettuare pagamenti verso utenti che hanno il servizio di pubblicare contenuti
 		\end{itemize}
 	\item REQ\_F\_SospendiAccount
 		\begin{itemize}	
-			\item Descrizione: permette agli amministratori di sospendere un account di un utente, per un certo periodo o permanentemente  (per svariate motivazioni)	
+		\item Priorità: Primaria
+		\item Descrizione: permette agli amministratori di sospendere un account di un utente, per un certo periodo o permanentemente  (per svariate motivazioni)	
 		\end{itemize}
 
 	%requisiti relativi agli utenti
 	
 	%registrazione
-	\item REQ\_F\_EffettuaRegistrazione	
-		\begin{itemize}	
-			\item Descrizione: permette la registrazione di un nuovo utente (richiedendo vari dati quali nome, cognome, ecc.)
-		\end{itemize}
+	\item REQ\_F\_GestisciAccount
 		\begin{enumerate}[label*=\arabic*.]
+		\item REQ\_F\_EffettuaRegistrazione	
+			\begin{itemize}	
+			\item Priorità: Primaria
+			\item Descrizione: permette la registrazione di un nuovo utente (richiedendo vari dati quali nome, cognome, ecc.)
+			\end{itemize}
 		\item REQ\_F\_ModificaProfilo
 			\begin{itemize}	
-				\item Descrizione: permette la modifica del profilo di un utente (può cambiare alcuni dati inseriti in fase di registrazione)
+			\item Priorità: Secondaria
+			\item Descrizione: permette la modifica del profilo di un utente (può cambiare alcuni dati inseriti in fase di registrazione)
 			\end{itemize}
 
 		\item REQ\_F\_EffettuaLogin
 			\begin{itemize}	
-				\item Descrizione: permette ad un utente registrato di accedere al proprio account
+			\item Priorità: Primaria
+			\item Descrizione: permette ad un utente registrato di accedere al proprio account
 			\end{itemize}
 
 		\item REQ\_F\_EffettuaLogout
 			\begin{itemize}	
-				\item Descrizione: permette ad un utente di uscire dal proprio account
+			\item Priorità: Primaria
+			\item Descrizione: permette ad un utente di uscire dal proprio account
 			\end{itemize}
 		\end{enumerate}
 
 	%ricerche
-	\item REQ\_F\_RicercaContenuto
-		\begin{itemize}	
-			\item Descrizione: permette la ricerca di contenuti coerenti con una stringa digitata dall'utente (eventualmente si può filtrare anche in base al tipo di risorsa: musica, film, playlist, ecc.)
-		\end{itemize}
+	\item REQ\_F\_GestisciRicerche
 		\begin{enumerate}[label*=\arabic*.]
-			\item REQ\_F\_RicercaPopolari
+		\item REQ\_F\_RicercaContenuto
+			\begin{itemize}	
+			\item Priorità: Primaria
+			\item Descrizione: permette la ricerca di contenuti (sia \hyperlink{AnReqProdMult}{prodotti} che \hyperlink{AnReqPlaylist}{playlist}) coerenti con una stringa digitata dall'utente
+			\end{itemize}
+		\item REQ\_F\_RicercaPopolari
 			\begin{itemize}
-				\item Descrizione: permette la ricerca di contenuti ritenuti popolari in base a vari criteri interni alla piattaforma 
+			\item Priorità: Secondaria
+			\item Descrizione: permette la ricerca di contenuti (sia \hyperlink{AnReqProdMult}{prodotti} che \hyperlink{AnReqPlaylist}{playlist}) ritenuti popolari in base a vari criteri interni alla piattaforma 
 			\end{itemize}	
+		
+		\item REQ\_F\_SuggerisciContenuti
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: suggerisce dei contenuti (sia \hyperlink{AnReqProdMult}{prodotti} che \hyperlink{AnReqPlaylist}{playlist})  ad un utente, in base agli ultimi contenuti \hyperlink{AnReqVisual}{visualizzati}
+			\end{itemize}
 		\end{enumerate}		
 
 	%abbonamenti
-	\item REQ\_F\_SottoscriviAbbonamento
-		\begin{itemize}	
-			\item Descrizione: permette ad un utente registrato di sottoscrivere un nuovo abbonamento (relativo a un piano di abbonamento esistente)
-		\end{itemize}
+	\item REQ\_F\_GestisciSottoscrizioniAbbonamenti
 		\begin{enumerate}[label*=\arabic*.]			
+		\item REQ\_F\_SottoscriviAbbonamento
+			\begin{itemize}
+			\item Priorità: Primaria	
+			\item Descrizione: permette ad un utente registrato di sottoscrivere un nuovo abbonamento (relativo a un piano di abbonamento esistente)
+			\end{itemize}
+
 		\item REQ\_F\_DisdiciAbbonamento
 			\begin{itemize}	
-				\item Descrizione: permette ad un utente registrato di disdire un abbonamento sottoscritto (evitando quindi il prossimo rinnovo, l'abbonamento rimane comunque valido fino alla scadenza)
+			\item Priorità: Primaria
+			\item Descrizione: permette ad un utente registrato di disdire un abbonamento sottoscritto (evitando quindi il prossimo rinnovo, l'abbonamento rimane comunque valido fino alla scadenza)
 			\end{itemize}
 		\end{enumerate}
 		%cambiare abbonamento?? bisogna chiarire...		
@@ -103,172 +247,196 @@
 	%per musica: serve la traccia audio, un eventuale file dei lyrics (con timestamp per poterlo sincronizzare), un eventuale video musicale (che viene unito all'audio, come per i video)
 	
 	\item REQ\_F\_CreaProdotto
-	\begin{itemize}
-		\item Descrizione: permette agli utenti di creare un nuovo prodotto (film/canzone/ecc) da pubblicare sulla piattaforma
-	\end{itemize}
-	\begin{enumerate}[label*=\arabic*.]
-		
-		\item REQ\_F\_CreaVideo
 		\begin{itemize}
-			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare un nuovo video da pubblicare sulla piattaforma
+		\item Priorità: Primaria
+		\item Descrizione: permette agli utenti (che hanno l'opportuno servizio) di creare un nuovo \hyperlink{AnReqProdMult}{prodotto} da pubblicare sulla piattaforma
 		\end{itemize}
 		\begin{enumerate}[label*=\arabic*.]
-			\item REQ\_F\_ModificaMetadatiVideo
+		\item REQ\_F\_CompilaInformazioniDiBase
 			\begin{itemize}
-				\item Descrizione: permette di modificare i metadati relativi a un video (se è un film o fa parte di una serie tv, genere, titolo, ecc.)
+			\item Priorità: Primaria
+			\item Descrizione: permette di riempire campi di base del \hyperlink{AnReqProdMult}{prodotto} (come titolo, descrizione, ecc)
 			\end{itemize}
+		\item REQ\_F\_CreaVideo
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare un nuovo \hyperlink{AnReqVideo}{video} da pubblicare sulla piattaforma
+			\end{itemize}
+			\begin{enumerate}[label*=\arabic*.]
 			\item REQ\_F\_AggiungiSottotitoli
-			\begin{itemize}
+				\begin{itemize}
+				\item Priorità: Secondaria
 				\item Descrizione: permette di aggiungere un file dei sottotitoli al video
-			\end{itemize}
-			\item REQ\_F\_CaricaRisorseMultimedialiVideo
-			\begin{itemize}
+				\end{itemize}
+			\item REQ\_F\_CaricaFileMultimedialiVideo
+				\begin{itemize}
+				\item Priorità: Primaria
 				\item Descrizione: permette di caricare le risorse multimediali per un video (è obbligatorio un file video, possono poi essere aggiunte varie tracce audio in lingue diverse)
-			\end{itemize}
-		\end{enumerate}
+				\end{itemize}
+			\end{enumerate}
 	
 		\item REQ\_F\_CreaCanzone
-		\begin{itemize}
-			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare una nuova canzone da pubblicare sulla piattaforma
-		\end{itemize}
-		\begin{enumerate}[label*=\arabic*.]
-			\item REQ\_F\_ModificaMetadatiCanzone
 			\begin{itemize}
-				\item Descrizione: permette di modificare i metadati relativi a una canzone (genere, titolo, ecc.)
+			\item Priorità: Primaria
+			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare un nuovo \hyperlink{AnReqMusicali}{prodotto musicale} da pubblicare sulla piattaforma
 			\end{itemize}
+			\begin{enumerate}[label*=\arabic*.]
 			\item REQ\_F\_AggiungiLyrics
-			\begin{itemize}
+				\begin{itemize}
+				\item Priorità: Secondaria
 				\item Descrizione: permette di aggiungere un file delle lyrics
-			\end{itemize}
-			\item REQ\_F\_CaricaRisorseMultimedialiCanzone
-			\begin{itemize}
+				\end{itemize}
+			\item REQ\_F\_CaricaFileMultimedialiCanzone
+				\begin{itemize}
+				\item Priorità: Primaria
 				\item Descrizione: permette di caricare le risorse multimediali per una canzone (è obbligatorio un file audio, può essere caricato anche un video multimediale)
-			\end{itemize}
-		\end{enumerate}	
+				\end{itemize}
+			\end{enumerate}	
 		
 		\item REQ\_F\_CambiaStatoPubblicazione
-		\begin{itemize}
+			\begin{itemize}
+			\item Priorità: Primaria
 			\item Descrizione: permette di modificare lo stato di pubblicazione del prodotto (può essere reso pubbico, oppure lo si può rimettere privato/in bozza)
-		\end{itemize}		
-
-	\end{enumerate}
+			\end{itemize}		
+		\end{enumerate}
 	
-	%riproduzione di risorse: chiamiamo riproduciRisorsa, poi questa penserà a usare RiproduciVideo o RiproduciMusica a seconda della risorsa, in RiproduciMusica è necessario trovare la traccia video adeguata, oppure facciamo che la musica in realtà deve essere caricata unitamente al video?
-	\item REQ\_F\_RiproduciRisorsa
+%riproduzione di risorse: chiamiamo riproduciRisorsa, poi questa penserà a usare RiproduciVideo o RiproduciMusica a seconda della risorsa, in RiproduciMusica è necessario trovare la traccia video adeguata, oppure facciamo che la musica in realtà deve essere caricata unitamente al video?
+	\item REQ\_F\_RiproduciProdotto
 		\begin{itemize}
-			\item Descrizione: riproduce una risorsa multimediale (sia essa video, audio)
+		\item Priorità: Primaria	
+		\item Descrizione: riproduce una \hyperlink{AnReqProdMult}{prodotto multimediale} (sia esso video, audio)
 		\end{itemize}
     		\begin{enumerate}[label*=\arabic*.]      				
-			\item REQ\_F\_RiproduciVideo
-				\begin{itemize}
-					\item Descrizione: riproduce una risorsa video
-				\end{itemize}
-			\item REQ\_F\_RiproduciMusica
-				\begin{itemize}
-					\item Descrizione: riproduce una risorsa musicale, con eventuale traccia video adeguata (lyrics o video musicale)
-				\end{itemize}
+		\item REQ\_F\_RiproduciVideo
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: riproduce una \hyperlink{AnReqVideo}{risorsa video}
+			\end{itemize}
+		\item REQ\_F\_RiproduciMusica
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: riproduce una \hyperlink{AnReqMusicali}{risorsa musicale}, con eventuale traccia video adeguata (lyrics o video musicale)
+			\end{itemize}
 			
-			\item REQ\_F\_PausaRisorsa
-				\begin{itemize}
-					\item Descrizione: mette in pausa la visualizzazione della risorsa
-				\end{itemize}
+		\item REQ\_F\_PausaPlayer
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: mette in pausa la visualizzazione della risorsa
+			\end{itemize}
 			
-			\item REQ\_F\_SpostaPuntoRiproduzione
-				\begin{itemize}
-					\item Descrizione: cambia il punto di riproduzione della risorsa (può essere spostata avanti o indietro)
-				\end{itemize}		
+		\item REQ\_F\_SpostaPuntoRiproduzione
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: cambia il punto di riproduzione della risorsa (può essere spostata avanti o indietro)
+			\end{itemize}		
 		\end{enumerate}
 		
 	%playlist... qualsiasi risorsa, o solo audio? Io direi qualsiasi risorsa e poi se la vede l'utente
-	\item REQ\_F\_CreaPlaylist
-		\begin{itemize}	
-			\item Descrizione: permette ad utenti registrati di creare una playlist (inizialmente vuota)
-		\end{itemize}
+	\item REQ\_F\_GestisciPlaylist
 		\begin{enumerate}[label*=\arabic*.]
-		\item REQ\_F\_AggiungiRisorsaAPlaylist
+		\item REQ\_F\_CreaPlaylist
 			\begin{itemize}	
-				\item Descrizione: permette ad utenti registrati di aggiungere una risorsa a una loro playlist precedentemente creata
+			\item Priorità: Primaria
+			\item Descrizione: permette ad utenti registrati di creare una \hyperlink{AnReqPlaylist}{playlist} (inizialmente vuota)
+			\end{itemize}
+		\item REQ\_F\_AggiungiProdottoAPlaylist
+			\begin{itemize}	
+			\item Priorità: Primaria
+			\item Descrizione: permette ad utenti registrati di aggiungere un \hyperlink{AnReqProdMult}{prodotto} a una loro playlist precedentemente creata
 			\end{itemize}
 
-		\item REQ\_F\_RimuoviRisorsaDaPlaylist
+		\item REQ\_F\_RimuoviProdottoDaPlaylist
 			\begin{itemize}	
-				\item Descrizione: permette ad utenti registrati di rimuovere una risorsa da una loro playlist
+			\item Priorità: Primaria
+			\item Descrizione: permette ad utenti registrati di rimuovere un prodotto da una loro playlist
 			\end{itemize}
 
 		\item REQ\_F\_RiproduciPlaylist
 			\begin{itemize}	
-				\item Descrizione: riproduce le risorse della playlist, una dopo l'altra
+			\item Priorità: Primaria
+			\item Descrizione: riproduce i prodotti della playlist, uno dopo l'altro
 			\end{itemize}
 		
 		\item REQ\_F\_CambiaVisibilitàPlaylist
 			\begin{itemize}	
-				\item Descrizione: cambia la visibilità della playlist (può essere pubblica, visibile solo all'utente che l'ha creata, o visibile per alcuni account)
+			\item Priorità: Primaria
+			\item Descrizione: cambia la visibilità della playlist (può essere pubblica, visibile solo all'utente che l'ha creata, o visibile per alcuni account)
 			\end{itemize}
 		\end{enumerate}		
 	
 	%serie tv e album gestite come playlist, che però sono pubbliche
 	\item REQ\_F\_CreaSerieTv
 		\begin{itemize}	
-			\item Descrizione: una serie tv è una playlist di video con dei vincoli: tutti gli episodi devono essere caricati dall'account che crea la serie tv, e un episodio non può appartenere a più serie tv.
+		\item Priorità: Primaria
+		\item Descrizione: una \hyperlink{AnReqSerieTv}{serie tv} è una playlist di video con dei vincoli: tutti gli episodi devono essere caricati dall'account che crea la serie tv, e un episodio non può appartenere a più serie tv.
 		\end{itemize}
 
 	\item REQ\_F\_CreaAlbum
 		\begin{itemize}	
-			\item Descrizione: un album è una playlist di canzoni con dei vincoli: tutte le canzoni devono essere caricate dall'account che crea l'album.
+		\item Priorità: Primaria
+		\item Descrizione: un \hyperlink{AnReqAlbum}{album} è una playlist di canzoni con dei vincoli: tutte le canzoni devono essere caricate dall'account che crea l'album.
 		\end{itemize}
 
 	%commenti/votazioni
-	\item REQ\_F\_VotaContenuto
-		\begin{itemize}	
-			\item Descrizione: permette di votare un contenuto (singoli video/canzoni o anche playlist pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
-		\end{itemize}
+	\item REQ\_F\_GestisciValutazioni
 		\begin{enumerate}[label*=\arabic*.]
+		\item REQ\_F\_VotaContenuto
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: permette di votare un contenuto (singoli \hyperlink{AnReqProdMult}{prodotti} o anche \hyperlink{AnReqPlaylist}{playlist} pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
+			\end{itemize}
+		
 		\item REQ\_F\_CommentaContenuto
 			\begin{itemize}	
-				\item Descrizione: permette di commentare un contenuto (singoli video/canzoni o anche playlist pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
+			\item Priorità: Secondaria
+			\item Descrizione: permette di commentare un contenuto (singoli \hyperlink{AnReqProdMult}{prodotti} o anche \hyperlink{AnReqPlaylist}{playlist} pubbliche, e quindi album e serie tv), agli utenti che l'hanno visionata
 			\end{itemize}
 		\item REQ\_F\_RimuoviCommento
 			\begin{itemize}	
-				\item Descrizione: permette ad un utente di rimuovere un proprio commento su un contenuto
+			\item Priorità: Secondaria
+			\item Descrizione: permette ad un utente di rimuovere un proprio commento su un contenuto
 			\end{itemize}
 		\end{enumerate}
 	
 	%segnalazioni
-	\item REQ\_F\_SegnalaUtente
-		\begin{itemize}	
-			\item Descrizione: permette di segnalare un utente (con relativa motivazione della segnalazione)
-		\end{itemize}
+	\item REQ\_F\_GestisciSegnalazioni
 		\begin{enumerate}[label*=\arabic*.]
+		\item REQ\_F\_SegnalaProdotto
+			\begin{itemize}
+			\item Priorità: Primaria		
+			\item Descrizione: permette di \hyperlink{AnReqSegnalazioni}{segnalare} un \hyperlink{AnReqProdMult}{prodotto} (con relativa motivazione della segnalazione)
+			\end{itemize}
 		\item REQ\_F\_OttieniSegnalazioni
 			\begin{itemize}	
-				\item Descrizione: ottiene le segnalazioni per un certo utente
+			\item Priorità: Primaria
+			\item Descrizione: ottiene le segnalazioni per un certo utente
 			\end{itemize}
 		\end{enumerate}
 
 	\item REQ\_F\_OttieniCronologia
 		\begin{itemize}	
-			\item Descrizione: ottiene gli ultimi contenuti guardati da un utente (si può specificare quanti contenuti si vogliono, o di quanti giorni si vogliono)
+		\item Priorità: Secondaria
+		\item Descrizione: ottiene gli ultimi contenuti \hyperlink{AnReqVisual}{visualizzati} da un utente (si può specificare quanti contenuti si vogliono, o di quanti giorni si vogliono)
 		\end{itemize}
 
 	\item REQ\_F\_DownloadProdotto
 		\begin{itemize}	
-			\item Descrizione: effettua il download di un certo prodotto, in modo da poterlo riprodurre anche in assenza di connessione internet
+		\item Priorità: Secondaria
+		\item Descrizione: effettua il download di un certo \hyperlink{AnReqProdMult}{prodotto}, in modo da poterlo riprodurre anche in assenza di connessione internet
 		\end{itemize}
 	
 	\item REQ\_F\_VisualizzaPubblicità
 		\begin{itemize}
-			\item Descrizione: riproduce uno spot pubblicitario (avviene solo per account che non hanno alcuni servizi, e in determinate situazioni)
+		\item Priorità: Primaria
+		\item Descrizione: riproduce uno spot pubblicitario (avviene solo per account che non hanno alcuni servizi, e in determinate situazioni)
 		\end{itemize}
 	
 	%requisiti svolti internamente dal sistema
-	\item REQ\_F\_SuggerisciContenuti
-		\begin{itemize}	
-			\item Descrizione: suggerisce dei contenuti ad un utente, in base agli ultimi contenuti guardati
-		\end{itemize}
 		
 	\item REQ\_F\_CalcolaQualitàContenuto
 		\begin{itemize}	
-			\item Descrizione: calcola il voto di un certo contenuto, in base ai voti ricevuti
+		\item Priorità: Secondaria
+		\item Descrizione: calcola il voto di un certo contenuto, in base ai voti ricevuti
 		\end{itemize}
 	
 
@@ -280,32 +448,38 @@
 \begin{enumerate}
 	\item REQ\_NF\_AudioInBackground
 		\begin{itemize}
-			\item Descrizione: nel caso in cui una musica sia in riproduzione, è necessario continuare a riprodurre la traccia anche quando l'app/sito viene messo in background (inibendo la traccia video)
+		\item Priorità: Secondaria
+		\item Descrizione: nel caso in cui una musica sia in riproduzione, è necessario continuare a riprodurre la traccia anche quando l'app/sito viene messo in background (inibendo la traccia video)
 		\end{itemize}
 	
 	\item REQ\_NF\_TempoDiRisposta
 		\begin{itemize}
-			\item Descrizione: la piattaforma deve effettuare le richieste degli utenti in tempi ragionevoli (pochi secondi al massimo), nel caso in cui questo non fosse momentaneamente possibile, è necessario comunicarlo all'utente precisando l'errore
+		\item Priorità: Primaria
+		\item Descrizione: la piattaforma deve effettuare le richieste degli utenti in tempi ragionevoli (pochi secondi al massimo), nel caso in cui questo non fosse momentaneamente possibile, è necessario comunicarlo all'utente precisando l'errore
 		\end{itemize}
 
 	\item REQ\_NF\_Privacy
 		\begin{itemize}
-			\item Descrizione: la piattaforma dovrà garantire la riservatezza di dati sensibili degli utenti
+		\item Priorità: Primaria
+		\item Descrizione: la piattaforma dovrà garantire la riservatezza di dati sensibili degli utenti
 		\end{itemize}
 
 	\item REQ\_NF\_Compatibilità
 		\begin{itemize}
-			\item Descrizione: la piattaforma dovrà essere compatibile su dispositivi Android e iOS (per quanto riguarda l'app), e sui maggiori browser: Firefox, Chrome, Safari (per quanto riguarda la web app)
+		\item Priorità: Secondaria
+		\item Descrizione: la piattaforma dovrà essere compatibile su dispositivi Android e iOS (per quanto riguarda l'app), e sui maggiori browser: Firefox, Chrome, Safari (per quanto riguarda la web app)
 		\end{itemize}
 	
 	\item REQ\_NF\_Backup
 		\begin{itemize}
-			\item Descrizione: la piattaforma deve effettuare backup dei contenuti caricati dagli utenti (insieme ai loro dati), in modo da garantire la disponibilità e la persistenza dei dati
+		\item Priorità: Primaria
+		\item Descrizione: la piattaforma deve effettuare backup dei contenuti caricati dagli utenti (insieme ai loro dati), in modo da garantire la disponibilità e la persistenza dei dati
 		\end{itemize}
 
 	\item REQ\_NF\_ContenutiNonAppropriati
 		\begin{itemize}
-			\item Descrizione: le segnalazioni inviate dagli utenti devono essere analizzate tempestivamente, in modo da rimuovere eventuali contenuti non appropriati
+		\item Priorità: Primaria
+		\item Descrizione: le segnalazioni inviate dagli utenti devono essere analizzate tempestivamente, in modo da rimuovere eventuali contenuti non appropriati
 		\end{itemize}
 
 \end{enumerate}
