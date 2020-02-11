@@ -11,6 +11,9 @@
 	\item Password (hash)
 	\item Email di recupero
 	\item data di registrazione
+	\item Metodi di pagamento per pagare gli abbonamenti
+	\item Eventuali metodi di pagamento per ricevere pagamenti
+	\item Stato dell'account (può essere attivo, sospeso, ecc.)
 	\item La lista degli abbonamenti sottoscritti. Di ogni abbonamento sottoscritto interessa:
 		\begin{enumerate}[label*=\arabic*.]
 		\item Data di sottoscrizione
@@ -112,6 +115,13 @@
 	\item Motivo della segnalazione
 	\end{enumerate} 
 
+\item \hypertarget{AnReqCodaRip}{Della coda di riproduzione interessa:}
+	\begin{enumerate}[label*=\arabic*.]
+	\item è locale ad ogni utente
+	\item Lista ordinata dei \hyperlink{AnReqUt}{prodotti} da riprodurre
+	\end{enumerate} 
+
+
 \end{enumerate}
 
 
@@ -151,10 +161,10 @@
 			\item Descrizione: permette agli amministratori di recuperare tutti i servizi associati ad un certo abbonamento
 			\end{itemize}
 	
-		\item REQ\_F\_RecuperaServiziUtente
+		\item REQ\_F\_RecuperaPianiAbbonamentoUtente
 			\begin{itemize}	
 			\item Priorità: Primaria
-			\item Descrizione: permette di recuperare tutti i servizi di cui dispone un certo utente
+			\item Descrizione: permette di recuperare tutti i piani di abbonamento sottoscritti da un certo utente
 			\end{itemize}
 
 		\item REQ\_F\_RecuperaServizi
@@ -238,6 +248,12 @@
 			\begin{itemize}	
 			\item Priorità: Primaria
 			\item Descrizione: permette ad un utente registrato di disdire un abbonamento sottoscritto (evitando quindi il prossimo rinnovo, l'abbonamento rimane comunque valido fino alla scadenza)
+			\end{itemize}
+				
+		\item REQ\_F\_CambiaAbbonamento
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: permette ad un utente registrato di sostituire un abbonamento in corso di validità con un altro abbonamento, pagando eventualmente un sovrapprezzo
 			\end{itemize}
 		\end{enumerate}
 		%cambiare abbonamento?? bisogna chiarire...		
@@ -409,7 +425,7 @@
 		\item REQ\_F\_OttieniSegnalazioni
 			\begin{itemize}	
 			\item Priorità: Primaria
-			\item Descrizione: ottiene le segnalazioni per un certo utente
+			\item Descrizione: permette agli amministratori di ottenere le segnalazioni per un certo utente
 			\end{itemize}
 		\end{enumerate}
 
@@ -439,6 +455,19 @@
 		\item Descrizione: calcola il voto di un certo contenuto, in base ai voti ricevuti
 		\end{itemize}
 	
+	\item REQ\_F\_GestisciCodaDiRiproduzione
+		\begin{enumerate}[label*=\arabic*.]
+		\item REQ\_F\_AggiungiProdottoAllaCoda
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: aggiunge un prodotto in fondo alla coda di riproduzione
+			\end{itemize}
+		\item REQ\_F\_RimuoviProdottoDallaCoda
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: rimuove il prodotto in testa alla coda di riproduzione
+			\end{itemize}
+		\end{enumerate}
 
 
 \end{enumerate}
@@ -483,3 +512,12 @@
 		\end{itemize}
 
 \end{enumerate}
+
+\noindent{\LARGE \textbf{Revisioni 6}} \\ \\
+\begin{tabular}{|c | c | c | c|} 
+ 	\hline
+	 Numero & Data & Descrizione \\ [0.5ex] 
+	\hline\hline
+	1 & 06/02/2020 & Stesura iniziale \\ 
+	\hline
+\end{tabular}
