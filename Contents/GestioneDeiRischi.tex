@@ -8,41 +8,42 @@ Useremo la tecnica RMMM (Risk Mitigation, Monitoring, Management) per la gestion
 \end{itemize}
 Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da aspetti tecnologici, e con la convenzione RSC\_M\_\textit{nome} i rischi derivanti da aspetti manageriali \\
 
-\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
- 	\hline
-	 \textbf{ID} & RSC\_T\_ SovraccaricoCDN\\ [0.5ex] 
-	\hline
-	\textbf{Descrizione} & Le richieste effettuate dagli utenti superano il carico massimo sopportabile dalla CDN \\ 
-	\hline
-	\textbf{Probabilità} &  Moderata \\ 
-	\hline
-	\textbf{Impatto} &  Serio \\ 
-	\hline
-	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
-	\hline
-	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
-	\hline
-	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
-	\hline
-\end{tabular}
 
-\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
- 	\hline
-	 \textbf{ID} & RSC\_T\_ PerditaDati\\ [0.5ex] 
-	\hline
-	\textbf{Descrizione} & In seguito alla rottura di hard disk dei server, si perdono dati caricati dagli utenti o dati relativi agli utenti \\ 
-	\hline
-	\textbf{Probabilità} &  Molto bassa \\ 
-	\hline
-	\textbf{Impatto} &  Catastrofico \\ 
-	\hline
-	\textbf{Mitigation} & Distribuire i dati su più server ed effettuare backup (anche più di uno) di tutti i dati su server diversi. Sostituire hard disk difettosi. Progettare le varie funzionalità della piattaforma in modo che siano resistenti alle perdite di dati\\ 
-	\hline
-	\textbf{Monitoring} & Monitorare costantemente lo stato degli hard disk dei server, in modo da individuare eventuali problemi \\ 
-	\hline
-	\textbf{Management} & In caso di perdita di dati caricati dagli utenti, comunicarlo agli utenti in modo che possano eventualmente ricaricarli. In caso di dati persi quali informazioni sugli abbonamenti degli utenti, informare gli utenti e cercare di rimborsarli o offrire abbonamenti in omaggio (basandosi sui dati non persi) \\ 
-	\hline
-\end{tabular}
+%\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
+% 	\hline
+%	 \textbf{ID} & RSC\_T\_ SovraccaricoCDN\\ [0.5ex] 
+%	\hline
+%	\textbf{Descrizione} & Le richieste effettuate dagli utenti superano il carico massimo sopportabile dalla CDN \\ 
+%	\hline
+%	\textbf{Probabilità} &  Moderata \\ 
+%	\hline
+%	\textbf{Impatto} &  Serio \\ 
+%	\hline
+%	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
+%	\hline
+%	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
+%	\hline
+%	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
+%	\hline
+%\end{tabular}
+
+%\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
+% 	\hline
+%	 \textbf{ID} & RSC\_T\_ PerditaDati\\ [0.5ex] 
+%	\hline
+%	\textbf{Descrizione} & In seguito alla rottura di hard disk dei server, si perdono dati caricati dagli utenti o dati relativi agli utenti \\ 
+%	\hline
+%	\textbf{Probabilità} &  Molto bassa \\ 
+%	\hline
+%	\textbf{Impatto} &  Catastrofico \\ 
+%	\hline
+%	\textbf{Mitigation} & Distribuire i dati su più server ed effettuare backup (anche più di uno) di tutti i dati su server diversi. Sostituire hard disk difettosi. Progettare le varie funzionalità della piattaforma in modo che siano resistenti alle perdite di dati\\ 
+%	\hline
+%	\textbf{Monitoring} & Monitorare costantemente lo stato degli hard disk dei server, in modo da individuare eventuali problemi \\ 
+%	\hline
+%	\textbf{Management} & In caso di perdita di dati caricati dagli utenti, comunicarlo agli utenti in modo che possano eventualmente ricaricarli. In caso di dati persi quali informazioni sugli abbonamenti degli utenti, informare gli utenti e cercare di rimborsarli o offrire abbonamenti in omaggio (basandosi sui dati non persi) \\ 
+%	\hline
+%\end{tabular}
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
  	\hline
@@ -102,17 +103,17 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
  	\hline
 	\textbf{ID} & RSC\_M\_ DurataSottostimata\\ [0.5ex] 
 	\hline
-	\textbf{Descrizione} & La durata di alcune iterazioni viene sottostimata \\ 
+	\textbf{Descrizione} & La durata dell'iterazione corrente viene sottostimata \\ 
 	\hline
 	\textbf{Probabilità} & Basso\\ 
 	\hline
 	\textbf{Impatto} & Serio\\
 	\hline
-	\textbf{Mitigation} & Lasciare qualche giorno in più del previsto in ogni iterazione, in modo da far fronte a eventuali ritardi\\ 
+	\textbf{Mitigation} & Lasciare qualche giorno in più del previsto in ogni iterazione, in modo da far fronte a eventuali errori di stima per una certa iterazione\\ 
 	\hline
-	\textbf{Monitoring} & Esaminare periodicamente l'andamento del progetto, in modo da individuare potenziali situazioni che portano a ritardi\\ 
+	\textbf{Monitoring} & Esaminare periodicamente l'andamento dell'iterazione corrente, in modo da individuare potenziali situazioni che portano a superare la durata stimata dell'iterazione\\ 
 	\hline
-	\textbf{Management} & Se è stata sottostimata la durata di poche iterazioni, spostare il lavoro in eccesso su iterazioni successive. Se la durata è stata sottostimata di molto, considerare la rimozione di alcune funzionalità secondarie, al fine di rimpicciolire il progetto\\ 
+	\textbf{Management} & Se è la prima iterazione che è stata sottostimata, si può distribuire il lavoro in eccesso sull'iterazione successiva, in quanto è improbabile aver sottostimato due iterazioni consecutive. Se è la seconda iterazione di fila che è stata sottostimata, considerare la rimozione di requisiti meno importanti, in quanto si accumulerebbe troppo lavoro continuando a rimandare sulle fasi successive \\ 
 	\hline
 \end{tabular}
 
@@ -141,5 +142,9 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 	 Numero & Data & Descrizione \\ [0.5ex] 
 	\hline\hline
 	1 & 07/02/2020 & Stesura iniziale \\ 
+	\hline
+	2 & 16/02/2020 & \thead{Rimossi rischi sul prodotto. In questa sezione consideriamo\\solo rischi che minano la realizzazione del progetto} \\
+	\hline
+	3 & 16/02/2020 & Modificato monitoring e management di REQ\_M\_DurataSottostimata \\
 	\hline
 \end{tabular}
