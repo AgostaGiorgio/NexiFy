@@ -77,14 +77,36 @@ Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritt
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
+ID & A\_1.2.1 \\\hline
+Nome & Partner\\\hline
+Genitore & A\_1.2 \\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritto un contratto con la piattaforma di tipo Partner. \\\hline
+\end{tabular}
+\label{table_attore:1.2.1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
 ID & A\_1.3 \\\hline
-Nome & Amministratore\\\hline
+Nome & Staff\\\hline
 Genitore & A\_1\\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
-Descrizione &  Rappresenta il ruolo di un amministratore della piattaforma \\\hline
+Descrizione &  Rappresenta il ruolo di staff della piattaforma \\\hline
 \end{tabular}
 \label{table_attore:1.3}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_1.3.1 \\\hline
+Nome & ManagerServizi\\\hline
+Genitore & A\_1.3\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo di chi gestisce i servizi offerti dalla piattaforma \\\hline
+\end{tabular}
+\label{table_attore:1.3.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -104,11 +126,11 @@ Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piat
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_1 \\\hline
-Categoria & User \\\hline
+Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
-Descrizione & Registrazione persistente di un itente all'interno della piattaforma \\\hline
+Attori &  UtenteNonRegistrato \\\hline
+Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
 			\item Il sistema richiede all' utente non registrato le credenziali di accesso quali: email, password, conferma della password, tipo di abbonamento da sottoscrivere;
@@ -129,10 +151,10 @@ Post-condizioni &  L'utente che ha richiesto la registrazione è registrato pers
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_2 \\\hline
-Categoria & User \\\hline
+Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato \\\hline
 Descrizione & Accesso al sistema identificandosi tramite credenziali \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di accedere alla piattaforma;
@@ -152,10 +174,10 @@ Post-condizioni &  L'utente è autenticato ed abilitato ai servizi che gli spett
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_3 \\\hline
-Categoria & User \\\hline
+Categoria & Risorse \\\hline
 Nome & UC\_RicercaRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Utente \\\hline
 Descrizione & Fornisce una lista filtrata di risorse disponibili. Le risorse vengono filtrate in base alla coerenza con la stringa di ricerca fornita.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di ricercare una risorsa;
@@ -173,10 +195,10 @@ Post-condizioni &  Nessuna\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_4 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_CreaAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Staff \\\hline
 Descrizione & Crea un nuovo abbonamento senza nessun servizio usufruibile da questo.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede la creazione di un nuovo abbonamento;
@@ -197,10 +219,10 @@ Post-condizioni &  Esiste un nuovo abbonamento con il nome fornito\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_5 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_EliminaAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  ManagerServizi \\\hline
 Descrizione & Rende non più sottoscrivibile un abbonamento esistente.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede di invalidare un abbonamento;
@@ -221,10 +243,10 @@ Post-condizioni &   L'abbonamento con nome specificato non è piu sottoscrivibil
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_6 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_AggiungiServizioAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  ManagerServizi \\\hline
 Descrizione & Permette di estendere di un elemento l'insieme dei servizi collegati ad un abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede di estendere i servizi offerti da un abbonamento;
@@ -244,10 +266,10 @@ Post-condizioni &  L'abbonamento e il servizio sono associati.\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_6.1 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServizi\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi associabili ad un qualsiasi abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede di recuperare i servizi disponibili.
@@ -261,10 +283,10 @@ Post-condizioni &  Nessuna.\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_7 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  ManagerServizi \\\hline
 Descrizione & Permette la rimozione di uno dei servizi collegati ad un abbonamento.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede di ridurre i servizi offerti da  un abbonamento.
@@ -284,10 +306,10 @@ Post-condizioni &  L'abbonamento e il servizio non sono associati.\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_7.1 \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Staff \\\hline
 Descrizione & Permette, dato un nome di  un abbonamento, di reperire tutte i servizi usufruibili da esso.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'amministratore richiede di recuperare i servizi di un abbonamento;
@@ -303,10 +325,10 @@ Post-condizioni &  Nessuna.\\\hline
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_8 \\\hline
-Categoria & User\\\hline
+Categoria & Risorse\\\hline
 Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di sottoscrivere un piano di abbonamento;
@@ -327,10 +349,10 @@ Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbon
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_9 \\\hline
-Categoria & User\\\hline
+Categoria & Risorse\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato, Amministratore \\\hline
 Descrizione & Permette a un utente di disdire l'abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di disdire il piano di abbonamento a cui è associato;
@@ -348,10 +370,10 @@ Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal piano di ab
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_10 \\\hline
-Categoria & User\\\hline
+Categoria & Playlist\\\hline
 Nome & UC\_CreaPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato \\\hline
 Descrizione & Permette a un utente di creare una propria playlist, senza nessuna risorsa al suo interno.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di creare una nuova playlist;
@@ -378,10 +400,10 @@ Post-condizioni & Esiste una playlist con il nome specificato associata all'uten
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_11 \\\hline
-Categoria & User\\\hline
+Categoria & Playlist\\\hline
 Nome & UC\_AggiungiRisorsaAPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato \\\hline
 Descrizione & Permette a un utente di aggiungere una risorsa ad una sua playlist.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di aggiungere una risorsa ad una sua playlist;
@@ -401,10 +423,10 @@ Post-condizioni & All'interno della playlist è presente un riferimento alla ris
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_12 \\\hline
-Categoria & User\\\hline
+Categoria & Playlist\\\hline
 Nome & UC\_RimuoveiRisorsaDaPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  UtenteRegistrato \\\hline
 Descrizione & Permette a un utente di rimuovere una risorsa da una sua playlist..\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di rimuovere una risorsa da una sua playlist;
@@ -424,10 +446,10 @@ Post-condizioni & All'interno della playlist è presente un riferimento alla ris
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_13 \\\hline
-Categoria & User\\\hline
+Categoria & Risorse\\\hline
 Nome & UC\_PubblicaRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Partner\\\hline
 Descrizione & Permette a un utente di pubblicare sulla piattaforma una nuova risorsa.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di caricare una nuova risorsa sulla piattaforma;
@@ -454,10 +476,10 @@ Post-condizioni & La piattaforma fornisce una nuova Risorsa con i dati forniti d
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_14 \\\hline
-Categoria & User\\\hline
+Categoria & Risorse\\\hline
 Nome & UC\_RimuoviRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Partner \\\hline
 Descrizione & Permette a un utente di rimuoere dalla piattaforma una risorsa.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di rimuoere dalla piattaforma una risorsa;
@@ -484,10 +506,10 @@ Post-condizioni & La risorsa non è più accessibile da nessun servizio e risult
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_15 \\\hline
-Categoria & User\\\hline
+Categoria & Risorse\\\hline
 Nome & UC\_ModificaRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  ---- \\\hline
+Attori &  Partner \\\hline
 Descrizione & Permette a un utente di modificare una propria risorsa.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di modificare una risorsa;
