@@ -27,6 +27,7 @@
 	\item Prezzo
 	\item Durata
 	\item \hyperlink{AnReqServizi}{Lista dei servizi offerti}
+	\item Se è sottoscrivibile o non lo è più
 	\end{enumerate}
 
 \item \hypertarget{AnReqServizi}{Dei servizi si vuole mantenere:}
@@ -137,12 +138,16 @@
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di creare un nuovo piano di abbonamento (inizialmente con nessun servizio associato)
 			\end{itemize}
-		\item REQ\_F\_EliminaAbbonamento
+		\item REQ\_F\_NascondiAbbonamento
 			\begin{itemize}	
 			\item Priorità: Primaria
-			\item Descrizione: permette agli amministratori di eliminare un piano di abbonamento
+			\item Descrizione: permette agli amministratori di rendere un piano di abbonamento non più sottoscrivibile (dal punto di vista degli utenti è l'equivalente di un'eliminazione)
 			\end{itemize}
-			
+		\item REQ\_F\_MostraAbbonamento
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: permette agli amministratori di rendere un piano di abbonamento sottoscrivibile
+			\end{itemize}
 		\item REQ\_F\_AggiungiServizioAbbonamento
 			\begin{itemize}	
 			\item Priorità: Primaria

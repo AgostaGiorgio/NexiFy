@@ -119,7 +119,230 @@ Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piat
 \end{tabular}
 \label{table_attore:2}\newline
 
-% ============================== USE CASE ====================================
+
+% ================ USE CASE CHE VANNO BENE ===========
+
+%======= UC relativi ai requisiti funzionali 1. ==========
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_1 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_CreaAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Crea un nuovo piano di abbonamento senza nessun servizio associato.\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Esiste un piano di abbonamento con il nome fornito dall'amministratore\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'amministratore richiede la creazione di un nuovo piano di abbonamento;
+			\item Il sistema richiede all'amministratore il nome, il prezzo e la durata del nuovo piano di abbonamento;
+			\item L'amministratore fornisce i dati;
+			\item Il sistema valida gli input, e:
+				\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione:
+					\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema ricerca se esistono altri piani di abbonamento con il nome inserito:
+						\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1.1}: Se non esistono altri piani di abbonamento con il nome inserito: il piano di abbonamento viene creato, con i dati inseriti dall'amministratore, la lista dei servizi inizialmente vuota e inizialmente non sottoscrivibile
+						\item \textbf{\# alt1.2}: Se esistono altri piani di abbonamento con il nome inserito: la creazione viene annullata e viene comunicato all'amministratore che esiste già un piano di abbonamento con il nome inserito	
+						\end{enumerate}
+					\end{enumerate}
+				\item \textbf{\# alt2}: Se avvengono errori durante la validazione: il piano di abbonamento non viene creato e l'errore viene comunicato all'amministratore
+				\end{enumerate}
+			
+			\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:1}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_2 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hline
+Pre-condizioni &  Nessuna \\\hline
+Post-condizioni &  Tutti i piani di abbonamento creati vengono restituiti\\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i piani di abbonamento, e:
+				\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovati
+				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
+				\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:2}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_3 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_RecuperaServizi\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
+Pre-condizioni &  Nessuna.\\\hline
+Post-condizioni &  Tutti i servizi esistenti vengono restituiti\\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i servizi, e:
+				\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1:} Se il database risponde con successo: il risultato della richiesta viene restituito
+				\item \textbf{\# alt2:} Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
+				\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:3}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_4 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_NascondiAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Rende non più sottoscrivibile un piano di abbonamento esistente.\\\hline
+Pre-condizioni &  Nessuna \\\hline
+Post-condizioni &  Il piano di abbonamento specificato non è più sottoscrivibile\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'amministratore richiede di invalidare un piano di abbonamento;
+		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e sottoscrivibili
+			\begin{enumerate}[  ]
+			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
+			\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili
+			\end{enumerate}
+		\item L'amministratore sceglie un piano di abbonamento tra quelli della lista
+		\item Il piano di abbonamento scelto viene reso non sottoscrivibile
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:4}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_5 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_MostraAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Rende sottoscrivibile un piano di abbonamento esistente.\\\hline
+Pre-condizioni &  Nessuna \\\hline
+Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'amministratore richiede di rendere sottoscrivibile un piano di abbonamento;
+		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e non sottoscrivibili
+			\begin{enumerate}[  ]
+			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
+			\item vengono forniti nella lista solo i piani di abbonamento non sottoscrivibili
+			\end{enumerate}
+		\item L'amministratore sceglie un piano di abbonamento tra quelli della lista
+		\item Il piano di abbonamento scelto viene reso sottoscrivibile
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:5}\newline
+
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_6 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_AggiungiServizioAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  ManagerServizi \\\hline
+Descrizione & Permette di aggiungere un servizio all'insieme dei servizi disponibili in un piano di abbonamento.\\\hline
+Pre-condizioni & Nessuna \\\hline
+Post-condizioni &  Il servizio scelto viene aggiunto al piano di abbonamento scelto \\\hline
+Flusso &  	\begin{enumerate}
+		\item L'amministratore richiede di estendere i servizi offerti da un piano di abbonamento;
+		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
+		\begin{enumerate}[  ]
+			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
+		\end{enumerate}
+		\item L'amministratore sceglie un piano di abbonamento
+		\item Il sistema mostra la lista dei servizi che possono essere aggiunti		
+			\begin{enumerate}[label*=\arabic*.]
+			\item (UC\_3) Il sistema recupera tutti i servizi disponibili
+			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item La lista dei servizi sarà la differenza tra il primo e il secondo insieme calcolati
+			\end{enumerate}
+		\item l'amministratore sceglie un servizio dalla lista
+		\item Il sistema aggiunge il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:6}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_7 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_RimuoviServizioAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  ManagerServizi \\\hline
+Descrizione & Permette la rimozione di uno dei servizi forniti da un piano abbonamento.\\\hline
+Pre-condizioni &  Nessuna \\\hline
+Post-condizioni &  Il servizio scelto non fa parte della lista dei servizi del piano di abbonamento indicato\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'amministratore richiede di rimuovere un servizio offerto da un piano di abbonamento;
+		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
+		\begin{enumerate}[  ]
+			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
+		\end{enumerate}
+		\item L'amministratore sceglie un piano di abbonamento
+		\item Il sistema mostra la lista dei servizi che possono essere rimossi		
+			\begin{enumerate}[label*=\arabic*.]
+			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\end{enumerate}
+		\item l'amministratore sceglie un servizio dalla lista
+		\item Il sistema rimuove il servizio scelto dalla lista dei servizi del piano di abbonamento indicato
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:7}\newline
+
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_8 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_RecuperaServiziAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Permette, dato un piano di abbonamento, di reperire tutti i servizi forniti da esso.\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  I servizi forniti dal piano di abbonamento vengono restituiti \\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i servizi nella lista del piano di abbonamento indicato, e:
+				\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei servizi trovata
+				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
+				\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:8}\newline
+
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_9 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Permette di recuperare la lista dei piani di abbonamento sottoscritti da un utente.\\\hline
+Pre-condizioni &  Nessuna.\\\hline
+Post-condizioni &  Viene restituita la lista dei piani di abbonamento sottoscritti dal'utente indicato\\\hline
+Flusso &  	\begin{enumerate}	
+		\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato, e:
+			\begin{enumerate}[  ]
+			\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovata
+			\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:9}\newline
+%==============================
+
+
+
+% ============================== USE CASE DA RIVEDERE ====================================
 
 \subsection{Specifica Use Case}
 
@@ -192,135 +415,6 @@ Post-condizioni &  Nessuna\\\hline
 \end{tabular}
 \label{table_use_case:3}\newline
 
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_4 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_CreaAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & Crea un nuovo abbonamento senza nessun servizio usufruibile da questo.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede la creazione di un nuovo abbonamento;
-			\item Il sistema richiede all' amministratore il nome del nuovo abbonamento;
-			\item L'amministratore fornisce al sistema la stringa;
-			\item Il sistema valida l'input e verifica che non esista già un abbonamento con lo stesso nome e:
-				\begin{enumerate}[  ]
-					\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il nuovo abbonamento è stato creato e disponibile all'utilizzo.
-					\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il nuovo abbonamento non è stato creato e dunque non utilizzabile sulla piattaforma.
-				\end{enumerate}
-			
-		\end{enumerate}\\\hline
-Pre-condizioni &  Non esiste già un abbonamento con lo stesso nome di quello da creare\\\hline
-Post-condizioni &  Esiste un nuovo abbonamento con il nome fornito\\\hline
-\end{tabular}
-\label{table_use_case:4}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_5 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_EliminaAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  ManagerServizi \\\hline
-Descrizione & Rende non più sottoscrivibile un abbonamento esistente.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede di invalidare un abbonamento;
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento;
-			\item L'amministratore fornisce al sistema la stringa;
-			\item Il sistema valida l'input, verifica che esista un abbonamento con quel nome e che non ci sia un'utente attivo con quell'abbonamento in corso di validità:
-				\begin{enumerate}[  ]
-					\item \textbf{\# alt1}: se queste condizioni sono verificate l' abbonamento non sarà piu sottoscrivibile da quel momento in poi.
-					\item \textbf{\# alt2}: se queste condizioni non sono verificate l'abbonamento rimane valido e l'amministratore viene informato del fallimento dell'invalidazione.
-%DA RIVEDERE-- MAGARI E' MEGLIO NON RENDERLO PIU SOTTOSCRIVIBILE E A QUELLI CHE GIA LO HANNO GLI SI ANNULLA IL RINNOVO AUTOMATICO%
-				\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni &  L'abbonamento da eliminare è presente sul sistema\\\hline
-Post-condizioni &   L'abbonamento con nome specificato non è piu sottoscrivibile\\\hline
-\end{tabular}
-\label{table_use_case:5}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_6 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_AggiungiServizioAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  ManagerServizi \\\hline
-Descrizione & Permette di estendere di un elemento l'insieme dei servizi collegati ad un abbonamento.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede di estendere i servizi offerti da un abbonamento;
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento ed un elemento della lista dei servizi aggiungibili..
-			\begin{enumerate}
-				\item (UC\_7.1) Il sistema ricerca all'interno della base di dati tutti i nomi dei servizi disponibili.
-			\end{enumerate}
-			\item L'amministratore fornisce al sistema il nome dell'abbonamento e del servizio da aggiungere;
-			\item Il sistema valida l'input e memorizza l'associazione tra l'abbonamento e il servizio scelto.
-		\end{enumerate}\\\hline
-Pre-condizioni & L'abbonamento scelto e il servizio esistono;\newline 
-			L'abbonamento non è invalidato.\\\hline
-Post-condizioni &  L'abbonamento e il servizio sono associati.\\\hline
-\end{tabular}
-\label{table_use_case:6}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_6.1 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_RecuperaServizi\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & Permette di recuperare la lista di tutti i servizi associabili ad un qualsiasi abbonamento.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede di recuperare i servizi disponibili.
-			\item Il sistema ricerca tutti i servizi sulla base di dati.
-		\end{enumerate}\\\hline
-Pre-condizioni &  Nessuna.\\\hline
-Post-condizioni &  Nessuna.\\\hline
-\end{tabular}
-\label{table_use_case:6.1}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_7 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_RimuoviServizioAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  ManagerServizi \\\hline
-Descrizione & Permette la rimozione di uno dei servizi collegati ad un abbonamento.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede di ridurre i servizi offerti da  un abbonamento.
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento e un elemento della lista dei servizi associati all'abbonamento.
-			\begin{enumerate}
-				\item (UC\_6.1) Il sistema ricerca all'interno della base di dati tutti i nomi di servizi associati all'abbonamento specificato.
-			\end{enumerate}
-			\item L'amministratore fornisce al sistema il nome dell'abbonamento e del servizio da rimuovere.
-			\item Il sistema valida l'input e rimuove l'associazione tra l'abbonamento e il servizio scelto.
-		\end{enumerate}\\\hline
-Pre-condizioni &  L'abbonamento scelto e il servizio esistono e sono associati.\newline 
-			L'abbonamento è validato.\\\hline
-Post-condizioni &  L'abbonamento e il servizio non sono associati.\\\hline
-\end{tabular}
-\label{table_use_case:7}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_7.1 \\\hline
-Categoria & Abbonamenti\\\hline
-Nome & UC\_RecuperaServiziAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & Permette, dato un nome di  un abbonamento, di reperire tutte i servizi usufruibili da esso.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'amministratore richiede di recuperare i servizi di un abbonamento;
-			\item Il sistema richiede all' amministratore il nome dell' abbonamento;
-			\item L'amministratore fornisce al sistema la stringa;
-			\item Il sistema valida l'input e ricerca tutte i servizi associati all'abbonamento sulla base di dati;
-		\end{enumerate}\\\hline
-Pre-condizioni &  L'abbonamento scelto esiste.\\\hline
-Post-condizioni &  Nessuna.\\\hline
-\end{tabular}
-\label{table_use_case:7.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
