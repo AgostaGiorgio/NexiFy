@@ -6,30 +6,15 @@ Useremo la tecnica RMMM (Risk Mitigation, Monitoring, Management) per la gestion
 	\item una strategia di monitoring per individuare cambiamenti nella probabilità del rischio
 	\item una strategia di management per gestire il rischio, assumendo che questo si sia verificato
 \end{itemize}
-Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da aspetti tecnologici, e con la convenzione RSC\_M\_\textit{nome} i rischi derivanti da aspetti manageriali \\
+Inoltre classifichiamo i rischi in base agli aspetti che impattano: progetto, prodotto, business. \\
+Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
+
+
 
 
 %\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
 % 	\hline
-%	 \textbf{ID} & RSC\_T\_ SovraccaricoCDN\\ [0.5ex] 
-%	\hline
-%	\textbf{Descrizione} & Le richieste effettuate dagli utenti superano il carico massimo sopportabile dalla CDN \\ 
-%	\hline
-%	\textbf{Probabilità} &  Moderata \\ 
-%	\hline
-%	\textbf{Impatto} &  Serio \\ 
-%	\hline
-%	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
-%	\hline
-%	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
-%	\hline
-%	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
-%	\hline
-%\end{tabular}
-
-%\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
-% 	\hline
-%	 \textbf{ID} & RSC\_T\_ PerditaDati\\ [0.5ex] 
+%	 \textbf{ID} & RSC\_ PerditaDati\\ [0.5ex] 
 %	\hline
 %	\textbf{Descrizione} & In seguito alla rottura di hard disk dei server, si perdono dati caricati dagli utenti o dati relativi agli utenti \\ 
 %	\hline
@@ -47,9 +32,11 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
  	\hline
-	 \textbf{ID} & RSC\_T\_ DifficoltàIntegrazioneServizi\\ [0.5ex] 
+	 \textbf{ID} & RSC\_ DifficoltàIntegrazioneServizi\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & Diversi servizi esterni usati nella creazione della piattaforma (es: CDN, basi di dati, ecc), non si riescono a integrare come previsto\\ 
+	\hline
+	\textbf{Aspetto} &  Progetto, Prodotto\\ 
 	\hline
 	\textbf{Probabilità} &  Moderata\\ 
 	\hline
@@ -65,9 +52,11 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
-	\textbf{ID} & RSC\_M\_ IndisponibilitàPersonale\\ [0.5ex] 
+	\textbf{ID} & RSC\_ IndisponibilitàPersonale\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & Alcuni elementi del personale potrebbero essere indisponibili in alcuni periodi del progetto\\ 
+	\hline
+	\textbf{Aspetto} &  Progetto \\
 	\hline
 	\textbf{Probabilità} &  Alta \\ 
 	\hline
@@ -83,9 +72,11 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
-	\textbf{ID} & RSC\_M\_ CambiamentoRequisiti\\ [0.5ex] 
+	\textbf{ID} & RSC\_ CambiamentoRequisiti\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
+	\hline
+	\textbf{Aspetto} &  Progetto, Prodotto\\
 	\hline
 	\textbf{Probabilità} &  Alta \\ 
 	\hline
@@ -100,10 +91,74 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 \end{tabular}
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+	\hline
+   \textbf{ID} & RSC\_ CambiamentoTecnologia\\ [0.5ex] 
+   \hline
+   \textbf{Descrizione} & Le tecnologie utilizzate nel progetto vengono sostituite da nuove tecnologie  \\ 
+   \hline
+   \textbf{Aspetto} &  Business \\
+   \hline
+   \textbf{Probabilità} & Alta\\ 
+   \hline
+   \textbf{Impatto} & Tollerabile\\
+   \hline
+   \textbf{Mitigation} & Scegliere, al momento dello sviluppo iniziale, tecnologie aggiornate e che abbiano dimostrato di essere affidabili in altri progetti \\ 
+   \hline
+   \textbf{Monitoring} & Tenere traccia periodicamente delle tecnologie in uso, e di possibili nuovi aggiornamenti o cambiamenti che avvengono \\ 
+   \hline
+   \textbf{Management} & Adattare l'archittettura a possibili cambiamenti di tecnologia, utilizzando ove possibile, dei wrapper per le funzionalità offerte da queste \\ 
+   \hline
+\end{tabular}
+
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+	\hline
+   \textbf{ID} & RSC\_ DimensioneSoftwareSottostimata\\ [0.5ex] 
+   \hline
+   \textbf{Descrizione} & La dimensione del software da produrre viene sottostimata \\ 
+   \hline
+   \textbf{Aspetto} &  Progetto \\
+   \hline
+   \textbf{Probabilità} & Moderata\\ 
+   \hline
+   \textbf{Impatto} & Serio\\
+   \hline
+   \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale \\ 
+   \hline
+   \textbf{Monitoring} & Durante lo sviluppo, controllare periodicamente che la dimensione del software rimanga contenuta, in base a quanto è stato pianificato nelle fasi iniziali\\ 
+   \hline
+   \textbf{Management} & Qualora, durante lo sviluppo, il software dovesse superare la dimensione prestabilita per quello stadio, si deve effettuare una nuova stima che tenga conto delle nuove informazioni acquisite. Successivamente si deve rivedere la pianificazione del progetto, apportando modifiche laddove la dimensione del software risulta maggiore di quella stimata inizialmente \\ 
+   \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| } 
  	\hline
-	\textbf{ID} & RSC\_M\_ DurataSottostimata\\ [0.5ex] 
+	 \textbf{ID} & RSC\_ SovraccaricoCDN\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & Le richieste effettuate dagli utenti superano il carico massimo sopportabile dalla CDN \\ 
+	\hline
+   	\textbf{Aspetto} &  Prodotto \\
+	\hline
+	\textbf{Probabilità} &  Moderata \\ 
+	\hline
+	\textbf{Impatto} &  Serio \\ 
+	\hline
+	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
+	\hline
+	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
+	\hline
+	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
+	\hline
+\end{tabular}
+
+
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
+	\textbf{ID} & RSC\_ DurataSottostimata\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & La durata dell'iterazione corrente viene sottostimata \\ 
+	\hline
+	\textbf{Aspetto} &  Progetto \\
 	\hline
 	\textbf{Probabilità} & Basso\\ 
 	\hline
@@ -117,11 +172,14 @@ Identifichiamo con la convenzione RSC\_T\_\textit{nome} i rischi derivanti da as
 	\hline
 \end{tabular}
 
+
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
-	\textbf{ID} & RSC\_M\_ RiduzioneBudget\\ [0.5ex] 
+	\textbf{ID} & RSC\_ RiduzioneBudget\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & Il budget disponibile viene ridotto durante il progetto\\ 
+	\hline
+	\textbf{Aspetto} &  Business\\
 	\hline
 	\textbf{Probabilità} & Molto basso\\ 
 	\hline
