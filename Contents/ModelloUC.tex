@@ -341,6 +341,91 @@ Flusso &  	\begin{enumerate}
 %==============================
 
 
+%======= UC relativi a 2 e 3 ========
+\begin{tabular}{ |p{2cm}|p{13.5cm}|  }
+\hline
+ID & UC\_10 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_EffettuaPagamento\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Permette di effettuare un pagamento verso un utente (dal giorno dell'ultimo pagamento al momenti in cui viene invocato l'use-case).\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  L'utente indicato viene pagato\\\hline
+Flusso &  	
+		\begin{enumerate}	
+		\item L'amministratore richiede di effettuare un pagamento verso un utente
+		\item Il sistema mostra la lista degli utenti che possono ricevere un pagamento
+			\begin{enumerate}[  ]
+			\item Il sistema recupera tutti gli utenti
+			\item (UC\_9) per ogni utente il sistema recupera i suoi piani di abbonamento e da questi (UC\_8) recupera i servizi dell'utente
+			\item Vengono restituiti gli utenti che hanno il servizio di pubblicare prodotti e il cui account è attivo
+			\end{enumerate}
+		\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
+		\item (UC\_11) Il sistema calcola l'importo da pagare all'utente
+		\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
+			\begin{enumerate}[  ]
+			\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
+			\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene comunicato all'amministratore che si è verificato un errore, e viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:10}\newline
+
+\begin{tabular}{ |p{2cm}|p{13.5cm}|  }
+\hline
+ID & UC\_11 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_CalcolaImportoDaPagare\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Calcola l'importa da pagare a un utente dall'ultima volta che ha ricevuto un pagamento fino al momento in cui viene invocato l'use-case\\\hline
+Pre-condizioni &  L'utente indicato ha il servizio per pubblicare prodotti e l'account dell'utente è attivo\\\hline
+Post-condizioni &  L'utente indicato viene pagato\\\hline
+Flusso &  	
+		\begin{enumerate}
+		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo che va da quell'istante fino all'istante corrente	
+		\item Il sistema effettua una richiesta al database distribuito per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
+		\begin{enumerate}[  ]
+			\item \textbf{\# alt1}: Se la richiesta al database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
+			\item \textbf{\# alt2}: Se la richiesta al database ha esito negativo: la procedura viene abortita
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:11}\newline
+
+\begin{tabular}{ |p{2cm}|p{13.5cm}|  }
+\hline
+ID & UC\_12 \\\hline
+Categoria & Management\\\hline
+Nome & UC\_SospendiAccount\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Sospende l'account di un utente\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
+Flusso &  	
+		\begin{enumerate}
+		\item L'amministratore richiede di sospendere l'account di un utente
+		\item Il sistema mostra la lista degli utenti che hanno un account attivo
+			\begin{enumerate}[  ]
+			\item Il sistema recupera tutti gli utenti
+			\item vengono mostrati nella lista gli utenti con account attivo
+			\end{enumerate}	
+		\item L'amministratore sceglie un utente da sospendere
+		\item L'account dell'utente viene sospeso
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:12}\newline
+
+%=======================
+
+
+
+
+
+
+
 
 % ============================== USE CASE DA RIVEDERE ====================================
 
