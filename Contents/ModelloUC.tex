@@ -508,11 +508,87 @@ Post-condizioni &  L'utente non è più autenticato.\\\hline
 
 %==============================
 
+%============ UC relativi a 6 =============
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_17 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_SottoscriviAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di sottoscrivere un piano di abbonamento;
+			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili e non ancora sottoscritti dall'utente
+				\begin{enumerate}[  ]
+				\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
+				\item (UC\_9): il sistema recupera i piani di abbonamento sottoscritti da un utente
+				\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili che non sono sottoscritti dall'utente
+				\end{enumerate}
+			\item L'utente sceglie il piano di abbonamento
+			\item Il sistema reinderizza l'utente al sistema esterno di pagamento (sulla base del meotodo di pagamento scelto in fase di registrazione), e attende risposta dal sistema esterno
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il pagamento va a buon fine: il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente, salvando il timestamp in cui il piano è stato attivato
+				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente non ha sottoscritto tutti i i piani di abbonamento\\\hline
+Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
+\end{tabular}
+\label{table_use_case:17}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_18 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_DisdiciAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato, Amministratore \\\hline
+Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di disdire un piano di abbonamento che aveva sottoscritto
+			\item (UC\_9) Il sistema fornisce una lista dei piani di abbonamento sottoscritti dall'utente
+			\item L'utente sceglie dalla lista il piano di abbonamento da disdire
+			\item Il rinnovo automatico per il piano di abbonamento scelto viene annullato, e l'utente potrà usare i servizi del piano di abbonamento fino alla scadenza
+		\end{enumerate}\\\hline
+Pre-condizioni & L'utente ha almeno un piano di abbonamento sottoscritto.\\\hline
+Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato.\\\hline
+\end{tabular}
+\label{table_use_case:18}\newline
+
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_19 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_CambiaAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi (selezionato da una lista), con un'altro abbonamento attivabile (selezionandolo da una lista);
+			\item il sistema controlla le politiche di cambio;
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
+				\begin{enumerate}[label=\arabic*]
+					\item \textbf{\# alt1}: se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
+					\item \textbf{\# alt2}: altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
+				\end{enumerate}
+				\item \textbf{\# alt2}: altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
+			\end{enumerate}
+			\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni &  l'utente ha sottoscritto il nuovo abbonamento e non possiede piu il precedente.\\\hline
+\end{tabular}
+\label{table_use_case:19}\newline
+%========================
+
+
 
 %======= UC relativi a 7 ===========
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_17\\\hline
+ID & UC\_20\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_CreaProdotto \\\hline
 Priorità & High \\\hline
@@ -522,22 +598,22 @@ Pre-condizioni &  L'utente autenticato ha il servizio per pubblicare prodotti\\\
 Post-condizioni &  Viene creato un nuovo prodotto con proprietario l'utente autenticato\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di creare un nuovo prodotto
-			\item (UC\_18) Il sistema permette all'utente di inserire informazioni di base sul prodotto
+			\item (UC\_21) Il sistema permette all'utente di inserire informazioni di base sul prodotto
 			\item Il sistema chiede all'utente di scegliere tra prodotto video e prodotto musicale
 			\item L'utente sceglie e:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se l'utente sceglie risorsa video: il sistema continua la procedura permettendo all'utente di caricare un prodotto video (UC\_19)
-				\item \textbf{\# alt2}: Se l'utente sceglie risorsa musicale: il sistema continua la procedura permettendo all'utente di caricare un prodotto musiclae (UC\_20)
+				\item \textbf{\# alt1}: Se l'utente sceglie risorsa video: il sistema continua la procedura permettendo all'utente di caricare un prodotto video (UC\_22)
+				\item \textbf{\# alt2}: Se l'utente sceglie risorsa musicale: il sistema continua la procedura permettendo all'utente di caricare un prodotto musiclae (UC\_23)
 			\end{enumerate}
 			\item il proprietario del prodotto è l'utente che ha effettuato la richiesta di creazione
 			\item la visibilità del prodotto è inizialmente impostata come "privato"
 		\end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:17}\newline
+\label{table_use_case:20}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_18\\\hline
+ID & UC\_21\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_CompilaInformazioniDiBase \\\hline
 Priorità & High \\\hline
@@ -560,11 +636,11 @@ Flusso &  	\begin{enumerate}
 			\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:18}\newline
+\label{table_use_case:21}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_19\\\hline
+ID & UC\_22\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_CreaVideo \\\hline
 Priorità & High \\\hline
@@ -578,11 +654,11 @@ Flusso &  	\begin{enumerate}
 			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
 		\end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:19}\newline
+\label{table_use_case:22}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_20\\\hline
+ID & UC\_23\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_CreaCanzone \\\hline
 Priorità & High \\\hline
@@ -596,11 +672,11 @@ Flusso &  	\begin{enumerate}
 			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
 		\end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:20}\newline
+\label{table_use_case:23}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_21\\\hline
+ID & UC\_24\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_CambiaStatoPubblicazione \\\hline
 Priorità & High \\\hline
@@ -630,8 +706,97 @@ Flusso &  	\begin{enumerate}
 				\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:21}\newline
+\label{table_use_case:24}\newline
 %====================
+
+
+%============ UC relativi a 8 ============= 
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_25 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_RiproduciVideo\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di riprodurre una risorsa video.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
+			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
+			\item il client contatta il nodo e stabiliscono una connessione
+			\item inizia lo stram del pacchetto mkv 
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:25}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_26 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_RiproduciMusica\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & riproduce una risorsa musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
+			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
+			\item il client contatta il nodo e stabiliscono una connessione
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se il file ha associato un file di lyrics, verra inviata al client anche quest'ultima nella prima fase di comunicazione tra client e server
+				\item \textbf{\# alt2}: Altrimenti non sarà possibile visualizzare il testo del brano.
+			\end{enumerate}
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: se il file ha associato un video musicale, il file mkv conterrà quella traccia video
+				\item \textbf{\# alt2}: altrimenti verrà inviato un mkv con solo la traccia audio
+			\end{enumerate}
+			\item inizia lo stram del pacchetto mkv
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:26}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_27 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_PausaPlayer\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & mette in pausa la visualizzazione della risorsa.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede la pausa di riproduzione al player
+			\item il player ferma la riproduzione della risorsa ma continua a ricevere pacchetti dalla CDN 
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:27}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_28 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & cambia il punto di riproduzione della risorsa (pu\'o essere spostata avanti o indietro).\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente seleziona lo spostamento di riproduzione ad un certo punto compreso tra 0 e lunghezza della risorsa
+			\item il player interrompe la riproduzione come da UC\_19
+			\item il client comunica al nodo della CDN che sta fornendo la risorsa il nuovo istante di tempo dal quale proseguire
+			\item il server risponde con il prossimo pacchetto da riprodurre. che coincide con il pacchetto dell'istante richiesto
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
+Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
+\end{tabular}
+\label{table_use_case:28}\newline
+%===========================
 
 
 
@@ -661,51 +826,6 @@ Post-condizioni &  Nessuna\\\hline
 \end{tabular}
 \label{table_use_case:3}\newline
 
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_8 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_SottoscriviAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di sottoscrivere un piano di abbonamento;
-			\item Il sistema richiede il nome dell'abbonamento da sottoscrivere;
-			\item L'utente fornisce la stringa;
-			\item Il sistema valida l'input, verifica che esista un abbonamento sottoscrivibile con quel nome :
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se queste condizioni sono verificate l'abbonamento verrà associato all'account dell'utente.
-				\item \textbf{\# alt2}: se queste condizioni non sono verificate non viene portata nessuna variazione nello stato dell'account dell'utente e questo viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma e ha effettuato con successo il Login.\\\hline
-Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
-\end{tabular}
-\label{table_use_case:8}\newline
-%DA DECIDERE BENE COME COMPORTARSI SE L'UTENTE HA GIA' IN CORSO UN ABBONAMENTO: DOPO LA SCADENZA DEL VECCHIO PARTE IL NUOVO ?%
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_9 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_DisdiciAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato, Amministratore \\\hline
-Descrizione & Permette a un utente di disdire l'abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di disdire il piano di abbonamento a cui è associato;
-			\item Il sistema verifica sulla base di dati lo stato del rinnovo automatico dell'abbonamento per l'utente in questione:
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se il rinnovo automatico è attivo, lo disasttiva e avvisa l'utente che la modifica è stata apportata correttamente;
-				\item \textbf{\# alt2}: se il rinnovo automatico non è attivo avvisa l'utente che l'abbonamento era già stato disdetto;
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
-Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal piano di abbonamento basilare ( Free ).\\\hline
-\end{tabular}
-\label{table_use_case:9}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -785,36 +905,6 @@ Post-condizioni & All'interno della playlist è presente un riferimento alla ris
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_13 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_PubblicaRisorsa\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato\\\hline
-Descrizione & Permette a un utente di pubblicare sulla piattaforma una nuova risorsa.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di caricare una nuova risorsa sulla piattaforma;
-			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta la pubblicazione di nuove risorse:
-			\begin{enumerate}
-				\item Se l'abbonamento include il servizio:
-				\begin{enumerate}
-					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione (quest'ultima potrebbe non esserci);
-					\item L'utente fornisce i dati richiesti;
-					\item Il sistema verifica sulla base di dati che l'utente non abbia già pubblicato una risorsa gli stessi dati:
-					\begin{enumerate}
-						\item Se il sistema risponde in maniera positiva, allora la risorsa viene pubblicata;
-						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene pubblicata e l'utente viene avvisato del fallimento dell'operazione.
-					\end{enumerate}
-				\end{enumerate}
-				\item Se l'abbonamento non include il servizio, allora la risorsa non viene pubblicata e l'utente viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login e possiede un abbonamento che permetta la pubblicazione di risorse.\\\hline
-Post-condizioni & La piattaforma fornisce una nuova Risorsa con i dati forniti dall'utente (ovviamente la risorsa è associata all'utente) .\\\hline
-\end{tabular}
-\label{table_use_case:13} \newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
 ID & UC\_14 \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_RimuoviRisorsa\\\hline
@@ -877,116 +967,7 @@ Post-condizioni & La risorsa è aggiornata con i nuovi dati.\\\hline
 \label{table_use_case:15}\newline
 
 
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_16 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_CambiaAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi (selezionato da una lista), con un'altro abbonamento attivabile (selezionandolo da una lista);
-			\item il sistema controlla le politiche di cambio;
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
-				\begin{enumerate}[label=\arabic*]
-					\item \textbf{\# alt1}: se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
-					\item \textbf{\# alt2}: altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
-				\end{enumerate}
-				\item \textbf{\# alt2}: altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
-			\end{enumerate}
-			\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
-Post-condizioni &  l'utente ha sottoscritto il nuovo abbonamento e non possiede piu il precedente.\\\hline
-\end{tabular}
-\label{table_use_case:16}\newline
 
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_17 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_RiproduciVideo\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di riprodurre una risorsa video.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
-			\item il client contatta il nodo e stabiliscono una connessione
-			\item inizia lo stram del pacchetto mkv 
-			\end{enumerate}
-			\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
-Post-condizioni & NESSUNA\\\hline
-\end{tabular}
-\label{table_use_case:17}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_18 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_RiproduciMusica\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & riproduce una risorsa musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
-			\item il client contatta il nodo e stabiliscono una connessione
-			\item \begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: Se il file ha associato un file di lyrics, verra inviata al client anche quest'ultima nella prima fase di comunicazione tra client e server
-				\item \textbf{\# alt2}: Altrimenti non sarà possibile visualizzare il testo del brano.
-			\end{enumerate}
-			\item \begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: se il file ha associato un video musicale, il file mkv conterrà quella traccia video
-				\item \textbf{\# alt2}: altrimenti verrà inviato un mkv con solo la traccia audio
-			\end{enumerate}
-			\item inizia lo stram del pacchetto mkv
-			\end{enumerate}
-			\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
-Post-condizioni & NESSUNA\\\hline
-\end{tabular}
-\label{table_use_case:18}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_19 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_PausaPlayer\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & mette in pausa la visualizzazione della risorsa.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede la pausa di riproduzione al player
-			\item il player ferma la riproduzione della risorsa ma continua a ricevere pacchetti dalla CDN 
-			\end{enumerate}
-			\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
-Post-condizioni & NESSUNA\\\hline
-\end{tabular}
-\label{table_use_case:19}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_20 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & cambia il punto di riproduzione della risorsa (pu\'o essere spostata avanti o indietro).\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente seleziona lo spostamento di riproduzione ad un certo punto compreso tra 0 e lunghezza della risorsa
-			\item il player interrompe la riproduzione come da UC\_19
-			\item il client comunica al nodo della CDN che sta fornendo la risorsa il nuovo istante di tempo dal quale proseguire
-			\item il server risponde con il prossimo pacchetto da riprodurre. che coincide con il pacchetto dell'istante richiesto
-			\end{enumerate}
-			\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
-Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
-\end{tabular}
-\label{table_use_case:20}\newline
 
 %DA PENSARE BENE SE E COME METTERE I SEGUENTI USE-CASE: %
 %NUOVO SERVIZIO - ELIMINA SERVIZIO - DOWNLOAD RISORSA%
