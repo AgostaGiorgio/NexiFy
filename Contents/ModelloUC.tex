@@ -488,15 +488,6 @@ Pre-condizioni &  L'utente esiste e non è già autenticato\\\hline
 Post-condizioni &  L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
 \end{tabular}
 \label{table_use_case:15}\newline
-%==============================
-
-
-
-
-
-% ============================== USE CASE DA RIVEDERE ====================================
-
-\textbf{USE CASE DA RIVEDERE} \newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
@@ -514,6 +505,140 @@ Pre-condizioni &  L'utente è già autenticato\\\hline
 Post-condizioni &  L'utente non è più autenticato.\\\hline
 \end{tabular}
 \label{table_use_case:16}\newline
+
+%==============================
+
+
+%======= UC relativi a 7 ===========
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_17\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaProdotto \\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Pre-condizioni &  L'utente autenticato ha il servizio per pubblicare prodotti\\\hline
+Post-condizioni &  Viene creato un nuovo prodotto con proprietario l'utente autenticato\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di creare un nuovo prodotto
+			\item (UC\_18) Il sistema permette all'utente di inserire informazioni di base sul prodotto
+			\item Il sistema chiede all'utente di scegliere tra prodotto video e prodotto musicale
+			\item L'utente sceglie e:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se l'utente sceglie risorsa video: il sistema continua la procedura permettendo all'utente di caricare un prodotto video (UC\_19)
+				\item \textbf{\# alt2}: Se l'utente sceglie risorsa musicale: il sistema continua la procedura permettendo all'utente di caricare un prodotto musiclae (UC\_20)
+			\end{enumerate}
+			\item il proprietario del prodotto è l'utente che ha effettuato la richiesta di creazione
+			\item la visibilità del prodotto è inizialmente impostata come "privato"
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:17}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_18\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CompilaInformazioniDiBase \\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Pre-condizioni &  Vengono dati un utente e un nuovo prodotto ancora in creazione\\\hline
+Post-condizioni &  I campi base del nuovo prodotto in creazione sono compilati\\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema richiede all'utente di inserire nome del prodotto, descrizione del prodotto, genere del prodotto (tra una lista di generi disponibili)
+			\item L'utente inserisce i dati per il prodotto
+			\item Il sistema valida i dati e verifica che non esista un altro prodotto con lo stesso nome tra quelli creati dall'utente:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se non si verificano errori: i dati vengono correttamente memorizzati, e:
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema mostra all'utente un questionario a domande chiuse, atto a calcolare l'età minima per visionare il prodotto
+					\item L'utente compila il questionario
+					\item Sulla base delle risposte dell'utente, il sistema calcola l'età minima per visionare il prodotto
+				\end{enumerate}
+				\item \textbf{\# alt2}: Se si verificano errori, viene informato l'utente e viene riportato alla schermata per ricompilare i campi
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:18}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_19\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaVideo \\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto video\\\hline
+Pre-condizioni &   Vengono dati un utente e un nuovo prodotto (video) ancora in creazione\\\hline
+Post-condizioni &  Vengono completate le caratteristiche del prodotto video con proprietario l'utente autenticato\\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
+			\item L'utente carica i file sulla piattaforma
+			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:19}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_20\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaCanzone \\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto musicale\\\hline
+Pre-condizioni &   Vengono dati un utente e un nuovo prodotto (musicale) ancora in creazione\\\hline
+Post-condizioni &  Vengono completate le caratteristiche del prodotto musicale con proprietario l'utente autenticato\\\hline
+Flusso &  	\begin{enumerate}
+			\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
+			\item L'utente carica i file sulla piattaforma
+			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:20}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_21\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CambiaStatoPubblicazione \\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette a un utente autenticato di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
+Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti\\\hline
+Post-condizioni &  Lo stato di pubblicazione del prodotto viene cambiato con quello scelto dall'utente\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente autenticato richiede di cambiare lo stato di pubblicazione di un prodotto
+			\item Il sistema mostra all'utente la lista dei suoi prodotti
+			\item L'utente seleziona uno dei suoi prodotti
+			\item Il sistema richiede il nuovo stato di pubblicazione per il prodotto
+			\item L'utente sceglie il nuovo stato di pubblicazione tra "privato", "pubblico" e "amici", e:
+				\begin{enumerate}[  ]
+					\item \textbf{\# alt1:} L'utente sceglie privato: il sistema cambia lo stato di pubblicazione in "privato" e il prodotto diventa accessibile solamente all'utente stesso
+					\item \textbf{\# alt2:} L'utente sceglie pubblico: il sistema cambia lo stato di pubblicazione in "pubblico" e il prodotto diventa accessibile a tutti gli utenti che hanno il servizio di visionare quel tipo di prodotto
+					\item \textbf{\# alt3:} L'utente sceglie amici: il sistema cambia lo stato di pubblicazione in "amici", e:
+					\begin{enumerate}[label*=\arabic*.]
+						\item Il sistema richiede una lista di email, cioè gli utenti che possono accedere al prodotto
+						\item L'utente fornisce la lista di email
+						\item Il sistema valida le email, e per ogni email inserita:
+							\begin{enumerate}[label*=\arabic*.]
+								\item \textbf{\# alt1:} Se l'email è valida e corrisponde a un utente esistente, allora viene aggiunta alla lista degli utenti che possono accedere al prodotto
+								\item \textbf{\# alt2:} Se l'email non è valida o non corrisponde a un utente esistente, viene comunicato all'utente e non viene inserita nella lista
+							\end{enumerate}
+					\end{enumerate}
+				\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:21}\newline
+%====================
+
+
+
+% ============================== USE CASE DA RIVEDERE ====================================
+
+\textbf{USE CASE DA RIVEDERE} \newline
+
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
