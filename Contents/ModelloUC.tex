@@ -751,6 +751,118 @@ Post-condizioni & La risorsa è aggiornata con i nuovi dati.\\\hline
 \end{tabular}
 \label{table_use_case:15}\newline
 
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_16 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_CambiaAbbonamento\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi (selezionato da una lista), con un'altro abbonamento attivabile (selezionandolo da una lista);
+			\item il sistema controlla le politiche di cambio;
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
+				\begin{enumerate}[label=\arabic*]
+					\item \textbf{\# alt1}: se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
+					\item \textbf{\# alt2}: altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
+				\end{enumerate}
+				\item \textbf{\# alt2}: altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
+			\end{enumerate}
+			\end{enumerate}\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni &  l'utente ha sottoscritto il nuovo abbonamento e non possiede piu il precedente.\\\hline
+\end{tabular}
+\label{table_use_case:16}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_17 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_RiproduciVideo\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di riprodurre una risorsa video.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
+			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
+			\item il client contatta il nodo e stabiliscono una connessione
+			\item inizia lo stram del pacchetto mkv 
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:17}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_18 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_RiproduciMusica\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & riproduce una risorsa musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
+			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
+			\item il client contatta il nodo e stabiliscono una connessione
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se il file ha associato un file di lyrics, verra inviata al client anche quest'ultima nella prima fase di comunicazione tra client e server
+				\item \textbf{\# alt2}: Altrimenti non sarà possibile visualizzare il testo del brano.
+			\end{enumerate}
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: se il file ha associato un video musicale, il file mkv conterrà quella traccia video
+				\item \textbf{\# alt2}: altrimenti verrà inviato un mkv con solo la traccia audio
+			\end{enumerate}
+			\item inizia lo stram del pacchetto mkv
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:18}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_19 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_PausaPlayer\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & mette in pausa la visualizzazione della risorsa.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede la pausa di riproduzione al player
+			\item il player ferma la riproduzione della risorsa ma continua a ricevere pacchetti dalla CDN 
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:19}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_20 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & cambia il punto di riproduzione della risorsa (pu\'o essere spostata avanti o indietro).\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente seleziona lo spostamento di riproduzione ad un certo punto compreso tra 0 e lunghezza della risorsa
+			\item il player interrompe la riproduzione come da UC\_19
+			\item il client comunica al nodo della CDN che sta fornendo la risorsa il nuovo istante di tempo dal quale proseguire
+			\item il server risponde con il prossimo pacchetto da riprodurre. che coincide con il pacchetto dell'istante richiesto
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
+Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
+\end{tabular}
+\label{table_use_case:20}\newline
+
 %DA PENSARE BENE SE E COME METTERE I SEGUENTI USE-CASE: %
 %NUOVO SERVIZIO - ELIMINA SERVIZIO - DOWNLOAD RISORSA%
 
