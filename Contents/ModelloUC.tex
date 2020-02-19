@@ -56,7 +56,7 @@ Descrizione &  L' Utente è il ruolo assunto da tutti coloro che usufruiranno de
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
 ID & A\_1.1 \\\hline
-Nome & UtenteNonRegistrato\\\hline
+Nome & UtenteNonAutenticato\\\hline
 Genitore & A\_1 \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
@@ -67,24 +67,13 @@ Descrizione &  Questo ruolo è assunto da tutti coloro che utilizzano la piattaf
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
 ID & A\_1.2 \\\hline
-Nome & UtenteRegistrato\\\hline
+Nome & UtenteAutenticato\\\hline
 Genitore & A\_1 \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
 Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritto un contratto con la piattaforma e si sono autenticati in fase di accesso ad essa. \\\hline
 \end{tabular}
 \label{table_attore:1.2}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_1.2.1 \\\hline
-Nome & Partner\\\hline
-Genitore & A\_1.2 \\\hline
-Livello &  Primario \\\hline
-Tipologia & Umano \\\hline
-Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritto un contratto con la piattaforma di tipo Partner. \\\hline
-\end{tabular}
-\label{table_attore:1.2.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -431,7 +420,7 @@ ID & UC\_13 \\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
-Attori &  UtenteNonRegistrato \\\hline
+Attori &  UtenteNonAutenticato \\\hline
 Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
@@ -460,7 +449,7 @@ ID & UC\_14\\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede la modifica dei suoi dati;
@@ -483,7 +472,7 @@ ID & UC\_15 \\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di accedere alla piattaforma;
@@ -515,7 +504,7 @@ ID & UC\_16\\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogout \\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di uscire dalla piattaforma;
@@ -554,7 +543,7 @@ ID & UC\_8 \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di sottoscrivere un piano di abbonamento;
@@ -578,7 +567,7 @@ ID & UC\_9 \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato, Amministratore \\\hline
+Attori &  UtenteAutenticato, Amministratore \\\hline
 Descrizione & Permette a un utente di disdire l'abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di disdire il piano di abbonamento a cui è associato;
@@ -599,7 +588,7 @@ ID & UC\_10 \\\hline
 Categoria & Playlist\\\hline
 Nome & UC\_CreaPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di creare una propria playlist, senza nessuna risorsa al suo interno.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di creare una nuova playlist;
@@ -629,7 +618,7 @@ ID & UC\_11 \\\hline
 Categoria & Playlist\\\hline
 Nome & UC\_AggiungiRisorsaAPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di aggiungere una risorsa ad una sua playlist.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di aggiungere una risorsa ad una sua playlist;
@@ -652,7 +641,7 @@ ID & UC\_12 \\\hline
 Categoria & Playlist\\\hline
 Nome & UC\_RimuoveiRisorsaDaPlaylist\\\hline
 Priorità & High \\\hline
-Attori &  UtenteRegistrato \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di rimuovere una risorsa da una sua playlist..\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di rimuovere una risorsa da una sua playlist;
@@ -675,7 +664,7 @@ ID & UC\_13 \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_PubblicaRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  Partner\\\hline
+Attori &  UtenteAutenticato\\\hline
 Descrizione & Permette a un utente di pubblicare sulla piattaforma una nuova risorsa.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di caricare una nuova risorsa sulla piattaforma;
@@ -694,7 +683,7 @@ Flusso &  	\begin{enumerate}
 				\item Se l'abbonamento non include il servizio, allora la risorsa non viene pubblicata e l'utente viene avvisato del fallimento dell'operazione.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login e possiede un abbonamento che permetta la pubblicazione di risorse.\\\hline
 Post-condizioni & La piattaforma fornisce una nuova Risorsa con i dati forniti dall'utente (ovviamente la risorsa è associata all'utente) .\\\hline
 \end{tabular}
 \label{table_use_case:13} \newline
@@ -724,7 +713,7 @@ Flusso &  	\begin{enumerate}
 				\item Se l'abbonamento non include il servizio, allora la risorsa non viene rimossa e l'utente viene avvisato del fallimento dell'operazione.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login ed ha pubblicato almeno una risorsa.\\\hline
 Post-condizioni & La risorsa non è più accessibile da nessun servizio e risulta inoltre rimossa da ogni playlist .\\\hline
 \end{tabular}
 \label{table_use_case:14}\newline
@@ -735,7 +724,7 @@ ID & UC\_15 \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_ModificaRisorsa\\\hline
 Priorità & High \\\hline
-Attori &  Partner \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di modificare una propria risorsa.\\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di modificare una risorsa;
@@ -757,7 +746,7 @@ Flusso &  	\begin{enumerate}
 				\item Se l'abbonamento non include il servizio, allora la risorsa non viene modificata e l'utente viene avvisato del fallimento dell'operazione.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login.\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login, possiede un abbonamento che permetta la pubblicazione di risorse ed ha pubblicato almeno una risorsa.\\\hline
 Post-condizioni & La risorsa è aggiornata con i nuovi dati.\\\hline
 \end{tabular}
 \label{table_use_case:15}\newline
