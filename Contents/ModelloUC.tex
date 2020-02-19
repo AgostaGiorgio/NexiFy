@@ -118,9 +118,13 @@ Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piattaforma \\\hline
 \end{tabular}
 \label{table_attore:2}\newline
+\end{center}
 
 
 % ================ USE CASE CHE VANNO BENE ===========
+\subsection{Specifica Use Case}
+
+\begin{center}
 
 %======= UC relativi ai requisiti funzionali 1. ==========
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
@@ -417,23 +421,13 @@ Flusso &
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:12}\newline
-
 %=======================
 
 
-
-
-
-
-
-
-% ============================== USE CASE DA RIVEDERE ====================================
-
-\subsection{Specifica Use Case}
-
+%======= UC relativi a 4 ===========
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_1 \\\hline
+ID & UC\_13 \\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
@@ -441,29 +435,56 @@ Attori &  UtenteNonRegistrato \\\hline
 Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
-			\item Il sistema richiede all' utente non registrato le credenziali di accesso quali: email, password, conferma della password, tipo di abbonamento da sottoscrivere;
+			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password, tipo di abbonamento da sottoscrivere;
 			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
-			\item Il sistema verifica la correttezza dei dati e richiede il metodo di pagamento desiderato tra quelli disponibili;
-			\item L'utente seleziona il metodo di pagamento desiderato;
-			\item Il sistema verifica che il metodo selezionato sia valido e reinderizza l'utente al sistema esterno di pagamento, e attende risposta dal sistema esterno:
+			\item Il sistema verifica la correttezza dei dati e controlla se il piano di abbonamento scelto richiede il pagamento di una somma di denaro:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il pagamento è stato effettuato e l'utente viene registrato sulla piattaforma 
-				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il pagamento non è stato effettuato e si chiede all'utente di riprovare o rinunciare alla registrazione.
+				\item\textbf{\# alt1}: se lo richiede il sistema fornisce un lista dei metodi di pagamento disponibili
+				\item L'utente seleziona il metodo di pagamento desiderato;
+				\item Il sistema verifica che il metodo selezionato sia valido e reinderizza l'utente al sistema esterno di pagamento, e attende risposta dal sistema esterno:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il pagamento è stato effettuato e l'utente viene registrato sulla piattaforma 
+					\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il pagamento non è stato effettuato e si chiede all'utente di riprovare o rinunciare alla registrazione.
+				\end{enumerate}
+				\item\textbf{\# alt2}: se NON richiede nessun pagaento l'utente viene registrato sulla piattaforma
 			\end{enumerate}
 		\end{enumerate}\\\hline
 Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
 Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente, ed il suo account, identificato dalla email formita nel modulo di registrazione, è abbinato al pacchetto di servizi scelto.\\\hline
 \end{tabular}
-\label{table_use_case:1}\newline
+\label{table_use_case:13}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
-ID & UC\_2 \\\hline
+ID & UC\_14\\\hline
+Categoria & Autenticazione \\\hline
+Nome & UC\_ModificaProfilo \\\hline
+Priorità & Medium \\\hline
+Attori &  UtenteRegistrato \\\hline
+Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede la modifica dei suoi dati;
+			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili;
+			\item L'utente comunica al sistema i nuovi valori da memorizzare;
+			\item Il sistema valida i dati proposti dall'utente:
+			\begin{enumerate}[  ]
+				\item\textbf{\# alt1}: Se i nuovi valori sono validi, questi vengono salvati sul sistema e quindi il profilo dell'utente viene aggiornato;
+				\item\textbf{\# alt1}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+Pre-condizioni &  L'utente è già autenticato\\\hline
+Post-condizioni &  Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
+\end{tabular}
+\label{table_use_case:14}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_15 \\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
 Attori &  UtenteRegistrato \\\hline
-Descrizione & Accesso al sistema identificandosi tramite credenziali \\\hline
+Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
 Flusso &  	\begin{enumerate}
 			\item L'utente richiede di accedere alla piattaforma;
 			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
@@ -477,7 +498,33 @@ Flusso &  	\begin{enumerate}
 Pre-condizioni &  L'utente esiste e non è già autenticato\\\hline
 Post-condizioni &  L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
 \end{tabular}
-\label{table_use_case:2}\newline
+\label{table_use_case:15}\newline
+%==============================
+
+
+
+
+
+% ============================== USE CASE DA RIVEDERE ====================================
+
+\textbf{USE CASE DA RIVEDERE} \newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_16\\\hline
+Categoria & Autenticazione \\\hline
+Nome & UC\_EffettuaLogout \\\hline
+Priorità & High \\\hline
+Attori &  UtenteRegistrato \\\hline
+Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di uscire dalla piattaforma;
+			\item Il sistema elimina la sessione dell'utente in questione.
+		\end{enumerate}\\\hline
+Pre-condizioni &  L'utente è già autenticato\\\hline
+Post-condizioni &  L'utente non è più autenticato.\\\hline
+\end{tabular}
+\label{table_use_case:16}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
