@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  21 FEB 2020 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  21 FEB 2020 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -341,19 +341,10 @@ Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
    defining Unicode char U+20AC (decimal 8364)
  (./main.aux
 
-LaTeX Warning: Label `table_use_case:1' multiply defined.
+LaTeX Warning: Label `table_use_case:14' multiply defined.
 
 
-LaTeX Warning: Label `table_use_case:2' multiply defined.
-
-
-LaTeX Warning: Label `table_use_case:3' multiply defined.
-
-
-LaTeX Warning: Label `table_use_case:8' multiply defined.
-
-
-LaTeX Warning: Label `table_use_case:9' multiply defined.
+LaTeX Warning: Label `table_use_case:15' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -1144,50 +1135,27 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 1239--1265
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1274
-[]|\OT1/lmr/m/n/10 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1275--1275
-[]|\OT1/lmr/m/n/10 Post-
- []
-
-
-Overfull \hbox (49.15369pt too wide) in paragraph at lines 1266--1293
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1270--1297
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1302--1302
-[]|\OT1/lmr/m/n/10 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1303--1303
-[]|\OT1/lmr/m/n/10 Post-
- []
-
-
-Overfull \hbox (49.15369pt too wide) in paragraph at lines 1294--1313
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1302--1320
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 752.34492pt on input line 1319.
-
-
-Underfull \hbox (badness 2126) in paragraph at lines 1343--1344
+Underfull \hbox (badness 2126) in paragraph at lines 1349--1350
 \OT1/lmr/m/n/10 non viene ri-mossa e l'utente viene avvisato del fal-li-mento
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1324--1353
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1330--1359
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1358--1390
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1364--1396
  [][] 
  []
 
@@ -1197,7 +1165,7 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
 \indexentry{Index|hyperpage}{44}
 ] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
 [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73]
-[74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84]
+[74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
@@ -1211,10 +1179,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 7581 strings out of 494428
- 108508 string characters out of 6174304
- 420644 words of memory out of 5000000
- 10573 multiletter control sequences out of 15000+600000
+ 7582 strings out of 494428
+ 108502 string characters out of 6174304
+ 421662 words of memory out of 5000000
+ 10572 multiletter control sequences out of 15000+600000
  69833 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  30i,14n,37p,895b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1227,10 +1195,10 @@ ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (84 pages, 754229 bytes).
+Output written on main.pdf (86 pages, 755477 bytes).
 PDF statistics:
- 1158 PDF objects out of 1200 (max. 8388607)
- 1046 compressed objects within 11 object streams
- 553 named destinations out of 1000 (max. 500000)
+ 1167 PDF objects out of 1200 (max. 8388607)
+ 1053 compressed objects within 11 object streams
+ 555 named destinations out of 1000 (max. 500000)
  243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
