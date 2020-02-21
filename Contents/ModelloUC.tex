@@ -790,7 +790,7 @@ Flusso &  	\begin{enumerate}
 			\item il player interrompe la riproduzione come da UC\_19
 			\item il client comunica al nodo della CDN che sta fornendo la risorsa il nuovo istante di tempo dal quale proseguire
 			\item il server risponde con il prossimo pacchetto da riprodurre. che coincide con il pacchetto dell'istante richiesto
-			\end{enumerate}
+		\end{enumerate}
 			\\\hline
 Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login, sta riproducento una risorsa.\\\hline
 Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
@@ -798,33 +798,125 @@ Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
 \label{table_use_case:28}\newline
 %===========================
 
+%================UC relativi a 5==========
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_29 \\\hline
+Categoria & Ricerca \\\hline
+Nome & UC\_RicercaContenuto\\\hline
+Priorità & High \\\hline
+Attori &  Utente \\\hline
+Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente richiede di ricercare una risorsa;
+			\item Il sistema richiede all' utente la stringa di ricerca;
+			\item L'utente fornisce al sistema la stringa;
+			\item Il sistema valida l'input e:
+			\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1:} Se l'input supera la fase di validazione: il sistema effettua una richiesta al database distribuito, richiedendo tutti i prodotti pubblici che contengono la stringa inserita dall'utente nel proprio nome, e tutte le serie tv e album pubblici che contengono la stringa inserita dall'utente nel proprio nome
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i risultati ottenuti all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, la procedura viene annullata e si comunicano gli errori all'utente
+				\end{enumerate}
+			\item \textbf{\# alt2:} Altrimenti: la procedura viene annullata e viene comunicato all'utente che l'input non è valido
+			\end{enumerate}
+			
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:29}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_30 \\\hline
+Categoria & Ricerca \\\hline
+Nome & UC\_RicercaPopolari\\\hline
+Priorità & Medium \\\hline
+Attori &  Utente \\\hline
+Descrizione & Cerca contenuti (sia prodotti che playlist) ritenuti popolari\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni &  Vengono mostrati video, canzoni, serie tv, album ritenuti popolari (se ne esistono)\\\hline
+Flusso &  	\begin{enumerate}
+		\item Il sistema fa una richiesta al database per ottenere i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i video popolari all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili video popolari al momento
+				\end{enumerate}
+		\item Il sistema fa una richiesta al database per ottenere i primi 10 prodotti musicali per numero di visualizzazioni ricevute negli ultimi 7 giorni:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le canzoni popolari all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili musicali popolari al momento
+				\end{enumerate}
+		\item Il sistema fa una richiesta al database per ottenere le prime 10 serie tv per numero di visualizzazioni (le visualizzazioni di una serie tv sono la somma delle visualizzazioni dei singoli episodi) ricevute negli ultimi 7 giorni:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le serie tv popolari all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili serie tv popolari al momento
+				\end{enumerate}
+		\item Il sistema fa una richiesta al database per ottenere i primi 10 album per numero di visualizzazioni (le visualizzazioni di un album sono la somma delle visualizzazioni delle singole canzoni) ricevute negli ultimi 7 giorni:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra gli album popolari all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili album popolari al momento
+				\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:30}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_31 \\\hline
+Categoria & Ricerca \\\hline
+Nome & UC\_SuggerisciContenuti\\\hline
+Priorità & Medium \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Suggerisce contenuti (sia prodotti che playlist) all'utente sulla base delle ultime visualizzazioni\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
+Flusso &  	\begin{enumerate}
+		\item Il sistema richiede al database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti video riprodotti (o tutti i prodotti video riprodotti se l'utente ha visualizzato meno di 20 prodotti video),:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1:} Se il database risponde con successo, e il genere più visualizzato è @genere:
+			\begin{enumerate}[label*=\arabic*.]
+			\item Il sistema fa una richiesta al database per ottenere 5 prodotti video (non appartententi a una serie tv) con genere @genere
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i prodotti video all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti video
+				\end{enumerate}
+			\item Il sistema fa una richiesta al database per ottenere 5 serie tv con genere @genere
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le serie tv all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggerite serie tv
+				\end{enumerate}
+			\end{enumerate}
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), non vengono suggeriti prodotti video all'utente
+		\end{enumerate}
+		\item Il sistema richiede al database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali),:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1:} Se il database risponde con successo, e il genere più visualizzato è @genere:
+			\begin{enumerate}[label*=\arabic*.]
+			\item Il sistema fa una richiesta al database per ottenere 5 prodotti musicali con genere @genere
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i prodotti musicali all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti musicali
+				\end{enumerate}
+			\item Il sistema fa una richiesta al database per ottenere 5 album con genere @genere
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra gli album all'utente
+					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti album
+				\end{enumerate}
+			\end{enumerate}
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), non vengono suggeriti prodotti musicali all'utente
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:31}\newline
+%=============================
 
 
 % ============================== USE CASE DA RIVEDERE ====================================
 
 \textbf{USE CASE DA RIVEDERE} \newline
-
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_3 \\\hline
-Categoria & Risorse \\\hline
-Nome & UC\_RicercaRisorsa\\\hline
-Priorità & High \\\hline
-Attori &  Utente \\\hline
-Descrizione & Fornisce una lista filtrata di risorse disponibili. Le risorse vengono filtrate in base alla coerenza con la stringa di ricerca fornita.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di ricercare una risorsa;
-			\item Il sistema richiede all' utente la stringa di ricerca;
-			\item L'utente fornisce al sistema la stringa;
-			\item Il sistema valida l'input e avvia la procedura di ricerca delle risorse sui server e la restituisce all'utente. %%%.
-			% da scrivere passaggi cdn 
-			
-		\end{enumerate}\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  Nessuna\\\hline
-\end{tabular}
-\label{table_use_case:3}\newline
 
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
