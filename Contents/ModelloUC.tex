@@ -885,7 +885,6 @@ Post-condizioni & La segnalazione selezione è chiusa ed ha un esito\\\hline
 %===========================
 
 %================UC relativi a 5==========
-
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
 ID & UC\_32 \\\hline
@@ -999,6 +998,30 @@ Flusso &  	\begin{enumerate}
 \label{table_use_case:34}\newline
 %=============================
 
+%================UC relativi a 16==========
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_35 \\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_VisualizzaPubblicit\'a\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & Riproduce uno spot pubblicitario\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente e inoltre il suo piano di abbonamenti non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
+Post-condizioni & Nessuna\\\hline
+%immagino di avere una variabile che mi permette di sapere se mandare 
+%la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
+%ciò che mi è stato chiesto
+Flusso &  	\begin{enumerate}
+		\item Il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
+		\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
+				\item \textbf{\# alt2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:35}\newline
+%======================================
 
 % ============================== USE CASE DA RIVEDERE ====================================
 
