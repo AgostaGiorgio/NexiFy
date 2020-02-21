@@ -1169,6 +1169,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 
 \textbf{USE CASE DA RIVEDERE} \newline
 
+%================UC relativi a 9==========
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
@@ -1319,6 +1320,77 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \label{table_use_case:40}\newline
 \end{table}
 %=====================================
+
+%================UC relativi a 18==========
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_41\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_AggiungiProdottoAllaCoda\\\hline
+Priorità & Medium \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di aggiungere alla coda di riproduzione una risorsa\\\hline
+Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
+Post-condizioni & La risorsa scelta \'e associata alla coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item L'utente chiede al sistema l'aggiunta di una risorsa alla coda di riproduzione;
+    \item Il sistema chiede all'utente l'informazione riguardo la risorsa da aggiungere;
+    \item L'utente fornisce al sistema quale risorsa aggiungere;
+    \item Il sistema associa la risorsa alla coda di riproduzione;
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:41}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_42\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_RimuoviProdottoDallaCoda\\\hline
+Priorità & Medium \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di rimuovere dalla coda di riproduzione una risorsa\\\hline
+Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
+Post-condizioni & La risorsa scelta non \'e pi\'u associata alla coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item L'utente chiede al sistema la rimozione di una risorsa dalla coda di riproduzione;
+    \item Il sistema chiede all'utente l'informazione riguardo la risorsa da rimuovere;
+    \item L'utente fornisce al sistema quale risorsa rimuovere;
+    \item Il sistema dissocia la risorsa dalla coda di riproduzione;
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:42}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_43\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_VisualizzaStatoCoda\\\hline
+Priorità & Medium \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di visualizzare tutte le risorse associate alla cado di riproduzione\\\hline
+Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item L'utente chiede al sistema lo stato della coda di riproduzione;
+    \item Il sistema fornisce la lista di tutte le risorse associate alla coda di riproduzione.
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:43}\newline
+\end{table}
+%======================================
+
 
 % ============================== USE CASE DA RIVEDERE ====================================
 
