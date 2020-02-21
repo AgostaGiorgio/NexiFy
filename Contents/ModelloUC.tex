@@ -796,6 +796,92 @@ Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con suc
 Post-condizioni & la riproduzione continua dall'istante selezionato\\\hline
 \end{tabular}
 \label{table_use_case:28}\newline
+%====================
+
+
+%============ UC relativi a 13 ============= 
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_29 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_SegnalaProdotto\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato, Staff \\\hline
+Descrizione & Permette di segnalare un prodotto (con relativa motivazione della segnalazione).\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'utente seleziona il prodotto da segnalare:
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se il prodotto da segnalare è un profilo utente, sarà selezionato da un pulsante nella pagina di dettaglio.
+				\item \textbf{\# alt2}: Se il prodotto da segnalare è una risorsa, sarà selezionato da un pulsante nella pagina di visualizzazione della risorsa
+				\end{enumerate}
+			\item All'utente viene richiesta una motivazione della segnalazione.
+			\item il sistema riceve l'identificativo del prodotto, la sua tipologia (profilo, risorsa ...), la motivazione e provvede ad aprire la segnalazione
+			\begin{enumerate}[label=\arabic*. ]
+				\item Viene memorizzato in modo persistente l'utente che ha segnalatore, il prodotto segnalato, e la motivazione
+				\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
+			\end{enumerate}.
+			\item L'utente viene segnalato dell'esito della sengalazione
+			\begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso positivo
+				\item \textbf{\# alt2}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso negativo
+			\end{enumerate}
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
+Post-condizioni & Il prodotto selezionato ha una segnalazione aperta\\\hline
+\end{tabular}
+\label{table_use_case:29}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_30 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_OttieniSegnalazioni\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni.
+			\item Il sistema ricerca le segnalazioni fornisce la lista di segnalazioni all'operatore richiedente.
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & NESSUNA\\\hline
+Post-condizioni & NESSUNA\\\hline
+\end{tabular}
+\label{table_use_case:30}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_31 \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_ChiudiSegnalazione\\\hline
+Priorità & High \\\hline
+Attori &  Staff \\\hline
+Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
+Flusso &  	\begin{enumerate}
+			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_30.
+%			POTREBBE ESSERE UN ALTRO USE CASE
+%			\item L'operatore potra richiedere di visionare un elemento della lista:
+%				\begin{enumerate}
+%				\item \textbf{\# alt1}: Se è stato segnalato un profilo utente si potr\'a visionare il dettaglio di esso.
+%				\item \textbf{\# alt2}: Se è stata segnalata una risorsa sar\'a visionabile la risorsa in questione.
+%				\end{enumerate}
+			\item L'operatore seleziona il prodotto da chiudere fornendo un esito.
+			\item il sistema riceve la segnalazione da chiudere, l'esito e chiude la segnalazione: 
+			memorizza in maniera persistente l'esito della segnalazione. 
+			\begin{enumerate}
+			\item memorizza persistentemente l'esito della segnalazione associato al prodotto segnalato
+			\end{enumerate}
+			\item \begin{enumerate}[label= ]
+				\item \textbf{\# alt1}: Se il la chiudura della segnalazione è andata a buon fine, l'utente riceverà un responso positivo
+				\item \textbf{\# alt2}: Se il la chiudura della segnalazione è andata a buon fine, l'utente riceverà un responso negativo
+			\end{enumerate}
+			\end{enumerate}
+			\\\hline
+Pre-condizioni & NESSUNA\\\hline
+Post-condizioni & La segnalazione selezione è chiusa ed ha un esito\\\hline
+\end{tabular}
+\label{table_use_case:31}\newline
 %===========================
 
 
