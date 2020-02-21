@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  18 FEB 2020 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  21 FEB 2020 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -358,21 +358,21 @@ LaTeX Warning: Label `table_use_case:9' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 26.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -407,7 +407,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -417,15 +417,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 32.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 29.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -433,7 +433,7 @@ File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <images/worldCDN.png, id=120, 325.215pt x 153.2124pt>
 File: images/worldCDN.png Graphic file (type png)
 <use images/worldCDN.png>
-Package pdftex.def Info: images/worldCDN.png  used on input line 42.
+Package pdftex.def Info: images/worldCDN.png  used on input line 39.
 (pdftex.def)             Requested size: 325.2142pt x 153.212pt.
  [1
 
@@ -534,12 +534,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 43--72
+Underfull \hbox (badness 10000) in paragraph at lines 43--69
 
  []
 
 
-Overfull \hbox (36.29434pt too wide) in paragraph at lines 43--72
+Overfull \hbox (36.29434pt too wide) in paragraph at lines 43--69
 []
  []
 
@@ -648,12 +648,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 283.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 276--82
+Underfull \hbox (badness 10000) in paragraph at lines 276--79
 
  []
 
 
-Overfull \hbox (17.95918pt too wide) in paragraph at lines 276--82
+Overfull \hbox (17.95918pt too wide) in paragraph at lines 276--79
 []
  []
 
@@ -690,12 +690,12 @@ i []prodotti[]
  []
 
 [26] [27])
-Underfull \hbox (badness 10000) in paragraph at lines 520--87
+Underfull \hbox (badness 10000) in paragraph at lines 520--84
 
  []
 
 
-Overfull \hbox (3.10698pt too wide) in paragraph at lines 520--87
+Overfull \hbox (3.10698pt too wide) in paragraph at lines 520--84
 []
  []
 
@@ -822,12 +822,12 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 217--236
  []
 
 [37] [38])
-Underfull \hbox (badness 10000) in paragraph at lines 240--92
+Underfull \hbox (badness 10000) in paragraph at lines 240--89
 
  []
 
 
-Overfull \hbox (80.11244pt too wide) in paragraph at lines 240--92
+Overfull \hbox (80.11244pt too wide) in paragraph at lines 240--89
 []
  []
 
@@ -930,476 +930,291 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 100--110
  []
 
 [43]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 118--118
-[]|\OT1/lmr/m/n/12 Descrizione| 
+Underfull \hbox (badness 1629) in paragraph at lines 143--144
+[]\OT1/lmr/bx/n/10 # alt1.2\OT1/lmr/m/n/10 : Se es-istono al-tri pi-ani di ab-b
+ona-mento con il
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 111--121
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 122--152
  [][] 
  []
 
 
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 133--133
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 126--156
- [][] 
- []
-
-[44]
-Overfull \vbox (103.61021pt too high) has occurred while \output is active []
-
-
-[45]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 164--164
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--165
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 157--176
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 157--176
  [][] 
  []
 
 
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 184--184
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--186
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 177--196
- [][] 
- []
-
-[46]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 204--204
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 197--219
- [][] 
- []
-
-[47]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 227--227
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--229
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 220--242
- [][] 
- []
-
-[48]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 251--251
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--252
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 244--272
- [][] 
- []
-
-[49]
-Overfull \vbox (31.61021pt too high) has occurred while \output is active []
-
-
-[50]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 280--280
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--281
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--282
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 273--299
- [][] 
- []
-
-[51]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 308--308
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--309
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--310
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 301--320
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 181--200
  [][] 
  []
 
 
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 329--329
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--330
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--331
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 322--342
- [][] 
- []
-
-[52]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 356--356
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--370
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 349--373
- [] 
- []
-
-[53] [54]
-Overfull \vbox (76.69353pt too high) has occurred while \output is active []
-
-
-[55]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 381--381
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 3919) in paragraph at lines 388--389
-[]\OT1/lmr/bx/n/12 # alt1\OT1/lmr/m/n/12 : se il sis-tema risponde in maniera p
-os-i-tiva:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--392
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 374--396
- [][] 
- []
-
-[56]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 404--404
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--414
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 397--417
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 205--227
  [][] 
  []
 
 
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 426--426
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--437
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 419--442
- [][] 
- []
-
-[57]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 450--450
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--459
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 443--463
- [][] 
- []
-
-[58]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 471--471
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 1237) in paragraph at lines 486--487
-\OT1/lmr/m/n/12 non viene cre-ata e l'utente viene avvisato del fal-li-mento
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 489--489
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 464--493
- [][] 
- []
-
-[59]
-Overfull \vbox (49.61021pt too high) has occurred while \output is active []
-
-
-[60]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 501--501
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 512--512
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--513
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 494--516
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 232--254
  [][] 
  []
 
 
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 524--524
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--535
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--536
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 517--539
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 260--288
  [][] 
  []
 
-[61]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 547--547
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 565--565
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 540--569
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 293--319
  [][] 
  []
 
-[62]
-Overfull \vbox (63.61021pt too high) has occurred while \output is active []
 
-
-[63]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 577--577
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--595
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 596--596
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 570--599
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 324--343
  [][] 
  []
 
-[64]
-Overfull \vbox (49.61021pt too high) has occurred while \output is active []
 
-
-[65]
-Overfull \hbox (1.0914pt too wide) in paragraph at lines 607--607
-[]|\OT1/lmr/m/n/12 Descrizione| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 628--628
-[]|\OT1/lmr/m/n/12 Pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 629--629
-[]|\OT1/lmr/m/n/12 Post-
- []
-
-
-Overfull \hbox (106.05919pt too wide) in paragraph at lines 600--632
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 348--367
  [][] 
  []
 
-[66]
-Overfull \vbox (77.61021pt too high) has occurred while \output is active []
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 375--404
+ [][] 
+ []
 
 
-[67])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [68
-\indexentry{Index|hyperpage}{68}
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+LaTeX Warning: Float too large for page by 18.11497pt on input line 404.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 409--430
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 435--458
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 466--494
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 20.11497pt on input line 494.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 499--521
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 526--548
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 553--569
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 576--603
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 608--626
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 631--655
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 664--688
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 693--719
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 724--741
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 746--763
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 768--801
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 90.11497pt on input line 801.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 809--828
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 833--860
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 865--882
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 887--906
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 914--945
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 2.11497pt on input line 945.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 950--967
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 972--1004
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1011--1038
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1043--1077
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 114.72623pt on input line 1077.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1083--1131
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 132.11896pt on input line 1131.
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1138--1165
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1175--1202
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1207--1234
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1239--1265
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1274--1274
+[]|\OT1/lmr/m/n/10 Pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1275
+[]|\OT1/lmr/m/n/10 Post-
+ []
+
+
+Overfull \hbox (49.15369pt too wide) in paragraph at lines 1266--1293
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1302--1302
+[]|\OT1/lmr/m/n/10 Pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1303
+[]|\OT1/lmr/m/n/10 Post-
+ []
+
+
+Overfull \hbox (49.15369pt too wide) in paragraph at lines 1294--1313
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 752.34492pt on input line 1319.
+
+
+Underfull \hbox (badness 2126) in paragraph at lines 1343--1344
+\OT1/lmr/m/n/10 non viene ri-mossa e l'utente viene avvisato del fal-li-mento
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1324--1353
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1358--1390
+ [][] 
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
+ [44
+\indexentry{Index|hyperpage}{44}
+] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
+[59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73]
+[74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A2E2DB96992942EA05202DBFAC831360;1911.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 7378 strings out of 494428
- 106605 string characters out of 6174304
- 208364 words of memory out of 5000000
- 10545 multiletter control sequences out of 15000+600000
+ 7581 strings out of 494428
+ 108508 string characters out of 6174304
+ 420644 words of memory out of 5000000
+ 10573 multiletter control sequences out of 15000+600000
  69833 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  30i,14n,37p,895b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1412,10 +1227,10 @@ ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (68 pages, 720605 bytes).
+Output written on main.pdf (84 pages, 754229 bytes).
 PDF statistics:
- 893 PDF objects out of 1000 (max. 8388607)
- 800 compressed objects within 8 object streams
- 378 named destinations out of 1000 (max. 500000)
+ 1158 PDF objects out of 1200 (max. 8388607)
+ 1046 compressed objects within 11 object streams
+ 553 named destinations out of 1000 (max. 500000)
  243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
