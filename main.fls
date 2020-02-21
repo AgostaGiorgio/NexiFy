@@ -192,6 +192,9 @@ INPUT /Users/alessio/Developer/Other/NexiFy/Contents/PianificazioneProgetto.tex
 INPUT /Users/alessio/Developer/Other/NexiFy/images/RUPplan.png
 INPUT /Users/alessio/Developer/Other/NexiFy/images/RUPplan.png
 INPUT /Users/alessio/Developer/Other/NexiFy/images/RUPplan.png
+INPUT /Users/alessio/Developer/Other/NexiFy/./images/Gantt_NexiFy.png
+INPUT ./images/Gantt_NexiFy.png
+INPUT ./images/Gantt_NexiFy.png
 INPUT /usr/local/texlive/2019basic/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /usr/local/texlive/2019basic/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm
 INPUT /usr/local/texlive/2019basic/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm
