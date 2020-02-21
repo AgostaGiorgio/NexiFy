@@ -164,7 +164,7 @@ Attori &  Staff \\\hline
 Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni &  Tutti i piani di abbonamento creati vengono restituiti\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i piani di abbonamento, e:
 				\begin{enumerate}[  ]
 				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovati
@@ -188,7 +188,7 @@ Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
 Pre-condizioni &  Nessuna.\\\hline
 Post-condizioni &  Tutti i servizi esistenti vengono restituiti\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i servizi, e:
 				\begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1:} Se il database risponde con successo: il risultato della richiesta viene restituito
@@ -212,7 +212,7 @@ Attori &  Staff \\\hline
 Descrizione & Rende non più sottoscrivibile un piano di abbonamento esistente.\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni &  Il piano di abbonamento specificato non è più sottoscrivibile\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'amministratore richiede di invalidare un piano di abbonamento;
 		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e sottoscrivibili
 			\begin{enumerate}[  ]
@@ -239,7 +239,7 @@ Attori &  Staff \\\hline
 Descrizione & Rende sottoscrivibile un piano di abbonamento esistente.\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'amministratore richiede di rendere sottoscrivibile un piano di abbonamento;
 		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e non sottoscrivibili
 			\begin{enumerate}[  ]
@@ -267,7 +267,7 @@ Attori &  ManagerServizi \\\hline
 Descrizione & Permette di aggiungere un servizio all'insieme dei servizi disponibili in un piano di abbonamento.\\\hline
 Pre-condizioni & Nessuna \\\hline
 Post-condizioni &  Il servizio scelto viene aggiunto al piano di abbonamento scelto \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'amministratore richiede di estendere i servizi offerti da un piano di abbonamento;
 		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
 		\begin{enumerate}[  ]
@@ -300,7 +300,7 @@ Attori &  ManagerServizi \\\hline
 Descrizione & Permette la rimozione di uno dei servizi forniti da un piano abbonamento.\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni &  Il servizio scelto non fa parte della lista dei servizi del piano di abbonamento indicato\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'amministratore richiede di rimuovere un servizio offerto da un piano di abbonamento;
 		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
 		\begin{enumerate}[  ]
@@ -331,7 +331,7 @@ Attori &  Staff \\\hline
 Descrizione & Permette, dato un piano di abbonamento, di reperire tutti i servizi forniti da esso.\\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  I servizi forniti dal piano di abbonamento vengono restituiti \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i servizi nella lista del piano di abbonamento indicato, e:
 				\begin{enumerate}[  ]
 				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei servizi trovata
@@ -355,7 +355,7 @@ Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista dei piani di abbonamento sottoscritti da un utente.\\\hline
 Pre-condizioni &  Nessuna.\\\hline
 Post-condizioni &  Viene restituita la lista dei piani di abbonamento sottoscritti dal'utente indicato\\\hline
-Flusso &  	\begin{enumerate}	
+Flusso &  	\vspace{-5mm} \begin{enumerate}	
 		\item Il sistema effettua una richiesta al database distribuito esterno per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato, e:
 			\begin{enumerate}[  ]
 			\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovata
@@ -383,7 +383,7 @@ Descrizione & Permette di effettuare un pagamento verso un utente (dal giorno de
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  L'utente indicato viene pagato\\\hline
 Flusso &  	
-		\begin{enumerate}	
+		\vspace{-5mm} \begin{enumerate}	
 		\item L'amministratore richiede di effettuare un pagamento verso un utente
 		\item Il sistema mostra la lista degli utenti che possono ricevere un pagamento
 			\begin{enumerate}[  ]
@@ -417,7 +417,7 @@ Descrizione & Calcola l'importa da pagare a un utente dall'ultima volta che ha r
 Pre-condizioni &  L'utente indicato ha il servizio per pubblicare prodotti e l'account dell'utente è attivo\\\hline
 Post-condizioni &  L'utente indicato viene pagato\\\hline
 Flusso &  	
-		\begin{enumerate}
+		\vspace{-5mm} \begin{enumerate}
 		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo che va da quell'istante fino all'istante corrente	
 		\item Il sistema effettua una richiesta al database distribuito per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
 		\begin{enumerate}[  ]
@@ -443,7 +443,7 @@ Descrizione & Sospende l'account di un utente\\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
 Flusso &  	
-		\begin{enumerate}
+		\vspace{-5mm} \begin{enumerate}
 		\item L'amministratore richiede di sospendere l'account di un utente
 		\item Il sistema mostra la lista degli utenti che hanno un account attivo
 			\begin{enumerate}[  ]
@@ -471,7 +471,7 @@ Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
 Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
 			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password, tipo di abbonamento da sottoscrivere;
 			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
@@ -504,7 +504,7 @@ Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la modifica dei suoi dati;
 			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili;
 			\item L'utente comunica al sistema i nuovi valori da memorizzare;
@@ -531,7 +531,7 @@ Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di accedere alla piattaforma;
 			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
 			\item L'utente riempie i campi richiesti e li invia al sistema;
@@ -558,7 +558,7 @@ Nome & UC\_EffettuaLogout \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di uscire dalla piattaforma;
 			\item Il sistema elimina la sessione dell'utente in questione.
 		\end{enumerate}\\\hline
@@ -581,7 +581,7 @@ Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di sottoscrivere un piano di abbonamento;
 			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili e non ancora sottoscritti dall'utente
 				\begin{enumerate}[  ]
@@ -613,7 +613,7 @@ Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato, Amministratore \\\hline
 Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di disdire un piano di abbonamento che aveva sottoscritto
 			\item (UC\_9) Il sistema fornisce una lista dei piani di abbonamento sottoscritti dall'utente
 			\item L'utente sceglie dalla lista il piano di abbonamento da disdire
@@ -636,7 +636,7 @@ Nome & UC\_CambiaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi (selezionato da una lista), con un'altro abbonamento attivabile (selezionandolo da una lista);
 			\item il sistema controlla le politiche di cambio;
 			\begin{enumerate}[  ]
@@ -671,7 +671,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
 Pre-condizioni &  L'utente autenticato ha il servizio per pubblicare prodotti\\\hline
 Post-condizioni &  Viene creato un nuovo prodotto con proprietario l'utente autenticato\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di creare un nuovo prodotto
 			\item (UC\_21) Il sistema permette all'utente di inserire informazioni di base sul prodotto
 			\item Il sistema chiede all'utente di scegliere tra prodotto video e prodotto musicale
@@ -700,7 +700,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
 Pre-condizioni &  Vengono dati un utente e un nuovo prodotto ancora in creazione\\\hline
 Post-condizioni &  I campi base del nuovo prodotto in creazione sono compilati\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema richiede all'utente di inserire nome del prodotto, descrizione del prodotto, genere del prodotto (tra una lista di generi disponibili)
 			\item L'utente inserisce i dati per il prodotto
 			\item Il sistema valida i dati e verifica che non esista un altro prodotto con lo stesso nome tra quelli creati dall'utente:
@@ -731,7 +731,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto video\\\hline
 Pre-condizioni &   Vengono dati un utente e un nuovo prodotto (video) ancora in creazione\\\hline
 Post-condizioni &  Vengono completate le caratteristiche del prodotto video con proprietario l'utente autenticato\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
 			\item L'utente carica i file sulla piattaforma
 			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
@@ -753,7 +753,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto musicale\\\hline
 Pre-condizioni &   Vengono dati un utente e un nuovo prodotto (musicale) ancora in creazione\\\hline
 Post-condizioni &  Vengono completate le caratteristiche del prodotto musicale con proprietario l'utente autenticato\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
 			\item L'utente carica i file sulla piattaforma
 			\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
@@ -775,7 +775,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente autenticato di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
 Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti\\\hline
 Post-condizioni &  Lo stato di pubblicazione del prodotto viene cambiato con quello scelto dall'utente\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente autenticato richiede di cambiare lo stato di pubblicazione di un prodotto
 			\item Il sistema mostra all'utente la lista dei suoi prodotti
 			\item L'utente seleziona uno dei suoi prodotti
@@ -814,7 +814,7 @@ Nome & UC\_RiproduciVideo\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di riprodurre una risorsa video.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
 			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
 			\item il client contatta il nodo e stabiliscono una connessione
@@ -838,7 +838,7 @@ Nome & UC\_RiproduciMusica\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & riproduce una risorsa musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente selezione a seguito di una ricerca la risorsa da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
 			\item il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire la risorsa 
 			\item il client contatta il nodo e stabiliscono una connessione
@@ -870,7 +870,7 @@ Nome & UC\_PausaPlayer\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & mette in pausa la visualizzazione della risorsa.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la pausa di riproduzione al player
 			\item il player ferma la riproduzione della risorsa ma continua a ricevere pacchetti dalla CDN 
 			\end{enumerate}
@@ -892,7 +892,7 @@ Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & cambia il punto di riproduzione della risorsa (pu\'o essere spostata avanti o indietro).\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente seleziona lo spostamento di riproduzione ad un certo punto compreso tra 0 e lunghezza della risorsa
 			\item il player interrompe la riproduzione come da UC\_19
 			\item il client comunica al nodo della CDN che sta fornendo la risorsa il nuovo istante di tempo dal quale proseguire
@@ -919,7 +919,7 @@ Nome & UC\_SegnalaProdotto\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato, Staff \\\hline
 Descrizione & Permette di segnalare un prodotto (con relativa motivazione della segnalazione).\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente seleziona il prodotto da segnalare:
 			\item \begin{enumerate}[label= ]
 				\item \textbf{\# alt1}: Se il prodotto da segnalare è un profilo utente, sarà selezionato da un pulsante nella pagina di dettaglio.
@@ -955,7 +955,7 @@ Nome & UC\_OttieniSegnalazioni\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni.
 			\item Il sistema ricerca le segnalazioni fornisce la lista di segnalazioni all'operatore richiedente.
 			\end{enumerate}
@@ -977,7 +977,7 @@ Nome & UC\_ChiudiSegnalazione\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_30.
 %			POTREBBE ESSERE UN ALTRO USE CASE
 %			\item L'operatore potra richiedere di visionare un elemento della lista:
@@ -1018,7 +1018,7 @@ Attori &  Utente \\\hline
 Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di ricercare una risorsa;
 			\item Il sistema richiede all' utente la stringa di ricerca;
 			\item L'utente fornisce al sistema la stringa;
@@ -1050,7 +1050,7 @@ Attori &  Utente \\\hline
 Descrizione & Cerca contenuti (sia prodotti che playlist) ritenuti popolari\\\hline
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni &  Vengono mostrati video, canzoni, serie tv, album ritenuti popolari (se ne esistono)\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema fa una richiesta al database per ottenere i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni:
 				\begin{enumerate}[label*=\arabic*.]
 					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i video popolari all'utente
@@ -1148,7 +1148,7 @@ Post-condizioni & Nessuna\\\hline
 %immagino di avere una variabile che mi permette di sapere se mandare 
 %la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
 %ciò che mi è stato chiesto
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema controlla che il piano di abbonamento associato all'utente non lo esenti dalle pubblicità:
 		 \begin{enumerate}[label*=\arabic*.]
 			\item \textbf{\# alt1}: Se l'utente \'e esentato dalla riproduzione di spot pubblicitari il sistema non riproduce nessuno spot
@@ -1182,7 +1182,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di creare una nuova playlist (vuota)\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente e inoltre il suo piano di abbonamento permette la creazione di playlist\\\hline
 Post-condizioni & Una nuova playlist vuote è asscociata all'utente che l'ha creata\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 \item L'utente chiede al sistema la creazione di una nuova playlist;
 		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la creazione di nuove playlist:
 		 \begin{enumerate}[label*=\arabic*.]
@@ -1214,7 +1214,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di agguingere una risorsa all'interno di una playlist esistente\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
 Post-condizioni & Una nuova risorsa farà parte della playlist scelta\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 \item L'utente chiede al sistema di aggiungere una risorsa ad una playlist;
 		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
 		 \begin{enumerate}[label*=\arabic*.]
@@ -1246,7 +1246,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rimuovere una risorsa all'interno di una playlist esistente\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
 Post-condizioni & La risorsa non farà più parte della playlist\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 \item L'utente chiede al sistema di rimuovere una risorsa da una playlist;
 		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
 		 \begin{enumerate}[label*=\arabic*.]
@@ -1277,7 +1277,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rendere pubblica, privata una playlist\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
 Post-condizioni & La playlist avr\'a visibilit\'a aggiornata a quella fornita dall'utente\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'utente chiede al sistema di cambiare la visibilit\'a di una playlist;
 		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
 		 \begin{enumerate}[label*=\arabic*.]
@@ -1309,7 +1309,7 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di riprodurre in ordine le risorse raccolte all'interno di una playlist\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente\\\hline
 Post-condizioni & Nessuna\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item L'utente chiede al sistema di riprodurre una playlist;
 		\item Il sistema chiede all'utente l'informazione riguardo la playlist da riprodurre;
 		\item L'utente fornisce al sistema quale playlist riprodurre;
@@ -1335,7 +1335,7 @@ Nome & UC\_RimuoviRisorsa\\\hline
 Priorità & High \\\hline
 Attori &  Partner \\\hline
 Descrizione & Permette a un utente di rimuoere dalla piattaforma una risorsa.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di rimuoere dalla piattaforma una risorsa;
 			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
 			\begin{enumerate}
@@ -1369,7 +1369,7 @@ Nome & UC\_ModificaRisorsa\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di modificare una propria risorsa.\\\hline
-Flusso &  	\begin{enumerate}
+Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di modificare una risorsa;
 			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
 			\begin{enumerate}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  21 FEB 2020 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  21 FEB 2020 19:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,7 +977,7 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 375--404
  []
 
 
-LaTeX Warning: Float too large for page by 18.11497pt on input line 404.
+LaTeX Warning: Float too large for page by 3.88861pt on input line 404.
 
 
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 409--430
@@ -995,7 +995,7 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 466--494
  []
 
 
-LaTeX Warning: Float too large for page by 20.11497pt on input line 494.
+LaTeX Warning: Float too large for page by 5.88861pt on input line 494.
 
 
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 499--521
@@ -1053,7 +1053,7 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 768--801
  []
 
 
-LaTeX Warning: Float too large for page by 90.11497pt on input line 801.
+LaTeX Warning: Float too large for page by 75.88861pt on input line 801.
 
 
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 809--828
@@ -1081,9 +1081,6 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 914--945
  []
 
 
-LaTeX Warning: Float too large for page by 2.11497pt on input line 945.
-
-
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 950--967
  [][] 
  []
@@ -1104,7 +1101,7 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 1043--1077
  []
 
 
-LaTeX Warning: Float too large for page by 114.72623pt on input line 1077.
+LaTeX Warning: Float too large for page by 100.49986pt on input line 1077.
 
 
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 1083--1131
@@ -1181,7 +1178,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
 Here is how much of TeX's memory you used:
  7582 strings out of 494428
  108502 string characters out of 6174304
- 421662 words of memory out of 5000000
+ 421665 words of memory out of 5000000
  10572 multiletter control sequences out of 15000+600000
  69833 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
@@ -1195,7 +1192,7 @@ ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (86 pages, 755477 bytes).
+Output written on main.pdf (86 pages, 755478 bytes).
 PDF statistics:
  1167 PDF objects out of 1200 (max. 8388607)
  1053 compressed objects within 11 object streams
