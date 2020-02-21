@@ -1013,96 +1013,153 @@ Post-condizioni & Nessuna\\\hline
 %la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
 %ciò che mi è stato chiesto
 Flusso &  	\begin{enumerate}
-		\item Il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
-		\item \begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
-				\item \textbf{\# alt2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1
+		\item Il sistema controlla che il piano di abbonamento associato all'utente non lo esenti dalle pubblicit\'a:
+		 \begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se l'utente \'e esentato dalla riproduzione di spot pubblicitari il sistema non riproduce nessuno spot
+			\item \textbf{\# alt2}: Se l'utente non \'e esentato dalle pubblicità allora il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
+			 \begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt2.1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
+				\item \textbf{\# alt2.2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1 e non riproduce nessuno spot.
 			\end{enumerate}
+		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:35}\newline
 %======================================
 
+%================UC relativi a 9==========
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_36 \\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di creare una nuova playlist (vuota)\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente e inoltre il suo piano di abbonamento permette la creazione di playlist\\\hline
+Post-condizioni & Una nuova playlist vuote è asscociata all'utente che l'ha creata\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'utente chiede al sistema la creazione di una nuova playlist;
+		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la creazione di nuove playlist:
+		 \begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il piano associato all'utente non permette la creazione di playlist l'operazione fallisce e l'utente viene avvisato;
+			\item \textbf{\# alt2}: Se il piano associato all'utente permette la creazione di playlist, il sistema richiede all'utente il nome della nuova playlist;
+			\item L'utente fornisce l'informazione richiesta;
+			\item Il sistema, dopo aver validato l'informazione fornitagli dall'utente, controlle se è già esistente una playlist con quel nome tra quelle create dallo stesso utente:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt2.1}: Se non ci sono altre playlist, il sistema procede con la creazione di una nuova con il nome fornitogli dall'utente
+				\item \textbf{\# alt2.2}: Se esiste almeno 1 playlist associata a quell'utente, l'operazione fallisce e il sistema chiede all'utente un nuovo nome diverso d quello appena fornito.
+			\end{enumerate}
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:36}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_37 \\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_AggiungiProdottoPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di agguingere una risorsa all'interno di una playlist esistente\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
+Post-condizioni & Una nuova risorsa farà parte della playlist scelta\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'utente chiede al sistema di aggiungere una risorsa ad una playlist;
+		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
+		 \begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il piano associato all'utente non permette la modifica di playlist l'operazione fallisce e l'utente viene avvisato;
+			\item \textbf{\# alt2}: Se il piano associato all'utente permette la modifica di playlist, il sistema  fornisce la lista delle playlist associate ad esso;
+			\begin{enumerate}[label*=\arabic*.]
+				\item L'utente sceglie la playlist e la comunica al sistema;	
+				\item Il sistema chiede all'utente di fornire l'informazione riguardo la risorsa da aggiungere;
+				\item L'utente fornisce la risorsa da aggiungere;
+				\item Il sistema procede con l'aggiunta della risorsa all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
+			\end{enumerate}
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:37}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_38\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_RimuoviProdottoPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di rimuovere una risorsa all'interno di una playlist esistente\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
+Post-condizioni & La risorsa non farà più parte della playlist\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'utente chiede al sistema di rimuovere una risorsa da una playlist;
+		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
+		 \begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il piano associato all'utente non permette la modifica di playlist l'operazione fallisce e l'utente viene avvisato;
+			\item \textbf{\# alt2}: Se il piano associato all'utente permette la modifica di playlist, il sistema  fornisce la lista delle playlist associate ad esso;
+			\begin{enumerate}[label*=\arabic*.]
+				\item L'utente sceglie la playlist da modificare dalla lista;
+				\item Il sistema fornisce la lista di risorse associate alla playlist scelta;
+				\item L'utente sceglie la risorsa e la comunica al sistema;
+				\item Il sistema procede con la rimozione della risorsa scelta dalla playist e avvisa l'utente della riuscita dell'operazione.
+			\end{enumerate}
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:38}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_39\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CambiaVisibilit\'aPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di rendere pubblica, privata una playlist\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente e la playlist è associata a lui\\\hline
+Post-condizioni & La playlist avr\'a visibilit\'a aggiornata a quella fornita dall'utente\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'utente chiede al sistema di cambiare la visibilit\'a di una playlist;
+		\item Il sistema verifica sulla base di dati che il piano di abbonamento sottoscritto dall'utente permetta la modifica di playlist:
+		 \begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il piano associato all'utente non permette la modifica di playlist l'operazione fallisce e l'utente viene avvisato;
+			\item \textbf{\# alt2}: Se il piano associato all'utente permette la modifica di playlist, il sistema  fornisce la lista delle playlist associate ad esso;
+			\begin{enumerate}[label*=\arabic*.]
+				\item L'utente sceglie la playlist da modificare dalla lista;
+				\item Il sistema fornisce la lista di opzioni per visibilit\'a supportate dalla piattaforma;
+				\item L'utente sceglie la visibilità e la comunica al sistema;
+				\item Il sistema procede con l'aggiornamento dell'informaizone secondo le scelte fatte dall'utente.
+			\end{enumerate}
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:39}\newline
+
+\begin{tabular}{ |p{2cm}|p{13cm}|  }
+\hline
+ID & UC\_40\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_RiproduciPlaylist\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di riprodurre in ordine le risorse raccolte all'interno di una playlist\\\hline
+Pre-condizioni & L'utente è registrato e autenticato correttamente\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &  	\begin{enumerate}
+		\item L'utente chiede al sistema di riprodurre una playlist;
+		\item Il sistema chiede all'utente l'informazione riguardo la playlist da riprodurre;
+		\item L'utente fornisce al sistema quale playlist riprodurre;
+		\item Il sistema per ogni risorsa associata alla playlist scelta dall'utente esegue UC\_41
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:40}\newline
+%=====================================
+
 % ============================== USE CASE DA RIVEDERE ====================================
 
 \textbf{USE CASE DA RIVEDERE} \newline
 
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_10 \\\hline
-Categoria & Playlist\\\hline
-Nome & UC\_CreaPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di creare una propria playlist, senza nessuna risorsa al suo interno.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di creare una nuova playlist;
-			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta la creazione di playlist:
-			\begin{enumerate}
-				\item Se l'abbonamento include il servizio:
-				\begin{enumerate}
-					\item Il sistema richiede il nome della playlist da creare;
-					\item L'utente fornisce la stringa;
-					\item Il sistema verifica sulla base di dati che l'utente non abbia già una playlist con lo stesso nome:
-					\begin{enumerate}
-						\item Se il sistema risponde in maniera positiva, allora la playlist viene creata;
-						\item Se il sistema risponde in maniera negativa, allora la playlist non viene creata e l'utente viene avvisato del fallimento dell'operazione.
-					\end{enumerate}
-				\end{enumerate}
-				\item Se l'abbonamento non include il servizio, allora la playlist non viene creata e l'utente viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login,  l'abbonamento sottoscritto permette la creazione di playlist e non esiste già una playlist associato allo stesso utente con lo stesso nome.\\\hline
-Post-condizioni & Esiste una playlist con il nome specificato associata all'utente.\\\hline
-\end{tabular}
-\label{table_use_case:10}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_11 \\\hline
-Categoria & Playlist\\\hline
-Nome & UC\_AggiungiRisorsaAPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di aggiungere una risorsa ad una sua playlist.\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di aggiungere una risorsa ad una sua playlist;
-			\item Il sistema richiede il nome della risorsa e il nome della playlist;
-			\item L'utente invia le informazioni richieste;
-			\item Il sistema verifica sulla base di dati che tra le playlist associate all'utente sia presente quella con il nome comunicato:
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il sistema risponde in maniera positiva, allora la risorsa viene agigunta alla playlist;
-				\item \textbf{\# alt2}: Se il sistema risponde in maniera negativa, allora la risorsa non viene  agigunta alla playlist e l'utente viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login e ha almeno 1 playlist a se associata.\\\hline
-Post-condizioni & All'interno della playlist è presente un riferimento alla risorsa scelta.\\\hline
-\end{tabular}
-\label{table_use_case:11}\newline
-
-\begin{tabular}{ |p{2cm}|p{13cm}|  }
-\hline
-ID & UC\_12 \\\hline
-Categoria & Playlist\\\hline
-Nome & UC\_RimuoveiRisorsaDaPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di rimuovere una risorsa da una sua playlist..\\\hline
-Flusso &  	\begin{enumerate}
-			\item L'utente richiede di rimuovere una risorsa da una sua playlist;
-			\item Il sistema richiede il nome della risorsa e il nome della playlist;
-			\item L'utente invia le informazioni richieste;
-			\item Il sistema verifica sulla base di dati che tra le playlist associate all'utente sia presente quella con il nome comunicato:
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il sistema risponde in maniera positiva, allora la risorsa viene agigunta alla playlist;
-				\item \textbf{\# alt2}: Se il sistema risponde in maniera negativa, allora la risorsa non viene  agigunta alla playlist e l'utente viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login e ha almeno 1 playlist a se associata.\\\hline
-Post-condizioni & All'interno della playlist è presente un riferimento alla risorsa scelta.\\\hline
-\end{tabular}
-\label{table_use_case:12}\newline
 
 \begin{tabular}{ |p{2cm}|p{13cm}|  }
 \hline
