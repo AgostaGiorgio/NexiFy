@@ -1167,8 +1167,6 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 
 % ============================== USE CASE DA RIVEDERE ====================================
 
-\textbf{USE CASE DA RIVEDERE} \newline
-
 %================UC relativi a 9==========
 \begin{table}[bp]
     \centering
@@ -1310,11 +1308,12 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di riprodurre in ordine le risorse raccolte all'interno di una playlist\\\hline
 Pre-condizioni & L'utente è registrato e autenticato correttamente\\\hline
 Post-condizioni & Nessuna\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
+Flusso &  	\begin{enumerate}
 		\item L'utente chiede al sistema di riprodurre una playlist;
 		\item Il sistema chiede all'utente l'informazione riguardo la playlist da riprodurre;
 		\item L'utente fornisce al sistema quale playlist riprodurre;
-		\item Il sistema per ogni risorsa associata alla playlist scelta dall'utente esegue UC\_41
+		\item Il sistema per ogni risorsa nella coda di riproduzione (UC\_43) procede rimuovendola da questa coda (UC\_42);
+		\item Il sistema per ogni risorsa associata alla playlist scelta dall'utente il sistema la aggiunge alla coda di riproduzione (UC\_41);
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:40}\newline
@@ -1393,9 +1392,6 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 
 
 % ============================== USE CASE DA RIVEDERE ====================================
-
-\textbf{USE CASE DA RIVEDERE} \newline
-
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
