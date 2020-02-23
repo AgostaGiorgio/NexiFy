@@ -1165,8 +1165,6 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{table}
 %======================================
 
-% ============================== USE CASE DA RIVEDERE ====================================
-
 %================UC relativi a 9==========
 \begin{table}[bp]
     \centering
@@ -1390,80 +1388,80 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \end{table}
 %======================================
 
-
-% ============================== USE CASE DA RIVEDERE ====================================
+%================UC relativi a 10, 11==========
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
-ID & UC\_14 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_RimuoviRisorsa\\\hline
-Priorità & High \\\hline
-Attori &  Partner \\\hline
-Descrizione & Permette a un utente di rimuoere dalla piattaforma una risorsa.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di rimuoere dalla piattaforma una risorsa;
-			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
-			\begin{enumerate}
-				\item Se l'abbonamento include il servizio:
-				\begin{enumerate}
-					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione;
-					\item L'utente fornisce i dati richiesti;
-					\item Il sistema verifica sulla base di dati che l'utente abbia pubblicato una risorsa gli stessi dati:
-					\begin{enumerate}
-						\item Se il sistema risponde in maniera positiva, allora la risorsa viene rimossa;
-						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene rimossa e l'utente viene avvisato del fallimento dell'operazione.
-					\end{enumerate}
-				\end{enumerate}
-				\item Se l'abbonamento non include il servizio, allora la risorsa non viene rimossa e l'utente viene avvisato del fallimento dell'operazione.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login ed ha pubblicato almeno una risorsa.\\\hline
-Post-condizioni & La risorsa non è più accessibile da nessun servizio e risulta inoltre rimossa da ogni playlist .\\\hline
-\end{tabular}
-\label{table_use_case:14}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_15 \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_ModificaRisorsa\\\hline
+ID & UC\_44\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaSerieTv\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di modificare una propria risorsa.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di modificare una risorsa;
-			\item Il sistema verifica sulla base di dati che l'abbonamento sottoscritto dall'utente permetta l'operazione:
-			\begin{enumerate}
-				\item Se l'abbonamento include il servizio:
-				\begin{enumerate}
-					\item Il sistema richiede il Titolo della risorsa da caricare e informazioni varie come Descrizione Breve,  Descrizione Completa, Tipo, Categoria, Pubblico Consigliato e Collezione;
-					\item L'utente fornisce i dati richiesti;
-					\item Il sistema verifica sulla base di dati che l'utente abbia pubblicato una risorsa gli stessi dati:
-					\begin{enumerate}
-						\item Se il sistema risponde in maniera positiva:
-							\subitem A.1. Il sistema chiede i nuovi valori dei dati;
-							\subitem A.2. L'utente fornisce i dati richiesti;
-							\subitem A.3. Il sistema aggiorna i dati della risorsa.
-						\item Se il sistema risponde in maniera negativa, allora  la risorsa non viene modificata e l'utente viene avvisato del fallimento dell'operazione.
-					\end{enumerate}
-				\end{enumerate}
-				\item Se l'abbonamento non include il servizio, allora la risorsa non viene modificata e l'utente viene avvisato del fallimento dell'operazione.
+Descrizione & Permette di trasformare una playlist in una serie tv\\\hline
+Pre-condizioni & L'utente ha il servizio per creare serie tv\\\hline
+Post-condizioni & Una nuova serie tv viene associata all'utente\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente chiede al sistema di creare una nuova serie tv
+		\item Il sistema mostra all'utente la lista delle playlist che possiede
+		\item L'utente seleziona la playlist che intende trasformare in serie tv
+		\item Il sistema verifica che:
+			\begin{itemize}
+			\item Tutti i prodotti della playlist siano prodotti video
+			\item Tutti i prodotti della playlist appartengono all'utente stesso
+			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
+			\end{itemize}
+			 \begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è una serie tv
+				\item \textbf{\# alt2}: Se almeno una condizione non è verificata: il sistema comunica all'utente che la playlist non può essere una serie tv
 			\end{enumerate}
-		\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato il Login, possiede un abbonamento che permetta la pubblicazione di risorse ed ha pubblicato almeno una risorsa.\\\hline
-Post-condizioni & La risorsa è aggiornata con i nuovi dati.\\\hline
+    \end{enumerate}\\\hline
 \end{tabular}
-\label{table_use_case:15}\newline
+\label{table_use_case:44}\newline
 \end{table}
 
-%DA PENSARE BENE SE E COME METTERE I SEGUENTI USE-CASE: %
-%NUOVO SERVIZIO - ELIMINA SERVIZIO - DOWNLOAD RISORSA%
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_45\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_CreaAlbum\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette di trasformare una playlist in un album\\\hline
+Pre-condizioni & L'utente ha il servizio per creare album\\\hline
+Post-condizioni & Un nuovo album viene associato all'utente\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente chiede al sistema di creare un nuovo album
+		\item Il sistema mostra all'utente la lista delle playlist che possiede
+		\item L'utente seleziona la playlist che intende trasformare in album
+		\item Il sistema verifica che:
+			\begin{itemize}
+			\item Tutti i prodotti della playlist siano prodotti musicali
+			\item Tutti i prodotti della playlist appartengono all'utente stesso
+			\end{itemize}
+			 \begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è un album
+				\item \textbf{\# alt2}: Se almeno una condizione non è verificata: il sistema comunica all'utente che la playlist non può essere un album
+			\end{enumerate}
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:45}\newline
+\end{table}
+%================================
 
 \end{center}
+
+\newpage
+\noindent{\LARGE \textbf{Revisioni 8}} \\ \\
+\begin{tabular}{|c | c | c | c|} 
+ 	\hline
+	 Numero & Data & Descrizione \\ [0.5ex] 
+	\hline\hline
+	1 & 20/02/2020 & Stesura iniziale con requisiti funzionali principali \\
+	\hline
+\end{tabular}
+
