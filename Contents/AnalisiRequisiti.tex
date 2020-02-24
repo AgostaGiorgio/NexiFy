@@ -138,12 +138,12 @@
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di creare un nuovo piano di abbonamento (inizialmente con nessun servizio associato)
 			\end{itemize}
-		\item REQ\_F\_NascondiAbbonamento
+		\item REQ\_F\_DisattivaAbbonamento
 			\begin{itemize}	
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di rendere un piano di abbonamento non più sottoscrivibile (dal punto di vista degli utenti è l'equivalente di un'eliminazione)
 			\end{itemize}
-		\item REQ\_F\_MostraAbbonamento
+		\item REQ\_F\_AttivaAbbonamento
 			\begin{itemize}
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di rendere un piano di abbonamento sottoscrivibile
@@ -153,25 +153,21 @@
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di aggiungere un certo servizio ad un certo piano di abbonamento
 			\end{itemize}
-	
 		\item REQ\_F\_RimuoviServizioAbbonamento
 			\begin{itemize}	
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di rimuovere un certo servizio ad un certo piano di abbonamento
 			\end{itemize}
-
 		\item REQ\_F\_RecuperaServiziAbbonamento
 			\begin{itemize}	
 			\item Priorità: Primaria
 			\item Descrizione: permette agli amministratori di recuperare tutti i servizi associati ad un certo abbonamento
 			\end{itemize}
-	
 		\item REQ\_F\_RecuperaPianiAbbonamentoUtente
 			\begin{itemize}	
 			\item Priorità: Primaria
 			\item Descrizione: permette di recuperare tutti i piani di abbonamento sottoscritti da un certo utente
 			\end{itemize}
-
 		\item REQ\_F\_RecuperaServizi
 			\begin{itemize}	
 			\item Priorità: Primaria
@@ -179,11 +175,12 @@
 			\end{itemize}
 		\end{enumerate}
 
-	\item REQ\_F\_EffettuaPagamento
+	\item REQ\_F\_EffettuaPagamentoPartner
 		\begin{itemize}	
 		\item Priorità: Primaria
-		\item Descrizione: permette agli amministratori di effettuare pagamenti verso utenti che hanno il servizio di pubblicare contenuti
+		\item Descrizione: permette agli amministratori di effettuare pagamenti verso utenti che hanno accesso a un servizio che permette di pubblicare contenuti
 		\end{itemize}
+
 	\item REQ\_F\_SospendiAccount
 		\begin{itemize}	
 		\item Priorità: Primaria
@@ -476,6 +473,11 @@
 			\begin{itemize}	
 			\item Priorità: Secondaria
 			\item Descrizione: rimuove il prodotto in testa alla coda di riproduzione
+			\end{itemize}
+		\item REQ\_F\_MostraStatoDellaCoda
+			\begin{itemize}	
+			\item Priorità: Secondaria
+			\item Descrizione: mostra le risorse attualmente associate alla coda di riproduzione
 			\end{itemize}
 		\end{enumerate}
 
