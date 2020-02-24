@@ -9,8 +9,6 @@
 \usepackage{imakeidx}
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
-
-
 \usepackage{tabularx}
 \usepackage{paralist}
 \usepackage{enumitem}
@@ -21,9 +19,10 @@
 \usepackage[official]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro{}}
 
-%\newcounter{ucCounter}
-%\newcommand{\uc{\theuccounter}}
-
+\newcounter{ucCounter}
+\stepcounter{ucCounter}
+\newcommand{\lastUC}{\theucCounter}
+\newcommand{\nextUC}{\stepcounter{ucCounter}{\theucCounter}}
 
 \author{Agosta, Belli, Emili, Giacchini, Luciani}
 
