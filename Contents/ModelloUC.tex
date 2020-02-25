@@ -110,6 +110,17 @@ Descrizione &  Rappresenta il sistema di gestione dei pagamenti verso i partner 
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
+ID & A\_1.3.3 \\\hline
+Nome & ManagerSegnalazioni\\\hline
+Genitore & A\_1.3\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo di chi gestisce tutte le segnalazioni verso prodotti o utenti \\\hline
+\end{tabular}
+\label{table_attore:1.3.1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
 ID & A\_2 \\\hline
 Nome & Pagamento\\\hline
 Genitore & - \\\hline
@@ -411,7 +422,7 @@ ID & UC\_\nextUC \\\hline
 Categoria & Management\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & High \\\hline
-Attori &  Staff \\\hline
+Attori &  ManagerPagamenti \\\hline
 Descrizione & Permette di effettuare un pagamento verso un utente (dal giorno dell'ultimo pagamento al momento in cui viene invocato l'use-case).\\\hline
 Pre-condizioni &  L'utente indicato ha il servizio che permette di ricevere pagamenti\\\hline
 Post-condizioni &  L'utente indicato viene pagato\\\hline
@@ -445,17 +456,17 @@ ID & UC\_\nextUC \\\hline
 Categoria & Management\\\hline
 Nome & UC\_CalcolaImportoDaPagare\\\hline
 Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & Calcola l'importa da pagare a un utente dall'ultima volta che ha ricevuto un pagamento fino al momento in cui viene invocato l'use-case\\\hline
-Pre-condizioni &  L'utente indicato ha il servizio per pubblicare prodotti e l'account dell'utente è attivo\\\hline
+Attori &  ManagerPagamenti \\\hline
+Descrizione & Calcola l'importo da pagare a un utente dall'ultima volta che ha ricevuto un pagamento fino al momento in cui viene invocato l'use-case\\\hline
+Pre-condizioni &  L'utente indicato ha il servizio che permettte di pubblicare prodotti e l'account dell'utente è attivo\\\hline
 Post-condizioni &  L'utente indicato viene pagato\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}
 		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo che va da quell'istante fino all'istante corrente	
-		\item Il sistema effettua una richiesta al database distribuito per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
+		\item Il sistema effettua una richiesta al Database per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
 		\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se la richiesta al database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
-			\item \textbf{\# alt2}: Se la richiesta al database ha esito negativo: la procedura viene abortita
+			\item \textbf{\# alt1}: Se la richiesta al Database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
+			\item \textbf{\# alt2}: Se la richiesta al Database ha esito negativo: la procedura viene abortita
 		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -471,19 +482,19 @@ ID & UC\_\nextUC \\\hline
 Categoria & Management\\\hline
 Nome & UC\_SospendiAccount\\\hline
 Priorità & High \\\hline
-Attori &  Staff \\\hline
+Attori &  ManagerSegnalazioni \\\hline
 Descrizione & Sospende l'account di un utente\\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}
-		\item L'amministratore richiede di sospendere l'account di un utente
+		\item Il manager delle segnalazioni richiede di sospendere l'account di un utente
 		\item Il sistema mostra la lista degli utenti che hanno un account attivo
 			\begin{enumerate}[  ]
 			\item Il sistema recupera tutti gli utenti
-			\item vengono mostrati nella lista gli utenti con account attivo
+			\item Vengono mostrati nella lista gli utenti con account attivo
 			\end{enumerate}	
-		\item L'amministratore sceglie un utente da sospendere
+		\item Il manager delle segnalazioni sceglie un utente da sospendere
 		\item L'account dell'utente viene sospeso
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -504,24 +515,18 @@ Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
 Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
+Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
+Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
-			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password, tipo di abbonamento da sottoscrivere;
+			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password;
 			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
-			\item Il sistema verifica la correttezza dei dati e controlla se il piano di abbonamento scelto richiede il pagamento di una somma di denaro:
+			\item Il sistema verifica la correttezza dei dati:
 			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: se lo richiede il sistema fornisce un lista dei metodi di pagamento disponibili
-				\item L'utente seleziona il metodo di pagamento desiderato;
-				\item Il sistema verifica che il metodo selezionato sia valido e reinderizza l'utente al sistema esterno di pagamento, e attende risposta dal sistema esterno:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: il pagamento è stato effettuato e l'utente viene registrato sulla piattaforma 
-					\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: il pagamento non è stato effettuato e si chiede all'utente di riprovare o rinunciare alla registrazione.
-				\end{enumerate}
-				\item\textbf{\# alt2}: se NON richiede nessun pagaento l'utente viene registrato sulla piattaforma
+				\item\textbf{\# alt1}: Se il sistema accetta i dati, l'utente viene registrato sulla piattaforma
+				\item\textbf{\# alt2}: Se il sistema non accetta i dati, la procedura fallisce e l'utente viene avvisato
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
-Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente, ed il suo account, identificato dalla email formita nel modulo di registrazione, è abbinato al pacchetto di servizi scelto.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -537,6 +542,8 @@ Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la modifica dei suoi dati;
 			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili;
@@ -547,8 +554,6 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 				\item\textbf{\# alt1}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni &  L'utente è già autenticato\\\hline
-Post-condizioni &  Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -562,20 +567,20 @@ ID & UC\_\nextUC \\\hline
 Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Attori &  UtenteNonAutenticato \\\hline
 Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di accedere alla piattaforma;
 			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
 			\item L'utente riempie i campi richiesti e li invia al sistema;
-			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con la base di dati degli utenti:
+			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database degli utenti:
 			\begin{enumerate}[  ]
 				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: l'utente è autenticato ed abilitato all'utilizzo dei servizi offerti dall'abbonamento in corso; 
 				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: l'utente non viene autenticato ed è reindirizzato alla pagina di login.
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni &  L'utente esiste e non è già autenticato\\\hline
-Post-condizioni &  L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -591,12 +596,12 @@ Nome & UC\_EffettuaLogout \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  L'utente non è più autenticato.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di uscire dalla piattaforma;
 			\item Il sistema elimina la sessione dell'utente in questione.
 		\end{enumerate}\\\hline
-Pre-condizioni &  L'utente è già autenticato\\\hline
-Post-condizioni &  L'utente non è più autenticato.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -614,6 +619,8 @@ Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Pre-condizioni & L'utente non ha sottoscritto tutti i i piani di abbonamento\\\hline
+Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di sottoscrivere un piano di abbonamento;
 			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili e non ancora sottoscritti dall'utente
@@ -629,8 +636,6 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
 			\end{enumerate}
 		\end{enumerate}\\\hline
-Pre-condizioni & L'utente non ha sottoscritto tutti i i piani di abbonamento\\\hline
-Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -644,16 +649,16 @@ ID & UC\_\nextUC \\\hline
 Categoria & Risorse\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
-Attori &  UtenteAutenticato, Amministratore \\\hline
+Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
+Pre-condizioni & L'utente ha almeno un piano di abbonamento sottoscritto.\\\hline
+Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di disdire un piano di abbonamento che aveva sottoscritto
 			\item (UC\_9) Il sistema fornisce una lista dei piani di abbonamento sottoscritti dall'utente
 			\item L'utente sceglie dalla lista il piano di abbonamento da disdire
 			\item Il rinnovo automatico per il piano di abbonamento scelto viene annullato, e l'utente potrà usare i servizi del piano di abbonamento fino alla scadenza
 		\end{enumerate}\\\hline
-Pre-condizioni & L'utente ha almeno un piano di abbonamento sottoscritto.\\\hline
-Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -668,21 +673,30 @@ Categoria & Risorse\\\hline
 Nome & UC\_CambiaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento in sostituzione di uno gi\'a attivo.\\\hline
+Pre-condizioni & L'utente deve avere almeno un piano di abbonamento attivo.\\\hline
+Post-condizioni &  L'utente ha sottoscritto il nuovo abbonamento e non possiede pi\'u il precedente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi (selezionato da una lista), con un'altro abbonamento attivabile (selezionandolo da una lista);
-			\item il sistema controlla le politiche di cambio;
+			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi;
+			\item Il sistema fornisce una lista di tutti i piani di abbonamento attivi sottoscritti dall'utente;
+			\item L'utente sceglie l'abbonamento da sostituire;
+			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
-				\begin{enumerate}[label=\arabic*]
-					\item \textbf{\# alt1}: se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
-					\item \textbf{\# alt2}: altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
+				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_2)
+				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_9)
+				\item Il sistema fornisce solo i piani di abbonamento sottoscrivibili non ancora sottoscritti dall'utente
+			\end{enumerate}
+			\item L'utente sceglie il nuovo abbonamento da sottoscrivere;
+			\item Il sistema controlla le politiche di cambio;
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: Se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
+					\item \textbf{\# alt2}: Altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
 				\end{enumerate}
-				\item \textbf{\# alt2}: altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
+				\item \textbf{\# alt2}: Altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
 			\end{enumerate}
 			\end{enumerate}\\\hline
-Pre-condizioni & L'utente è registrato sulla piattaforma, ha effettuato con successo il Login.\\\hline
-Post-condizioni &  l'utente ha sottoscritto il nuovo abbonamento e non possiede piu il precedente.\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -929,7 +943,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotto\\\hline
 Nome & UC\_SegnalaProdotto\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato, Staff \\\hline
@@ -937,21 +951,15 @@ Descrizione & Permette di segnalare un prodotto (con relativa motivazione della 
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Il prodotto selezionato ha una segnalazione aperta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente seleziona il prodotto da segnalare:
-			\item \begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: Se il prodotto da segnalare è un profilo utente, sarà selezionato da un pulsante nella pagina di dettaglio.
-				\item \textbf{\# alt2}: Se il prodotto da segnalare è un prodotto, sarà selezionato da un pulsante nella pagina di visualizzazione del prodotto
-				\end{enumerate}
-			\item All'utente viene richiesta una motivazione della segnalazione.
-			\item Il sistema riceve l'identificativo del prodotto, la sua tipologia, la motivazione e provvede ad aprire la segnalazione
-			\begin{enumerate}[label=\arabic*. ]
-				\item Viene memorizzato in modo persistente l'utente che ha segnalatore, il prodotto segnalato, e la motivazione
-				\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
-			\end{enumerate}.
-			\item L'utente viene segnalato dell'esito della sengalazione
+			\item L'utente seleziona il prodotto da segnalare
+			\item Il sistema richiede la motivazione della segnalazione
+			\item L'utente comunica una motivazione.
+			\item Il sistema riceve il prodotto e la motivazione e provvede ad aprire la segnalazione
+			\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
+			\item L'utente viene avvisato dell'esito della sengalazione
 			\begin{enumerate}[label= ]
 				\item \textbf{\# alt1}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso positivo
-				\item \textbf{\# alt2}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso negativo
+				\item \textbf{\# alt2}: Se il la segnalazione non è andata a buon fine, l'utente riceverà un responso negativo
 			\end{enumerate}
 			\end{enumerate}
 			\\\hline
@@ -965,13 +973,13 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotto\\\hline
 Nome & UC\_OttieniSegnalazioni\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
-Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
-Pre-condizioni & NESSUNA\\\hline
-Post-condizioni & NESSUNA\\\hline
+Descrizione & Permette ai membri dello staff di ottenere le segnalazioni.\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni.
 			\item Il sistema ricerca le segnalazioni fornisce la lista di segnalazioni all'operatore richiedente.
@@ -987,13 +995,15 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotto\\\hline
 Nome & UC\_ChiudiSegnalazione\\\hline
 Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & permette agli amministratori di ottenere le segnalazioni per un certo utente.\\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Permette ai membri dello staff di chiudere una segnalazione.\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & La segnalazione selezionata è chiusa ed ha un esito\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_30.
+			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_29.
 %			POTREBBE ESSERE UN ALTRO USE CASE
 %			\item L'operatore potra richiedere di visionare un elemento della lista:
 %				\begin{enumerate}
@@ -1001,19 +1011,10 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 %				\item \textbf{\# alt2}: Se è stata segnalata una risorsa sar\'a visionabile la risorsa in questione.
 %				\end{enumerate}
 			\item L'operatore seleziona il prodotto da chiudere fornendo un esito.
-			\item il sistema riceve la segnalazione da chiudere, l'esito e chiude la segnalazione: 
+			\item Il sistema riceve la segnalazione da chiudere, l'esito e chiude la segnalazione: 
 			memorizza in maniera persistente l'esito della segnalazione. 
-			\begin{enumerate}
-			\item memorizza persistentemente l'esito della segnalazione associato al prodotto segnalato
-			\end{enumerate}
-			\item \begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: Se il la chiudura della segnalazione è andata a buon fine, l'utente riceverà un responso positivo
-				\item \textbf{\# alt2}: Se il la chiudura della segnalazione è andata a buon fine, l'utente riceverà un responso negativo
-			\end{enumerate}
 			\end{enumerate}
 			\\\hline
-Pre-condizioni & NESSUNA\\\hline
-Post-condizioni & La segnalazione selezione è chiusa ed ha un esito\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -1031,20 +1032,20 @@ Nome & UC\_RicercaContenuto\\\hline
 Priorità & High \\\hline
 Attori &  Utente \\\hline
 Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  Nessuna\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di ricercare una risorsa;
+			\item L'utente richiede di ricercare un contenuto;
 			\item Il sistema richiede all' utente la stringa di ricerca;
 			\item L'utente fornisce al sistema la stringa;
 			\item Il sistema valida l'input e:
 			\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1:} Se l'input supera la fase di validazione: il sistema effettua una richiesta al database distribuito, richiedendo tutti i prodotti pubblici che contengono la stringa inserita dall'utente nel proprio nome, e tutte le serie tv e album pubblici che contengono la stringa inserita dall'utente nel proprio nome
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i risultati ottenuti all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, la procedura viene annullata e si comunicano gli errori all'utente
-				\end{enumerate}
-			\item \textbf{\# alt2:} Altrimenti: la procedura viene annullata e viene comunicato all'utente che l'input non è valido
+				\item \textbf{\# alt1:} Se l'input supera la fase di validazione: il sistema effettua una richiesta al Database, richiedendo tutti i prodotti pubblici che contengono la stringa inserita dall'utente nel proprio nome, e tutte le serie tv e album pubblici che contengono la stringa inserita dall'utente nel proprio nome
+					\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i risultati ottenuti all'utente
+						\item \textbf{\# alt2:} Se si verificano errori nella richiesta, la procedura viene annullata e si comunicano gli errori all'utente
+					\end{enumerate}
+				\item \textbf{\# alt2:} Altrimenti: la procedura viene annullata e viene comunicato all'utente che l'input non è valido
 			\end{enumerate}
 			
 		\end{enumerate}\\\hline
@@ -1064,26 +1065,26 @@ Priorità & Medium \\\hline
 Attori &  Utente \\\hline
 Descrizione & Cerca contenuti (sia prodotti che playlist) ritenuti popolari\\\hline
 Pre-condizioni & Nessuna\\\hline
-Post-condizioni &  Vengono mostrati video, canzoni, serie tv, album ritenuti popolari (se ne esistono)\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema fa una richiesta al database per ottenere i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni:
+		\item Il sistema fa una richiesta al Database per ottenere i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni:
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i video popolari all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i video popolari all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili video popolari al momento
 				\end{enumerate}
-		\item Il sistema fa una richiesta al database per ottenere i primi 10 prodotti musicali per numero di visualizzazioni ricevute negli ultimi 7 giorni:
+		\item Il sistema fa una richiesta al Database per ottenere i primi 10 prodotti musicali per numero di visualizzazioni ricevute negli ultimi 7 giorni:
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le canzoni popolari all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le canzoni popolari all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili musicali popolari al momento
 				\end{enumerate}
-		\item Il sistema fa una richiesta al database per ottenere le prime 10 serie tv per numero di visualizzazioni (le visualizzazioni di una serie tv sono la somma delle visualizzazioni dei singoli episodi) ricevute negli ultimi 7 giorni:
+		\item Il sistema fa una richiesta al Database per ottenere le prime 10 serie tv per numero di visualizzazioni (le visualizzazioni di una serie tv sono la somma delle visualizzazioni dei singoli episodi) ricevute negli ultimi 7 giorni:
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le serie tv popolari all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le serie tv popolari all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili serie tv popolari al momento
 				\end{enumerate}
-		\item Il sistema fa una richiesta al database per ottenere i primi 10 album per numero di visualizzazioni (le visualizzazioni di un album sono la somma delle visualizzazioni delle singole canzoni) ricevute negli ultimi 7 giorni:
+		\item Il sistema fa una richiesta al Database per ottenere i primi 10 album per numero di visualizzazioni (le visualizzazioni di un album sono la somma delle visualizzazioni delle singole canzoni) ricevute negli ultimi 7 giorni:
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra gli album popolari all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra gli album popolari all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili album popolari al momento
 				\end{enumerate}
 		\end{enumerate}\\\hline
@@ -1106,39 +1107,39 @@ Descrizione & Suggerisce contenuti (sia prodotti che playlist) all'utente sulla 
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema richiede al database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti video riprodotti (o tutti i prodotti video riprodotti se l'utente ha visualizzato meno di 20 prodotti video),:
+		\item Il sistema richiede al Database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti video riprodotti (o tutti i prodotti video riprodotti se l'utente ha visualizzato meno di 20 prodotti video),:
 		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1:} Se il database risponde con successo, e il genere più visualizzato è @genere:
+			\item \textbf{\# alt1:} Se il Database risponde con successo, e il genere più visualizzato è @genere:
 			\begin{enumerate}[label*=\arabic*.]
-			\item Il sistema fa una richiesta al database per ottenere 5 prodotti video (non appartententi a una serie tv) con genere @genere
+			\item Il sistema fa una richiesta al Database per ottenere 5 prodotti video (non appartententi a una serie tv) con genere @genere
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i prodotti video all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i prodotti video all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti video
 				\end{enumerate}
-			\item Il sistema fa una richiesta al database per ottenere 5 serie tv con genere @genere
+			\item Il sistema fa una richiesta al Database per ottenere 5 serie tv con genere @genere
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra le serie tv all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le serie tv all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggerite serie tv
 				\end{enumerate}
 			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), non vengono suggeriti prodotti video all'utente
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), vengono suggeriti solo i prodotti video restituiti dallo UC\_32
 		\end{enumerate}
-		\item Il sistema richiede al database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali),:
+		\item Il sistema richiede al Database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali),:
 		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1:} Se il database risponde con successo, e il genere più visualizzato è @genere:
+			\item \textbf{\# alt1:} Se il Database risponde con successo, e il genere più visualizzato è @genere:
 			\begin{enumerate}[label*=\arabic*.]
-			\item Il sistema fa una richiesta al database per ottenere 5 prodotti musicali con genere @genere
+			\item Il sistema fa una richiesta al Database per ottenere 5 prodotti musicali con genere @genere
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra i prodotti musicali all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i prodotti musicali all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti musicali
 				\end{enumerate}
-			\item Il sistema fa una richiesta al database per ottenere 5 album con genere @genere
+			\item Il sistema fa una richiesta al Database per ottenere 5 album con genere @genere
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il database risponde con successo, il sistema mostra gli album all'utente
+					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra gli album all'utente
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti album
 				\end{enumerate}
 			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), non vengono suggeriti prodotti musicali all'utente
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), vengono suggeriti solo i prodotti musicali restituiti dallo UC\_32
 		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -1153,27 +1154,22 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse \\\hline
+Categoria & Prodotto \\\hline
 Nome & UC\_VisualizzaPubblicità\\\hline
 Priorità & High \\\hline
-Attori &  Staff \\\hline
+Attori & UtenteAutenticato \\\hline
 Descrizione & Riproduce uno spot pubblicitario\\\hline
-Pre-condizioni & L'utente è registrato e autenticato correttamente e inoltre il suo piano di abbonamenti non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
+Pre-condizioni & Il piano di abbonamento associato all'utente non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
 Post-condizioni & Nessuna\\\hline
 %immagino di avere una variabile che mi permette di sapere se mandare 
 %la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
 %ciò che mi è stato chiesto
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema controlla che il piano di abbonamento associato all'utente non lo esenti dalle pubblicità:
-		 \begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se l'utente \'e esentato dalla riproduzione di spot pubblicitari il sistema non riproduce nessuno spot
-			\item \textbf{\# alt2}: Se l'utente non \'e esentato dalle pubblicità allora il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
-			 \begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt2.1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
-				\item \textbf{\# alt2.2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1 e non riproduce nessuno spot.
+		\item Il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
+				\item \textbf{\# alt2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1 e non riproduce nessuno spot.
 			\end{enumerate}
-					\end{enumerate}
-
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1300,8 +1296,8 @@ Flusso &  	\begin{enumerate}
 		\item L'utente chiede al sistema di riprodurre una playlist;
 		\item Il sistema fornisce una lista di tutte le playlist riproducibili;
 		\item L'utente sceglie la playlist e la comunica al sistema;
-		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_43) procede rimuovendolo da questa coda (UC\_42);
-		\item Il sistema per ogni prodotto associata alla playlist scelta dall'utente e lo aggiunge alla coda di riproduzione (UC\_41);
+		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_42) procede rimuovendolo da questa coda (UC\_41);
+		\item Il sistema per ogni prodotto associata alla playlist scelta dall'utente e lo aggiunge alla coda di riproduzione (UC\_40);
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1318,19 +1314,19 @@ Flusso &  	\begin{enumerate}
 ID & UC\_\nextUC\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_AggiungiProdottoAllaCoda\\\hline
-Priorità & Medium \\\hline
+Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
-Post-condizioni & Il prodotto scelta \'e associata alla coda di riproduzione\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Il prodotto scelto \'e associata alla coda di riproduzione\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
     \item L'utente chiede al sistema l'aggiunta di un prodotto alla coda di riproduzione;
     \item Il sistema chiede all'utente quale prodotto da aggiungere;
     \item L'utente fornisce al sistema il prodotto da aggiungere;
-	\item Il sistema verifica che il prodotto scelto \'e riproducibile:
+	\item Il sistema verifica che il prodotto scelto sia riproducibile:
 		\begin{enumerate}[label*=\arabic*.]
 			\item \textbf{\# alt1}: Se il prodotto non \'e riproducibile, il sistema annulla l'operazione e avvisa l'utente del fallimento;
-			\item \textbf{\# alt2}: Se il prodotto \'e riproducibile, il sistema associa il prodotto alla coda di riproduzione;
+			\item \textbf{\# alt2}: Se il prodotto \'e riproducibile, il sistema aggiunge il prodotto alla coda di riproduzione;
 		\end{enumerate}
     \end{enumerate}\\\hline
 \end{tabular}
@@ -1345,16 +1341,16 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 ID & UC\_\nextUC\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_RimuoviProdottoDallaCoda\\\hline
-Priorità & Medium \\\hline
+Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di rimuovere dalla coda di riproduzione una risorsa\\\hline
-Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
-Post-condizioni & La risorsa scelta non \'e pi\'u associata alla coda di riproduzione\\\hline
+Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
+Pre-condizioni & La coda di riproduzione non \'e vuota\\\hline
+Post-condizioni & Il prodotto scelto non \'e pi\'u associata alla coda di riproduzione\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema la rimozione di una risorsa dalla coda di riproduzione;
-    \item Il sistema chiede all'utente l'informazione riguardo la risorsa da rimuovere;
-    \item L'utente fornisce al sistema quale risorsa rimuovere;
-    \item Il sistema dissocia la risorsa dalla coda di riproduzione;
+    \item L'utente chiede al sistema la rimozione di una prodotto dalla coda di riproduzione;
+    \item Il sistema fornisce la lista di prodotti presenti nella coda;
+    \item L'utente sceglie il prodotto da rimuovere e lo comunica al sistema;
+    \item Il sistema rimuove il prodotto dalla coda di riproduzione;
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1368,14 +1364,14 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 ID & UC\_\nextUC\\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_MostraStatoCoda\\\hline
-Priorità & Medium \\\hline
+Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di visualizzare tutte le risorse associate alla cado di riproduzione\\\hline
-Pre-condizioni & L'utente \'e registrato e autenticato correttamente\\\hline
+Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
+Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
     \item L'utente chiede al sistema lo stato della coda di riproduzione;
-    \item Il sistema fornisce la lista di tutte le risorse associate alla coda di riproduzione.
+    \item Il sistema fornisce la lista di tutti i prodotti nella coda di riproduzione.
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1436,6 +1432,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti musicali
 			\item Tutti i prodotti della playlist appartengono all'utente stesso
+			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
 			\end{itemize}
 			 \begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è un album
