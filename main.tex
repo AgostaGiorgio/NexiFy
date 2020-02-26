@@ -1,26 +1,32 @@
 \documentclass{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage{tabularx}
 \graphicspath{ {./images/} }
 \usepackage{imakeidx}
 \makeindex[columns=3, title=Alphabetical Index, intoc]
 
 \usepackage{tabularx}
 \usepackage{paralist}
+\usepackage{enumitem}
+\usepackage{hyperref} %\usepackage[hidelinks]{hyperref} %per togliere bordi rossi
+\usepackage{makecell}
 
 
 \usepackage[official]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro{}}
 
+\newcounter{ucCounter}
+\stepcounter{ucCounter}
+\newcommand{\lastUC}{\theucCounter}
+\newcommand{\nextUC}{\stepcounter{ucCounter}{\theucCounter}}
+
 \author{Agosta, Belli, Emili, Giacchini, Luciani}
 
-
-
 \begin{document}
-
 
 \begin{center}
     \sffamily{\fontsize{50}{48} \selectfont \textcolor{red}{Nexi}\textcolor{green}{Fy}}
@@ -51,9 +57,12 @@
 \input{Contents/VisioneDelSistema.tex}
 \index{Index}
 
-\newpage
-\section{\itshape{Configurazione del Sistema alla Consegna}}
+\subsection{\itshape{Configurazione del Sistema alla Consegna}}
 \input{Contents/ConfigurazioneSistemaConsegna.tex}
+\index{Index}
+
+\subsection{\itshape{Vincoli}}
+\input{Contents/Vincoli.tex}
 \index{Index}
 
 \newpage
@@ -62,18 +71,8 @@
 \index{Index}
 
 \newpage
-\section{\itshape{Vincoli}}
-\input{Contents/Vincoli.tex}
-\index{Index}
-
-\newpage
 \section{\itshape{Contratto}}
 \input{Contents/Contratto.tex}
-\index{Index}
-
-\newpage
-\section{\itshape{Descrizione del Sistema}}
-\input{Contents/DescrizioneSistema.tex}
 \index{Index}
 
 \newpage
@@ -82,8 +81,19 @@
 \index{Index}
 
 \newpage
-\section{\itshape{Revisioni}}
-\input{Contents/Revisioni.tex}
+\section{\itshape{Analisi dei Requisiti}}
+\input{Contents/AnalisiRequisiti.tex}
+\index{Index}
+
+\newpage
+\section{\itshape{Gestione dei Rischi}}
+\input{Contents/GestioneDeiRischi.tex}
+\index{Index}
+
+
+\newpage
+\section{\itshape{Modello degli Use-Case}}
+\input{Contents/ModelloUC.tex}
 \index{Index}
 
 
