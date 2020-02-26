@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 00:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 20:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,74 +592,68 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 124--142
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 143--158
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 143--163
  [][] 
  []
 
 [14]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 159--179
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 164--179
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 180--195
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 180--196
  [][] 
  []
 
 [15]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 196--209
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 197--212
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 210--225
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 213--228
  [][] 
  []
 
 [16]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 226--241
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 229--244
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 242--257
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 245--258
  [][] 
  []
 
 [17]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 258--271
- [][] 
- []
-
 <./images/Gantt_NexiFy.png, id=243, 1389.19pt x 638.385pt>
 File: ./images/Gantt_NexiFy.png Graphic file (type png)
 <use ./images/Gantt_NexiFy.png>
-Package pdftex.def Info: ./images/Gantt_NexiFy.png  used on input line 278.
+Package pdftex.def Info: ./images/Gantt_NexiFy.png  used on input line 265.
 (pdftex.def)             Requested size: 455.24408pt x 209.19681pt.
 
-Overfull \hbox (53.33858pt too wide) in paragraph at lines 278--279
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 265--266
  | [] 
  []
 
-[18]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 289.
+(Font)              <8> on input line 276.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 289.
+(Font)              <6> on input line 276.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 282--82
+Underfull \hbox (badness 10000) in paragraph at lines 269--82
 
  []
 
 
-Overfull \hbox (17.95918pt too wide) in paragraph at lines 282--82
+Overfull \hbox (17.95918pt too wide) in paragraph at lines 269--82
 []
  []
 
-[19
+[18 <./images/Gantt_NexiFy.png>] [19
 \indexentry{Index|hyperpage}{19}
- <./images/Gantt_NexiFy.png>] (./Contents/AnalisiRequisiti.tex [20] [21]
-[22]
+] (./Contents/AnalisiRequisiti.tex [20] [21] [22]
 Overfull \hbox (20.5339pt too wide) in paragraph at lines 198--199
 []\OT1/lmr/m/n/10 Descrizione: per-me-tte la reg-is-trazione di un nuovo utente
  (richiedendo
@@ -1231,10 +1225,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 7597 strings out of 494428
- 108785 string characters out of 6174304
- 418014 words of memory out of 5000000
- 10589 multiletter control sequences out of 15000+600000
+ 7596 strings out of 494428
+ 108767 string characters out of 6174304
+ 417973 words of memory out of 5000000
+ 10588 multiletter control sequences out of 15000+600000
  69833 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  30i,14n,37p,895b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1247,7 +1241,7 @@ ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (92 pages, 914058 bytes).
+Output written on main.pdf (92 pages, 913810 bytes).
 PDF statistics:
  1187 PDF objects out of 1200 (max. 8388607)
  1065 compressed objects within 11 object streams
