@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 22:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 23:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -334,12 +334,30 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \c@nlinenum=\count111
 \TeXr@lab=\toks23
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen127
+\captionmargin@=\dimen128
+\captionwidth=\dimen129
+\caption@tempdima=\dimen130
+\caption@indent=\dimen131
+\caption@parindent=\dimen132
+\caption@hangindent=\dimen133
+)
+\c@caption@flags=\count112
+\c@ContinuedFloat=\count113
+Package caption Info: hyperref package is loaded.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box56
 )
    defining Unicode char U+20AC (decimal 8364)
-\c@ucCounter=\count112
+\c@ucCounter=\count114
  (./main.aux
 
 LaTeX Warning: Label `table_attore:1.3.1' multiply defined.
@@ -376,16 +394,16 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen127
+\scratchcounter=\count115
+\scratchdimen=\dimen134
 \scratchbox=\box57
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen128
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen135
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -413,7 +431,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count119
+\c@section@level=\count121
 )
 LaTeX Info: Redefining \ref on input line 29.
 LaTeX Info: Redefining \pageref on input line 29.
@@ -423,12 +441,14 @@ LaTeX Info: Redefining \nameref on input line 29.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+lmss on input line 32.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<images/worldCDN.png, id=124, 325.215pt x 153.2124pt>
+<images/worldCDN.png, id=128, 325.215pt x 153.2124pt>
 File: images/worldCDN.png Graphic file (type png)
 <use images/worldCDN.png>
 Package pdftex.def Info: images/worldCDN.png  used on input line 42.
@@ -551,7 +571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--27
 [9]) [10
 \indexentry{Index|hyperpage}{10}
 ] (./Contents/PianificazioneProgetto.tex
-<images/RUPplan.png, id=211, 857.2025pt x 515.9275pt>
+<images/RUPplan.png, id=216, 857.2025pt x 515.9275pt>
 File: images/RUPplan.png Graphic file (type png)
 <use images/RUPplan.png>
 Package pdftex.def Info: images/RUPplan.png  used on input line 27.
@@ -627,7 +647,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 243--256
  []
 
 [17]
-<./images/Gantt_NexiFy.jpg, id=243, 1958.31625pt x 675.52374pt>
+<./images/Gantt_NexiFy.jpg, id=248, 1958.31625pt x 675.52374pt>
 File: ./images/Gantt_NexiFy.jpg Graphic file (type jpg)
 <use ./images/Gantt_NexiFy.jpg>
 Package pdftex.def Info: ./images/Gantt_NexiFy.jpg  used on input line 263.
@@ -1201,53 +1221,72 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 1415--1442
 [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61]
 [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
 [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
-Underfull \hbox (badness 10000) in paragraph at lines 1448--1456
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1458
 
  []
 
 
-Overfull \hbox (41.03304pt too wide) in paragraph at lines 1448--1456
+Overfull \hbox (41.03304pt too wide) in paragraph at lines 1448--1458
 [] 
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [92
+) [92
 \indexentry{Index|hyperpage}{92}
+] (./Contents/StimaDeiCosti.tex
+Overfull \hbox (32.12355pt too wide) in paragraph at lines 15--22
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 30.
+(/usr/share/texmf/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 30.
+
+Overfull \hbox (32.12355pt too wide) in paragraph at lines 27--34
+ [][] 
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+ [93
+\indexentry{Index|hyperpage}{93}
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C9880413B07331108C81E2740C19B900;1979.
+(rerunfilecheck)             Checksum: C3BE7E3FA38D99FF0A63730C61FFB27F;2030.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 7595 strings out of 494428
- 108755 string characters out of 6174304
- 417888 words of memory out of 5000000
- 10588 multiletter control sequences out of 15000+600000
- 69833 words of font info for 47 fonts, out of 8000000 for 9000
+ 8758 strings out of 494428
+ 129606 string characters out of 6174304
+ 435796 words of memory out of 5000000
+ 11691 multiletter control sequences out of 15000+600000
+ 74051 words of font info for 48 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 30i,14n,37p,895b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/
-feymr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx
-i10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (92 pages, 963841 bytes).
+ 53i,14n,92p,895b,816s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/s
+hare/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (93 pages, 972269 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 1063 compressed objects within 11 object streams
- 549 named destinations out of 1000 (max. 500000)
- 256 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1254 PDF objects out of 1440 (max. 8388607)
+ 1130 compressed objects within 12 object streams
+ 597 named destinations out of 1000 (max. 500000)
+ 264 words of extra memory for PDF output out of 10000 (max. 10000000)
 

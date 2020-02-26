@@ -1,0 +1,35 @@
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\captionsetup[table]{name=Tabella}
+
+Presentiamo una stima dei costi, che utilizza la tecnica dei \emph{Use Case Point}, necessaria alla realizzazione del progetto Nexify. Nel seguito effettueremo, nell'ordine:
+\begin{itemize}
+\item una stima della complessità degli attori;
+\item una stima della complessità dei casi d'uso;
+\item calcoleremo i fattori di aggiustamento.
+\end{itemize}
+
+\noindent \\ Vengono inoltre illustrate le tabelle utilizzate ai fini del calcolo.
+
+\begin{table}[htb]
+    \centering
+\begin{tabular}{ |P{3.5cm}|P{5cm}|P{3.5cm}|  }
+\hline
+\textbf{Actor Type} & \textbf{Type of Actor} & \textbf{Weightening factor} \\\hline
+Simple & External system that must interact with the system using a well-defined API	 & 1\\\hline
+Average & External system that must interact with the system using standard communication protocols (e.g. TCP/IP, FTP, HTTP, database) & 2\\\hline
+Complex & Human actor using a GUI application interface	& 3 \\\hline
+\end{tabular}
+\caption{Unadjusted Actor Weight (UAW)}
+\end{table}
+
+\begin{table}[htb]
+    \centering
+\begin{tabular}{ |P{3.5cm}|P{5cm}|P{3.5cm}|  }
+\hline
+\textbf{Use Case Type} & \textbf{No of Transactions} & \textbf{Weighting Factor} \\\hline
+Simple & \textless =3 & 5\\\hline
+Average & 4 to 7 & 10\\\hline
+Complex & \textgreater = 8 & 15\\\hline
+\end{tabular}
+\caption{Unadjusted Use Case Weight (UUCW)}
+\end{table}
