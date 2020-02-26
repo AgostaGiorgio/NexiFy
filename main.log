@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 20:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  26 FEB 2020 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,75 +554,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--27
 <images/RUPplan.png, id=211, 857.2025pt x 515.9275pt>
 File: images/RUPplan.png Graphic file (type png)
 <use images/RUPplan.png>
-Package pdftex.def Info: images/RUPplan.png  used on input line 29.
+Package pdftex.def Info: images/RUPplan.png  used on input line 27.
 (pdftex.def)             Requested size: 341.43306pt x 205.50137pt.
 
-Overfull \hbox (11.43306pt too wide) in paragraph at lines 29--30
+Overfull \hbox (11.43306pt too wide) in paragraph at lines 27--28
 [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 35--52
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 33--50
  [] 
  []
 
 [11 <./images/RUPplan.png>]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 53--68
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 51--66
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 69--90
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 67--88
  [][] 
  []
 
 [12]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 91--106
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 89--104
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 107--123
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 105--121
  [][] 
  []
 
 [13]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 124--142
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 122--140
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 143--163
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 141--161
  [][] 
  []
 
 [14]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 164--179
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 162--177
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 180--196
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 178--194
  [][] 
  []
 
 [15]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 197--212
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 195--210
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 213--228
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 211--226
  [][] 
  []
 
 [16]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 229--244
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 227--242
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 245--258
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 243--256
  [][] 
  []
 
@@ -630,28 +630,31 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 245--258
 <./images/Gantt_NexiFy.png, id=243, 1389.19pt x 638.385pt>
 File: ./images/Gantt_NexiFy.png Graphic file (type png)
 <use ./images/Gantt_NexiFy.png>
-Package pdftex.def Info: ./images/Gantt_NexiFy.png  used on input line 265.
+Package pdftex.def Info: ./images/Gantt_NexiFy.png  used on input line 263.
 (pdftex.def)             Requested size: 455.24408pt x 209.19681pt.
 
-Overfull \hbox (53.33858pt too wide) in paragraph at lines 265--266
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 263--264
  | [] 
  []
 
+[18 <./images/Gantt_NexiFy.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 276.
+(Font)              <8> on input line 275.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 276.
+(Font)              <6> on input line 275.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 269--82
+Underfull \hbox (badness 10000) in paragraph at lines 268--82
 
  []
 
 
-Overfull \hbox (17.95918pt too wide) in paragraph at lines 269--82
+Overfull \hbox (17.95918pt too wide) in paragraph at lines 268--82
 []
  []
 
-[18 <./images/Gantt_NexiFy.png>] [19
+[19
+
+
 \indexentry{Index|hyperpage}{19}
 ] (./Contents/AnalisiRequisiti.tex [20] [21] [22]
 Overfull \hbox (20.5339pt too wide) in paragraph at lines 198--199
@@ -1065,145 +1068,145 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 669--702
 LaTeX Warning: Float too large for page by 29.88861pt on input line 702.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 711--739
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 711--737
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 744--770
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 742--768
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 775--804
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 773--802
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 809--832
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 807--830
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 840--859
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 838--857
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 864--891
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 862--889
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 896--913
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 894--911
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 918--935
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 916--933
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 943--968
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 941--966
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 973--990
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 971--988
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 995--1020
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 993--1018
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1027--1054
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1025--1052
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1059--1093
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1057--1091
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 99.88861pt on input line 1093.
+LaTeX Warning: Float too large for page by 99.88861pt on input line 1091.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1099--1147
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1097--1145
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 132.11896pt on input line 1147.
+LaTeX Warning: Float too large for page by 132.11896pt on input line 1145.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1154--1176
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1152--1174
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1183--1205
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1181--1203
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1210--1230
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1208--1228
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1235--1255
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1233--1253
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1260--1280
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1258--1278
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1285--1304
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1283--1302
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1312--1334
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1310--1332
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1339--1357
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1337--1355
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1362--1378
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1360--1376
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1385--1412
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1383--1410
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1417--1444
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1415--1442
  [][] 
  []
 
 [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61]
 [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
 [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
-Underfull \hbox (badness 10000) in paragraph at lines 1450--1458
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1456
 
  []
 
 
-Overfull \hbox (41.03304pt too wide) in paragraph at lines 1450--1458
+Overfull \hbox (41.03304pt too wide) in paragraph at lines 1448--1456
 [] 
  []
 
@@ -1225,9 +1228,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 7596 strings out of 494428
- 108767 string characters out of 6174304
- 417973 words of memory out of 5000000
+ 7594 strings out of 494428
+ 108751 string characters out of 6174304
+ 417883 words of memory out of 5000000
  10588 multiletter control sequences out of 15000+600000
  69833 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
@@ -1241,10 +1244,10 @@ ts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (92 pages, 913810 bytes).
+Output written on main.pdf (92 pages, 913761 bytes).
 PDF statistics:
- 1187 PDF objects out of 1200 (max. 8388607)
- 1065 compressed objects within 11 object streams
- 551 named destinations out of 1000 (max. 500000)
+ 1185 PDF objects out of 1200 (max. 8388607)
+ 1063 compressed objects within 11 object streams
+ 549 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
