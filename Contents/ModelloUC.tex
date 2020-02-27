@@ -139,7 +139,7 @@ Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema usato per la memorizzazione di informazioni. \\\hline
 \end{tabular}
-\label{table_attore:1}\newline
+\label{table_attore:3}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -150,7 +150,19 @@ Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di distribuzione dei contenuti. \\\hline
 \end{tabular}
-\label{table_attore:1}\newline
+\label{table_attore:4}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_5 \\\hline
+Nome & Time\\\hline
+Genitore & - \\\hline
+Livello &  Primario \\\hline
+Tipologia & Sistema \\\hline
+Descrizione &  Rappresenta la componente responsabile dello scheduling delle operazioni \\\hline
+\end{tabular}
+\label{table_attore:5}\newline
+
 
 \end{center}
 
@@ -422,26 +434,28 @@ ID & UC\_\nextUC \\\hline
 Categoria & Management\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & High \\\hline
-Attori &  ManagerPagamenti \\\hline
-Descrizione & Permette di effettuare un pagamento verso un utente (dal giorno dell'ultimo pagamento al momento in cui viene invocato l'use-case).\\\hline
-Pre-condizioni &  L'utente indicato ha il servizio che permette di ricevere pagamenti\\\hline
-Post-condizioni &  L'utente indicato viene pagato\\\hline
+Attori &  Time \\\hline
+Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio di pubblicare prodotti (dal giorno dell'ultimo pagamento al momento in cui viene invocato l'use-case).\\\hline
+Pre-condizioni &  Nessuno\\\hline
+Post-condizioni &  Nessuno\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}	
-		\item L'amministratore richiede di effettuare un pagamento verso un utente
-		\item Il sistema mostra la lista degli utenti che possono ricevere un pagamento
+		\item Il sistema, alla fine di ogni mese, recupera la lista degli utenti che possono ricevere un pagamento
 			\begin{enumerate}[  ]
 			\item Il sistema recupera tutti gli utenti
 			\item (UC\_9) per ogni utente il sistema recupera i suoi piani di abbonamento e da questi (UC\_8) recupera i servizi dell'utente
 			\item Vengono restituiti gli utenti che hanno il servizio di pubblicare prodotti e il cui account è attivo
 			\end{enumerate}
-		\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
-		\item (UC\_11) Il sistema calcola l'importo da pagare all'utente
-		\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
-			\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
-			\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene comunicato all'amministratore che si è verificato un errore, e viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
-			\end{enumerate}
+		\item Per ogni utente individuato:
+		\begin{enumerate}[label*=\arabic*.]
+			\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
+			\item (UC\_11) Il sistema calcola l'importo da pagare all'utente
+			\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
+				\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
+				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+				\end{enumerate}
+		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -456,13 +470,15 @@ ID & UC\_\nextUC \\\hline
 Categoria & Management\\\hline
 Nome & UC\_CalcolaImportoDaPagare\\\hline
 Priorità & High \\\hline
-Attori &  ManagerPagamenti \\\hline
-Descrizione & Calcola l'importo da pagare a un utente dall'ultima volta che ha ricevuto un pagamento fino al momento in cui viene invocato l'use-case\\\hline
-Pre-condizioni &  L'utente indicato ha il servizio che permettte di pubblicare prodotti e l'account dell'utente è attivo\\\hline
-Post-condizioni &  L'utente indicato viene pagato\\\hline
+Attori &  Time \\\hline
+Descrizione & Calcola l'importo da pagare a un utente per il prossimo pagamento\\\hline
+Input & L'utente per cui si vuole calcolare l'importo\\\hline
+Output & L'importo da pagare all'utente\\\hline
+Pre-condizioni &  L'utente ha il servizio che permette di pubblicare prodotti e l'account dell'utente è attivo\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}
-		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo che va da quell'istante fino all'istante corrente	
+		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo:\newline $[max(adesso - 1mese, istante\ ultimo\ pagamento), adesso]$ (dove adesso indica l'istante corrente, quando viene eseguito l'use-case)
 		\item Il sistema effettua una richiesta al Database per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
 		\begin{enumerate}[  ]
 			\item \textbf{\# alt1}: Se la richiesta al Database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
