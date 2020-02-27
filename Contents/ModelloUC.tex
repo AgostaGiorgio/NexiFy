@@ -903,7 +903,7 @@ Pre-condizioni & L'utente sta riproducento un prodotto.\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la pausa di riproduzione al player
-			\item Il player ferma la riproduzione del prodotto ma continua a ricevere pacchetti dalla CDN 
+			\item Il player ferma la riproduzione del prodotto, ma continua a ricevere pacchetti dalla CDN (fino ad un'eventuale saturazione del buffer)
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -926,6 +926,7 @@ Post-condizioni & La riproduzione continua dall'istante selezionato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente seleziona lo spostamento di riproduzione in un certo punto compreso tra 0 e lunghezza del prodotto
 			\item Il client comunica al nodo della CDN che sta fornendo il prodotto il nuovo istante di tempo dal quale proseguire
+			\item Il player riprende la riproduzione dal punto selezionato (eventualmente usando i pacchetti che aveva già ricevuto dalla CDN, oppure aspettando i nuovi pacchetti)
 		\end{enumerate}
 			\\\hline
 \end{tabular}
