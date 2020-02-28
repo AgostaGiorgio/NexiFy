@@ -16,8 +16,7 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 	\item \textbf{Genitore}: indica l'identificatore del primo antenato nella gerarchia degli attori.
 	\item \textbf{Livello}: indica il grado di rilevanza dell'attore all'interno dell'intero sistema. Può assumere il valore di {Primario, Secondario, Di Supporto}.
 	\item \textbf{Tipologia}: classifica l'attore in {Umano, Sistema}
-	\item \textbf{Descrizione}: descrive brevemente cosa rappresenta all'interno del sistema l'attore.\\
-
+	\item \textbf{Descrizione}: descrive brevemente cosa rappresenta all'interno del sistema l'attore.\
 \end{itemize}
 
 
@@ -166,6 +165,30 @@ Descrizione &  Rappresenta la componente responsabile dello scheduling delle ope
 
 \end{center}
 
+%==== gestione errori di default ====
+\subsection{Gestione Errori}
+Specifichiamo qui le politiche standard di gestione degli errori dovuti a fallimenti di sistemi esterni. Se negli use case non viene specificato esplicitamente come gestire un fallimento di questi sistemi, si assume che entrino in atto queste politiche.
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & ERR\_1\\\hline
+Nome & ERR\_FallimentoDatabase\\\hline
+Attore & Database\\\hline
+Descrizione & una richiesta al database produce un errore, e non viene quindi restituito il risultato richiesto\\\hline
+Gestione &  La procedura che ha effettuato la richiesta al database viene abortita, riportando un messaggio di errore \\\hline
+\end{tabular}
+\label{table_errore:1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & ERR\_2\\\hline
+Nome & ERR\_FallimentoCDN\\\hline
+Attore & CDN\\\hline
+Descrizione & una richiesta alla CDN produce un errore\\\hline
+Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita, riportando un messaggio di errore \\\hline
+\end{tabular}
+\label{table_errore:2}\newline
+
 % ================ USE CASE CHE VANNO BENE ===========
 \subsection{Specifica Use Case}
 
@@ -188,7 +211,7 @@ Post-condizioni &  Esiste un piano di abbonamento con il nome fornito dal manage
 Flusso &  	\begin{enumerate}
 			\item Il manager degli abbonamenti richiede la creazione di un nuovo piano di abbonamento;
 			\item Il sistema richiede al manager degli abbonamenti il nome, il prezzo e la durata del nuovo piano di abbonamento;
-			\item Ilmanager degli abbonamenti fornisce i dati;
+			\item Il manager degli abbonamenti fornisce i dati;
 			\item Il sistema valida gli input, e:
 				\begin{enumerate}[  ]
 				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione:
@@ -242,10 +265,12 @@ Nome & UC\_RecuperaServizi\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
+Input &  - \\\hline
+Output &  Tutti i piani di abbonamento esistenti\\\hline
 Pre-condizioni &  Nessuna.\\\hline
-Post-condizioni &  Tutti i servizi esistenti vengono restituiti\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i servizi, e:
+			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi, e:
 				\begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1:} Se il database risponde con successo: il risultato della richiesta viene restituito
 				\item \textbf{\# alt2:} Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
