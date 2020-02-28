@@ -166,28 +166,28 @@ Descrizione &  Rappresenta la componente responsabile dello scheduling delle ope
 \end{center}
 
 %==== gestione errori di default ====
-\subsection{Gestione Errori}
-Specifichiamo qui le politiche standard di gestione degli errori dovuti a fallimenti di sistemi esterni. Se negli use case non viene specificato esplicitamente come gestire un fallimento di questi sistemi, si assume che entrino in atto queste politiche.
+\subsection{Gestione Fallimenti}
+Specifichiamo qui le politiche standard di gestione dei fallimenti di sistemi esterni. Se negli use case non viene specificato esplicitamente come gestire un fallimento di questi sistemi, si assume che entrino in atto queste politiche.
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & ERR\_1\\\hline
-Nome & ERR\_FallimentoDatabase\\\hline
+ID & F\_1\\\hline
+Nome & F\_FallimentoDatabase\\\hline
 Attore & Database\\\hline
 Descrizione & una richiesta al database produce un errore, e non viene quindi restituito il risultato richiesto\\\hline
 Gestione &  La procedura che ha effettuato la richiesta al database viene abortita, riportando un messaggio di errore \\\hline
 \end{tabular}
-\label{table_errore:1}\newline
+\label{table_fail:1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & ERR\_2\\\hline
-Nome & ERR\_FallimentoCDN\\\hline
+ID & F\_2\\\hline
+Nome & F\_FallimentoCDN\\\hline
 Attore & CDN\\\hline
 Descrizione & una richiesta alla CDN produce un errore\\\hline
 Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita, riportando un messaggio di errore \\\hline
 \end{tabular}
-\label{table_errore:2}\newline
+\label{table_fail:2}\newline
 
 % ================ USE CASE CHE VANNO BENE ===========
 \subsection{Specifica Use Case}
