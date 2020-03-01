@@ -28,9 +28,11 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {High, Medium, Low}. 
 	\item \textbf{Attori}: Lista di identificativi degli attori coinvolti nel caso d'uso.
 	\item \textbf{Descrizione}: Breve descrizione della funzione svolta dal caso d'uso.
-	\item \textbf{Flusso}: Passi logici eseguiti dal caso d'uso per ottenere il risultato desiderato.
+	\item \textbf{Input}: Lista di cosa riceve in input il caso d'uso (se non indicato, si assume che non riceve niente in input)
+	\item \textbf{Output}: Lista di cosa restituisce il caso d'uso (se non è indicato, si assume che non restituisce niente)
 	\item \textbf{Pre-condizioni}: Condizioni che devono essere verificate prima che il caso d'uso inizi, altrimenti non potrà essere svolto.
 	\item \textbf{Post-condizioni}: Condizioni che devono essere verificate subito dopo l'esecuzione del caso d'uso.
+	\item \textbf{Flusso}: Passi logici eseguiti dal caso d'uso per ottenere il risultato desiderato.
 	%\item \textbf{Flusso Alternativo}: 
 
 \end{itemize}
@@ -206,7 +208,7 @@ Nome & UC\_CreaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Crea un nuovo piano di abbonamento senza nessun servizio associato.\\\hline
-Pre-condizioni &  Nessuna\\\hline
+Pre-condizioni &  \'E possibile creare un nuovo piano di abbonamento\\\hline
 Post-condizioni &  Esiste un piano di abbonamento con il nome fornito dal manager degli abbonamenti\\\hline
 Flusso &  	\begin{enumerate}
 			\item Il manager degli abbonamenti richiede la creazione di un nuovo piano di abbonamento;
@@ -241,14 +243,13 @@ Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hline
+Input &  - \\\hline
+Output &  Tutti i piani di abbonamento esistenti\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni &  Tutti i piani di abbonamento esistenti vengono restituiti\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i piani di abbonamento, e:
-				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovati
-				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i piani di abbonamento
+			\item viene restituita la lista dei piani di abbonamento trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -266,15 +267,12 @@ Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
 Input &  - \\\hline
-Output &  Tutti i piani di abbonamento esistenti\\\hline
+Output &  Tutti i servizi esistenti\\\hline
 Pre-condizioni &  Nessuna.\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi, e:
-				\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1:} Se il database risponde con successo: il risultato della richiesta viene restituito
-				\item \textbf{\# alt2:} Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi
+			\item viene restituita la lista dei servizi trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -291,17 +289,10 @@ Nome & UC\_DisattivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende non più sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Nessuna \\\hline
+Pre-condizioni &  Il manager ha indicato la disattivazione di uno specifico piano di abbonamento\\\hline
 Post-condizioni &  Il piano di abbonamento specificato non è più sottoscrivibile\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di invalidare un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e sottoscrivibili
-			\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-			\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili
-			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento tra quelli della lista
-		\item Il piano di abbonamento scelto viene reso non sottoscrivibile
+		\item Il sistema richiede al Database di salvare che il piano di abbonamento specificato non è più sottoscrivibile\newline
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -318,17 +309,10 @@ Nome & UC\_AttivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Nessuna \\\hline
+Pre-condizioni &  Il manager ha indicato l'attivazione di uno specifico piano di abbonamento\\\hline
 Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di rendere sottoscrivibile un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e non sottoscrivibili
-			\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-			\item vengono forniti nella lista solo i piani di abbonamento non sottoscrivibili
-			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento tra quelli della lista
-		\item Il piano di abbonamento scelto viene reso sottoscrivibile
+		\item Il sistema richiede al Database di salvare che il piano di abbonamento specificato è sottoscrivibile\newline
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -346,23 +330,17 @@ Nome & UC\_AggiungiServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Permette di aggiungere un servizio all'insieme dei servizi disponibili in un piano di abbonamento.\\\hline
-Pre-condizioni & Nessuna \\\hline
-Post-condizioni &  Il servizio scelto viene aggiunto al piano di abbonamento scelto \\\hline
+Pre-condizioni & Il manager ha indicato uno specifico piano di abbonamento al quale vuole aggiungere un servizio\\\hline
+Post-condizioni & Un nuovo servizio viene aggiunto al piano di abbonamento indicato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di estendere i servizi offerti da un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
-		\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-		\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento
-		\item Il sistema mostra la lista dei servizi che possono essere aggiunti		
+		\item Il sistema mostra la lista dei servizi che possono essere aggiunti al piano di abbonamento indicato		
 			\begin{enumerate}[label*=\arabic*.]
 			\item (UC\_3) Il sistema recupera tutti i servizi disponibili
 			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\item La lista dei servizi sarà la differenza tra il primo e il secondo insieme calcolati
 			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un servizio dalla lista
-		\item Il sistema aggiunge il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
+		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da aggiungere al piano di abbonamento
+		\item Il sistema richiede al Database di aggiungere il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -379,21 +357,15 @@ Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Permette la rimozione di uno dei servizi forniti da un piano abbonamento.\\\hline
-Pre-condizioni &  Nessuna \\\hline
+Pre-condizioni &  Il manager ha indicato uno specifico piano di abbonamento al quale vuole rimuovere un servizio \\\hline
 Post-condizioni &  Il servizio scelto non \'e pi\'u associato al piano di abbonamento indicato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di rimuovere un servizio offerto da un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
-		\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-		\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento
-		\item Il sistema mostra la lista dei servizi che possono essere rimossi		
+		\item Il sistema mostra la lista dei servizi che possono essere rimossi dal piano di abbonamento indicato
 			\begin{enumerate}[label*=\arabic*.]
 			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un servizio dalla lista
-		\item Il sistema rimuove il servizio scelto dalla lista dei servizi del piano di abbonamento indicato
+		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da rimuovere
+		\item Il sistema richiede al Database di rimuovere il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -410,14 +382,13 @@ Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette, dato un piano di abbonamento, di reperire tutti i servizi associati ad esso.\\\hline
+Input &  Un piano di abbonamento \\\hline
+Output &  I servizi associati al piano di abbonamento fornito\\\hline
 Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  I servizi associati al piano di abbonamento vengono restituiti \\\hline
+Post-condizioni &  Nessuna \\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i servizi associati al piano di abbonamento indicato, e:
-				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei servizi trovati
-				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi associati al piano di abbonamento indicato
+			\item Viene restituita la lista dei servizi trovata
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -434,14 +405,13 @@ Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista dei piani di abbonamento sottoscritti da un utente.\\\hline
-Pre-condizioni &  Nessuna.\\\hline
-Post-condizioni &  Viene restituita la lista dei piani di abbonamento sottoscritti dal'utente indicato\\\hline
+Input &  Un utente \\\hline
+Output &  La lista dei piani di abbonamento sottoscritti dall'utente\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}	
-		\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato, e:
-			\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovata
-			\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-			\end{enumerate}
+		\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato
+		\item Viene restituita la lista dei piani di abbonamento trovata
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -460,7 +430,7 @@ Categoria & Management\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & High \\\hline
 Attori &  Time \\\hline
-Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio di pubblicare prodotti (dal giorno dell'ultimo pagamento al momento in cui viene invocato l'use-case).\\\hline
+Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio di pubblicare prodotti\\\hline
 Pre-condizioni &  Nessuno\\\hline
 Post-condizioni &  Nessuno\\\hline
 Flusso &  	
@@ -475,11 +445,14 @@ Flusso &
 		\begin{enumerate}[label*=\arabic*.]
 			\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
 			\item (UC\_11) Il sistema calcola l'importo da pagare all'utente
-			\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se UC\_11 non produce errori, allora il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
 				\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
-				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+					\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
+					\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
 				\end{enumerate}
+				\item \textbf{\# alt2}: Se UC\_11 produce errori, viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+			\end{enumerate}
 		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -505,10 +478,7 @@ Flusso &
 		\vspace{-5mm} \begin{enumerate}
 		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo:\newline $[max(adesso - 1mese, istante\ ultimo\ pagamento), adesso]$ (dove adesso indica l'istante corrente, quando viene eseguito l'use-case)
 		\item Il sistema effettua una richiesta al Database per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
-		\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se la richiesta al Database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
-			\item \textbf{\# alt2}: Se la richiesta al Database ha esito negativo: la procedura viene abortita
-		\end{enumerate}
+		\item il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -525,18 +495,11 @@ Nome & UC\_SospendiAccount\\\hline
 Priorità & High \\\hline
 Attori &  ManagerSegnalazioni \\\hline
 Descrizione & Sospende l'account di un utente\\\hline
-Pre-condizioni &  Nessuna\\\hline
+Pre-condizioni &  Il manager ha indicato un utente che vuole sospendere\\\hline
 Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}
-		\item Il manager delle segnalazioni richiede di sospendere l'account di un utente
-		\item Il sistema mostra la lista degli utenti che hanno un account attivo
-			\begin{enumerate}[  ]
-			\item Il sistema recupera tutti gli utenti
-			\item Vengono mostrati nella lista gli utenti con account attivo
-			\end{enumerate}	
-		\item Il manager delle segnalazioni sceglie un utente da sospendere
-		\item L'account dell'utente viene sospeso
+		\item Il sistema richiede al Database di memorizzare che l'account dell'utente specificato è sospeso\newline
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
