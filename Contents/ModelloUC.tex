@@ -847,13 +847,13 @@ Nome & UC\_RiproduciVideo\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di riprodurre un prodotto video.\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la riproduzione video.\\\hline
+Pre-condizioni & L'utente ha il servizio che permette la riproduzione video e ha fornito uno specifico prodotto video che intende riprodurre\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente seleziona, a seguito di una ricerca, il prodotto da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item Il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire il prodotto 
+			\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
 			\item Il client contatta il nodo e stabiliscono una connessione
 			\item Inizia lo stream del prodotto
+			\item I pacchetti ricevuti dalla CDN vengono riprodotti dal player
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -871,21 +871,18 @@ Nome & UC\_RiproduciMusica\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la riproduzione video.\\\hline
+Pre-condizioni & L'utente ha il servizio che permette la riproduzione di musica e  ha fornito uno specifico prodotto musicale che intende riprodurre\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente selezione, a seguito di una ricerca, il prodotto da riprodurre (la lista dei prodotti riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item Il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire il prodotto 
+			\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
 			\item Il client contatta il nodo e stabiliscono una connessione
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se il file ha associato un file di lyrics, verr\'a riprodotto insieme al file audio;
-				\item \textbf{\# alt2}: Altrimenti non sarà possibile visualizzare il testo del brano:
-					\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1}: Se il file ha associato un video musicale, verr\'a ripredotta insieme al file video
-						\item \textbf{\# alt2}: Altrimenti verr\'a riprodotta solo la traccia audio
-					\end{enumerate}
+				\item \textbf{\# alt1}: Se il prodotto ha associato un file di lyrics: verr\'a riprodotto il video lyrics insieme al file audio;
+				\item \textbf{\# alt2}: Altrimenti, se il prodotto non ha associato un file lyrics, ma ha associato un file video musicale: verr\'a riprodotto il video musicale insieme al file audio
+				\item \textbf{\# alt3}: Altrimenti, se il prodotto non ha assocaito nè un file lyrics nè un file video musicale: verr\'a riprodotta solo la traccia audio
 			\end{enumerate}
-			\item Inizia lo stream del prodotto
+			\item Inizia lo stream del file audio e dell'eventuale file video
+			\item I pacchetti ricevuti dalla CDN vengono riprodotti dal player
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -1375,6 +1372,38 @@ Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
     \item L'utente chiede al sistema lo stato della coda di riproduzione;
     \item Il sistema fornisce la lista di tutti i prodotti nella coda di riproduzione.
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotto \\\hline
+Nome & UC\_RiproduciCoda\\\hline
+Priorità & High \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Riproduce la coda di riproduzione\\\hline
+Pre-condizioni & La coda non è vuota\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+	\item L'utente richiede la riproduzione della coda
+ 	\item Il sistema estrae il primo prodotto dalla coda di riproduzione
+	\item Il sistema rimuove il primo prodotto dalla coda di riproduzione
+	\item Il sistema controlla il tipo del prodotto estratto:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il prodotto è di tipo video: viene riprodotto il video (UC\_24)
+			\item \textbf{\# alt2}: Se il prodotto è di tipo musicale: viene riprodotto il prodotto musicale (UC\_25)
+		\end{enumerate}
+	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se la coda di riproduzione è vuota, la riproduzione termina
+			\item \textbf{\# alt2}: Se la coda di riproduzione non è vuota, si torna al punto 2.
+		\end{enumerate}
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
