@@ -518,16 +518,16 @@ Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
-Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
-Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente.\\\hline
+Descrizione & Permette a un utente non autenticato di registrarsi\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Viene creato un nuovo account\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
 			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password;
 			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
-			\item Il sistema verifica la correttezza dei dati:
+			\item Il sistema verifica la validità dei dati:
 			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se il sistema accetta i dati, l'utente viene registrato sulla piattaforma
+				\item\textbf{\# alt1}: Se il sistema accetta i dati, il sistema richiede al Database di registrare l'utente sulla piattaforma
 				\item\textbf{\# alt2}: Se il sistema non accetta i dati, la procedura fallisce e l'utente viene avvisato
 			\end{enumerate}
 		\end{enumerate}\\\hline
@@ -545,17 +545,17 @@ Categoria & Autenticazione \\\hline
 Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
+Descrizione & Permette la modifica da parte di un utente di alcuni dati inseriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede la modifica dei suoi dati;
-			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili;
-			\item L'utente comunica al sistema i nuovi valori da memorizzare;
+			\item L'utente richiede la modifica dei suoi dati
+			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili, facendo una richiesta al Database
+			\item L'utente comunica al sistema i nuovi valori da memorizzare
 			\item Il sistema valida i dati proposti dall'utente:
 			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se i nuovi valori sono validi, questi vengono salvati sul sistema e quindi il profilo dell'utente viene aggiornato;
-				\item\textbf{\# alt}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi.
+				\item\textbf{\# alt1}: Se i nuovi valori sono validi, il sistema richiede al Database di aggiornare i dati dell'utente con quelli inseriti
+				\item\textbf{\# alt}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi
 			\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -572,17 +572,17 @@ Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
+Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo le opportune credenziali \\\hline
 Pre-condizioni & Nessuna\\\hline
-Post-condizioni & L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
+Post-condizioni & L'utente è autenticato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di accedere alla piattaforma;
-			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
-			\item L'utente riempie i campi richiesti e li invia al sistema;
-			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database degli utenti:
+			\item L'utente richiede di accedere alla piattaforma
+			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password
+			\item L'utente riempie i campi richiesti e li invia al sistema
+			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: l'utente è autenticato ed abilitato all'utilizzo dei servizi offerti dall'abbonamento in corso; 
-				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: l'utente non viene autenticato ed è reindirizzato alla pagina di login.
+				\item \textbf{\# alt1}: se le credenziali sono corrette: l'utente è autenticato all'interno del proprio account
+				\item \textbf{\# alt2}: se le credenziali non sono corrette: l'utente non viene autenticato ed è reindirizzato alla schermata di login
 			\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -599,12 +599,13 @@ Categoria & Autenticazione \\\hline
 Nome & UC\_EffettuaLogout \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Descrizione & Permette ad un utente autenticato di uscire dal proprio profilo \\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  L'utente non è più autenticato.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di uscire dalla piattaforma;
-			\item Il sistema elimina la sessione dell'utente in questione.
+			\item L'utente richiede di uscire dalla piattaforma
+			\item L'utente non è più autenticato sulla piattaforma e viene reindirizzato alla schermata principale
+			%\item Il sistema elimina la sessione dell'utente
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -634,9 +635,9 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 				\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili che non sono sottoscritti dall'utente
 				\end{enumerate}
 			\item L'utente sceglie il piano di abbonamento
-			\item Il sistema reinderizza l'utente al sistema esterno di pagamento (sulla base del meotodo di pagamento scelto in fase di registrazione), e attende risposta dal sistema esterno
+			\item Il sistema reinderizza l'utente al sistema esterno di pagamento (sulla base del metodo di pagamento scelto in fase di registrazione), e attende risposta dal sistema esterno
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il pagamento va a buon fine: il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente, salvando il timestamp in cui il piano è stato attivato
+				\item \textbf{\# alt1}: Se il pagamento va a buon fine: il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente, salvando il timestamp in cui il piano è stato attivato e attivando inizialmente il rinnovo automatico
 				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
 			\end{enumerate}
 		\end{enumerate}\\\hline
@@ -654,14 +655,11 @@ Categoria & Risorse\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
-Pre-condizioni & L'utente ha almeno un piano di abbonamento sottoscritto.\\\hline
-Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato.\\\hline
+Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista\\\hline
+Pre-condizioni & L'utente ha indicato un piano di abbonamento sottoscritto che intende disdire\\\hline
+Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di disdire un piano di abbonamento che aveva sottoscritto
-			\item (UC\_9) Il sistema fornisce una lista dei piani di abbonamento sottoscritti dall'utente
-			\item L'utente sceglie dalla lista il piano di abbonamento da disdire
-			\item Il rinnovo automatico per il piano di abbonamento scelto viene annullato, e l'utente potrà usare i servizi del piano di abbonamento fino alla scadenza
+			\item Il sistema richiede al Database di memorizzare l'annullamento del rinnovo automatico per il piano di abbonamento indicato\newline
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -678,27 +676,28 @@ Nome & UC\_CambiaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento in sostituzione di uno gi\'a attivo.\\\hline
-Pre-condizioni & L'utente deve avere almeno un piano di abbonamento attivo.\\\hline
+Pre-condizioni & L'utente ha indicato un piano di abbonamento sottoscritto che intende cambiare\\\hline
 Post-condizioni &  L'utente ha sottoscritto il nuovo abbonamento e non possiede pi\'u il precedente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi;
-			\item Il sistema fornisce una lista di tutti i piani di abbonamento attivi sottoscritti dall'utente;
-			\item L'utente sceglie l'abbonamento da sostituire;
-			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili:
+			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili, in sostituzione a quello indicato:
 			\begin{enumerate}[  ]
 				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_2)
 				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_9)
 				\item Il sistema fornisce solo i piani di abbonamento sottoscrivibili non ancora sottoscritti dall'utente
 			\end{enumerate}
 			\item L'utente sceglie il nuovo abbonamento da sottoscrivere;
-			\item Il sistema controlla le politiche di cambio;
+			\item Il sistema controlla le politiche di cambio:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
+				\item \textbf{\# alt1}: Se le politiche permettono il cambio di abbonamento:
 				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1}: Se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
-					\item \textbf{\# alt2}: Altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
+					\item \textbf{\# alt1}: Se il prezzo del nuovo abbonamento è minore o uguale al vecchio abbonamento, il cambio verra effettuato immediatamente
+					\item \textbf{\# alt2}: Altrimenti, il sistema reinderizza l'utente al sistema esterno di pagamento per far pagare all'utente la differenza tra i due piano di abbonamento:
+						\begin{enumerate}[label*=\arabic*.]
+							\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene effettuato il cambio, rimuovendo il vecchio piano di abbonamento e sottoscrivendo il nuovo piano di abbonamento
+							\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
+						\end{enumerate}
 				\end{enumerate}
-				\item \textbf{\# alt2}: Altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
+				\item \textbf{\# alt2}: Altrimenti, l'operazione viene annullata e l'utente viene informato che non è possibile effettuare il cambio
 			\end{enumerate}
 			\end{enumerate}\\\hline
 \end{tabular}
