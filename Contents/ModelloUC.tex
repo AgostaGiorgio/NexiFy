@@ -750,7 +750,7 @@ Nome & UC\_ModificaInformazioniDiBase \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette ad un utente autenticato di inserire informazioni di base su un prodotto \\\hline
-Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti\\\hline
+Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti, l'utente ha selezionato il prodotto da modificare\\\hline
 Post-condizioni &  I campi base del prodotto sono compilati\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema richiede all'utente di inserire descrizione del prodotto, genere del prodotto (tra una lista di generi disponibili)
@@ -781,25 +781,21 @@ Nome & UC\_CaricaFile \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto video \\\hline
-Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti \\\hline
+Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti, l'utente ha selezionato il prodotto sul quale caricare i/il file \\\hline
 Post-condizioni & I file multimediali relativi al prodotto sono pubblicati \\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente fornisce il prodotto del quale vuole caricare il file
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}:Se il prodotto \'e di tipo Video allora: 
-					\begin{enumerate}[label*=\arabic*.]
-						\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
-						\item L'utente carica i file sulla piattaforma
-						\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
-					\end{enumerate}
-				\item \textbf{\# alt2}:Se il prodotto \'e di tipo Musicale allora: 
-					\begin{enumerate}[label*=\arabic*.]
-						\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
-						\item L'utente carica i file sulla piattaforma
-						\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
-					\end{enumerate}
-			\end{enumerate}
-		\end{enumerate}\\\hline
+Flusso &  	\vspace{-5mm}
+			\textbf{\# alt1}:Se il prodotto \'e di tipo Video allora: 
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
+					\item L'utente carica i file sulla piattaforma
+					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
+				\end{enumerate}
+			\textbf{\# alt2}:Se il prodotto \'e di tipo Musicale allora: 
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
+					\item L'utente carica i file sulla piattaforma
+					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
+				\end{enumerate}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -815,17 +811,14 @@ Nome & UC\_CambiaStatoPubblicazione \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente autenticato di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
-Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti\\\hline
+Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti, l'utente ha selezionato la pubblicazione tramite la pagina delle pubblicazioni o tramite la pagina di dettaglio della pubblicazione.\\\hline
 Post-condizioni &  Lo stato di pubblicazione del prodotto viene cambiato con quello scelto dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente autenticato richiede di cambiare lo stato di pubblicazione di un prodotto
-			\item Il sistema mostra all'utente la lista dei suoi prodotti
-			\item L'utente seleziona uno dei suoi prodotti
-			\item Il sistema richiede il nuovo stato di pubblicazione per il prodotto
+			\item Il sistema richiede all'utente il nuovo stato di pubblicazione per il prodotto
 			\item L'utente sceglie il nuovo stato di pubblicazione tra "privato", "pubblico", e:
 				\begin{enumerate}[  ]
 					\item \textbf{\# alt1:} Se l'utente sceglie privato: il sistema cambia lo stato di pubblicazione in "privato" e il prodotto diventa accessibile solamente all'utente stesso
-					\item \textbf{\# alt2:} Se l'utente sceglie pubblico: il sistema cambia lo stato di pubblicazione in "pubblico" e il prodotto diventa accessibile a tutti gli utenti che hanno il servizio di visionare quel tipo di prodotto
+					\item \textbf{\# alt2:} Se l'utente sceglie pubblico: il sistema cambia lo stato di pubblicazione in "pubblico" e il prodotto diventa accessibile a tutti gli utenti che hanno il servizio adatto a visionare quel tipo di prodotto
 				\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
