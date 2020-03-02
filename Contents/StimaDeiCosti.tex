@@ -26,15 +26,16 @@ Complesso & Attore umano che accede utilizzando un'interfaccia grafica (GUI)	& 3
     \centering
 \begin{tabular}{ |P{3.5cm}|P{5cm}|P{3.5cm}|  }
 \hline
-\textbf{Tipo di use case} & \textbf{No of Transactions} & \textbf{Weighting Factor} \\\hline
-Simple & \textless =3 & 5\\\hline
-Average & 4 to 7 & 10\\\hline
-Complex & \textgreater = 8 & 15\\\hline
+\textbf{Tipo di use case} & \textbf{Numero di transazioni} & \textbf{Peso} \\\hline
+Semplice & \textless =3 & 5\\\hline
+Medio & 4 to 7 & 10\\\hline
+Complesso & \textgreater = 8 & 15\\\hline
 \end{tabular}
 \caption{Unadjusted Use Case Weight (UUCW)}
 \end{table}
 
 \begin{table}[hb]
+\caption{Attori}
     \centering
 \begin{tabular}{ |P{3.5cm}|P{5cm}|P{3.5cm}|  }
 \hline
@@ -48,11 +49,11 @@ A\_4 & Database & 2\\\hline
 A\_5 & CDN & 2\\\hline
 A\_6 & Timer & 1\\\hline
 \end{tabular}
-\caption{Attori}
+\caption*{\\UAW = 18}
 \end{table}
 
 \clearpage
-\begin{longtable}{| p{.20\textwidth} | p{.70\textwidth} | p{.20\textwidth} |} 
+\begin{longtable}{| p{.20\textwidth} | p{.60\textwidth} | p{.20\textwidth} |} 
 \caption{Casi d'uso}\\
 \hline
 \textbf{ID} & \textbf{Nome} & \textbf{Peso} \\\hline
@@ -104,67 +105,31 @@ UC\_45 & UC\_CreaAlbum & 5\\
 UC\_46 & UC\_GestisciScadenzeAbbonamenti & 10\\
 UC\_47 & UC\_GestisciAbbonamenti & 10\\
 UC\_48 & UC\_CalcolaQualitáContenuto & 10\\
-UC\_49 & UC\_OttieniCronologia & 5\\
-\caption{Your caption here} % needs to go inside longtable environment
-\label{tab:myfirstlongtable}
+UC\_49 & UC\_OttieniCronologia & 5\\\hline
+\caption*{UUCW = 375}
 \end{longtable}
 
 \begin{table}[hb]
     \centering
-\begin{tabular}{ |P{3.5cm}|P{5cm}|P{3.5cm}|  }
+        \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |P{2.5cm}|P{5cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|  }
 \hline
-\textbf{ID} & \textbf{Nome} & \textbf{Peso} \\\hline
-UC\_1 & UC\_CreaAbbonamento & 10\\
-UC\_2 & UC\_RecuperaAbbonamentiEsistenti & 5\\
-UC\_3 & UC\_RecuperaServizi & 5\\
-UC\_4 & UC\_DisattivaAbbonamento & 5\\
-UC\_5 & UC\_AttivaAbbonamento & 5\\
-UC\_6 & UC\_AggiungiServizioAbbonamento & 10\\
-UC\_7 & UC\_RimuoviServizioAbbonamento & 10\\
-UC\_8 & UC\_RecuperaServiziAbbonamento & 5\\
-UC\_9 & UC\_RecuperaPianiAbbonamentoUtente & 5\\
-UC\_10 & UC\_EffettuaPagamentoPartner & 10\\
-UC\_11 & UC\_CalcolaImportoDaPagare & 5\\
-UC\_12 & UC\_SospendiAccount & 5\\\\
-UC\_13 & UC\_EffettuaRegistrazione & 10\\\\
-UC\_14 & UC\_ModificaProfilo & 10\\
-UC\_15 & UC\_EffettuaLogin &1 0\\
-UC\_16 & UC\_EffettuaLogout & 5\\
-UC\_17 & UC\_SottoscriviAbbonamento & 10\\
-UC\_18 & UC\_DisdiciAbbonamento & 5\\
-UC\_19 & UC\_CambiaAbbonamento & 15\\
-UC\_20 & UC\_CreaProdotto & 10\\
-UC\_21 & UC\_ModificaInformazioniDiBase & 10\\
-UC\_22 & UC\_CaricaFile & 10\\
-UC\_23 & UC\_CambiaStatoPubblicazione & 5\\
-UC\_24 & UC\_RiproduciVideo & 10\\
-UC\_25 & UC\_RiproduciMusica & 10\\
-UC\_26 & UC\_PausaPlayer & 5\\
-UC\_27 & UC\_SpostaPuntoRiproduzionePlayer & 5\\
-UC\_28 & UC\_SegnalaProdotto & 10\\
-UC\_29 & UC\_OttieniSegnalazioni & 5\\
-UC\_30 & UC\_ChiudiSegnalazione & 5\\
-UC\_31 & UC\_RicercaContenuto & 10\\
-UC\_32 & UC\_RicercaPopolari & 15\\
-UC\_33 & UC\_SuggerisciContenuti & 15\\
-UC\_34 & UC\_VisualizzaPubblicità & 5\\
-UC\_35 & UC\_CreaPlaylist & 10\\
-UC\_36 & UC\_AggiungiProdottoPlaylist & 5\\
-UC\_37 & UC\_RimuoviProdottoPlaylist & 5\\
-UC\_38 & UC\_CambiaVisibilitáPlaylist & 5\\
-UC\_39 & UC\_RiproduciPlaylist & 5\\
-UC\_40 & UC\_AggiungiProdottoAllaCoda & 5\\
-UC\_41 & UC\_RimuoviProdottoDallaCoda & 5\\
-UC\_42 & UC\_MostraStatoCoda & 5\\
-UC\_43 & UC\_RiproduciCoda & 10\\
-UC\_44 & UC\_CreaSerieTv & 5\\
-UC\_45 & UC\_CreaAlbum & 5\\
-UC\_46 & UC\_GestisciScadenzeAbbonamenti & 10\\
-UC\_47 & UC\_GestisciAbbonamenti & 10\\
-UC\_48 & UC\_CalcolaQualitáContenuto & 10\\
-UC\_49 & UC\_OttieniCronologia & 5\\
+\textbf{Fattore} & \textbf{Descrizione} & \textbf{Peso} & \textbf{T factor [1,5]} & \textbf{Valore} \\\hline
+T1 & Sistema distribuito & 2.0 & 4 & 2.0 * 4 = 8.0\\\hline
+T2 & Tempo di risposta o obbiettivi di permormance di troughput & 1.0& 4& 1.0 * 4 = 4.0\\\hline
+T3 & Efficienza per l'utente finale & 1.0& 3& 1.0 * 3 = 3.0\\\hline
+T4 & Complessità del processo interno & 1.0& 3& 1.0 * 3 = 3.0\\\hline
+T5 & Il codice deve essere riutilizzabile & 1.0& 2& 1.0 * 2 = 2.0\\\hline
+T6 & Facile da installare & 0.5& 4& 0.5 * 4 = 2.0\\\hline
+T7 & Facile da usare & 0.5& 5& 0.5 * 5 = 2.5\\\hline
+T8 & Portatile & 2.0& 4& 2.0 * 4 = 8.0\\\hline
+T9 & Facile da modificare & 1.0& 3& 1.0 * 3 = 3.0\\\hline
+T10 & Concorrente & 1.0& 4& 1.0 * 4 = 4.0\\\hline
+T11 & Include obbiettivi speciali di sicurezza & 1.0& 2& 1.0 * 2 = 2.0\\\hline
+T12 & Fornisce accesso diretto a terze parti & 1.0& 2& 1.0 * 2 = 2.0\\\hline
+T13 & Speciali strutture di training sono richieste per l'utente & 1.0& 1& 1.0 * 1 = 1.0\\\hline
 \end{tabular}
-\caption{Casi d'uso}
+\caption{Fattori tecnici}
 \end{table}
 
 \begin{table}[b]
