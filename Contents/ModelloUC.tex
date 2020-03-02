@@ -1537,7 +1537,35 @@ Flusso &    \vspace{-5mm}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+%======================================
 
+%================UC relativi a 14==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_OttieniCronologia\\\hline
+Priorità & Medium \\\hline
+Attori & User, Staff \\\hline
+Descrizione & ottiene la cronologia degli ultimi prodotti riprodotti da uno specifico utente\\\hline
+Pre-condizioni & E' stato selezionato l'utente di cui richiedere la cronologia e l'intervallo di tempo di interesse\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema interroga il Database estraendo le informazioni dei titoli riprodotti dall'utente di interesse nell'intervallo di tempo specificato.
+		\item Il sistema restituisce la lista dei titoli estratti ordinati in ordine decrescente secondo:
+		\begin{enumerate}[label*=\arabic*.]
+			\item votazione rilasciata dall'utente (se non presente considerata voto\_negativo<neutro<voto\_positivo).
+			\item data di visione.
+			\item popolarit\'a del titolo tra gli utenti.
+		\end{enumerate}
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
 %================================
 
 \end{center}
