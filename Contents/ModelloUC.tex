@@ -938,13 +938,12 @@ Nome & UC\_SegnalaProdotto\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato, Staff \\\hline
 Descrizione & Permette di segnalare un prodotto (con relativa motivazione della segnalazione).\\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & L'utente ha indicato il prodotto che intende segnalare\\\hline
 Post-condizioni & Il prodotto selezionato ha una segnalazione aperta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente seleziona il prodotto da segnalare
 			\item Il sistema richiede la motivazione della segnalazione
 			\item L'utente comunica una motivazione.
-			\item Il sistema riceve il prodotto e la motivazione e provvede ad aprire la segnalazione
+			\item Il sistema provvede ad aprire la segnalazione
 			\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
 			\item L'utente viene avvisato dell'esito della sengalazione
 			\begin{enumerate}[label= ]
@@ -972,7 +971,7 @@ Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni.
-			\item Il sistema ricerca le segnalazioni fornisce la lista di segnalazioni all'operatore richiedente.
+			\item Il sistema ricerca le segnalazioni e fornisce la lista di segnalazioni all'operatore richiedente.
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -990,7 +989,7 @@ Nome & UC\_ChiudiSegnalazione\\\hline
 Priorità & High \\\hline
 Attori &  ManagerSegnalazioni \\\hline
 Descrizione & Permette ai membri dello staff di chiudere una segnalazione.\\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & Esiste almeno una segnalazione su un prodotto aperta.\\\hline
 Post-condizioni & La segnalazione selezionata è chiusa ed ha un esito\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_29.
@@ -1147,7 +1146,7 @@ ID & UC\_\nextUC \\\hline
 Categoria & Prodotto \\\hline
 Nome & UC\_VisualizzaPubblicità\\\hline
 Priorità & High \\\hline
-Attori & UtenteAutenticato \\\hline
+Attori & Timer \\\hline
 Descrizione & Riproduce uno spot pubblicitario\\\hline
 Pre-condizioni & Il piano di abbonamento associato all'utente non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
 Post-condizioni & Nessuna\\\hline
@@ -1205,15 +1204,12 @@ Nome & UC\_AggiungiProdottoPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di agguingere un prodotto all'interno di una playlist esistente\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist\\\hline
-Post-condizioni & Un nuovo prodotto farà parte della playlist scelta\\\hline
+Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist e ha gi\'a scelto il prodotto da aggiungere\\\hline
+Post-condizioni & Il prodotto scelto fa parte della playlist scelta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-	\item L'utente chiede al sistema di aggiungere un prodotto ad una playlist;
 	\item Il sistema fornisce la lista delle playlist associate all'utente;
 	\item L'utente sceglie la playlist e la comunica al sistema;	
-	\item Il sistema fornisce la lista di prodotti che possono essere aggiunti alla playlist;
-	\item L'utente sceglie il prodotto e lo comunica al sistema;
-	\item Il sistema procede con l'aggiunta del prodotto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
+	\item Il sistema procede con l'aggiunta del prodotto scelto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
 	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1230,12 +1226,9 @@ Nome & UC\_RimuoviProdottoPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rimuovere un prodotto all'interno di una playlist esistente\\\hline
-Pre-condizioni & L'utente \'e proprietario di almeno una playlist con almeno una risorsa associata\\\hline
-Post-condizioni & Il prodotto non far\'a pi\'u parte della playlist scelta\\\hline
+Pre-condizioni & L'utente ha scelto la Playlist da cui rimuovere una risorsa tra quelle di cui \'e proprietario.\\\hline
+Post-condizioni & Il prodotto scelto non far\'a pi\'u parte della playlist scelta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-	\item L'utente chiede al sistema di rimuovere un prodotto da una playlist;
-	\item Il sistema fornisce la lista delle playlist associate all'utente;
-	\item L'utente sceglie la playlist e la comunica al sistema;	
 	\item Il sistema fornisce la lista di prodotti associati alla playlist scelta;
 	\item L'utente sceglie il prodotto e lo comunica al sistema;
 	\item Il sistema procede con la rimozione del prodotto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
@@ -1255,12 +1248,9 @@ Nome & UC\_CambiaVisibilit\'aPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rendere pubblica, privata una playlist\\\hline
-Pre-condizioni & L'utente \'e proprietario di almeno una playlist\\\hline
+Pre-condizioni & L'utente ha scelto la playlist da modificare tra quelle di cui \'e proprietario\\\hline
 Post-condizioni & La playlist avr\'a visibilit\'a aggiornata a quella fornita dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di cambiare la visibilit\'a di una playlist;
-		\item Il sistema fornisce una lista di tutte le playlist associate all'utente;
-		\item L'utente sceglie la playlist da modificare dalla lista;
 		\item Il sistema chiede se impostare la visibilit\'a a pubblica o privata;
 		\item L'utente sceglie la visibilità e la comunica al sistema;
 		\item Il sistema procede con l'aggiornamento dell'informaizone secondo le scelte fatte dall'utente.
@@ -1280,12 +1270,9 @@ Nome & UC\_RiproduciPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Aggiunge i prodotti associati alla playlist sulla coda di riproduzione\\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & L'utente ha scelto la playlist da riprodurre.\\\hline
 Post-condizioni & Tutti i prodotti associati alla playlist sono inseriti all'interno della coda di riproduzione\\\hline
 Flusso &  \vspace{-5mm}	\begin{enumerate}
-		\item L'utente chiede al sistema di riprodurre una playlist;
-		\item Il sistema fornisce una lista di tutte le playlist riproducibili;
-		\item L'utente sceglie la playlist e la comunica al sistema;
 		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_42) procede rimuovendolo da questa coda (UC\_41);
 		\item Il sistema per ogni prodotto associata alla playlist scelta dall'utente e lo aggiunge alla coda di riproduzione (UC\_40);
 		\item Viene avviata la riproduzione della coda (UC\_43)
