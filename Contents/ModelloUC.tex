@@ -78,91 +78,91 @@ Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritt
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_1.3 \\\hline
+ID & A\_2 \\\hline
 Nome & Staff\\\hline
-Genitore & A\_1\\\hline
+Genitore & -\\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
 Descrizione &  Rappresenta il ruolo di staff della piattaforma \\\hline
 \end{tabular}
-\label{table_attore:1.3}\newline
+\label{table_attore:2}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_1.3.1 \\\hline
+ID & A\_2.1 \\\hline
+Nome & Amministratore\\\hline
+Genitore & A\_2\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo amministratore della piattaforma, cioè un membro dello staff incaricato della gestione di vari aspetti della piattaforma \\\hline
+\end{tabular}
+\label{table_attore:2.1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_2.1.1 \\\hline
 Nome & ManagerAbbonamenti\\\hline
-Genitore & A\_1.3\\\hline
+Genitore & A\_2.1\\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
 Descrizione &  Rappresenta il ruolo di chi gestisce i servizi offerti dalla piattaforma \\\hline
 \end{tabular}
-\label{table_attore:1.3.1}\newline
+\label{table_attore:2.1.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_1.3.2 \\\hline
-Nome & ManagerPagamenti\\\hline
-Genitore & A\_1.3\\\hline
-Livello &  Primario \\\hline
-Tipologia & Sistema \\\hline
-Descrizione &  Rappresenta il sistema di gestione dei pagamenti verso i partner \\\hline
-\end{tabular}
-\label{table_attore:1.3.1}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_1.3.3 \\\hline
+ID & A\_2.1.2 \\\hline
 Nome & ManagerSegnalazioni\\\hline
-Genitore & A\_1.3\\\hline
+Genitore & A\_2.1\\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
 Descrizione &  Rappresenta il ruolo di chi gestisce tutte le segnalazioni verso prodotti o utenti \\\hline
 \end{tabular}
-\label{table_attore:1.3.1}\newline
+\label{table_attore:2.1.2}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_2 \\\hline
+ID & A\_3 \\\hline
 Nome & Pagamento\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piattaforma \\\hline
 \end{tabular}
-\label{table_attore:2}\newline
+\label{table_attore:3}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_3 \\\hline
+ID & A\_4 \\\hline
 Nome & Database\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema usato per la memorizzazione di informazioni. \\\hline
 \end{tabular}
-\label{table_attore:3}\newline
+\label{table_attore:4}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_4 \\\hline
+ID & A\_5 \\\hline
 Nome & CDN\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di distribuzione dei contenuti. \\\hline
 \end{tabular}
-\label{table_attore:4}\newline
+\label{table_attore:5}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_5 \\\hline
+ID & A\_6 \\\hline
 Nome & Time\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta la componente responsabile dello scheduling delle operazioni \\\hline
 \end{tabular}
-\label{table_attore:5}\newline
+\label{table_attore:6}\newline
 
 
 \end{center}
@@ -703,6 +703,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+
 %========================
 
 
@@ -1464,6 +1465,40 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 				\item \textbf{\# alt2}: Se almeno una condizione non è verificata: il sistema comunica all'utente che la playlist non può essere un album
 			\end{enumerate}
     \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Risorse\\\hline
+Nome & UC\_GestisciScadenzeAbbonamenti\\\hline
+Priorità & High \\\hline
+Attori &  Time \\\hline
+Descrizione & Gestisce un abbonamento nel momento in cui la sottoscrizione scade: effettua un rinnovo, o lo rimuove dai piani di abbonamento dell'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessun utente ha un abbonamento sottoscritto scaduto\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno un abbonamento sottoscritto
+			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_8)
+			\item Per ogni abbonamento sottoscritto dall'utente, il sistema verifica se la sottoscrizione è scaduta:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se l'abbonamento non è scaduto, la sottoscrizione viene lasciata inalterata
+				\item \textbf{\# alt2}: Se l'abbonamento è scaduto, allora:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: Se è attivo il rinnovo automatico e il piano di abbonamento è ancora sottoscrivibile, allora viene contattato il servizio di pagamento esterno per rinnovare l'abbonamento:
+					\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1}: Se il pagamento va a buon fine: la sottoscrizione dell'abbonamento viene rinnovata
+						\item \textbf{\# alt2}: Seil pagamento non va a buon fine: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente, e viene informato l'utente
+					\end{enumerate}
+					\item \textbf{\# alt2}: Altrimenti: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
