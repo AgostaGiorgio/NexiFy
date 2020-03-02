@@ -1472,6 +1472,38 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+%======================================
+
+%================UC relativi a interfaccia grafica==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & UI \\\hline
+Nome & UC\_GestisciAbbonamenti\\\hline
+Priorità & High \\\hline
+Attori & ManagerAbbonamenti \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione degli abbonamenti\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente accede alla pagina di gestione abbonamenti.
+		\item Il sistema presenta la pagina di gestione abbonamenti.
+		\item L'utente ricerca tramite filtri l'abbonamento o gli abbonamenti di interesse.
+		\item Il sistema per ogni abbonamento mostra le azioni possibili su di esso,
+		\item L'utente seleziona l'azione da intraprendere.
+		\item Il sistema aggiorna il suo stato in seguito all'azione scelta:
+			 \begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se l'azione influisce sui dati: il sistema si interfaccia con il Database, aggiorna i dati sull'abbonamento e comunica la riuscita dell'operazione mostrando i dati aggiornati.
+				\item \textbf{\# alt2}: Se l'azione non influisce sui dati viene solo presentata una pagina di risposta inerente all'azione intrapresa (dettaglio abbonamento, statistiche ...)
+			\end{enumerate}
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
 %================================
 
 \end{center}
