@@ -1507,6 +1507,36 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+%======================================
+
+%================UC relativi a 17==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_CalcolaQualit\'aContenuto\\\hline
+Priorità & Medium \\\hline
+Attori & User, Staff \\\hline
+Descrizione & calcola il voto di un certo contenuto, in base ai voti ricevuti\\\hline
+Pre-condizioni & E' attiva la pagina di presentazione dei prodotti o è attiva la pagina di dettaglio di un prodotto\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item L'utente accede alla pagina di presentazione dei prodotti o alla pagina di dettaglio di un prodotto
+		\item Il sistema esegue il clcolo di qualit\'a:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se è un prodotto Video: $ qualita = \frac{voti\_positivi}{voti\_totali}. $
+				\item \textbf{\# alt1}: Se è un prodotto Musicale: $ qualita = \frac{voti\_positivi}{voti\_totali}. $
+				\item \textbf{\# alt2}: Se è una Playlist: $ \frac{\sum_{p \in P} voti\_positivi\_p}{\sum_{p \in P}voti\_totali\_p}$
+			\end{enumerate}
+		\item Il sistema restituisce per ogni prodotto calcolato il rispettivo indice di qualit\'a.
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
 
 %================================
 
