@@ -1295,17 +1295,10 @@ Nome & UC\_AggiungiProdottoAllaCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Il prodotto scelto \'e associata alla coda di riproduzione\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto che intende aggiungere alla coda di riproduzione, l'utente ha il servizio per riprodurre il prodotto, il prodotto è pubblico\\\hline
+Post-condizioni & Il prodotto scelto è inserito in fondo alla coda di riproduzione\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema l'aggiunta di un prodotto alla coda di riproduzione;
-    \item Il sistema chiede all'utente quale prodotto da aggiungere;
-    \item L'utente fornisce al sistema il prodotto da aggiungere;
-	\item Il sistema verifica che il prodotto scelto sia riproducibile:
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se il prodotto non \'e riproducibile, il sistema annulla l'operazione e avvisa l'utente del fallimento;
-			\item \textbf{\# alt2}: Se il prodotto \'e riproducibile, il sistema aggiunge il prodotto alla coda di riproduzione;
-		\end{enumerate}
+    \item Il sistema aggiunge il prodotto indicato alla fine della coda di riproduzione \newline
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1322,13 +1315,10 @@ Nome & UC\_RimuoviProdottoDallaCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & La coda di riproduzione non \'e vuota\\\hline
-Post-condizioni & Il prodotto scelto non \'e pi\'u associata alla coda di riproduzione\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto della coda di riproduzione che intende rimuovere\\\hline
+Post-condizioni & Il prodotto scelto non \'e pi\'u  nella coda di riproduzione\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema la rimozione di una prodotto dalla coda di riproduzione;
-    \item Il sistema fornisce la lista di prodotti presenti nella coda;
-    \item L'utente sceglie il prodotto da rimuovere e lo comunica al sistema;
-    \item Il sistema rimuove il prodotto dalla coda di riproduzione;
+    \item Il sistema rimuove il prodotto dalla coda di riproduzione \newline \newline
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1345,15 +1335,17 @@ Nome & UC\_MostraStatoCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
+Input & - \\\hline
+Output & La lista dei prodotti nella coda di riproduzione\\\hline
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema lo stato della coda di riproduzione;
-    \item Il sistema fornisce la lista di tutti i prodotti nella coda di riproduzione.
+    \item Viene restituita la lista dei prodotti nella coda di riproduzione \newline \newline
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+
 
 \begin{table}[bp]
     \centering
@@ -1400,12 +1392,9 @@ Nome & UC\_CreaSerieTv\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di trasformare una playlist in una serie tv\\\hline
-Pre-condizioni & L'utente ha il servizio per creare serie tv\\\hline
-Post-condizioni & Una nuova serie tv viene associata all'utente\\\hline
+Pre-condizioni & L'utente ha il servizio per creare serie tv, e ha indicato una playlist che intende trasformare in serie tv\\\hline
+Post-condizioni & Se non avvengono errori, la playlist indicata diventa una serie tv\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di creare una nuova serie tv
-		\item Il sistema mostra all'utente la lista delle playlist che possiede
-		\item L'utente seleziona la playlist che intende trasformare in serie tv
 		\item Il sistema verifica che:
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti video
@@ -1432,12 +1421,9 @@ Nome & UC\_CreaAlbum\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di trasformare una playlist in un album\\\hline
-Pre-condizioni & L'utente ha il servizio per creare album\\\hline
-Post-condizioni & Un nuovo album viene associato all'utente\\\hline
+Pre-condizioni & L'utente ha il servizio per creare album, e ha indicato la playlist che intende trasformare in album\\\hline
+Post-condizioni & Se non avvengono errori, la playlist indicata diventa un album\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di creare un nuovo album
-		\item Il sistema mostra all'utente la lista delle playlist che possiede
-		\item L'utente seleziona la playlist che intende trasformare in album
 		\item Il sistema verifica che:
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti musicali
