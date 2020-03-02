@@ -216,13 +216,10 @@ Flusso &  	\begin{enumerate}
 			\item Il manager degli abbonamenti fornisce i dati;
 			\item Il sistema valida gli input, e:
 				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione:
+				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione,  il sistema ricerca se esistono altri piani di abbonamento con il nome inserito:
 					\begin{enumerate}[label*=\arabic*.]
-					\item Il sistema ricerca se esistono altri piani di abbonamento con il nome inserito:
-						\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1}: Se non esistono altri piani di abbonamento con il nome inserito: il piano di abbonamento viene creato, con i dati inseriti dal manager degli abbonamenti, la lista dei servizi inizialmente vuota e inizialmente non sottoscrivibile
-						\item \textbf{\# alt2}: Se esistono altri piani di abbonamento con il nome inserito: la creazione viene annullata e viene comunicato al manager degli abbonamenti che esiste già un piano di abbonamento con il nome inserito	
-						\end{enumerate}
+					\item \textbf{\# alt1}: Se non esistono altri piani di abbonamento con il nome inserito: il piano di abbonamento viene creato, con i dati inseriti dal manager degli abbonamenti, la lista dei servizi inizialmente vuota e inizialmente non sottoscrivibile
+					\item \textbf{\# alt2}: Se esistono altri piani di abbonamento con il nome inserito: la creazione viene annullata e viene comunicato al manager degli abbonamenti che esiste già un piano di abbonamento con il nome inserito	
 					\end{enumerate}
 				\item \textbf{\# alt2}: Se avvengono errori durante la validazione: il piano di abbonamento non viene creato e l'errore viene comunicato al manager degli abbonamenti
 				\end{enumerate}
