@@ -49,7 +49,7 @@ A\_4 & Database & 2\\\hline
 A\_5 & CDN & 2\\\hline
 A\_6 & Timer & 1\\\hline
 \end{tabular}
-\caption*{\\UAW = 18}
+\caption*{\\\textbf{UAW = 18}}
 \end{table}
 
 \clearpage
@@ -106,15 +106,16 @@ UC\_46 & UC\_GestisciScadenzeAbbonamenti & 10\\
 UC\_47 & UC\_GestisciAbbonamenti & 10\\
 UC\_48 & UC\_CalcolaQualitáContenuto & 10\\
 UC\_49 & UC\_OttieniCronologia & 5\\\hline
-\caption*{UUCW = 375}
+\caption*{\textbf{UUCW = 375}}
 \end{longtable}
 
 \begin{table}[hb]
+\caption{Fattori tecnici}
     \centering
         \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |P{2.5cm}|P{5cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|  }
 \hline
-\textbf{Fattore} & \textbf{Descrizione} & \textbf{Peso} & \textbf{T factor [1,5]} & \textbf{Valore} \\\hline
+\textbf{Fattore} & \textbf{Descrizione} & \textbf{Peso} & \textbf{T factor} & \textbf{Valore} \\\hline
 T1 & Sistema distribuito & 2.0 & 4 & 2.0 * 4 = 8.0\\\hline
 T2 & Tempo di risposta o obbiettivi di permormance di troughput & 1.0& 4& 1.0 * 4 = 4.0\\\hline
 T3 & Efficienza per l'utente finale & 1.0& 3& 1.0 * 3 = 3.0\\\hline
@@ -129,8 +130,44 @@ T11 & Include obbiettivi speciali di sicurezza & 1.0& 2& 1.0 * 2 = 2.0\\\hline
 T12 & Fornisce accesso diretto a terze parti & 1.0& 2& 1.0 * 2 = 2.0\\\hline
 T13 & Speciali strutture di training sono richieste per l'utente & 1.0& 1& 1.0 * 1 = 1.0\\\hline
 \end{tabular}
-\caption{Fattori tecnici}
+\caption*{\\\textbf{TFactor = 44.5}}
 \end{table}
+
+\begin{table}[hb]
+\caption{Fattori ambientali}
+    \centering
+        \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |P{2.5cm}|P{5cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|  }
+\hline
+\textbf{Fattore} & \textbf{Descrizione} & \textbf{Peso} & \textbf{E factor} & \textbf{Valore} \\\hline
+F1 & Familiarità con RUP & 1.5 & 1 & 1.5 * 1 = 1.5\\\hline
+F2 & Esperienza dell'applicazione & 0.5& 3& 0.5 * 3 = 1.5\\\hline
+F3 & Esperienza orientata agli oggetti & 1.0& 3& 1.0 * 3 = 3.0\\\hline
+F4 & Capacità di analisi  & 0.5& 4& 0.5 * 4 = 2.0\\\hline
+F5 & Motivazione & 1.0& 5& 1.0 * 5 = 5.0\\\hline
+F6 & Requisiti stabili & 2.0& 3& 2.0 * 3 = 6.0\\\hline
+F7 & Lavoratori part-time & -1.0& 2& -1.0 * 2 = -2\\\hline
+F8 & Linguaggio di programmazione difficile & -1.0& 4& -1 * 4 = -4.0\\\hline
+\end{tabular}
+\caption*{\\\textbf{EFactor = 13.0}\\~\\}
+\caption*{\\~\\\large{UUCP = UAW + UUCW = attori + use-case = 18 + 375 = 393}}
+\caption*{\\\large{TCF = 0,6 + (0,01 * TFactor) = 0,6 + (0,01 * 44.5) = 1,045}}
+\caption*{\\\large{EF = 1,4 + (-0,03 * EFactor) = 1,4 + (-0,03 * 13) = 1,01}}
+\caption*{\\\large{UCP = UUCP * TCF * EF = 393 * 1,045 * 1,01 = 414,79185}}
+\end{table}
+
+\clearpage
+
+\noindent Considereremo il fattore Hours per UCP \emph{HpUCP} pari a 20, il numero di sviluppatori \emph{dev} che hanno preso parte al progetto pari a 5 e la paga oraria \emph{rate} pari a 50 \$. Da cui:
+
+\vspace{1.0cm}
+\centerline{\large{Hours per UCP = HpUCP = 20}}\vspace{0.5cm}
+\centerline{\large{Settimane = HpUCP * UCP / (HpW * dev) = 20 * 414,8 / (30 * 5) = 55,3}}\vspace{0.5cm}
+\centerline{\large{Paga settimanale = 50 * 30 = 1500 \$}}\vspace{0.5cm}
+\centerline{\large{Costo totale = 1500 * 55,3 * 5 = 414.750 \$}}\vspace{0.5cm}
+\centerline{\large{Tempo totale ~= 1 anno e 20 giorni}}\vspace{1.0cm}
+
+\noindent Quindi in tutto la realizzazione del nostro progetto richiederà poco più di un anno e verrà a costare circa 414 mila dollari (ovvero circa 370 mila euro).
 
 \begin{table}[b]
 \noindent{\large \textbf{Revisioni 9}} \\ \\
