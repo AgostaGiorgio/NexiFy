@@ -781,19 +781,23 @@ Attori &  UtenteAutenticato \\\hline
 Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto video \\\hline
 Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti, l'utente ha selezionato il prodotto sul quale caricare i/il file \\\hline
 Post-condizioni & I file multimediali relativi al prodotto sono pubblicati \\\hline
-Flusso &  	\vspace{-5mm}
-			\textbf{\# alt1}:Se il prodotto \'e di tipo Video allora: 
+Flusso &  	\vspace{-5mm}  \begin{enumerate}
+			\item Il sistema analizza il tipo del prodotto, e:
+			\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}:Se il prodotto \'e di tipo Video allora: 
 				\begin{enumerate}[label*=\arabic*.]
 					\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
 					\item L'utente carica i file sulla piattaforma
 					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
 				\end{enumerate}
-			\textbf{\# alt2}:Se il prodotto \'e di tipo Musicale allora: 
+			\item \textbf{\# alt2}:Se il prodotto \'e di tipo Musicale allora: 
 				\begin{enumerate}[label*=\arabic*.]
 					\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
 					\item L'utente carica i file sulla piattaforma
 					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
 				\end{enumerate}
+			\end{enumerate}
+			\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
