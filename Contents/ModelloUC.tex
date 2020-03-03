@@ -1489,15 +1489,15 @@ Categoria & UI \\\hline
 Nome & UC\_GestisciAbbonamenti\\\hline
 Priorità & High \\\hline
 Attori & ManagerAbbonamenti \\\hline
-Descrizione & Fornisce l'interfaccia per la gestione degli abbonamenti\\\hline
+Descrizione & Fornisce l'interfaccia per la gestione dei piani di abbonamento\\\hline
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-		\item L'utente accede alla pagina di gestione abbonamenti.
-		\item Il sistema presenta la pagina di gestione abbonamenti.
-		\item L'utente ricerca tramite filtri l'abbonamento o gli abbonamenti di interesse.
-		\item Il sistema per ogni abbonamento mostra le azioni possibili su di esso,
-		\item L'utente seleziona l'azione da intraprendere.
+		\item Il manager accede alla pagina di gestione dei piani di abbonamento
+		\item Il sistema presenta la pagina di gestione abbonamenti
+		\item Il manager ricerca tramite filtri l'abbonamento o gli abbonamenti di interesse
+		\item Il sistema per ogni abbonamento mostra le azioni possibili su di esso
+		\item Il manager seleziona l'azione da intraprendere
 		\item Il sistema aggiorna il suo stato in seguito all'azione scelta:
 			 \begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se l'azione influisce sui dati: il sistema si interfaccia con il Database, aggiorna i dati sull'abbonamento e comunica la riuscita dell'operazione mostrando i dati aggiornati.
@@ -1519,20 +1519,21 @@ ID & UC\_\nextUC\\\hline
 Categoria & Risorse \\\hline
 Nome & UC\_CalcolaQualit\'aContenuto\\\hline
 Priorità & Medium \\\hline
-Attori & User, Staff \\\hline
+Attori & Utente, Staff \\\hline
 Descrizione & calcola il voto di un certo contenuto, in base ai voti ricevuti\\\hline
-Pre-condizioni & E' attiva la pagina di presentazione dei prodotti o è attiva la pagina di dettaglio di un prodotto\\\hline
+Input & Un contenuto (un prodotto o una playlist)\\\hline
+Output & un indicatore di qualità (un numero) per il contenuto\\\hline
+Pre-condizioni & Il contenuto ha ricevuto almeno una votazione\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} 
 	\begin{enumerate}
-		\item L'utente accede alla pagina di presentazione dei prodotti o alla pagina di dettaglio di un prodotto
-		\item Il sistema esegue il clcolo di qualit\'a:
+		\item Il sistema esegue il calcolo di qualit\'a in base al tipo di contenuto:
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se è un prodotto Video: $ qualita = \frac{voti\_positivi}{voti\_totali}. $
-				\item \textbf{\# alt1}: Se è un prodotto Musicale: $ qualita = \frac{voti\_positivi}{voti\_totali}. $
-				\item \textbf{\# alt2}: Se è una Playlist: $ \frac{\sum_{p \in P} voti\_positivi\_p}{\sum_{p \in P}voti\_totali\_p}$
+				\item \textbf{\# alt1}: Se è un prodotto Video: $ qualita = \frac{somma\_voti}{voti\_totali}. $
+				\item \textbf{\# alt2}: Se è un prodotto Musicale: $ qualita = \frac{somma\_voti}{voti\_totali}. $
+				\item \textbf{\# alt3}: Se è una Playlist: $ qualita = \frac{\sum_{p \in P} somma\_voti\_p}{\sum_{p \in P}voti\_totali\_p}$ dove $P=$ insieme dei prodotti nella playlist
 			\end{enumerate}
-		\item Il sistema restituisce per ogni prodotto calcolato il rispettivo indice di qualit\'a.
+		\item Il sistema restituisce la qualità calcolata
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1549,18 +1550,73 @@ ID & UC\_\nextUC\\\hline
 Categoria & Risorse \\\hline
 Nome & UC\_OttieniCronologia\\\hline
 Priorità & Medium \\\hline
-Attori & User, Staff \\\hline
-Descrizione & ottiene la cronologia degli ultimi prodotti riprodotti da uno specifico utente\\\hline
-Pre-condizioni & E' stato selezionato l'utente di cui richiedere la cronologia e l'intervallo di tempo di interesse\\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} 
 	\begin{enumerate}
-		\item Il sistema interroga il Database estraendo le informazioni dei titoli riprodotti dall'utente di interesse nell'intervallo di tempo specificato.
-		\item Il sistema restituisce la lista dei titoli estratti ordinati in ordine decrescente secondo:
+		\item L'utente richiede di visualizzare la propria cronologia
+		\item Il sistema interroga il Database estraendo i prodotti riprodotti dall'utente
+		\item Il sistema restituisce la lista dei prodotti estratti ordinati in ordine decrescente secondo l'istante di visione
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%================================
+
+%================UC relativi a 15==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_DownloadProdotto\\\hline
+Priorità & Medium \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette di scaricare un prodotto, in modo da poterlo riprodurre offline\\\hline
+Pre-condizioni & L'utente ha il servizio per scaricare prodotti, l'utente ha indicato un prodotto che intende scaricare, il dispositivo dell'utente ha sufficiente memoria per contenere i file multimediali del prodotto\\\hline
+Post-condizioni & Il prodotto è scaricato sul dispositivo dell'utente\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
+		\item Il client contatta il nodo e stabiliscono una connessione
+		\item Il client effettua il download del prodotto dal nodo della CDN, e lo memorizza sul dispositivo
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_RiproduciProdotto\\\hline
+Priorità & Medium \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette di riprodurre un prodotto\\\hline
+Pre-condizioni & L'utente ha il servizio per riprodurre il prodotto, e ha indicato uno specifico prodotto che intende riprodurre\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+	\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_34
+	\item \textbf{\# alt1}: Se il prodotto è scaricato sul dispositivo dell'utente:
+		\begin{enumerate}[label*=\arabic*.]	
+		\item \textbf{\# alt1}: Se non è disponibile una connessione ad Internet, il prodotto viene riprodotto tramite il player della piattaforma, usando i file scaricati
+		\item \textbf{\# alt2:} Se è disponibile una connessione ad Internet, il sistema effettua una richiesta al Database per verificare che il prodotto è ancora pubblico e l'utente ha ancora il servizio per guardarlo:
+			\begin{enumerate}[label*=\arabic*.]	
+			\item \textbf{\# alt1}: Se è ancora possibile visualizzare il prodotto, il prodotto viene riprodotto tramite il player della piattaforma, usando i file scaricati
+			\item \textbf{\# alt2}: Se non è più possibile visualizzare il prodotto, vengono rimossi i file scaricati relativi al prodotto e la procedura termina
+			\end{enumerate}
+		\end{enumerate}
+	\item \textbf{\# alt2}: Altrimenti, il sistema analizza il tipo di prodotto:
 		\begin{enumerate}[label*=\arabic*.]
-			\item votazione rilasciata dall'utente (se non presente considerata voto\_negativo<neutro<voto\_positivo).
-			\item data di visione.
-			\item popolarit\'a del titolo tra gli utenti.
+		\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_24
+		\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_25
 		\end{enumerate}
 	\end{enumerate}\\\hline
 \end{tabular}
