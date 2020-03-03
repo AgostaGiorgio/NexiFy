@@ -243,10 +243,10 @@ Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hli
 Input &  - \\\hline
 Output &  Tutti i piani di abbonamento esistenti\\\hline
 Pre-condizioni &  Nessuna \\\hline
-Post-condizioni &  Tutti i piani di abbonamento esistenti vengono restituiti\\\hline
+Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i piani di abbonamento
-			\item viene restituita la lista dei piani di abbonamento trovati
+			\item Viene restituita la lista dei piani di abbonamento trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -269,7 +269,7 @@ Pre-condizioni &  Nessuna.\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi
-			\item viene restituita la lista dei servizi trovati
+			\item Viene restituita la lista dei servizi trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -286,7 +286,7 @@ Nome & UC\_DisattivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende non più sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Il manager ha indicato la disattivazione di uno specifico piano di abbonamento\\\hline
+Pre-condizioni &  Il manager ha indicato il piano di abbonamento da disattivare.\\\hline
 Post-condizioni &  Il piano di abbonamento specificato non è più sottoscrivibile\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema richiede al Database di salvare che il piano di abbonamento specificato non è più sottoscrivibile\newline
@@ -306,8 +306,8 @@ Nome & UC\_AttivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Il manager ha indicato l'attivazione di uno specifico piano di abbonamento\\\hline
-Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile\\\hline
+Pre-condizioni &  Il manager ha indicato il piano di abbonamento da attivare.\\\hline
+Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema richiede al Database di salvare che il piano di abbonamento specificato è sottoscrivibile\newline
 		\end{enumerate}\\\hline
@@ -354,7 +354,7 @@ Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Permette la rimozione di uno dei servizi forniti da un piano abbonamento.\\\hline
-Pre-condizioni &  Il manager ha indicato uno specifico piano di abbonamento al quale vuole rimuovere un servizio \\\hline
+Pre-condizioni &  Il manager ha indicato uno specifico piano di abbonamento dal quale vuole rimuovere un servizio \\\hline
 Post-condizioni &  Il servizio scelto non \'e pi\'u associato al piano di abbonamento indicato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema mostra la lista dei servizi che possono essere rimossi dal piano di abbonamento indicato
@@ -385,7 +385,6 @@ Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna \\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi associati al piano di abbonamento indicato
-			\item Viene restituita la lista dei servizi trovata
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -408,7 +407,6 @@ Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}	
 		\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato
-		\item Viene restituita la lista dei piani di abbonamento trovata
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -427,7 +425,7 @@ Categoria & Management\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & High \\\hline
 Attori &  Timer \\\hline
-Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio di pubblicare prodotti\\\hline
+Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio che permette di pubblicare prodotti\\\hline
 Pre-condizioni &  Nessuno\\\hline
 Post-condizioni &  Nessuno\\\hline
 Flusso &  	
@@ -543,7 +541,7 @@ Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette la modifica da parte di un utente di alcuni dati inseriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & Il sistema presenta all'utente la pagina di dettaglio del proprio profilo.\\\hline
 Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la modifica dei suoi dati
@@ -809,14 +807,14 @@ Flusso &  	\vspace{-5mm}  \begin{enumerate}
 \hline
 ID & UC\_\nextUC\\\hline
 Categoria & Prodotto \\\hline
-Nome & UC\_CambiaStatoPubblicazione \\\hline
+Nome & UC\_CambiaVisibilit\'aProdotto \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette a un utente autenticato di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
-Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti, l'utente ha selezionato la pubblicazione tramite la pagina delle pubblicazioni o tramite la pagina di dettaglio della pubblicazione.\\\hline
+Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti, l'utente ha selezionato il prodotto tramite la pagina di dettaglio del prodotto, l'utente \'e il proprietario del prodotto.\\\hline
 Post-condizioni &  Lo stato di pubblicazione del prodotto viene cambiato con quello scelto dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema richiede all'utente il nuovo stato di pubblicazione per il prodotto
+			\item Il sistema richiede all'utente il nuovo stato di pubblicazione del prodotto
 			\item L'utente sceglie il nuovo stato di pubblicazione tra "privato", "pubblico", e:
 				\begin{enumerate}[  ]
 					\item \textbf{\# alt1:} Se l'utente sceglie privato: il sistema cambia lo stato di pubblicazione in "privato" e il prodotto diventa accessibile solamente all'utente stesso
@@ -864,7 +862,7 @@ Categoria & Risorse\\\hline
 Nome & UC\_RiproduciMusica\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
+Descrizione & Riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
 Pre-condizioni & L'utente ha il servizio che permette la riproduzione di musica e  ha fornito uno specifico prodotto musicale che intende riprodurre\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
@@ -950,7 +948,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema provvede ad aprire la segnalazione
 			\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
 			\item L'utente viene avvisato dell'esito della sengalazione
-			\begin{enumerate}[label= ]
+			\begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso positivo
 				\item \textbf{\# alt2}: Se il la segnalazione non è andata a buon fine, l'utente riceverà un responso negativo
 			\end{enumerate}
@@ -1025,7 +1023,7 @@ Nome & UC\_RicercaContenuto\\\hline
 Priorità & High \\\hline
 Attori &  Utente \\\hline
 Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & Il sistema presenta la pagina di ricerca.\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di ricercare un contenuto;
@@ -1230,7 +1228,7 @@ Nome & UC\_RimuoviProdottoPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di rimuovere un prodotto all'interno di una playlist esistente\\\hline
-Pre-condizioni & L'utente ha scelto la Playlist da cui rimuovere una risorsa tra quelle di cui \'e proprietario.\\\hline
+Pre-condizioni & L'utente ha scelto la Playlist da cui rimuovere un prodotto tra quelle di cui \'e proprietario.\\\hline
 Post-condizioni & Il prodotto scelto non far\'a pi\'u parte della playlist scelta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 	\item Il sistema fornisce la lista di prodotti associati alla playlist scelta;
@@ -1251,7 +1249,7 @@ Categoria & Prodotto \\\hline
 Nome & UC\_CambiaVisibilit\'aPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di rendere pubblica, privata una playlist\\\hline
+Descrizione & Permette di rendere pubblica o privata una playlist\\\hline
 Pre-condizioni & L'utente ha scelto la playlist da modificare tra quelle di cui \'e proprietario\\\hline
 Post-condizioni & La playlist avr\'a visibilit\'a aggiornata a quella fornita dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
@@ -1367,7 +1365,6 @@ Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 	\item L'utente richiede la riproduzione della coda
  	\item Il sistema estrae il primo prodotto dalla coda di riproduzione
-	\item Il sistema rimuove il primo prodotto dalla coda di riproduzione
 	\item Il sistema controlla il tipo del prodotto estratto:
 		\begin{enumerate}[label*=\arabic*.]
 			\item \textbf{\# alt1}: Se il prodotto è di tipo video: viene riprodotto il video (UC\_24)
@@ -1375,8 +1372,8 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 		\end{enumerate}
 	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
 		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se la coda di riproduzione è vuota, la riproduzione termina
-			\item \textbf{\# alt2}: Se la coda di riproduzione non è vuota, si torna al punto 2.
+			\item \textbf{\# alt1}: Se non \'e presente un prossimo prodotto da riprodurre, la riproduzione termina
+			\item \textbf{\# alt2}: Se \'e presente un prossimo prodotto da riprodurre, si torna al punto 2.
 		\end{enumerate}
     \end{enumerate}\\\hline
 \end{tabular}
@@ -1397,13 +1394,13 @@ Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
 Descrizione & Permette di trasformare una playlist in una serie tv\\\hline
 Pre-condizioni & L'utente ha il servizio per creare serie tv, e ha indicato una playlist che intende trasformare in serie tv\\\hline
-Post-condizioni & Se non avvengono errori, la playlist indicata diventa una serie tv\\\hline
+Post-condizioni & La playlist indicata diventa una serie tv\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 		\item Il sistema verifica che:
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti video
 			\item Tutti i prodotti della playlist appartengono all'utente stesso
-			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
+			\item Per ogni prodotto della playlist, non esiste un'altra serie tv dell'utente che contiene quel prodotto
 			\end{itemize}
 			 \begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è una serie tv
@@ -1432,7 +1429,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti musicali
 			\item Tutti i prodotti della playlist appartengono all'utente stesso
-			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
+			\item Per ogni prodotto della playlist, non esiste un'altro album dell'utente che contiene quel prodotto
 			\end{itemize}
 			 \begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è un album
@@ -1520,9 +1517,9 @@ Categoria & Risorse \\\hline
 Nome & UC\_CalcolaQualit\'aContenuto\\\hline
 Priorità & Medium \\\hline
 Attori & Utente, Staff \\\hline
-Descrizione & calcola il voto di un certo contenuto, in base ai voti ricevuti\\\hline
+Descrizione & Calcola il voto di un certo contenuto, in base ai voti ricevuti\\\hline
 Input & Un contenuto (un prodotto o una playlist)\\\hline
-Output & un indicatore di qualità (un numero) per il contenuto\\\hline
+Output & Un indicatore di qualità (un numero) per il contenuto\\\hline
 Pre-condizioni & Il contenuto ha ricevuto almeno una votazione\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} 
@@ -1551,7 +1548,7 @@ Categoria & Risorse \\\hline
 Nome & UC\_OttieniCronologia\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
-Descrizione & ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
+Descrizione & Ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
 Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} 
@@ -1577,7 +1574,7 @@ Nome & UC\_DownloadProdotto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
 Descrizione & Permette di scaricare un prodotto, in modo da poterlo riprodurre offline\\\hline
-Pre-condizioni & L'utente ha il servizio per scaricare prodotti, l'utente ha indicato un prodotto che intende scaricare, il dispositivo dell'utente ha sufficiente memoria per contenere i file multimediali del prodotto\\\hline
+Pre-condizioni & L'utente ha il servizio per scaricare prodotti, l'utente ha indicato un prodotto che intende scaricare, il dispositivo dell'utente ha sufficiente memoria per contenere i file multimediali del prodotto, il prodotto \'e riproducibile dall'utente.\\\hline
 Post-condizioni & Il prodotto è scaricato sul dispositivo dell'utente\\\hline
 Flusso &    \vspace{-5mm} 
 	\begin{enumerate}
@@ -1603,7 +1600,6 @@ Descrizione & Permette di riprodurre un prodotto\\\hline
 Pre-condizioni & L'utente ha il servizio per riprodurre il prodotto, e ha indicato uno specifico prodotto che intende riprodurre\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-	\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_34
 	\item \textbf{\# alt1}: Se il prodotto è scaricato sul dispositivo dell'utente:
 		\begin{enumerate}[label*=\arabic*.]	
 		\item \textbf{\# alt1}: Se non è disponibile una connessione ad Internet, il prodotto viene riprodotto tramite il player della piattaforma, usando i file scaricati
@@ -1615,8 +1611,9 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 		\end{enumerate}
 	\item \textbf{\# alt2}: Altrimenti, il sistema analizza il tipo di prodotto:
 		\begin{enumerate}[label*=\arabic*.]
-		\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_24
-		\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_25
+			\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_34
+			\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_24
+			\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_25
 		\end{enumerate}
 	\end{enumerate}\\\hline
 \end{tabular}
@@ -1662,7 +1659,7 @@ Categoria & Risorse \\\hline
 Nome & UC\_CommentaContenuto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di lasciare un feedback testuale (commento) a un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Descrizione & Permette a un utente di lasciare un commento a un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
 Pre-condizioni & L'utente ha scelto il contenuto da recensire.\\\hline
 Post-condizioni & Un nuovo commento \'e associato al contenuto scelto.\\\hline
 Flusso &    \vspace{-5mm} 
@@ -1685,8 +1682,8 @@ Categoria & Risorse \\\hline
 Nome & UC\_RimuoviCommento\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di rimuovere un feedback testuale (commento) da un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
-Pre-condizioni & L'utente ha scelto il commento da rimuovere.\\\hline
+Descrizione & Permette a un utente di rimuovere un commento da un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Pre-condizioni & L'utente ha scelto il commento da rimuovere dalla lista dei commenti da lui lasciati sotto un determinato prodotto.\\\hline
 Post-condizioni & Il commento non \'e pi\'u associato al contenuto scelto.\\\hline
 Flusso &  \vspace{-5mm} 
 	\begin{enumerate}
