@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  2 MAR 2020 23:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  3 MAR 2020 00:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1436,80 +1436,49 @@ Overfull \hbox (32.12355pt too wide) in paragraph at lines 27--34
  []
 
 
-Overfull \hbox (32.12355pt too wide) in paragraph at lines 39--51
+Overfull \hbox (32.12355pt too wide) in paragraph at lines 40--52
  [][] 
  []
 
 [99] [100]
-Overfull \hbox (70.18733pt too wide) in alignment at lines 55--77
+Overfull \hbox (35.69049pt too wide) in alignment at lines 56--78
  [] [] [] 
  []
 
 
-Overfull \hbox (70.18733pt too wide) in alignment at lines 77--97
+Overfull \hbox (35.69049pt too wide) in alignment at lines 78--98
  [] [] [] 
  []
 
 
-Overfull \hbox (70.18733pt too wide) in alignment at lines 97--110
+Overfull \hbox (35.69049pt too wide) in alignment at lines 98--110
  [] [] [] 
  []
 
 [101
 
 ] [102]
-Overfull \hbox (13.97464pt too wide) in paragraph at lines 118--118
- []|\OT1/lmr/m/n/10 UC[]RecuperaAbbonamentiEsistenti| 
- []
-
-
-Overfull \hbox (10.80789pt too wide) in paragraph at lines 122--122
- []|\OT1/lmr/m/n/10 UC[]AggiungiServizioAbbonamento| 
- []
-
-
-Overfull \hbox (8.1688pt too wide) in paragraph at lines 123--123
- []|\OT1/lmr/m/n/10 UC[]RimuoviServizioAbbonamento| 
- []
-
-
-Overfull \hbox (7.64134pt too wide) in paragraph at lines 124--124
- []|\OT1/lmr/m/n/10 UC[]RecuperaServiziAbbonamento| 
- []
-
-
-Overfull \hbox (30.8079pt too wide) in paragraph at lines 125--125
- []|\OT1/lmr/m/n/10 UC[]RecuperaPianiAbbonamentoUtente| 
- []
-
-
-Overfull \hbox (17.697pt too wide) in paragraph at lines 143--143
- []|\OT1/lmr/m/n/10 UC[]SpostaPuntoRiproduzionePlayer| 
- []
-
-
-Overfull \hbox (8.73848pt too wide) in paragraph at lines 162--162
- []|\OT1/lmr/m/n/10 UC[]GestisciScadenzeAbbonamenti| 
- []
-
-
-Overfull \hbox (32.12355pt too wide) in paragraph at lines 114--167
+Overfull \hbox (83.42154pt too wide) in paragraph at lines 116--133
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 722.84525pt on input line 168.
+Overfull \hbox (83.42154pt too wide) in paragraph at lines 140--152
+ [][] 
+ []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 171--181
+[103] [104] [105]
+Underfull \hbox (badness 10000) in paragraph at lines 173--183
 
  []
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [103
-\indexentry{Index|hyperpage}{103}
-] [104] [105]
+ [106
+
+
+\indexentry{Index|hyperpage}{106}
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
@@ -1519,10 +1488,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 9726 strings out of 494428
- 140505 string characters out of 6174304
+ 9727 strings out of 494428
+ 140507 string characters out of 6174304
  543007 words of memory out of 5000000
- 12635 multiletter control sequences out of 15000+600000
+ 12634 multiletter control sequences out of 15000+600000
  68142 words of font info for 46 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  249i,16n,243p,895b,820s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1540,10 +1509,10 @@ exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.
 pfb>
-Output written on main.pdf (105 pages, 1010265 bytes).
+Output written on main.pdf (106 pages, 1012122 bytes).
 PDF statistics:
- 1312 PDF objects out of 1440 (max. 8388607)
- 1172 compressed objects within 12 object streams
- 596 named destinations out of 1000 (max. 500000)
+ 1317 PDF objects out of 1440 (max. 8388607)
+ 1176 compressed objects within 12 object streams
+ 598 named destinations out of 1000 (max. 500000)
  272 words of extra memory for PDF output out of 10000 (max. 10000000)
 
