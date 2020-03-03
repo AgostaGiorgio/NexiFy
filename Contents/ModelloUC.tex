@@ -1624,6 +1624,78 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \end{table}
 %================================
 
+%================UC relativi a 12==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_VotaContenuto\\\hline
+Priorità & Medium \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di lasciare un feedback numerico (intero da 1 a 5) a un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Pre-condizioni & L'utente ha scelto il contenuto da recensire.\\\hline
+Post-condizioni & Una nuova valutazione numerica \'e associata al contenuto scelto.\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema chiede all'utente di fornire un valore compreso tra 1 e 5;
+		\item L'utente fornisce il valore richiesto;
+		\item Il sistema verifica se esiste gi\'a una valutazione dell'utente a quel contenuto:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se esiste, allora il sistema la aggiorna cambiando il valore numerico gi\'a memorizzato con 	quello appena fornitogli dall'utente;
+			\item \textbf{\# alt2}: Se non esiste, allora provvede a memorizzare il feedback.
+		\end{enumerate}
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_CommentaContenuto\\\hline
+Priorità & Medium \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di lasciare un feedback testuale (commento) a un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Pre-condizioni & L'utente ha scelto il contenuto da recensire.\\\hline
+Post-condizioni & Un nuovo commento \'e associato al contenuto scelto.\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema chiede all'utente di comunicare il commento relativo al contenuto scelto;
+		\item L'utente fornisce l'informazione richiesta;
+		\item Il sistema, dopo aver verificato l'input, provvede a memorizzare il commento.
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Risorse \\\hline
+Nome & UC\_RimuoviCommento\\\hline
+Priorità & Medium \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di rimuovere un feedback testuale (commento) da un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Pre-condizioni & L'utente ha scelto il commento da rimuovere.\\\hline
+Post-condizioni & Il commento non \'e pi\'u associato al contenuto scelto.\\\hline
+Flusso &  \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema provvede a rimuovere il commento. \newline
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%===================================
 
 \end{center}
 
