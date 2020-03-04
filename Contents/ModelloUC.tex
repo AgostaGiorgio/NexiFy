@@ -23,7 +23,7 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 \noindent \large{\textbf{Use Case}} \\
 \begin{itemize}[]
 	\item \textbf{ID}: identificativo univoco del caso d'uso, è della forma UC\_X dove X è una stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
-	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori {User, Subscriptions, Management}
+	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori \emph{GestioneAbbonamento, GestioneAccount, GestioneProdotto, InterfacciaUtente, SegnalazioniProdotto, GestioneInserzioni, GestionePlaylist, GestioneCodaDiRiproduzione, Recensione}.
 	\item \textbf{Nome}: Nome identificativo del caso d'uso, serve anche per dare un'idea del tipo di attività.
 	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {High, Medium, Low}. 
 	\item \textbf{Attori}: Lista di identificativi degli attori coinvolti nel caso d'uso.
@@ -203,7 +203,7 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\lastUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_CreaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -235,7 +235,7 @@ Flusso &  	\begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
@@ -258,7 +258,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_RecuperaServizi\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
@@ -281,7 +281,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_DisattivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -301,7 +301,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_AttivaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -322,7 +322,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_AggiungiServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -349,7 +349,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -374,7 +374,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
@@ -396,7 +396,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
@@ -421,7 +421,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & High \\\hline
 Attori &  Timer \\\hline
@@ -460,7 +460,7 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_CalcolaImportoDaPagare\\\hline
 Priorità & High \\\hline
 Attori &  Timer \\\hline
@@ -485,7 +485,7 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & GestioneAccount\\\hline
 Nome & UC\_SospendiAccount\\\hline
 Priorità & High \\\hline
 Attori &  ManagerSegnalazioni \\\hline
@@ -509,7 +509,7 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Autenticazione \\\hline
+Categoria & GestioneAccount \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
@@ -536,7 +536,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Autenticazione \\\hline
+Categoria & GestioneAccount \\\hline
 Nome & UC\_ModificaProfilo \\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -563,7 +563,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Autenticazione \\\hline
+Categoria & GestioneAccount \\\hline
 Nome & UC\_EffettuaLogin \\\hline
 Priorità & High \\\hline
 Attori &  UtenteNonAutenticato \\\hline
@@ -590,7 +590,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Autenticazione \\\hline
+Categoria & GestioneAccount \\\hline
 Nome & UC\_EffettuaLogout \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -614,7 +614,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -646,7 +646,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -666,7 +666,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_CambiaAbbonamento\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -710,7 +710,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneProdotto \\\hline
 Nome & UC\_CreaProdotto \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -741,7 +741,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneProdotto \\\hline
 Nome & UC\_ModificaInformazioniDiBase \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -772,7 +772,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneProdotto \\\hline
 Nome & UC\_CaricaFile \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -806,7 +806,7 @@ Flusso &  	\vspace{-5mm}  \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneProdotto \\\hline
 Nome & UC\_CambiaVisibilit\'aProdotto \\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -834,7 +834,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & InterfacciaUtente\\\hline
 Nome & UC\_RiproduciVideo\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -858,7 +858,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & InterfacciaUtente\\\hline
 Nome & UC\_RiproduciMusica\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -887,7 +887,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & InterfacciaUtente\\\hline
 Nome & UC\_PausaPlayer\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -909,7 +909,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & InterfacciaUtente\\\hline
 Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -935,7 +935,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
+Categoria & SegnalazioniProdotto\\\hline
 Nome & UC\_SegnalaProdotto\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato, Staff \\\hline
@@ -964,7 +964,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
+Categoria & SegnalazioniProdotto\\\hline
 Nome & UC\_OttieniSegnalazioni\\\hline
 Priorità & High \\\hline
 Attori &  Staff \\\hline
@@ -986,7 +986,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
+Categoria & SegnalazioniProdotto\\\hline
 Nome & UC\_ChiudiSegnalazione\\\hline
 Priorità & High \\\hline
 Attori &  ManagerSegnalazioni \\\hline
@@ -1018,7 +1018,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_RicercaContenuto\\\hline
 Priorità & High \\\hline
 Attori &  Utente \\\hline
@@ -1050,7 +1050,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_RicercaPopolari\\\hline
 Priorità & Medium \\\hline
 Attori &  Utente \\\hline
@@ -1090,7 +1090,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_SuggerisciContenuti\\\hline
 Priorità & Medium \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1145,7 +1145,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneInserzioni \\\hline
 Nome & UC\_VisualizzaPubblicità\\\hline
 Priorità & High \\\hline
 Attori & Timer \\\hline
@@ -1174,7 +1174,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_CreaPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1201,7 +1201,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_AggiungiProdottoPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1223,7 +1223,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_RimuoviProdottoPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1245,7 +1245,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_CambiaVisibilit\'aPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1267,7 +1267,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_RiproduciPlaylist\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1292,7 +1292,7 @@ Flusso &  \vspace{-5mm}	\begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneCodaDiRiproduzione \\\hline
 Nome & UC\_AggiungiProdottoAllaCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1312,7 +1312,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneCodaDiRiproduzione \\\hline
 Nome & UC\_RimuoviProdottoDallaCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1332,7 +1332,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneCodaDiRiproduzione \\\hline
 Nome & UC\_MostraStatoCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1355,7 +1355,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestioneCodaDiRiproduzione \\\hline
 Nome & UC\_RiproduciCoda\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1388,7 +1388,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_CreaSerieTv\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1417,7 +1417,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & GestionePlaylist \\\hline
 Nome & UC\_CreaAlbum\\\hline
 Priorità & High \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1446,7 +1446,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & GestioneAbbonamento\\\hline
 Nome & UC\_GestisciScadenzeAbbonamenti\\\hline
 Priorità & High \\\hline
 Attori &  Timer \\\hline
@@ -1482,7 +1482,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & GestioneAbbonamento \\\hline
 Nome & UC\_GestisciAbbonamenti\\\hline
 Priorità & High \\\hline
 Attori & ManagerAbbonamenti \\\hline
@@ -1513,7 +1513,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & GestioneProdotto \\\hline
 Nome & UC\_CalcolaQualit\'aContenuto\\\hline
 Priorità & Medium \\\hline
 Attori & Utente, Staff \\\hline
@@ -1544,7 +1544,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_OttieniCronologia\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1569,7 +1569,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_DownloadProdotto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1592,7 +1592,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & InterfacciaUtente \\\hline
 Nome & UC\_RiproduciProdotto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1628,7 +1628,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensione \\\hline
 Nome & UC\_VotaContenuto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1655,7 +1655,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensione \\\hline
 Nome & UC\_CommentaContenuto\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1678,7 +1678,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensione \\\hline
 Nome & UC\_RimuoviCommento\\\hline
 Priorità & Medium \\\hline
 Attori & UtenteAutenticato \\\hline
