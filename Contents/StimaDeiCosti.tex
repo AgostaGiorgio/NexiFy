@@ -1,3 +1,8 @@
+\newcounter{ucCostCounter}
+\newcommand{\lastUCCost}{\theucCostCounter}
+\newcommand{\nextUCCost}{\stepcounter{ucCostCounter}{\theucCostCounter}}
+
+
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \captionsetup[table]{name=Tabella}
 
