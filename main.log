@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  3 MAR 2020 00:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  4 MAR 2020 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -445,40 +445,41 @@ Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 )
    defining Unicode char U+20AC (decimal 8364)
 \c@ucCounter=\count131
+\c@ucCostCounter=\count132
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 37.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
+\scratchcounter=\count133
 \scratchdimen=\dimen144
 \scratchbox=\box63
-\nofMPsegments=\count133
-\nofMParguments=\count134
+\nofMPsegments=\count134
+\nofMParguments=\count135
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count135
+\MPscratchCnt=\count136
 \MPscratchDim=\dimen145
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -498,7 +499,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -506,11 +507,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count138
+\c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -518,7 +519,7 @@ LaTeX Info: Redefining \nameref on input line 33.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 36.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 40.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -526,7 +527,7 @@ File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <images/worldCDN.png, id=132, 325.215pt x 153.2124pt>
 File: images/worldCDN.png Graphic file (type png)
 <use images/worldCDN.png>
-Package pdftex.def Info: images/worldCDN.png  used on input line 46.
+Package pdftex.def Info: images/worldCDN.png  used on input line 50.
 (pdftex.def)             Requested size: 325.2142pt x 153.212pt.
  [1
 
@@ -627,12 +628,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 43--76
+Underfull \hbox (badness 10000) in paragraph at lines 43--80
 
  []
 
 
-Overfull \hbox (36.29434pt too wide) in paragraph at lines 43--76
+Overfull \hbox (36.29434pt too wide) in paragraph at lines 43--80
 []
  []
 
@@ -738,12 +739,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 276.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 269--86
+Underfull \hbox (badness 10000) in paragraph at lines 269--90
 
  []
 
 
-Overfull \hbox (17.95918pt too wide) in paragraph at lines 269--86
+Overfull \hbox (17.95918pt too wide) in paragraph at lines 269--90
 []
  []
 
@@ -782,12 +783,12 @@ i []prodotti[]
  []
 
 [27] [28])
-Underfull \hbox (badness 10000) in paragraph at lines 528--91
+Underfull \hbox (badness 10000) in paragraph at lines 528--95
 
  []
 
 
-Overfull \hbox (3.10698pt too wide) in paragraph at lines 528--91
+Overfull \hbox (3.10698pt too wide) in paragraph at lines 528--95
 []
  []
 
@@ -914,12 +915,12 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 217--236
  []
 
 [38] [39])
-Underfull \hbox (badness 10000) in paragraph at lines 240--96
+Underfull \hbox (badness 10000) in paragraph at lines 240--100
 
  []
 
 
-Overfull \hbox (80.11244pt too wide) in paragraph at lines 240--96
+Overfull \hbox (80.11244pt too wide) in paragraph at lines 240--100
 []
  []
 
@@ -941,6 +942,18 @@ l'attore all'interno dell'intero
 
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
+ []
+
+
+Overfull \hbox (1.63757pt too wide) in paragraph at lines 26--27
+\OT1/lmr/m/n/12 as-sumere i val-ori \OT1/lmr/m/it/12 Ges-tione-Ab-bona-mento, G
+es-tioneAc-count, Ges-
+ []
+
+
+Overfull \hbox (24.83932pt too wide) in paragraph at lines 26--27
+\OT1/lmr/m/it/12 tione-Prodotto, In-ter-fac-ciaU-t-ente, Seg-nalazion-iProdotto
+, Ges-tioneIn-
  []
 
 [41]
@@ -966,7 +979,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 46--56
  [] 
  []
 
-
+[42]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 64--64
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -976,7 +989,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 57--67
  [][] 
  []
 
-[42]
+
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 75--75
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1142,283 +1155,307 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 349--369
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 374--392
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 374--391
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 397--415
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 396--413
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 423--457
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 421--455
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 25.88861pt on input line 457.
+LaTeX Warning: Float too large for page by 37.88861pt on input line 455.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 462--482
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 460--480
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 487--503
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 485--501
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 511--533
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 509--531
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 538--560
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 536--558
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 565--587
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 563--585
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 592--609
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 590--607
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 616--643
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 614--641
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--660
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 648--663
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 646--661
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 668--702
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 666--700
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 33.88861pt on input line 702.
+LaTeX Warning: Float too large for page by 33.88861pt on input line 700.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 712--738
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 710--736
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 743--769
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 741--767
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 774--803
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 772--801
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 808--828
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 806--826
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 836--855
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 834--853
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 860--884
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 858--882
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 889--906
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 887--904
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 911--929
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 909--927
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 937--961
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 935--959
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 966--983
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 964--981
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 988--1013
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 986--1011
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1020--1047
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1018--1045
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1052--1086
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1050--1084
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 99.88861pt on input line 1086.
+LaTeX Warning: Float too large for page by 99.88861pt on input line 1084.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1092--1140
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1090--1138
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 132.11896pt on input line 1140.
+LaTeX Warning: Float too large for page by 132.11896pt on input line 1138.
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1147--1169
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1145--1167
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1176--1198
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1174--1196
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1203--1220
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1201--1218
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1225--1242
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1223--1240
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1247--1264
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1245--1262
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1269--1286
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1267--1284
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1294--1309
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1292--1307
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1325--1326
+Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1325--1326
+Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1314--1329
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1312--1327
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1346
 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1334--1351
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1332--1349
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1357--1384
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1355--1381
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1391--1415
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1388--1412
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1420--1444
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1417--1441
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1449--1478
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1446--1475
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1485--1509
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1482--1506
  [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1516--1539
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1513--1537
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1561--1562
-[]\OT1/lmr/m/n/10 votazione ri-las-ci-ata dall'utente (se non pre-sente con-sid
--er-ata
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1544--1562
+ [][] 
  []
 
 
-Overfull \hbox (66.22551pt too wide) in paragraph at lines 1546--1568
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1569--1587
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1592--1621
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1628--1650
+ [][] 
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1655--1673
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1690--1691
+
+ []
+
+
+Overfull \hbox (66.22551pt too wide) in paragraph at lines 1678--1694
  [][] 
  []
 
 [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
 [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
 [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92]
-[93] [94] [95] [96] [97]
-Underfull \hbox (badness 10000) in paragraph at lines 1575--1585
+[93] [94] [95] [96] [97] [98] [99] [100] [101] [102]
+Underfull \hbox (badness 10000) in paragraph at lines 1700--1710
 
  []
 
 
-Overfull \hbox (41.03304pt too wide) in paragraph at lines 1575--1585
+Overfull \hbox (41.03304pt too wide) in paragraph at lines 1700--1710
 [] 
  []
 
-) [98
-\indexentry{Index|hyperpage}{98}
+) [103
+\indexentry{Index|hyperpage}{103}
 ] (./Contents/StimaDeiCosti.tex
 Overfull \hbox (32.12355pt too wide) in paragraph at lines 15--22
  [][] 
@@ -1440,7 +1477,7 @@ Overfull \hbox (32.12355pt too wide) in paragraph at lines 40--52
  [][] 
  []
 
-[99] [100]
+[104] [105]
 Overfull \hbox (35.69049pt too wide) in alignment at lines 56--78
  [] [] [] 
  []
@@ -1451,47 +1488,47 @@ Overfull \hbox (35.69049pt too wide) in alignment at lines 78--98
  []
 
 
-Overfull \hbox (35.69049pt too wide) in alignment at lines 98--110
+Overfull \hbox (35.69049pt too wide) in alignment at lines 98--115
  [] [] [] 
  []
 
-[101
+[106
 
-] [102]
-Overfull \hbox (83.42154pt too wide) in paragraph at lines 116--133
+] [107]
+Overfull \hbox (83.42154pt too wide) in paragraph at lines 121--138
  [][] 
  []
 
 
-Overfull \hbox (83.42154pt too wide) in paragraph at lines 140--152
+Overfull \hbox (83.42154pt too wide) in paragraph at lines 145--157
  [][] 
  []
 
-[103] [104] [105]
-Underfull \hbox (badness 10000) in paragraph at lines 173--183
+[108] [109] [110]
+Underfull \hbox (badness 10000) in paragraph at lines 178--188
 
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [106
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+ [111
 
 
-\indexentry{Index|hyperpage}{106}
+\indexentry{Index|hyperpage}{111}
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1470D791FAC43E22CB61F21274B214A4;2099.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 9727 strings out of 494428
- 140507 string characters out of 6174304
- 543007 words of memory out of 5000000
- 12634 multiletter control sequences out of 15000+600000
+ 9763 strings out of 494428
+ 140913 string characters out of 6174304
+ 562007 words of memory out of 5000000
+ 12645 multiletter control sequences out of 15000+600000
  68142 words of font info for 46 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  249i,16n,243p,895b,820s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1509,10 +1546,10 @@ exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.
 pfb>
-Output written on main.pdf (106 pages, 1012122 bytes).
+Output written on main.pdf (111 pages, 1023486 bytes).
 PDF statistics:
- 1317 PDF objects out of 1440 (max. 8388607)
- 1176 compressed objects within 12 object streams
- 598 named destinations out of 1000 (max. 500000)
+ 1365 PDF objects out of 1440 (max. 8388607)
+ 1218 compressed objects within 13 object streams
+ 623 named destinations out of 1000 (max. 500000)
  272 words of extra memory for PDF output out of 10000 (max. 10000000)
 

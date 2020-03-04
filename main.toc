@@ -29,4 +29,4 @@
 \contentsline {subsection}{\numberline {8.3}Specifica Attori}{42}{subsection.8.3}% 
 \contentsline {subsection}{\numberline {8.4}Gestione Fallimenti}{47}{subsection.8.4}% 
 \contentsline {subsection}{\numberline {8.5}Specifica Use Case}{48}{subsection.8.5}% 
-\contentsline {section}{\numberline {9}\itshape {Stima dei costi}}{99}{section.9}% 
+\contentsline {section}{\numberline {9}\itshape {Stima dei costi}}{104}{section.9}% 
