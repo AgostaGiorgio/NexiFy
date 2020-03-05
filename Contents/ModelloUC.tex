@@ -28,7 +28,7 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 \noindent \large{\textbf{Use Case}} \\
 \begin{itemize}[]
 	\item \textbf{ID}: identificativo univoco del caso d'uso, è della forma UC\_X dove X è una stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
-	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori \emph{GestioneAbbonamento, GestioneAccount, GestioneProdotto, InterfacciaUtente, SegnalazioniProdotto, GestioneInserzioni, GestionePlaylist, GestioneCodaDiRiproduzione, Recensione}.
+	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori \emph{Abbonamenti, Account, Prodotti, Segnalazioni, Playlist, CodaDiRiproduzione, Recensioni}.
 	\item \textbf{Nome}: Nome identificativo del caso d'uso, serve anche per dare un'idea del tipo di attività.
 	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {Alta, Media, Bassa}. 
 	\item \textbf{Attori}: Lista di identificativi degli attori coinvolti nel caso d'uso.
@@ -229,6 +229,12 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 \nextUcName{ucRecuperaPianiAbbonamentoUtente}
 \nextUcName{ucEffettuaPagamentoPartner}
 \nextUcName{ucCalcolaImportoDaPagare}
+\nextUcName{ucGestisciSottoscrizioniAbbonamenti}
+\nextUcName{ucSottoscriviAbbonamento}
+\nextUcName{ucDisdiciAbbonamento}
+\nextUcName{ucCambiaAbbonamento}
+\nextUcName{ucGestisciScadenzeAbbonamenti}
+
 \nextUcName{ucSospendiAccount}
 \nextUcName{ucRiattivaAccount}
 \nextUcName{ucRiattivaAccountAutomatico}
@@ -236,10 +242,8 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 \nextUcName{ucModificaProfilo}
 \nextUcName{ucEffettuaLogin}
 \nextUcName{ucEffettuaLogout}
-\nextUcName{ucGestisciSottoscrizioniAbbonamenti}
-\nextUcName{ucSottoscriviAbbonamento}
-\nextUcName{ucDisdiciAbbonamento}
-\nextUcName{ucCambiaAbbonamento}
+\nextUcName{ucOttieniCronologia}
+
 \nextUcName{ucGestisciProdotti}
 \nextUcName{ucCreaProdotto}
 \nextUcName{ucModificaInformazioniDiBase}
@@ -251,36 +255,38 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 \nextUcName{ucPausaPlayer}
 \nextUcName{ucSpostaPuntoRiproduzionePlayer}
 \nextUcName{ucDownloadProdotto}
+\nextUcName{ucVisualizzaPubblicita}
+\nextUcName{ucRiproduciAudioInBackground}
+
 \nextUcName{ucSegnalaProdotto}
 \nextUcName{ucGestisciSegnalazioni}
 \nextUcName{ucOttieniSegnalazioni}
 \nextUcName{ucChiudiSegnalazione}
 \nextUcName{ucRiapriSegnalazione}
 \nextUcName{ucVisualizzaProdottoSegnalato}
+
 \nextUcName{ucRicercaContenuto}
 \nextUcName{ucRicercaPopolari}
 \nextUcName{ucSuggerisciContenuti}
-\nextUcName{ucVisualizzaPubblicita}
+
 \nextUcName{ucGestisciPlaylist}
 \nextUcName{ucCreaPlaylist}
 \nextUcName{ucAggiungiProdottoPlaylist}
 \nextUcName{ucRimuoviProdottoPlaylist}
 \nextUcName{ucCambiaVisibilitaPlaylist}
 \nextUcName{ucRiproduciPlaylist}
+\nextUcName{ucCreaSerieTv}
+\nextUcName{ucCreaAlbum}
+
 \nextUcName{ucAggiungiProdottoAllaCoda}
 \nextUcName{ucRimuoviProdottoDallaCoda}
 \nextUcName{ucMostraStatoCoda}
 \nextUcName{ucRiproduciCoda}
-\nextUcName{ucCreaSerieTv}
-\nextUcName{ucCreaAlbum}
-\nextUcName{ucGestisciScadenzeAbbonamenti}
+
 \nextUcName{ucCalcolaQualitaContenuto}
-\nextUcName{ucOttieniCronologia}
 \nextUcName{ucVotaContenuto}
 \nextUcName{ucCommentaContenuto}
 \nextUcName{ucRimuoviCommento}
-\nextUcName{ucRiproduciAudioInBackground}
-
 \begin{center}
 
 %======= UC relativi ai requisiti funzionali 1. ==========
@@ -290,7 +296,7 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & Abbonamenti \\\hline
 Nome & UC\_GestisciAbbonamenti\\\hline
 Priorità & Alta \\\hline
 Attori & ManagerAbbonamenti \\\hline
@@ -313,7 +319,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_CreaAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -344,7 +350,7 @@ Flusso &  	\begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
@@ -366,7 +372,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServizi\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
@@ -387,7 +393,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_DisattivaAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -407,7 +413,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_AttivaAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -428,7 +434,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_AggiungiServizioAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -455,7 +461,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RimuoviServizioAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
@@ -480,7 +486,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
@@ -501,7 +507,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
@@ -518,14 +524,14 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 %==============================
 
 
-%======= UC relativi a 2 e 3 ========
+%======= UC relativi a 2 =======
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
 Priorità & Alta \\\hline
 Attori &  Timer \\\hline
@@ -564,7 +570,7 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_CalcolaImportoDaPagare\\\hline
 Priorità & Alta \\\hline
 Attori &  Timer \\\hline
@@ -580,183 +586,7 @@ Flusso &
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & GestioneAccount\\\hline
-Nome & UC\_SospendiAccount\\\hline
-Priorità & Alta \\\hline
-Attori &  ManagerSegnalazioni \\\hline
-Descrizione & Sospende l'account di un utente\\\hline
-Pre-condizioni &  Il manager ha indicato un utente attivo che vuole sospendere\\\hline
-Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
-Flusso &  	
-		\vspace{-5mm} \begin{enumerate}
-		\item Il sistema richiede al manager la durata della sospensione
-		\item Il manager fornisce la durata della sospensione
-		\item Il sistema richiede al Database di memorizzare che l'account dell'utente specificato è sospeso\newline
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
-Nome & UC\_RiattivaAccount\\\hline
-Priorità & Media \\\hline
-Attori &  ManagerSegnalazioni \\\hline
-Descrizione & Riattiva l'account di un utente, precedentemente sospeso\\\hline
-Pre-condizioni &  Il manager ha indicato un utente sospeso che vuole riattivare\\\hline
-Post-condizioni &  L'account dell'utente specificato è riattivato\\\hline
-Flusso &  	
-		\vspace{-5mm} \begin{enumerate}
-		\item Il sistema richiede al Database di memorizzare che l'account dell'utente specificato è di nuovo attivo\newline
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
-Nome & UC\_RiattivaAccountAutomatico\\\hline
-Priorità & Alta \\\hline
-Attori &  Timer \\\hline
-Descrizione & Riattiva l'account di un utente, al termine del periodo di sospensione\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  Gli utenti il cui periodo di sospensione è terminato sono di nuovo attivi\\\hline
-Flusso &  	
-		\vspace{-5mm} \begin{enumerate}
-		\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno l'account sospeso
-		\item Per ogni utente, il sistema verifica se il periodo di sospensione è terminato:
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se il periodo di sospensione non è terminato, l'account viene lasciato inalterato
-			\item \textbf{\# alt2}: Se il periodo di sospensione è terminato, allora il sistema richiede al Database di memorizzare che l'account dell'utente considerato è di nuovo attivo
-		\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%=======================
-
-
-%======= UC relativi a 4 ===========
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & GestioneAccount \\\hline
-Nome & UC\_EffettuaRegistrazione \\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Permette a un utente non autenticato di registrarsi\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  Viene creato un nuovo account\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di registrarsi alla piattaforma;
-			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password;
-			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
-			\item Il sistema verifica la validità dei dati:
-			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se il sistema accetta i dati, il sistema richiede al Database di registrare l'utente sulla piattaforma
-				\item\textbf{\# alt2}: Se il sistema non accetta i dati, la procedura fallisce e l'utente viene avvisato
-			\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneAccount \\\hline
-Nome & UC\_ModificaProfilo \\\hline
-Priorità & Media \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette la modifica da parte di un utente di alcuni dati inseriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
-Pre-condizioni & L'utente si trova sulla pagina di dettaglio del proprio profilo.\\\hline
-Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede la modifica dei suoi dati
-			\item Il sistema rende modificabili i campi che possono essere modificati
-			\item L'utente comunica al sistema i nuovi valori da memorizzare
-			\item Il sistema valida i dati proposti dall'utente:
-			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se i nuovi valori sono validi, il sistema richiede al Database di aggiornare i dati dell'utente con quelli inseriti
-				\item\textbf{\# alt}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi
-			\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & GestioneAccount \\\hline
-Nome & UC\_EffettuaLogin \\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo le opportune credenziali \\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & L'utente è autenticato\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di accedere alla piattaforma
-			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password
-			\item L'utente riempie i campi richiesti e li invia al sistema
-			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database:
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se le credenziali sono corrette: l'utente è autenticato all'interno del proprio account
-				\item \textbf{\# alt2}: se le credenziali non sono corrette: l'utente non viene autenticato ed è reindirizzato alla schermata di login
-			\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneAccount \\\hline
-Nome & UC\_EffettuaLogout \\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette ad un utente autenticato di uscire dal proprio profilo \\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  L'utente non è più autenticato.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di uscire dalla piattaforma
-			\item L'utente non è più autenticato sulla piattaforma e viene reindirizzato alla schermata principale
-			%\item Il sistema elimina la sessione dell'utente
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%==============================
+%===========
 
 %============ UC relativi a 6 =============
 \begin{table}[bp]
@@ -765,7 +595,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & Abbonamenti \\\hline
 Nome & UC\_GestisciSottoscrizioniAbbonamenti\\\hline
 Priorità & Alta \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -788,7 +618,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_SottoscriviAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -816,7 +646,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_DisdiciAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -836,7 +666,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_CambiaAbbonamento\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -865,9 +695,243 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \label{table_use_case:\lastUC}\newline
 \end{table}
 
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_GestisciScadenzeAbbonamenti\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer \\\hline
+Descrizione & Gestisce un abbonamento nel momento in cui la sottoscrizione scade: effettua un rinnovo, o lo rimuove dai piani di abbonamento dell'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessun utente ha un abbonamento sottoscritto scaduto\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno un abbonamento sottoscritto
+			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
+			\item Per ogni abbonamento sottoscritto dall'utente, il sistema verifica se la sottoscrizione è scaduta:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se l'abbonamento non è scaduto, la sottoscrizione viene lasciata inalterata
+				\item \textbf{\# alt2}: Se l'abbonamento è scaduto, allora:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: Se è attivo il rinnovo automatico e il piano di abbonamento è ancora sottoscrivibile, allora viene contattato il servizio di pagamento esterno per rinnovare l'abbonamento:
+					\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1}: Se il pagamento va a buon fine: la sottoscrizione dell'abbonamento viene rinnovata
+						\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente, e viene informato l'utente
+					\end{enumerate}
+					\item \textbf{\# alt2}: Altrimenti: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
 %========================
 
+%====== UC relativi a 3========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
+Nome & UC\_SospendiAccount\\\hline
+Priorità & Alta \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Sospende l'account di un utente\\\hline
+Pre-condizioni &  Il manager ha indicato un utente attivo che vuole sospendere\\\hline
+Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item Il sistema richiede al manager la durata della sospensione
+		\item Il manager fornisce la durata della sospensione
+		\item Il sistema richiede al Database di memorizzare che l'account dell'utente specificato è sospeso\newline
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
 
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
+Nome & UC\_RiattivaAccount\\\hline
+Priorità & Media \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Riattiva l'account di un utente, precedentemente sospeso\\\hline
+Pre-condizioni &  Il manager ha indicato un utente sospeso che vuole riattivare\\\hline
+Post-condizioni &  L'account dell'utente specificato è riattivato\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item Il sistema richiede al Database di memorizzare che l'account dell'utente specificato è di nuovo attivo\newline
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
+Nome & UC\_RiattivaAccountAutomatico\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer \\\hline
+Descrizione & Riattiva l'account di un utente, al termine del periodo di sospensione\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Gli utenti il cui periodo di sospensione è terminato sono di nuovo attivi\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno l'account sospeso
+		\item Per ogni utente, il sistema verifica se il periodo di sospensione è terminato:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il periodo di sospensione non è terminato, l'account viene lasciato inalterato
+			\item \textbf{\# alt2}: Se il periodo di sospensione è terminato, allora il sistema richiede al Database di memorizzare che l'account dell'utente considerato è di nuovo attivo
+		\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%=======================
+
+
+%======= UC relativi a 4 ===========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account \\\hline
+Nome & UC\_EffettuaRegistrazione \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteNonAutenticato \\\hline
+Descrizione & Permette a un utente non autenticato di registrarsi\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Viene creato un nuovo account\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item L'utente richiede di registrarsi alla piattaforma;
+			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password;
+			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
+			\item Il sistema verifica la validità dei dati:
+			\begin{enumerate}[  ]
+				\item\textbf{\# alt1}: Se il sistema accetta i dati, il sistema richiede al Database di registrare l'utente sulla piattaforma
+				\item\textbf{\# alt2}: Se il sistema non accetta i dati, la procedura fallisce e l'utente viene avvisato
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Account \\\hline
+Nome & UC\_ModificaProfilo \\\hline
+Priorità & Media \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette la modifica da parte di un utente di alcuni dati inseriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
+Pre-condizioni & L'utente si trova sulla pagina di dettaglio del proprio profilo.\\\hline
+Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item L'utente richiede la modifica dei suoi dati
+			\item Il sistema rende modificabili i campi che possono essere modificati
+			\item L'utente comunica al sistema i nuovi valori da memorizzare
+			\item Il sistema valida i dati proposti dall'utente:
+			\begin{enumerate}[  ]
+				\item\textbf{\# alt1}: Se i nuovi valori sono validi, il sistema richiede al Database di aggiornare i dati dell'utente con quelli inseriti
+				\item\textbf{\# alt}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account \\\hline
+Nome & UC\_EffettuaLogin \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteNonAutenticato \\\hline
+Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo le opportune credenziali \\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & L'utente è autenticato\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item L'utente richiede di accedere alla piattaforma
+			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password
+			\item L'utente riempie i campi richiesti e li invia al sistema
+			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database:
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: se le credenziali sono corrette: l'utente è autenticato all'interno del proprio account
+				\item \textbf{\# alt2}: se le credenziali non sono corrette: l'utente non viene autenticato ed è reindirizzato alla schermata di login
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Account \\\hline
+Nome & UC\_EffettuaLogout \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette ad un utente autenticato di uscire dal proprio profilo \\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  L'utente non è più autenticato.\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item L'utente richiede di uscire dalla piattaforma
+			\item L'utente non è più autenticato sulla piattaforma e viene reindirizzato alla schermata principale
+			%\item Il sistema elimina la sessione dell'utente
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%==============================
+
+%================UC relativi a 14==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Account \\\hline
+Nome & UC\_OttieniCronologia\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item L'utente richiede di visualizzare la propria cronologia
+		\item Il sistema interroga il Database estraendo i prodotti riprodotti dall'utente
+		\item Il sistema restituisce la lista dei prodotti estratti ordinati in ordine decrescente secondo l'istante di visione
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%================================
 
 %======= UC relativi a 7 ===========
 \begin{table}[bp]
@@ -876,7 +940,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_GestisciProdotti\\\hline
 Priorità & Alta \\\hline
 Attori & UtenteAttivo \\\hline
@@ -899,7 +963,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_CreaProdotto \\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -929,7 +993,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestioneProdotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_ModificaInformazioniDiBase \\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -960,7 +1024,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestioneProdotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_CaricaFile \\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -994,7 +1058,7 @@ Flusso &  	\vspace{-5mm}  \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestioneProdotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_CambiaVisibilit\'aProdotto \\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1021,7 +1085,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_RiproduciProdotto\\\hline
 Priorità & Alta \\\hline
 Attori & UtenteAttivo \\\hline
@@ -1059,7 +1123,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_StreamingVideo\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo, ManagerSegnalazioni \\\hline
@@ -1083,7 +1147,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_StreamingMusica\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo, ManagerSegnalazioni \\\hline
@@ -1112,7 +1176,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & InterfacciaUtente\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_PausaPlayer\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1134,7 +1198,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & InterfacciaUtente\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1159,7 +1223,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_DownloadProdotto\\\hline
 Priorità & Media \\\hline
 Attori & UtenteAttivo \\\hline
@@ -1175,9 +1239,57 @@ Flusso &    \vspace{-5mm}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
-
-
 %================================
+
+%================UC relativi a 16==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_VisualizzaPubblicità\\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Riproduce uno spot pubblicitario\\\hline
+Pre-condizioni & Il piano di abbonamento associato all'utente non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
+Post-condizioni & Nessuna\\\hline
+%immagino di avere una variabile che mi permette di sapere se mandare 
+%la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
+%ciò che mi è stato chiesto
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+		\item Il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
+				\item \textbf{\# alt2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1 e non riproduce nessuno spot.
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%======================================
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_RiproduciAudioInBackground\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette la riproduzione dell'audio quando l'applicazione è in background\\\hline
+Pre-condizioni & L'applicazione è in background ed è in corso la riproduzione di un prodotto\\\hline
+Post-condizioni & Nessuno\\\hline
+Flusso &  \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema sposta la riproduzione del prodotto in background\newline\newline
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
 
 %============ UC relativi a 13 ============= 
 \begin{table}[bp]
@@ -1186,7 +1298,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & SegnalazioniProdotto\\\hline
+Categoria & Segnalazioni\\\hline
 Nome & UC\_SegnalaProdotto\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo, Staff \\\hline
@@ -1215,7 +1327,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & Segnalazioni \\\hline
 Nome & UC\_GestisciSegnalazioni\\\hline
 Priorità & Alta \\\hline
 Attori & ManagerSegnalazioni \\\hline
@@ -1239,7 +1351,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & SegnalazioniProdotto\\\hline
+Categoria & Segnalazioni\\\hline
 Nome & UC\_OttieniSegnalazioni\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
@@ -1261,7 +1373,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & SegnalazioniProdotto\\\hline
+Categoria & Segnalazioni\\\hline
 Nome & UC\_ChiudiSegnalazione\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerSegnalazioni \\\hline
@@ -1284,7 +1396,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
+Categoria & Segnalazioni\\\hline
 Nome & UC\_RiapriSegnalazione\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerSegnalazioni \\\hline
@@ -1305,7 +1417,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
+Categoria & Segnalazioni\\\hline
 Nome & UC\_VisualizzaProdottoSegnalato\\\hline
 Priorità & Alta \\\hline
 Attori &  ManagerSegnalazioni \\\hline
@@ -1329,7 +1441,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & InterfacciaUtente \\\hline
+Categoria & Ricerche \\\hline
 Nome & UC\_RicercaContenuto\\\hline
 Priorità & Alta \\\hline
 Attori &  Utente \\\hline
@@ -1359,7 +1471,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & InterfacciaUtente \\\hline
+Categoria & Ricerche \\\hline
 Nome & UC\_RicercaPopolari\\\hline
 Priorità & Media \\\hline
 Attori &  Utente \\\hline
@@ -1399,7 +1511,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & InterfacciaUtente \\\hline
+Categoria & Ricerche \\\hline
 Nome & UC\_SuggerisciContenuti\\\hline
 Priorità & Media \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1447,35 +1559,6 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{table}
 %=============================
 
-%================UC relativi a 16==========
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & GestioneInserzioni \\\hline
-Nome & UC\_VisualizzaPubblicità\\\hline
-Priorità & Alta \\\hline
-Attori & UtenteAttivo \\\hline
-Descrizione & Riproduce uno spot pubblicitario\\\hline
-Pre-condizioni & Il piano di abbonamento associato all'utente non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
-Post-condizioni & Nessuna\\\hline
-%immagino di avere una variabile che mi permette di sapere se mandare 
-%la pubblicità oppure no. Se la mando ovviamente la variabile va resettata altrimenti decremento e riproduco 
-%ciò che mi è stato chiesto
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema controlla quante riproduzioni mancano all'avvio dello spot pubblicitario:
-			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se mancano 0 riproduzioni allora il sistema resetta questo valore a quello di default e riproduce uno spot pubblicitario qualsiasi
-				\item \textbf{\# alt2}: Se mancano 1 o più riproduzioni allora il sistema decrementa questo valore di 1 e non riproduce nessuno spot.
-			\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%======================================
-
 %================UC relativi a 9==========
 \begin{table}[bp]
     \centering
@@ -1483,7 +1566,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & UI \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_GestisciPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori & UtenteAttivo \\\hline
@@ -1507,7 +1590,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1533,7 +1616,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_AggiungiProdottoPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1559,7 +1642,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_RimuoviProdottoPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1581,7 +1664,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CambiaVisibilitaPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAutenticato \\\hline
@@ -1603,7 +1686,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_RiproduciPlaylist\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1620,97 +1703,6 @@ Flusso &  \vspace{-5mm}	\begin{enumerate}
 \end{table}
 %=====================================
 
-%================UC relativi a 18==========
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneCodaDiRiproduzione \\\hline
-Nome & UC\_AggiungiProdottoAllaCoda\\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteAttivo \\\hline
-Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & L'utente ha indicato un prodotto che intende aggiungere alla coda di riproduzione, l'utente ha il servizio per riprodurre il prodotto, il prodotto è pubblico\\\hline
-Post-condizioni & Il prodotto scelto è inserito in fondo alla coda di riproduzione\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item Il sistema aggiunge il prodotto indicato alla fine della coda di riproduzione \newline
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneCodaDiRiproduzione \\\hline
-Nome & UC\_RimuoviProdottoDallaCoda\\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteAttivo \\\hline
-Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & L'utente ha indicato un prodotto della coda di riproduzione che intende rimuovere\\\hline
-Post-condizioni & Il prodotto scelto non \'e pi\'u  nella coda di riproduzione\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item Il sistema rimuove il prodotto dalla coda di riproduzione \newline \newline
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneCodaDiRiproduzione \\\hline
-Nome & UC\_MostraStatoCoda\\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteAttivo \\\hline
-Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item Viene restituita la lista dei prodotti nella coda di riproduzione \newline \newline
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & GestioneCodaDiRiproduzione \\\hline
-Nome & UC\_RiproduciCoda\\\hline
-Priorità & Alta \\\hline
-Attori &  UtenteAttivo \\\hline
-Descrizione & Riproduce la coda di riproduzione\\\hline
-Pre-condizioni & La coda non è vuota\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-	\item L'utente richiede la riproduzione della coda
- 	\item Il sistema estrae il prossimo prodotto dalla coda di riproduzione
-	\item Il prodotto viene riprodotto con UC\_\ucRiproduciProdotto
-	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se non \'e presente un prossimo prodotto da riprodurre, la riproduzione termina
-			\item \textbf{\# alt2}: Se \'e presente un prossimo prodotto da riprodurre, si torna al punto 2.
-		\end{enumerate}
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%======================================
-
 %================UC relativi a 10, 11==========
 \begin{table}[bp]
     \centering
@@ -1718,7 +1710,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaSerieTv\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1747,7 +1739,7 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestionePlaylist \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaAlbum\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo \\\hline
@@ -1769,37 +1761,94 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+%======================================
+
+%================UC relativi a 18==========
 
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
-ID & UC\_\nextUC \\\hline
-Categoria & GestioneAbbonamento\\\hline
-Nome & UC\_GestisciScadenzeAbbonamenti\\\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_AggiungiProdottoAllaCoda\\\hline
 Priorità & Alta \\\hline
-Attori &  Timer \\\hline
-Descrizione & Gestisce un abbonamento nel momento in cui la sottoscrizione scade: effettua un rinnovo, o lo rimuove dai piani di abbonamento dell'utente\\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto che intende aggiungere alla coda di riproduzione, l'utente ha il servizio per riprodurre il prodotto, il prodotto è pubblico\\\hline
+Post-condizioni & Il prodotto scelto è inserito in fondo alla coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Il sistema aggiunge il prodotto indicato alla fine della coda di riproduzione \newline
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_RimuoviProdottoDallaCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto della coda di riproduzione che intende rimuovere\\\hline
+Post-condizioni & Il prodotto scelto non \'e pi\'u  nella coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Il sistema rimuove il prodotto dalla coda di riproduzione \newline \newline
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_MostraStatoCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
 Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessun utente ha un abbonamento sottoscritto scaduto\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno un abbonamento sottoscritto
-			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
-			\item Per ogni abbonamento sottoscritto dall'utente, il sistema verifica se la sottoscrizione è scaduta:
-			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se l'abbonamento non è scaduto, la sottoscrizione viene lasciata inalterata
-				\item \textbf{\# alt2}: Se l'abbonamento è scaduto, allora:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1}: Se è attivo il rinnovo automatico e il piano di abbonamento è ancora sottoscrivibile, allora viene contattato il servizio di pagamento esterno per rinnovare l'abbonamento:
-					\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1}: Se il pagamento va a buon fine: la sottoscrizione dell'abbonamento viene rinnovata
-						\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente, e viene informato l'utente
-					\end{enumerate}
-					\item \textbf{\# alt2}: Altrimenti: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente
-				\end{enumerate}
-			\end{enumerate}
-		\end{enumerate}\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Viene restituita la lista dei prodotti nella coda di riproduzione \newline \newline
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_RiproduciCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Riproduce la coda di riproduzione\\\hline
+Pre-condizioni & La coda non è vuota\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+	\item L'utente richiede la riproduzione della coda
+ 	\item Il sistema estrae il prossimo prodotto dalla coda di riproduzione
+	\item Il prodotto viene riprodotto con UC\_\ucRiproduciProdotto
+	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se non \'e presente un prossimo prodotto da riprodurre, la riproduzione termina
+			\item \textbf{\# alt2}: Se \'e presente un prossimo prodotto da riprodurre, si torna al punto 2.
+		\end{enumerate}
+    \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -1813,7 +1862,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & GestioneProdotto \\\hline
+Categoria & Recensioni \\\hline
 Nome & UC\_CalcolaQualit\'aContenuto\\\hline
 Priorità & Media \\\hline
 Attori & Utente, Staff \\\hline
@@ -1835,31 +1884,6 @@ Flusso &    \vspace{-5mm}
 \end{table}
 %======================================
 
-%================UC relativi a 14==========
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & InterfacciaUtente \\\hline
-Nome & UC\_OttieniCronologia\\\hline
-Priorità & Media \\\hline
-Attori & UtenteAutenticato \\\hline
-Descrizione & Ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &    \vspace{-5mm} 
-	\begin{enumerate}
-		\item L'utente richiede di visualizzare la propria cronologia
-		\item Il sistema interroga il Database estraendo i prodotti riprodotti dall'utente
-		\item Il sistema restituisce la lista dei prodotti estratti ordinati in ordine decrescente secondo l'istante di visione
-	\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%================================
-
 
 %================UC relativi a 12==========
 \begin{table}[bp]
@@ -1868,7 +1892,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensioni \\\hline
 Nome & UC\_VotaContenuto\\\hline
 Priorità & Media \\\hline
 Attori & UtenteAttivo \\\hline
@@ -1895,7 +1919,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensioni \\\hline
 Nome & UC\_CommentaContenuto\\\hline
 Priorità & Media \\\hline
 Attori & UtenteAttivo \\\hline
@@ -1918,7 +1942,7 @@ Flusso &    \vspace{-5mm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
+Categoria & Recensioni \\\hline
 Nome & UC\_RimuoviCommento\\\hline
 Priorità & Media \\\hline
 Attori & UtenteAutenticato \\\hline
@@ -1928,27 +1952,6 @@ Post-condizioni & Il commento non \'e pi\'u associato al contenuto scelto.\\\hli
 Flusso &  \vspace{-5mm} 
 	\begin{enumerate}
 		\item Il sistema effettua una richiesta al Database per rimuovere il commento. \newline
-	\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & Risorse \\\hline
-Nome & UC\_RiproduciAudioInBackground\\\hline
-Priorità & Media \\\hline
-Attori & UtenteAutenticato \\\hline
-Descrizione & Permette la riproduzione dell'audio quando l'applicazione è in background\\\hline
-Pre-condizioni & L'applicazione è in background ed è in corso la riproduzione di un prodotto\\\hline
-Post-condizioni & Nessuno\\\hline
-Flusso &  \vspace{-5mm} 
-	\begin{enumerate}
-		\item Il sistema sposta la riproduzione del prodotto in background\newline\newline
 	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
