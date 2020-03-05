@@ -208,6 +208,79 @@ Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita,
 % ================ USE CASE CHE VANNO BENE ===========
 \subsection{Specifica Use Case}
 
+%variabili per fare riferimento a un UC dentro un altro UC
+\newcounter{tmpCounter}
+
+\newcommand\nextUcName[1]%
+{%
+  \stepcounter{tmpCounter}%
+  \expandafter\edef\csname#1\endcsname{\thetmpCounter}%
+}
+
+\nextUcName{ucGestisciAbbonamenti}
+\nextUcName{ucCreaAbbonamento}
+\nextUcName{ucRecuperaAbbonamentiEsistenti}
+\nextUcName{ucRecuperaServizi}
+\nextUcName{ucDisattivaAbbonamento}
+\nextUcName{ucAttivaAbbonamento}
+\nextUcName{ucAggiungiServizioAbbonamento}
+\nextUcName{ucRimuoviServizioAbbonamento}
+\nextUcName{ucRecuperaServiziAbbonamento}
+\nextUcName{ucRecuperaPianiAbbonamentoUtente}
+\nextUcName{ucEffettuaPagamentoPartner}
+\nextUcName{ucCalcolaImportoDaPagare}
+\nextUcName{ucSospendiAccount}
+\nextUcName{ucRiattivaAccount}
+\nextUcName{ucRiattivaAccountAutomatico}
+\nextUcName{ucEffettuaRegistrazione}
+\nextUcName{ucModificaProfilo}
+\nextUcName{ucEffettuaLogin}
+\nextUcName{ucEffettuaLogout}
+\nextUcName{ucGestisciSottoscrizioniAbbonamenti}
+\nextUcName{ucSottoscriviAbbonamento}
+\nextUcName{ucDisdiciAbbonamento}
+\nextUcName{ucCambiaAbbonamento}
+\nextUcName{ucGestisciProdotti}
+\nextUcName{ucCreaProdotto}
+\nextUcName{ucModificaInformazioniDiBase}
+\nextUcName{ucCaricaFile}
+\nextUcName{ucCambiaVisibilitaProdotto}
+\nextUcName{ucRiproduciProdotto}
+\nextUcName{ucStreamingVideo}
+\nextUcName{ucStreamingMusica}
+\nextUcName{ucPausaPlayer}
+\nextUcName{ucSpostaPuntoRiproduzionePlayer}
+\nextUcName{ucDownloadProdotto}
+\nextUcName{ucSegnalaProdotto}
+\nextUcName{ucGestisciSegnalazioni}
+\nextUcName{ucOttieniSegnalazioni}
+\nextUcName{ucChiudiSegnalazione}
+\nextUcName{ucRiapriSegnalazione}
+\nextUcName{ucVisualizzaProdottoSegnalato}
+\nextUcName{ucRicercaContenuto}
+\nextUcName{ucRicercaPopolari}
+\nextUcName{ucSuggerisciContenuti}
+\nextUcName{ucVisualizzaPubblicita}
+\nextUcName{ucGestisciPlaylist}
+\nextUcName{ucCreaPlaylist}
+\nextUcName{ucAggiungiProdottoPlaylist}
+\nextUcName{ucRimuoviProdottoPlaylist}
+\nextUcName{ucCambiaVisibilitaPlaylist}
+\nextUcName{ucRiproduciPlaylist}
+\nextUcName{ucAggiungiProdottoAllaCoda}
+\nextUcName{ucRimuoviProdottoDallaCoda}
+\nextUcName{ucMostraStatoCoda}
+\nextUcName{ucRiproduciCoda}
+\nextUcName{ucCreaSerieTv}
+\nextUcName{ucCreaAlbum}
+\nextUcName{ucGestisciScadenzeAbbonamenti}
+\nextUcName{ucCalcolaQualitaContenuto}
+\nextUcName{ucOttieniCronologia}
+\nextUcName{ucVotaContenuto}
+\nextUcName{ucCommentaContenuto}
+\nextUcName{ucRimuoviCommento}
+\nextUcName{ucRiproduciAudioInBackground}
+
 \begin{center}
 
 %======= UC relativi ai requisiti funzionali 1. ==========
@@ -226,15 +299,9 @@ Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 		\item Il manager accede alla pagina di gestione dei piani di abbonamento
-		\item Il sistema presenta la pagina di gestione dei piani di abbonamento (usando UC\_3), mostrando per ognuno le azioni possibili su di esso
+		\item Il sistema presenta la pagina di gestione dei piani di abbonamento (usando UC\_\ucRecuperaAbbonamentiEsistenti), mostrando per ognuno le azioni possibili su di esso
 		\item Il manager seleziona l'azione da intraprendere (che può essere: attivare un abbonamento, disattivare un abbonamento, aggiungere un servizio a un abbonamento, rimuovere servizio da piano di abbonamento, creare un nuovo piano di abbonamento)
 		\item In base all'azione scelta dal manager, viene richiamato lo use case adeguato
-		
-		%\item Il sistema aggiorna il suo stato in seguito all'azione scelta:
-		%	 \begin{enumerate}[label*=\arabic*.]
-		%		\item \textbf{\# alt1}: Se l'azione influisce sui dati: il sistema si interfaccia con il Database, aggiorna i dati sull'abbonamento e comunica la riuscita dell'operazione mostrando i dati aggiornati.
-		%		\item \textbf{\# alt2}: Se l'azione non influisce sui dati viene solo presentata una pagina di risposta inerente all'azione intrapresa (dettaglio abbonamento, statistiche ...)
-		%	\end{enumerate}
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -292,6 +359,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \label{table_use_case:\lastUC}\newline
 \end{table}
 
+
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
@@ -303,7 +371,7 @@ Nome & UC\_RecuperaServizi\\\hline
 Priorità & Alta \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
-Pre-condizioni &  Nessuna.\\\hline
+Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi
@@ -370,8 +438,8 @@ Post-condizioni & Un nuovo servizio viene aggiunto al piano di abbonamento indic
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema mostra la lista dei servizi che possono essere aggiunti al piano di abbonamento indicato		
 			\begin{enumerate}[label*=\arabic*.]
-			\item (UC\_4) Il sistema recupera tutti i servizi disponibili
-			\item (UC\_9) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item (UC\_\ucRecuperaServizi) Il sistema recupera tutti i servizi disponibili
+			\item (UC\_\ucRecuperaServiziAbbonamento) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\item La lista dei servizi sarà la differenza tra il primo e il secondo insieme calcolati
 			\end{enumerate}
 		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da aggiungere al piano di abbonamento
@@ -397,7 +465,7 @@ Post-condizioni &  Il servizio scelto non \'e pi\'u associato al piano di abbona
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 		\item Il sistema mostra la lista dei servizi che possono essere rimossi dal piano di abbonamento indicato
 			\begin{enumerate}[label*=\arabic*.]
-			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item (UC\_\ucRecuperaServiziAbbonamento) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\end{enumerate}
 		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da rimuovere
 		\item Il sistema richiede al Database di rimuovere il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
@@ -469,20 +537,20 @@ Flusso &
 		\item Il sistema, alla fine di ogni mese, recupera la lista degli utenti che possono ricevere un pagamento
 			\begin{enumerate}[  ]
 			\item Il sistema recupera tutti gli utenti
-			\item (UC\_10) per ogni utente il sistema recupera i suoi piani di abbonamento e da questi (UC\_9) recupera i servizi dell'utente
+			\item per ogni utente il sistema recupera i suoi piani di abbonamento (UC\_\ucRecuperaPianiAbbonamentoUtente) e da questi recupera i servizi dell'utente (UC\_\ucRecuperaServiziAbbonamento)
 			\item Vengono restituiti gli utenti che hanno il servizio di pubblicare prodotti e il cui account è attivo
 			\end{enumerate}
 		\item Per ogni utente individuato:
 		\begin{enumerate}[label*=\arabic*.]
 			\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
-			\item (UC\_12) Il sistema calcola l'importo da pagare all'utente
+			\item Il sistema calcola l'importo da pagare all'utente (UC\_\ucCalcolaImportoDaPagare)
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se UC\_12 non produce errori, allora il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
+				\item \textbf{\# alt1}: Se UC\_\ucCalcolaImportoDaPagare\ non produce errori, allora il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
 				\begin{enumerate}[label*=\arabic*.]
 					\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
 					\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
 				\end{enumerate}
-				\item \textbf{\# alt2}: Se UC\_12 produce errori, viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+				\item \textbf{\# alt2}: Se UC\_\ucCalcolaImportoDaPagare\ produce errori, viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
 			\end{enumerate}
 		\end{enumerate}
 		\end{enumerate}\\\hline
@@ -706,7 +774,7 @@ Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 		\item L'utente accede alla pagina di gestione delle sottoscrizioni dei piani di abbonamento
-		\item Il sistema presenta la pagina di gestione dei piani di abbonamento attivi (usando UC\_3), mostrando per ognuno le azioni possibili su di esso
+		\item Il sistema presenta la pagina di gestione dei piani di abbonamento attivi (usando UC\_\ucRecuperaAbbonamentiEsistenti), mostrando per ognuno le azioni possibili su di esso
 		\item L'utente seleziona l'azione da intraprendere (per piani già sottoscritti, le azioni possibili saranno: disdici e cambia, per quelli non ancora sottoscritti l'unica azione possibile è la sottoscrizione)
 		\item In base all'azione scelta dall'utente, viene richiamato lo use case adeguato
     \end{enumerate}\\\hline
@@ -778,8 +846,8 @@ Post-condizioni &  L'utente ha sottoscritto il nuovo abbonamento e non possiede 
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema fornisce una lista dei piani di abbonamento con cui è possibile sostituire quello indicato:
 			\begin{enumerate}[  ]
-				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_2)
-				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_9)
+				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_\ucRecuperaAbbonamentiEsistenti)
+				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
 				\item Il sistema fornisce solo i piani di abbonamento sottoscrivibili non ancora sottoscritti dall'utente, e per cui le politiche del sistema permettono il cambio con il piano di abbonamento indicato
 			\end{enumerate}
 			\item L'utente sceglie il nuovo abbonamento da sottoscrivere;
@@ -972,11 +1040,11 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 		\end{enumerate}
 	\item \textbf{\# alt2}: Altrimenti, se il prodotto non è scaricato sul dispositivo e l'utente ha il servizio per riprodurre il prodotto:
 		\begin{enumerate}[label*=\arabic*.]
-			\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_34
+			\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_\ucVisualizzaPubblicita
 			\item Il sistema analizza il tipo di prodotto:
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_24
-				\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_25
+				\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_\ucStreamingVideo
+				\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_\ucStreamingMusica
 			\end{enumerate}
 		\end{enumerate}
 	\item \textbf{\# alt3}: Altrimenti: la riproduzione non viene effettuate, e l'errore viene comunicato all'utente 
@@ -1156,7 +1224,7 @@ Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 		\item Il manager accede alla pagina di gestione segnalazioni
-		\item Il sistema presenta la lista delle segnalazioni, con un pannello per filtrarle
+		\item Il sistema presenta la lista delle segnalazioni, con un pannello per filtrarle (UC\_\ucOttieniSegnalazioni)
 		\item Il manager seleziona l'azione da intraprendere (che può essere: chiudere una segnalazione, riaprire una segnalazione, sospendere un account con una segnalazione aperta, visualizza prodotto segnalato)
 		\item In base all'azione scelta dal manager, viene richiamato lo use case adeguato
     \end{enumerate}\\\hline
@@ -1245,8 +1313,8 @@ Descrizione & Permette al manager di visualizzare il prodotto relativo ad una se
 Pre-condizioni & Il manager ha richiesto la visualizzazione di un prodotto con una segnalazione aperta\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item \textbf{\#alt1}: Se il prodotto indicato è un prodotto video, viene riprodotto con (UC\_25)
-			\item \textbf{\#alt2}: Se il prodotto indicato è un prodotto musicale, viene riprodotto con (UC\_26)
+			\item \textbf{\#alt1}: Se il prodotto indicato è un prodotto video, viene riprodotto con (UC\_\ucStreamingVideo)
+			\item \textbf{\#alt2}: Se il prodotto indicato è un prodotto musicale, viene riprodotto con (UC\_\ucStreamingMusica)
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -1354,7 +1422,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggerite serie tv
 				\end{enumerate}
 			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), vengono suggeriti solo i prodotti video restituiti dallo UC\_32
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), vengono suggeriti solo i prodotti video restituiti dallo UC\_\ucRicercaPopolari
 		\end{enumerate}
 		\item Il sistema richiede al Database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali),:
 		\begin{enumerate}[label*=\arabic*.]
@@ -1371,7 +1439,7 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti album
 				\end{enumerate}
 			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), vengono suggeriti solo i prodotti musicali restituiti dallo UC\_32
+			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), vengono suggeriti solo i prodotti musicali restituiti dallo UC\_\ucRicercaPopolari
 		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -1543,9 +1611,9 @@ Descrizione & Aggiunge i prodotti associati alla playlist sulla coda di riproduz
 Pre-condizioni & L'utente ha indicato la playlist da riprodurre.\\\hline
 Post-condizioni & Tutti i prodotti associati alla playlist sono inseriti all'interno della coda di riproduzione\\\hline
 Flusso &  \vspace{-5mm}	\begin{enumerate}
-		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_42) procede rimuovendolo da questa coda (UC\_41);
-		\item Il sistema per ogni prodotto associato alla playlist scelta dall'utente, lo aggiunge alla coda di riproduzione (UC\_40);
-		\item Viene avviata la riproduzione della coda (UC\_43)
+		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_\ucMostraStatoCoda) procede rimuovendolo dalla coda (UC\_\ucRimuoviProdottoDallaCoda);
+		\item Il sistema per ogni prodotto associato alla playlist scelta dall'utente, lo aggiunge alla coda di riproduzione (UC\_\ucAggiungiProdottoAllaCoda);
+		\item Viene avviata la riproduzione della coda (UC\_\ucRiproduciCoda)
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1631,7 +1699,7 @@ Post-condizioni & Nessuna\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
 	\item L'utente richiede la riproduzione della coda
  	\item Il sistema estrae il prossimo prodotto dalla coda di riproduzione
-	\item Il prodotto viene riprodotto con UC\_28
+	\item Il prodotto viene riprodotto con UC\_\ucRiproduciProdotto
 	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
 		\begin{enumerate}[label*=\arabic*.]
 			\item \textbf{\# alt1}: Se non \'e presente un prossimo prodotto da riprodurre, la riproduzione termina
@@ -1717,7 +1785,7 @@ Pre-condizioni & Nessuna\\\hline
 Post-condizioni & Nessun utente ha un abbonamento sottoscritto scaduto\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno un abbonamento sottoscritto
-			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_8)
+			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
 			\item Per ogni abbonamento sottoscritto dall'utente, il sistema verifica se la sottoscrizione è scaduta:
 			\begin{enumerate}[label*=\arabic*.]
 				\item \textbf{\# alt1}: Se l'abbonamento non è scaduto, la sottoscrizione viene lasciata inalterata
@@ -1887,6 +1955,7 @@ Flusso &  \vspace{-5mm}
 \end{table}
 %===================================
 
+\setcounter{ucCounter}{0}
 \end{center}
 
 \newpage
