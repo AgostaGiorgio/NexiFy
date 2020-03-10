@@ -353,7 +353,7 @@ ID & UC\_\nextUC \\\hline
 Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
 Priorità & Alta \\\hline
-Attori &  Staff \\\hline
+Attori &  Staff, UtenteAttivo \\\hline
 Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hline
 Pre-condizioni &  Nessuna \\\hline
 Post-condizioni & Nessuna\\\hline
@@ -489,9 +489,9 @@ ID & UC\_\nextUC \\\hline
 Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServiziAbbonamento\\\hline
 Priorità & Alta \\\hline
-Attori &  Staff \\\hline
+Attori &  Staff, UtenteAttivo \\\hline
 Descrizione & Permette, dato un piano di abbonamento, di reperire tutti i servizi associati ad esso.\\\hline
-Pre-condizioni &  Il membro dello staff ha fornito un piano di abbonamento\\\hline
+Pre-condizioni &  \'E stato fornito un piano di abbonamento\\\hline
 Post-condizioni &  Nessuna \\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i servizi associati al piano di abbonamento indicato
@@ -510,9 +510,9 @@ ID & UC\_\nextUC \\\hline
 Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
 Priorità & Alta \\\hline
-Attori &  Staff \\\hline
+Attori &  Staff, UtenteAutenticato \\\hline
 Descrizione & Permette di recuperare la lista dei piani di abbonamento sottoscritti da un utente.\\\hline
-Pre-condizioni &  Il membro dello staff ha fornito un utente\\\hline
+Pre-condizioni &  \'E stato fornito un utente\\\hline
 Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}	
 		\item Il sistema effettua una richiesta al sistema Database per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato
@@ -1667,7 +1667,7 @@ ID & UC\_\nextUC\\\hline
 Categoria & Playlist \\\hline
 Nome & UC\_CambiaVisibilitaPlaylist\\\hline
 Priorità & Alta \\\hline
-Attori &  UtenteAutenticato \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Permette di rendere pubblica o privata una playlist\\\hline
 Pre-condizioni & L'utente ha indicato la playlist da modificare tra quelle di cui \'e proprietario\\\hline
 Post-condizioni & La playlist ha visibilit\'a aggiornata a quella fornita dall'utente\\\hline
