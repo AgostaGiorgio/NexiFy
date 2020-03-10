@@ -52,6 +52,26 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
+	\textbf{ID} & RSC\_ CambiamentoRequisiti\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
+	\hline
+	\textbf{Aspetto} &  Progetto\\
+	\hline
+	\textbf{Probabilità} &  Alta \\ 
+	\hline
+	\textbf{Impatto} &  Moderato \\ 
+	\hline
+	\textbf{Mitigation} & Revisionare attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
+	\hline
+	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
+	\hline
+	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Se dopo aver aggiunto i nuovi requisiti la durata del progetto supera di molto quella precedentemente prevista, eliminare requisiti secondari per restare nei tempi \\ 
+	\hline
+\end{tabular}
+\clearpage
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
 	\textbf{ID} & RSC\_ IndisponibilitàPersonale\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & Alcuni elementi del personale potrebbero essere indisponibili in alcuni periodi del progetto\\ 
@@ -70,26 +90,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 \end{tabular}
 
-\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
- 	\hline
-	\textbf{ID} & RSC\_ CambiamentoRequisiti\\ [0.5ex] 
-	\hline
-	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
-	\hline
-	\textbf{Aspetto} &  Progetto, Prodotto\\
-	\hline
-	\textbf{Probabilità} &  Alta \\ 
-	\hline
-	\textbf{Impatto} &  Serio \\ 
-	\hline
-	\textbf{Mitigation} & Revisione attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
-	\hline
-	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
-	\hline
-	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Altrimenti eliminare requisiti secondari per restare nei tempi \\ 
-	\hline
-\end{tabular}
-\clearpage
+
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
 	\textbf{ID} & RSC\_ RequisitiFraintesi\\ [0.5ex] 
@@ -102,23 +103,23 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio \\ 
 	\hline
-	\textbf{Mitigation} & Attenta analisi e studio dei requisiti prima di definire i casi d'uso.\\ 
+	\textbf{Mitigation} & Revisionare attentamente l'analisi dei requisiti prima di definire i casi d'uso.\\ 
 	\hline
-	\textbf{Monitoring} & Effettuare attenti controlli per verificare la coerenza dei casi d'uso rispetto ai requisiti di riferimento. \\ 
+	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili fraintendimenti delle specifiche\\ 
 	\hline
-	\textbf{Management} & Nel caso in cui i requisiti vengano fraintesi è necessario ridefinire per intero i caso d'uso li realizzano. \\ 
+	\textbf{Management} & Ridefinire i casi d'uso in modo da renderli coerenti con i requisiti corretti. Se dopo aver modificato i casi d'uso la durata del progetto supera di molto quella precedentemente prevista, eliminare requisiti secondari per restare nei tempi \\ 
 	\hline
 \end{tabular}
 \clearpage
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
 	\hline
-   \textbf{ID} & RSC\_ CambiamentoTecnologia\\ [0.5ex] 
+   \textbf{ID} & RSC\_ TecnologiaObsoleta\\ [0.5ex] 
    \hline
-   \textbf{Descrizione} & Le tecnologie utilizzate nel progetto vengono sostituite da nuove tecnologie  \\ 
+   \textbf{Descrizione} & Durante l'implementazione del progetto, le tecnologie che si intendono utilizzare diventano obsolete \\ 
    \hline
    \textbf{Aspetto} &  Business \\
    \hline
-   \textbf{Probabilità} & Alta\\ 
+   \textbf{Probabilità} & Moderata\\ 
    \hline
    \textbf{Impatto} & Tollerabile\\
    \hline
@@ -126,7 +127,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
    \hline
    \textbf{Monitoring} & Tenere traccia periodicamente delle tecnologie in uso, e di possibili nuovi aggiornamenti o cambiamenti che avvengono \\ 
    \hline
-   \textbf{Management} & Adattare l'archittettura a possibili cambiamenti di tecnologia, utilizzando ove possibile, dei wrapper per le funzionalità offerte da queste \\ 
+   \textbf{Management} & Effettuare un’analisi per capire se la tecnologia originale è ancora adatta allo svolgimento del compito per cui è stata scelta. In caso negativo, deve essere sostituita con una tecnologia più adatta.\\ 
    \hline
 \end{tabular}
 
@@ -143,11 +144,11 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
    \hline
    \textbf{Impatto} & Serio\\
    \hline
-   \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale \\ 
+   \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale. Inoltre per ogni iterazione aggiungere dei giorni aggiuntivi per fare fronte a eventuali ritardi dovuti a stime sbagliate \\ 
    \hline
    \textbf{Monitoring} & Durante lo sviluppo, controllare periodicamente che la dimensione del software rimanga contenuta, in base a quanto è stato pianificato nelle fasi iniziali\\ 
    \hline
-   \textbf{Management} & Qualora, durante lo sviluppo, il software dovesse superare la dimensione prestabilita per quello stadio, si deve effettuare una nuova stima che tenga conto delle nuove informazioni acquisite. Successivamente si deve rivedere la pianificazione del progetto, apportando modifiche laddove la dimensione del software risulta maggiore di quella stimata inizialmente \\ 
+   \textbf{Management} & Qualora, durante lo sviluppo, il software dovesse superare la dimensione prestabilita per quello stadio, si deve effettuare una nuova stima che tenga conto delle nuove informazioni acquisite. Successivamente si deve rivedere la pianificazione del progetto, eventualmente apportando modifiche laddove la dimensione del software risulta maggiore di quella stimata inizialmente \\ 
    \hline
 \end{tabular}
 
@@ -161,7 +162,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Probabilità} &  Moderata \\ 
 	\hline
-	\textbf{Impatto} &  Serio \\ 
+	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
 	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
 	\hline
@@ -184,11 +185,11 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Prestare attenzione alla quantità di contenuti di questa tipologia che vengono caricati sulla piattaforma. \\ 
+	\textbf{Mitigation} & Scegliere attentamente i costi che gli utenti devono pagare per poter pubblicare contenuti \\ 
 	\hline
 	\textbf{Monitoring} & Controlli periodici sui contenuti presenti sulla piattaforma. \\ 
 	\hline
-	\textbf{Management} & Se questa tipologia di contenuti eccede una certa soglia rispetto a quelli professionali si può limitare la quantità e/o la periodicità con cui questi possono essere caricati, oppure si può aumentare il prezzo richiesto per abilitare questa funzionalità. \\ 
+	\textbf{Management} &  Aumentare il prezzo richiesto per abilitare la pubblicazione di prodotti \\ 
 	\hline
 \end{tabular}
 
@@ -226,7 +227,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} & Catastrofico\\
 	\hline
-	\textbf{Mitigation} & Usare meno del budget iniziale a disposizione, in modo da coprire eventuali, piccole, riduzioni\\
+	\textbf{Mitigation} & Richiedere inizialmente un budget leggermente più alto del necessario, in modo da coprire eventuali, piccole, riduzioni\\
 	\hline
 	\textbf{Monitoring} & Controllare periodicamente che l'avanzamento del progetto segua i costi previsti, e sfruttare eventuali condizioni che portano a risparmio\\ 
 	\hline
