@@ -110,10 +110,11 @@ Inizio & 17/02/2020 \\\hline
 Fine &  24/02/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		\item Definire il modello dei casi d'uso per i requisiti funzionali primari
-		\item Produrre il modello di analisi dei requisiti funzionali primari
-		\item Individuare un ulteriore 25\% dei requisiti funzionali secondari
-		\item Individuare un ulteriore 25\% dei requisiti non funzionali
+		\item Iniziare modello di analisi dell'architettura, individuando le classi
+		\item Definire il modello dei casi d'uso per il primo 50\% dei requisiti funzionali primari
+		\item Individuare 5 requisiti funzionali fondamentali tra i requisiti funzionali primari (che verranno usati per testare l'architettura)
+		\item Individuare e descrivere un ulteriore 25\% dei requisiti funzionali secondari
+		\item Individuare e descrivere un ulteriore 50\% dei requisiti non funzionali
 		\item Individuare un ulteriore 15\% dei rischi e stendere un piano di gestione per ciascun rischio
 	\end{compactitem}\\\hline
 Stato &  Conclusa \\\hline
@@ -128,15 +129,15 @@ Inizio & 26/02/2020 \\\hline
 Fine &  03/03/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		%\item Raffinamento dei documenti Glossario, Requisiti
-		%\item Definire i diagrammi UML dei vari casi d'uso
-		%\item Creazione di una matrice di tracciabilità
-		\item Individuare un ulteriore 25\% dei requisiti funzionali secondari % 75%
-		\item Individuare un ulteriore 25\% dei requisiti non funzionali % 75%
+		\item Completare il modello di analisi dell'architettura (completare la descrizione delle classi ed effettuare una suddivisione in package)
+		\item Completare il modello dei casi d'uso relativo ai requisiti funzionali primari
+		\item Individuare e descrivere un ulteriore 25\% dei requisiti funzionali secondari % 75%
+		\item Individuare e descrivere i restanti requisiti non funzionali % 100%
 		\item Individuare i rischi rimanenti e stendere un piano di gestione per ciascun rischio % 100%
-		\item Definire il modello dei casi d'uso per il primo 50\% dei requisiti secondari individuati
-		\item Estendere il modello di analisi al primo 50\% dei requisiti secondari individuati
-		\item Effettuare una stima dei costi preventiva con casi d'uso primari
+		%\item Definire il modello dei casi d'uso per il primo 50\% dei requisiti secondari individuati
+		%\item Estendere il modello di analisi al primo 50\% dei requisiti secondari individuati
+		\item Individuare i primi test sull'architettura e sui requisiti fondamentali
+		\item Effettuare una stima dei costi con casi d'uso primari
 	\end{compactitem}\\\hline
 Stato &  Conclusa \\\hline
 \end{tabular}
@@ -152,20 +153,15 @@ Obbiettivi &
 	\begin{compactitem}
 		%\item Individuare le classi e le componenti per realizzare il sistema (per tutti i casi d'uso a priorità più alta, e facendo riferimento ai requisiti non funzionali)
 		%\item Modellare l'architettura del sistema
-		\item Definizione del modello di design (a partire da quello di analisi) e implementazione per i requisiti primari
-		\item Realizzazione dei test per il 50\% dei requisiti primari implementati
 		
-		\item Individuare un ulteriore 15\% dei requisiti funzionali secondari % 90%
-		\item Individuare un ulteriore 15\% dei requisiti non funzionali % 90%
+		%\item Definizione del modello di design (a partire da quello di analisi) e implementazione per i requisiti primari
+		%\item Realizzazione dei test per il 50\% dei requisiti primari implementati
 		
-		\item Estendere il modello dei casi d'uso per i requisiti funzionali secondari individuati all'iterazione 5
-		\item Estendere il modello di analisi per i requisiti funzionali secondari individuati all'iterazione 5
+		\item Iniziare il modello di design dell'architettura
+		\item Definire il modello di analisi per i casi d'uso fondamentali individuati 
+		\item Individuare e descrivere i restanti requisiti funzionali secondari % 100%
+		\item Ampliare i test sull'architettura e sui requisiti fondamentali, in seguito alle scelte di progetto		
 
-		%definire comportamento dell'architettura rispetto alle esigenze individuate
-		%\item Creazione schede CRC
-		%\item Creazione diagramma EBC
-		%\item Creazione diagrammi di sequenza
-		%\item Creazione diagrammi di classi
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
@@ -179,13 +175,10 @@ Inizio & 15/03/2020 \\\hline
 Fine & 25/03/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		%\item Raffinamento e revisione dei vari diagrammi definiti durante l'iterazione 6
-		\item Individuare i restanti requisiti funzionali secondari % 75%
-		\item Individuare i restanti requisiti non funzionali % 75%
-		\item Estendere modello dei casi d'uso ai restanti requisiti funzionali secondari
-		\item Estendere modello di analisi ai restanti requisiti funzionali secondari
-		\item Concludere stima dei costi con requisiti funzionali secondari
-		
+		\item Completare il modello di design dell'architettura
+		\item Definire il modello di design per i casi d'uso fondamentali individuati
+		\item Implementare l'architettura e i casi d'uso fondamentali individuati
+		\item Ultimare i test sull'architettura e sui requisiti fondamentali
 
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
@@ -203,14 +196,17 @@ Obbiettivi &
 		\item Tutti i rischi sono stati individuati ed è stato creato un piano di gestione per ciascun rischio
 		\item \'E stata effettuata una stima dei costi attendibile
 		\item Prendere una decisione Go/NoGo
-		\item \'E stata effettuata un'analisi del sistema coerente con i requisiti (sia funzionali che non funzionali)
+		\item \'E stata creata una base architetturale coerente con i requisiti ed eseguibile
+		\item I casi d'uso fondamentali risultano implementati correttamente con l'architettura prodotta
+		\item \'E stato prodotto un modello dei casi d'uso primari sufficientemente dettagliato per iniziare la fase di construction
+		%\item \'E stata effettuata un'analisi del sistema coerente con i requisiti (sia funzionali che non funzionali)
 		
 
 
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
-\label{table:milestone3}\newline
+\label{table:milestone2}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -220,10 +216,14 @@ Inizio & 27/03/2020 \\\hline
 Fine &  04/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
+		\item Definire il modello di analisi per i requisiti funzionali primari
+		\item Definire il modello dei casi d'uso per i requisiti funzionali secondari
+		\item Definire i test per i requisiti funzionali primari
 		%\item Creazione di un diagramma architetturale dell'intero sistema
-		\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il primo 50\% dei requisiti secondari
-		\item Realizzazione dei test per il restante 50\% dei requisiti primari implementati
-		\item Realizzazione dei test per il primo 50\% dei requisiti secondari implementati
+		
+		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il primo 50\% dei requisiti secondari	
+		%\item Realizzazione dei test per il restante 50\% dei requisiti primari implementati
+		%\item Realizzazione dei test per il primo 50\% dei requisiti secondari implementati
 		
 		% 50% test req primari
 		% 100% test req secondari
@@ -242,41 +242,34 @@ Fine &  12/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		%\item Creazione di un diagramma architetturale dell'intero sistema
-		\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
-		\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
+		\item Definire il modello di design per i requisiti funzionali primari
+		\item Definire il modello di analisi per i requisiti funzionali secondari
+		\item Estendere i test per i requisiti funzionali primari, in seguito alle scelte di progetto
+		\item Definire i test per i requisiti funzionali secondari
+		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
+		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
 		
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
 \label{table:9}\newline
 
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-Nome & Milestone 3\\\hline
-Fase & Construction \\\hline
-Inizio & 13/04/2020 \\\hline
-Fine &  13/04/2020 \\\hline
-Obbiettivi & 
-	\begin{compactitem}
-		\item il design e l'implementazione del sistema sono completati
-		\item Sono stati definiti test per ogni funzionalità del sistema
-		\item Il sistema ha superato tutti i test definiti
-	\end{compactitem}\\\hline
-Stato &  Programmata \\\hline
-\end{tabular}
-\label{table:milestone4}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
 Nome & Iterazione 10 \\\hline
-Fase & Transition \\\hline
-Inizio & 14/04/2020 \\\hline
-Fine &  18/04/2020  \\\hline
+Fase & Construction \\\hline
+Inizio & 13/04/2020 \\\hline
+Fine &  20/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		\item Raccolta Feedback di utilizzo degli utenti
-		\item Creazione degli ultimi test basati sul feedback degli utenti
-		\item Creare una release finale
+		%\item Creazione di un diagramma architetturale dell'intero sistema
+		\item Definire il modello di design per i requisiti funzionali secondari
+		\item Implementare il primo 50\% delle funzionalità principali
+		\item Ultimare i test per tutti i requisiti funzionali
+		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
+		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
+		
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
@@ -284,17 +277,70 @@ Stato &  Programmata \\\hline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-Nome & Milestone 4\\\hline
-Fase & Transition \\\hline
-Inizio & 19/04/2020 \\\hline
-Fine &  19/04/2020 \\\hline
+Nome & Iterazione 11 \\\hline
+Fase & Construction \\\hline
+Inizio & 21/04/2020 \\\hline
+Fine &  27/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		\item Release finale creata
+		%\item Creazione di un diagramma architetturale dell'intero sistema
+		\item Implementare le rimanenti funzionalità
+		\item Effettuare i test
+		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
+		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
+		
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
-\label{table:milestone5}\newline
+\label{table:11}\newline
+
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+Nome & Milestone 3\\\hline
+Fase & Construction \\\hline
+Inizio & 28/04/2020 \\\hline
+Fine &  28/04/2020 \\\hline
+Obbiettivi & 
+	\begin{compactitem}
+		\item Sono stati definiti test per ogni funzionalità del sistema
+		\item Il sistema e le sue funzionalità implementate hanno superato tutti i test definiti
+	\end{compactitem}\\\hline
+Stato &  Programmata \\\hline
+\end{tabular}
+\label{table:milestone3}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+Nome & Iterazione 12 \\\hline
+Fase & Transition \\\hline
+Inizio & 29/04/2020 \\\hline
+Fine &  2/05/2020  \\\hline
+Obbiettivi & 
+	\begin{compactitem}
+		\item Raccolta Feedback di utilizzo degli utenti
+		\item Effettuare correzioni basate sul feedback degli utenti
+		\item Creazione degli ultimi test basati sul feedback degli utenti
+		\item Creare una release finale
+	\end{compactitem}\\\hline
+Stato &  Programmata \\\hline
+\end{tabular}
+\label{table:12}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+Nome & Milestone 4\\\hline
+Fase & Transition \\\hline
+Inizio & 03/05/2020 \\\hline
+Fine &  03/05/2020 \\\hline
+Obbiettivi & 
+	\begin{compactitem}
+		\item Release finale creata
+		\item La release finale supera i test definiti in seguito al feedback degli utenti
+	\end{compactitem}\\\hline
+Stato &  Programmata \\\hline
+\end{tabular}
+\label{table:milestone4}\newline
 
 
 \end{center}
@@ -317,5 +363,7 @@ Stato &  Programmata \\\hline
 	2 & 16/02/2020 & \thead{Specificati meglio gli obiettivi da raggiungere per ogni iterazione,\\e non gli strumenti usati per raggiungerli} \\ 
 	\hline
 	3 & 26/02/2020 & Revisione del contratto e del piano di progetto \\ 
+	\hline
+	4 & 14/03/2020 & Specificate meglio attività per implementare l'architettura\\
 	\hline
 \end{tabular}
