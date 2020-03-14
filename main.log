@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.10)  14 MAR 2020 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.10)  14 MAR 2020 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -574,7 +574,7 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<images/worldCDN.png, id=148, 325.215pt x 153.2124pt>
+<images/worldCDN.png, id=152, 325.215pt x 153.2124pt>
 File: images/worldCDN.png Graphic file (type png)
 <use images/worldCDN.png>
 Package pdftex.def Info: images/worldCDN.png  used on input line 41.
@@ -616,15 +616,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [2
 
-]
+] [3]
 (./Contents/Glossario.tex
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 .
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [3
-\indexentry{Index|hyperpage}{3}
+)) [4
+\indexentry{Index|hyperpage}{4}
 ] (./Contents/VisioneDelSistema.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
@@ -647,8 +647,8 @@ Overfull \hbox (17.36009pt too wide) in paragraph at lines 12--13
 -cali per usufruirne
  []
 
-[4
-\indexentry{Index|hyperpage}{4}
+[5
+\indexentry{Index|hyperpage}{5}
 ]
 Overfull \hbox (17.36009pt too wide) in paragraph at lines 20--21
 []\OT1/lmr/m/n/10 Scaricare su dis-pos-i-tivo, tramite app mo-bile, brani mu-si
@@ -666,11 +666,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 
  []
 
-) (./Contents/Vincoli.tex [5
-\indexentry{Index|hyperpage}{5}
-]) [6
+) (./Contents/Vincoli.tex [6
 \indexentry{Index|hyperpage}{6}
-] (./Contents/StudioDiFattibilita.tex [7]
+]) [7
+\indexentry{Index|hyperpage}{7}
+] (./Contents/StudioDiFattibilita.tex [8]
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
@@ -690,17 +690,17 @@ Overfull \hbox (36.29434pt too wide) in paragraph at lines 43--71
 []
  []
 
-[8
-\indexentry{Index|hyperpage}{8}
+[9
+\indexentry{Index|hyperpage}{9}
 ] (./Contents/Contratto.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--27
 
  []
 
-[9]) [10
-\indexentry{Index|hyperpage}{10}
+[10]) [11
+\indexentry{Index|hyperpage}{11}
 ] (./Contents/PianificazioneProgetto.tex
-<images/RUPplan.png, id=241, 857.2025pt x 515.9275pt>
+<images/RUPplan.png, id=250, 857.2025pt x 515.9275pt>
 File: images/RUPplan.png Graphic file (type png)
 <use images/RUPplan.png>
 Package pdftex.def Info: images/RUPplan.png  used on input line 27.
@@ -715,7 +715,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 33--50
  [] 
  []
 
-[11 <./images/RUPplan.png>]
+[12 <./images/RUPplan.png>]
 Overfull \hbox (20.70093pt too wide) in paragraph at lines 51--67
  [][] 
  []
@@ -725,103 +725,113 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 68--88
  [][] 
  []
 
-[12]
+[13]
 Overfull \hbox (20.70093pt too wide) in paragraph at lines 89--104
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 105--122
- [][] 
- []
-
-[13]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 123--144
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 105--123
  [][] 
  []
 
 [14]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 145--173
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 124--145
  [][] 
  []
 
 [15]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 174--194
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 146--169
  [][] 
  []
 
 [16]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 195--214
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 170--187
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 215--235
- [][] 
- []
-
-
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 236--252
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 188--210
  [][] 
  []
 
 [17]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 253--268
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 211--235
  [][] 
  []
 
 
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 269--284
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 236--256
  [][] 
  []
 
 [18]
-Overfull \hbox (20.70093pt too wide) in paragraph at lines 285--298
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 258--277
  [][] 
  []
 
-<./images/Gantt_NexiFy.jpg, id=277, 1958.31625pt x 675.52374pt>
+
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 278--296
+ [][] 
+ []
+
+[19]
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 298--312
+ [][] 
+ []
+
+
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 313--329
+ [][] 
+ []
+
+[20]
+Overfull \hbox (20.70093pt too wide) in paragraph at lines 330--344
+ [][] 
+ []
+
+<./images/Gantt_NexiFy.jpg, id=291, 1958.31625pt x 675.52374pt>
 File: ./images/Gantt_NexiFy.jpg Graphic file (type jpg)
 <use ./images/Gantt_NexiFy.jpg>
-Package pdftex.def Info: ./images/Gantt_NexiFy.jpg  used on input line 305.
+Package pdftex.def Info: ./images/Gantt_NexiFy.jpg  used on input line 351.
 (pdftex.def)             Requested size: 455.24408pt x 157.03703pt.
 
-Overfull \hbox (53.33858pt too wide) in paragraph at lines 305--306
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 351--352
  | [] 
  []
 
-[19] [20 <./images/Gantt_NexiFy.jpg>]
+[21] [22 <./images/Gantt_NexiFy.jpg>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 317.
+(Font)              <8> on input line 363.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 317.
+(Font)              <6> on input line 363.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 310--81
+Underfull \hbox (badness 10000) in paragraph at lines 356--81
 
  []
 
 
-Overfull \hbox (17.95918pt too wide) in paragraph at lines 310--81
+Overfull \hbox (30.27362pt too wide) in paragraph at lines 356--81
 []
  []
 
-[21
+[23
 
 
-\indexentry{Index|hyperpage}{21}
-] (./Contents/AnalisiRequisiti.tex [22] [23] [24]
+\indexentry{Index|hyperpage}{23}
+] (./Contents/AnalisiRequisiti.tex [24] [25] [26]
 Overfull \hbox (20.5339pt too wide) in paragraph at lines 199--200
 []\OT1/lmr/m/n/10 Descrizione: per-me-tte la reg-is-trazione di un nuovo utente
  (richiedendo
  []
 
-[25]
+[27]
 Overfull \hbox (47.06088pt too wide) in paragraph at lines 259--260
 \OT1/lmr/m/n/10 bona-mento sot-to-scritto (evi-tando quindi il prossimo rin-nov
 o, l'abbonamento
  []
 
-[26] [27]
+[28] [29]
 Overfull \hbox (11.67278pt too wide) in paragraph at lines 374--375
 []\OT1/lmr/m/n/10 Descrizione: per-me-tte ad utenti reg-is-trati di ag-giun-ger
 e un []prodotto[]
@@ -833,13 +843,13 @@ Overfull \hbox (7.81157pt too wide) in paragraph at lines 380--381
 un prodotto
  []
 
-[28]
+[30]
 Overfull \hbox (12.17213pt too wide) in paragraph at lines 421--422
 []\OT1/lmr/m/n/10 Descrizione: per-me-tte di com-mentare un con-tenuto (sin-gol
 i []prodotti[]
  []
 
-[29] [30])
+[31] [32])
 Underfull \hbox (badness 10000) in paragraph at lines 528--86
 
  []
@@ -849,8 +859,8 @@ Overfull \hbox (3.10698pt too wide) in paragraph at lines 528--86
 []
  []
 
-[31
-\indexentry{Index|hyperpage}{31}
+[33
+\indexentry{Index|hyperpage}{33}
 ] (./Contents/GestioneDeiRischi.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
@@ -876,7 +886,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 53--72
 [][] 
  []
 
-[32] [33]
+[34] [35]
 Underfull \hbox (badness 8094) in paragraph at lines 87--88
 []|\OT1/lmr/m/n/10 Mantenere una co-mu-ni-cazione tra dipen-denti e resto
  []
@@ -901,9 +911,9 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 94--113
 [][] 
  []
 
-[34
+[36
 
-] [35]
+] [37]
 Overfull \hbox (2.30655pt too wide) in paragraph at lines 130--130
 []|\OT1/lmr/bx/n/10 Management| 
  []
@@ -923,7 +933,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 135--154
 [][] 
  []
 
-[36
+[38
 
 ]
 Overfull \hbox (2.30655pt too wide) in paragraph at lines 171--171
@@ -935,7 +945,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 155--174
 [][] 
  []
 
-[37]
+[39]
 Overfull \hbox (2.30655pt too wide) in paragraph at lines 192--192
 []|\OT1/lmr/bx/n/10 Management| 
  []
@@ -945,7 +955,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 176--195
 [][] 
  []
 
-[38]
+[40]
 Underfull \hbox (badness 1577) in paragraph at lines 211--212
 []|\OT1/lmr/m/n/10 Esaminare pe-ri-odica-mente l'andamento dell'iterazione cor-
 
@@ -961,7 +971,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 197--216
 [][] 
  []
 
-[39]
+[41]
 Overfull \hbox (2.30655pt too wide) in paragraph at lines 234--234
 []|\OT1/lmr/bx/n/10 Management| 
  []
@@ -971,7 +981,7 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 218--237
 [][] 
  []
 
-[40] [41])
+[42] [43])
 Underfull \hbox (badness 10000) in paragraph at lines 241--91
 
  []
@@ -981,8 +991,8 @@ Overfull \hbox (80.11244pt too wide) in paragraph at lines 241--91
 []
  []
 
-[42
-\indexentry{Index|hyperpage}{42}
+[44
+\indexentry{Index|hyperpage}{44}
 ] (./Contents/ModelloUC.tex
 \c@ucCounter=\count294
 
@@ -1018,7 +1028,7 @@ Overfull \hbox (0.74559pt too wide) in paragraph at lines 32--33
 rodotti, Seg-nalazioni,
  []
 
-[43]
+[45]
 Overfull \hbox (5.44347pt too wide) in paragraph at lines 38--39
 []\OT1/lmr/bx/n/12 Post-condizioni\OT1/lmr/m/n/12 : Con-dizioni che de-vono es-
 sere ver-ifi-cate subito
@@ -1051,7 +1061,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 61--71
  [][] 
  []
 
-[44]
+[46]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 79--79
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1071,7 +1081,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 83--93
  [][] 
  []
 
-[45]
+[47]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 101--101
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1091,7 +1101,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 105--115
  [][] 
  []
 
-[46]
+[48]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 123--123
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1111,7 +1121,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 127--137
  [][] 
  []
 
-[47]
+[49]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 145--145
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1131,7 +1141,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 149--159
  [][] 
  []
 
-[48]
+[50]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 167--167
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1151,7 +1161,7 @@ Overfull \hbox (20.70093pt too wide) in paragraph at lines 171--181
  [][] 
  []
 
-[49]
+[51]
 Overfull \hbox (1.0914pt too wide) in paragraph at lines 194--194
 []|\OT1/lmr/m/n/12 Descrizione| 
  []
@@ -1181,7 +1191,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--208
 
  []
 
-[50]
+[52]
 \c@tmpCounter=\count295
 
 Overfull \hbox (66.22551pt too wide) in paragraph at lines 297--315
@@ -1585,11 +1595,11 @@ Overfull \hbox (66.22551pt too wide) in paragraph at lines 1943--1959
  [][] 
  []
 
-[51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65]
-[66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
-[81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
-[96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108]
-[109] [110] [111] [112] [113] [114]
+[53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67]
+[68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
+[98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110]
+[111] [112] [113] [114] [115] [116]
 Underfull \hbox (badness 10000) in paragraph at lines 1966--1976
 
  []
@@ -1599,8 +1609,8 @@ Overfull \hbox (41.03304pt too wide) in paragraph at lines 1966--1976
 [] 
  []
 
-) [115
-\indexentry{Index|hyperpage}{115}
+) [117
+\indexentry{Index|hyperpage}{117}
 ] (./Contents/StimaDeiCosti.tex
 \c@ucCostCounter=\count296
 
@@ -1625,7 +1635,7 @@ Overfull \hbox (32.12355pt too wide) in paragraph at lines 45--57
  [][] 
  []
 
-[116] [117]
+[118] [119]
 Overfull \hbox (35.69049pt too wide) in alignment at lines 61--83
  [] [] [] 
  []
@@ -1640,14 +1650,14 @@ Overfull \hbox (35.69049pt too wide) in alignment at lines 103--123
  [] [] [] 
  []
 
-[118
+[120
 
-] [119]
+] [121]
 Overfull \hbox (35.69049pt too wide) in alignment at lines 123--129
  [] [] [] 
  []
 
-[120]
+[122]
 Overfull \hbox (83.42154pt too wide) in paragraph at lines 135--152
  [][] 
  []
@@ -1657,39 +1667,51 @@ Overfull \hbox (83.42154pt too wide) in paragraph at lines 159--171
  [][] 
  []
 
-[121] [122] [123]
+[123] [124] [125]
 Underfull \hbox (badness 10000) in paragraph at lines 192--200
 
  []
 
-) [124
+) [126
 
 
-\indexentry{Index|hyperpage}{124}
+\indexentry{Index|hyperpage}{126}
 ] (./Contents/AnalisiSistema.tex
-Overfull \hbox (3.221pt too wide) in paragraph at lines 28--33
+Overfull \hbox (1.16699pt too wide) in paragraph at lines 21--25
+\OT1/lmr/m/n/12 par-ti-co-lare di utente ^^Re il []part-ner[], che pub-blica su
+lla pi-attaforma; 
+ []
+
+
+Overfull \hbox (3.221pt too wide) in paragraph at lines 29--34
 [][]\OT1/lmr/m/n/12 Prodotto mul-ti-me-di-ale[]: oltre agli el-e-menti iden-ti-
 fica-tivi, ^^Re carat-
  []
 
-[125])
+[127]
+Overfull \hbox (4.78668pt too wide) in paragraph at lines 51--57
+[]\OT1/lmr/m/n/12 L' []am-min-is-tra-tore[] []ef-fet-tua[] di-verse op-er-azion
+i sugli []ab-bona-menti[].
+ []
+
+[128])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [126
-\indexentry{Index|hyperpage}{126}
+ [129
+\indexentry{Index|hyperpage}{129}
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0AF4ACACE15EEDD5D56A5DCCA604B3B5;2367.
+(rerunfilecheck)             Checksum: 9C195A213C88DBBFACE13BF20ADD5622;2444.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 10213 strings out of 482692
- 153851 string characters out of 5952019
+ 10239 strings out of 482692
+ 154089 string characters out of 5952019
  756807 words of memory out of 5000000
- 24333 multiletter control sequences out of 15000+600000
+ 24336 multiletter control sequences out of 15000+600000
  597580 words of font info for 58 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  250i,16n,245p,895b,833s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1713,10 +1735,10 @@ l/texlive/2019basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/tex
 live/2019basic/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/
 2019basic/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019b
 asic/texmf-dist/fonts/type1/public/lm/lmsy5.pfb>
-Output written on main.pdf (126 pages, 1040324 bytes).
+Output written on main.pdf (129 pages, 1045552 bytes).
 PDF statistics:
- 1499 PDF objects out of 1728 (max. 8388607)
- 1336 compressed objects within 14 object streams
- 677 named destinations out of 1000 (max. 500000)
- 304 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1541 PDF objects out of 1728 (max. 8388607)
+ 1375 compressed objects within 14 object streams
+ 700 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 

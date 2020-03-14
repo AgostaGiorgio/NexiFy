@@ -8,8 +8,8 @@ La legenda spiega come interpretare le informazioni.
 \begin{itemize}
     \item Nomi propri: istanze;
     \item Nomi comuni o predicati nominali: \textcolor{red}{classi} o \textcolor{orange}{attributi};
-    %\item \textcolor{green}{Verbi transitivi}: metodi;
-    \item \textcolor{green}{Verbi}: metodi;
+    %\item \textcolor{teal}{Verbi transitivi}: metodi;
+    \item \textcolor{teal}{Verbi}: metodi;
     \item \textcolor{cyan}{Verbi modali}: precondizioni, postcondizioni, o condizioni di invarianza;
     %\item \textcolor{blue}{Verbi intransitivi}: eccezioni o eventi dipendenti dal tempo;
     \item \textcolor{violet}{Aggettivi}: valore di attributo o classe;
@@ -20,7 +20,8 @@ La legenda spiega come interpretare le informazioni.
 \begin{enumerate}
     \item \textcolor{red}{Utente del sistema}: fornito di informazioni riguardanti \textcolor{orange}{nome}, \textcolor{orange}{cognome},
     \textcolor{orange}{data di nascita}, \textcolor{orange}{email}, \textcolor{orange}{password}, \textcolor{orange}{metodi di pagamento}
-    Ha la possibilità di sottoscrivere \textcolor{red}{abbonamenti};
+    Ha la possibilità di sottoscrivere \textcolor{red}{abbonamenti}. Un tipo particolare di utente è il \textcolor{red}{partner}, che pubblica
+    sulla piattaforma;
     \item \textcolor{red}{Piano di abbonamento}: selezionabile dagli utenti, ha proprietà quali \textcolor{orange}{nome},
     \textcolor{orange}{prezzo}, \textcolor{orange}{durata}, \textcolor{orange}{disponibilità di sottoscrizione}.
     Esso raggruppa una lista di \textcolor{red}{servizi} offerti;
@@ -30,7 +31,7 @@ La legenda spiega come interpretare le informazioni.
     \textcolor{violet}{video} o \textcolor{violet}{audio}: nel primo caso è fornito di \textcolor{orange}{traccia audio} e
     \textcolor{orange}{traccia video}, nel secondo solo \textcolor{orange}{traccia audio}, ma con accompagnamento di
     \textcolor{orange}{lyrics} o \textcolor{orange}{video musicale};
-    \item \textcolor{orange}{Playlist}: contenente una lista di \textcolor{red}{prodotti multimediali}.\\
+    \item \textcolor{red}{Playlist}: contenente una lista di \textcolor{red}{prodotti multimediali}.\\
     Casi particolari di essa sono:
     \begin{enumerate}
         \item \textcolor{red}{Serie TV}: formata solamente da \textcolor{violet}{prodotti video}, tutti pubblicati dallo stesso \textcolor{red}{utente};
@@ -42,4 +43,51 @@ La legenda spiega come interpretare le informazioni.
     la effettua e una \textcolor{orange}{motivazione};
     \item \textcolor{red}{Coda di riproduzione}: relativa ad un singolo \textcolor{red}{utente}, composta da una lista di  
     \textcolor{red}{prodotti multimediali};
+    \item \textcolor{red}{Amministratore del sistema}: si occupa della gestione del sistema.
+\end{enumerate}
+
+\subsubsection{Funzionalità}
+\begin{enumerate}
+    \item L' \textcolor{red}{amministratore} \textcolor{teal}{effettua} diverse operazioni sugli \textcolor{red}{abbonamenti}.
+    Egli \textcolor{teal}{crea} \textcolor{red}{abbonamenti} e \textcolor{cyan}{può} \textcolor{teal}{attivare} e
+    \textcolor{teal}{disattivare} alcuni già \textcolor{violet}{creati}, \textcolor{teal}{modificando} la loro \textcolor{orange}{disponibilità}.
+    Inoltre, egli \textcolor{teal}{aggiunge} e \textcolor{teal}{rimuove} \textcolor{red}{servizi} da \textcolor{red}{abbonamenti}.
+    L' \textcolor{red}{amministratore} \textcolor{cyan}{può} anche \textcolor{teal}{recuperare} \textcolor{orange}{informazioni} riguardanti
+    \textcolor{red}{servizi} (\textcolor{violet}{generici} o in un particolare \textcolor{red}{abbonamento}) e \textcolor{red}{piani di abbonamento};
+    \item L' \textcolor{red}{amministratore} \textcolor{teal}{effettua} pagamenti verso i \textcolor{red}{partner}.
+    \item L' \textcolor{red}{amministratore} \textcolor{cyan}{può} \textcolor{teal}{sospendere} l'account di un \textcolor{red}{utente};
+    \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} operazioni sul proprio account. Egli \textcolor{teal}{si registra},
+    \textcolor{teal}{fornendo} i propri dati, \textcolor{teal}{modifica} il proprio profilo ed \textcolor{teal}{effettua}
+    login e logout per \textcolor{teal}{autenticarsi} sulla piattaforma.
+    \item L' \textcolor{red}{utente} \textcolor{teal}{richiede} ricerche al \textcolor{red}{sistema}. Queste sono relative
+    ad un particolare contenuto (\textcolor{red}{prodotto} o \textcolor{red}{playlist}) oppure indirizzate a contenuti
+    \textcolor{violet}{popolari}. Inoltre, il \textcolor{red}{sistema} \textcolor{teal}{suggerisci} contenuti agli
+    \textcolor{red}{utenti}, sulla base delle loro \textcolor{orange}{preferenze};
+    \item L' \textcolor{red}{utente} \textcolor{teal}{sottoscrive} nuovi \textcolor{red}{abbonamenti} e ne \textcolor{teal}{disdice} di già
+    \textcolor{orange}{sottoscritti}. Egli \textcolor{cyan}{può} \textcolor{teal}{cambiare} un \textcolor{red}{abbonamento} con un altro,
+    pagando eventualmente un sovrapprezzo. Il \textcolor{red}{sistema} \textcolor{teal}{gestisce} il rinnovo automatico;
+    \item Il \textcolor{red}{partner} \textcolor{teal}{pubblica} nuovi \textcolor{red}{prodotti} sulla piattaforma. Egli \textcolor{teal}{compila}
+    le \textcolor{orange}{informazioni di base}. Inoltre, nel caso di un 
+    \textcolor{red}{prodotto} \textcolor{violet}{video}, egli \textcolor{teal}{carica} il file video (che comprende audio) e \textcolor{violet}{opzionalmente} sottotitoli.
+    Invece, per un \textcolor{red}{prodotto} \textcolor{violet}{audio}, egli \textcolor{teal}{carica} il file audio e \textcolor{violet}{opzionalmente} video musicale o lyrics.
+    Egli, \textcolor{cyan}{può} anche \textcolor{teal}{cambiare} lo stato della pubblicazione, tra \textcolor{violet}{pubblico} e \textcolor{violet}{privato};
+    \item L' \textcolor{red}{utente} \textcolor{teal}{riproduce} \textcolor{red}{prodotti} (sia video che audio) con il player. Egli \textcolor{cyan}{può} \textcolor{teal}{mettere}
+    il player \textcolor{violet}{in pausa} e \textcolor{violet}{in riproduzione} e \textcolor{teal}{spostare} il punto di riproduzione. 
+    Egli \textcolor{cyan}{può} anche \textcolor{teal}{riprodurre} audio in background;
+    \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} operazioni sulle \textcolor{red}{playlist}. Egli crea nuove \textcolor{red}{playlist}, \textcolor{violet}{vuote};
+    \textcolor{teal}{aggiunge} e \textcolor{teal}{rimuove} \textcolor{red}{prodotti} ad/da esse;  \textcolor{teal}{cambia} la loro \textcolor{orange}{visibilità} (\textcolor{violet}{pubblica} o \textcolor{violet}{privata});
+    \textcolor{teal}{riproduce} playlist, che \textcolor{cyan}{devono}  \textcolor{teal}{contenere} almeno un  \textcolor{red}{prodotto};
+    \item Il \textcolor{red}{partner} \textcolor{teal}{crea} una \textcolor{red}{serie TV};
+    \item Il \textcolor{red}{partner} \textcolor{teal}{crea} un \textcolor{red}{album};
+    \item L' \textcolor{red}{utente} \textcolor{cyan}{può} \textcolor{teal}{valutare} contenuti. Egli \textcolor{cyan}{può} \textcolor{teal}{votare} il contenuto
+    e/o  \textcolor{teal}{commentarlo}. Il commento \textcolor{cyan}{può} \textcolor{teal}{essere eliminato} dallo stesso \textcolor{red}{utente};
+    \item L' \textcolor{red}{utente} \textcolor{cyan}{può} \textcolor{teal}{segnalare} \textcolor{red}{prodotti} e l' \textcolor{red}{amministratore} \textcolor{teal}{controllare} le 
+    \textcolor{red}{segnalazioni} di un certo \textcolor{red}{utente};
+    \item L' \textcolor{red}{utente} \textcolor{teal}{ottiene} la cronologia dei contenuti visualizzati;
+    \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} il download di un certo \textcolor{red}{prodotto};
+    \item L' \textcolor{red}{utente} \textcolor{teal}{riproduce} spot pubblicitari.
+    \item Il \textcolor{red}{sistema} \textcolor{teal}{calcola} il voto di un certo contenuto, sulla base dei voti ricevuti.
+    \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} operazioni sulla \textcolor{red}{coda di riproduzione}. Egli \textcolor{teal}{aggiunge}
+    e \textcolor{teal}{rimuove} \textcolor{red}{prodotti} da essa. Inoltre, egli \textcolor{cyan}{può} \textcolor{teal}{visualizzare} i 
+    \textcolor{red}{prodotti} presenti nella \textcolor{red}{coda}.
 \end{enumerate}
