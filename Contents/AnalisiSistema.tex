@@ -1,0 +1,45 @@
+\subsection{Analisi Nomi-Verbi}
+Viene qui rappresentato l’elenco delle funzionalità che il sistema deve avere, sulla base dal Documento di Visione.
+Inoltre, sono presenti le definizioni necessarie.
+La legenda spiega come interpretare le informazioni.
+
+\subsubsection{Legenda}
+
+\begin{itemize}
+    \item Nomi propri: istanze;
+    \item Nomi comuni o predicati nominali: \textcolor{red}{classi} o \textcolor{orange}{attributi};
+    %\item \textcolor{green}{Verbi transitivi}: metodi;
+    \item \textcolor{green}{Verbi}: metodi;
+    \item \textcolor{cyan}{Verbi modali}: precondizioni, postcondizioni, o condizioni di invarianza;
+    %\item \textcolor{blue}{Verbi intransitivi}: eccezioni o eventi dipendenti dal tempo;
+    \item \textcolor{violet}{Aggettivi}: valore di attributo o classe;
+    \item  \underline{Riferimenti} alle definizioni.
+\end{itemize}
+
+\subsubsection{Definizioni}
+\begin{enumerate}
+    \item \textcolor{red}{Utente del sistema}: fornito di informazioni riguardanti \textcolor{orange}{nome}, \textcolor{orange}{cognome},
+    \textcolor{orange}{data di nascita}, \textcolor{orange}{email}, \textcolor{orange}{password}, \textcolor{orange}{metodi di pagamento}
+    Ha la possibilità di sottoscrivere \textcolor{red}{abbonamenti};
+    \item \textcolor{red}{Piano di abbonamento}: selezionabile dagli utenti, ha proprietà quali \textcolor{orange}{nome},
+    \textcolor{orange}{prezzo}, \textcolor{orange}{durata}, \textcolor{orange}{disponibilità di sottoscrizione}.
+    Esso raggruppa una lista di \textcolor{red}{servizi} offerti;
+    \item \textcolor{red}{Servizio}: caratterizzato da \textcolor{orange}{ID} e \textcolor{orange}{descrizione};
+    \item \textcolor{red}{Prodotto multimediale}: oltre agli elementi identificativi, è caratterizzato da \textcolor{orange}{genere},
+    \textcolor{orange}{visibilità}, \textcolor{red}{Utente} \textcolor{orange}{proprietario}. Esso può essere di tipo
+    \textcolor{violet}{video} o \textcolor{violet}{audio}: nel primo caso è fornito di \textcolor{orange}{traccia audio} e
+    \textcolor{orange}{traccia video}, nel secondo solo \textcolor{orange}{traccia audio}, ma con accompagnamento di
+    \textcolor{orange}{lyrics} o \textcolor{orange}{video musicale};
+    \item \textcolor{orange}{Playlist}: contenente una lista di \textcolor{red}{prodotti multimediali}.\\
+    Casi particolari di essa sono:
+    \begin{enumerate}
+        \item \textcolor{red}{Serie TV}: formata solamente da \textcolor{violet}{prodotti video}, tutti pubblicati dallo stesso \textcolor{red}{utente};
+        \item \textcolor{red}{Album}: formato solamente da \textcolor{violet}{prodotti audio}, tutti pubblicati dallo stesso \textcolor{red}{utente};
+    \end{enumerate}
+    \item \textcolor{red}{Visualizzazione}: proveniente da un \textcolor{red}{utente} verso un \textcolor{red}{prodotto multimediale},
+    considera anche l'\textcolor{orange}{istante} in cui avviene;
+    \item \textcolor{red}{Segnalazione}: relativa ad un \textcolor{red}{prodotto multimediale}, caratterizzata dall' \textcolor{red}{utente} che 
+    la effettua e una \textcolor{orange}{motivazione};
+    \item \textcolor{red}{Coda di riproduzione}: relativa ad un singolo \textcolor{red}{utente}, composta da una lista di  
+    \textcolor{red}{prodotti multimediali};
+\end{enumerate}
