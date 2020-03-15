@@ -55,7 +55,7 @@
         <task id="131" name="Requisiti e rischi individuati, iterazioni programmate" color="#993300" meeting="true" start="2020-02-17" duration="0" complete="0" thirdDate="2020-02-17" thirdDate-constraint="0" expand="true"/>
         <task id="61" name="Definizione di modello di analisi architetturale" color="#8cb6ce" meeting="false" start="2020-02-17" duration="12" complete="0" thirdDate="2020-01-27" thirdDate-constraint="0" expand="true"/>
         <task id="64" name="Definizione modello di casi d'uso per requisiti funzionali" color="#8cb6ce" meeting="false" start="2020-02-17" duration="12" complete="0" thirdDate="2020-01-27" thirdDate-constraint="0" expand="true"/>
-        <task id="103" name="Individuazione di test sull'architettura e sui requisiti fondamentali" color="#8cb6ce" meeting="false" start="2019-02-26" duration="13" complete="0" thirdDate="2019-11-11" thirdDate-constraint="0" expand="true"/>
+        <task id="103" name="Individuazione di test sull'architettura e sui requisiti fondamentali" color="#8cb6ce" meeting="false" start="2020-02-26" duration="13" complete="0" thirdDate="2019-11-11" thirdDate-constraint="0" expand="true"/>
         <task id="67" name="Effettuazione stima dei costi" color="#8cb6ce" meeting="false" start="2020-02-26" duration="5" complete="0" thirdDate="2020-02-07" thirdDate-constraint="0" expand="true"/>
         <task id="73" name="Definizione del modello di design del sistema" color="#8cb6ce" meeting="false" start="2020-03-05" duration="15" complete="0" thirdDate="2020-03-02" thirdDate-constraint="0" expand="true"/>
         <task id="71" name="Analisi del sistema" color="#8cb6ce" meeting="false" start="2020-03-05" duration="7" complete="0" thirdDate="2020-02-07" thirdDate-constraint="0" expand="true"/>
