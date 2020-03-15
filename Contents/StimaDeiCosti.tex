@@ -72,7 +72,7 @@ UC\_\nextUCCost & UC\_AggiungiServizioAbbonamento & 10\\
 UC\_\nextUCCost & UC\_RimuoviServizioAbbonamento & 10\\
 UC\_\nextUCCost & UC\_RecuperaServiziAbbonamento & 5\\
 UC\_\nextUCCost & UC\_RecuperaPianiAbbonamentoUtente & 5\\
-UC\_\nextUCCost & UC\_EffettuaPagamentoPartner & 10\\
+UC\_\nextUCCost & UC\_EffettuaPagamentoPartner & 15\\
 UC\_\nextUCCost & UC\_CalcolaImportoDaPagare & 5\\
 UC\_\nextUCCost & UC\_GestisciSottoscrizioniAbbonamenti & 10\\
 UC\_\nextUCCost & UC\_SottoscriviAbbonamento & 10\\
@@ -91,13 +91,13 @@ UC\_\nextUCCost & UC\_GestisciProdotti & 10\\
 UC\_\nextUCCost & UC\_CreaProdotto & 10\\
 UC\_\nextUCCost & UC\_ModificaInformazioniDiBase & 10\\
 UC\_\nextUCCost & UC\_CaricaFile & 10\\
-UC\_\nextUCCost & UC\_CambiaVisibilit\'aProdotto & 5\\
+UC\_\nextUCCost & UC\_CambiaVisibilitàProdotto & 5\\
 UC\_\nextUCCost & UC\_RiproduciProdotto & 15\\
 UC\_\nextUCCost & UC\_StreamingVideo & 10\\
 UC\_\nextUCCost & UC\_StreamingMusica & 10\\
 UC\_\nextUCCost & UC\_PausaPlayer & 5\\
 UC\_\nextUCCost & UC\_SpostaPuntoRiproduzionePlayer & 5\\
-UC\_\nextUCCost & UC\_DownloadProdotto & 10\\
+UC\_\nextUCCost & UC\_DownloadProdotto & 5\\
 UC\_\nextUCCost & UC\_VisualizzaPubblicità & 5\\
 UC\_\nextUCCost & UC\_RiproduciAudioInBackground & 5\\
 UC\_\nextUCCost & UC\_SegnalaProdotto & 10\\
@@ -105,27 +105,27 @@ UC\_\nextUCCost & UC\_GestisciSegnalazioni & 10\\
 UC\_\nextUCCost & UC\_OttieniSegnalazioni & 5\\
 UC\_\nextUCCost & UC\_ChiudiSegnalazione & 5\\
 UC\_\nextUCCost & UC\_RiapriSegnalazione & 5\\
-UC\_\nextUCCost & UC\_VisualizzaProdottoSegnalato & 10\\
+UC\_\nextUCCost & UC\_VisualizzaProdottoSegnalato & 5\\
 UC\_\nextUCCost & UC\_RicercaContenuto & 10\\
 UC\_\nextUCCost & UC\_RicercaPopolari & 15\\
 UC\_\nextUCCost & UC\_SuggerisciContenuti & 15\\
 UC\_\nextUCCost & UC\_GestisciPlaylist & 10\\
 UC\_\nextUCCost & UC\_CreaPlaylist & 10\\
-UC\_\nextUCCost & UC\_AggiungiProdottoPlaylist & 5\\
+UC\_\nextUCCost & UC\_AggiungiProdottoPlaylist & 10\\
 UC\_\nextUCCost & UC\_RimuoviProdottoPlaylist & 5\\
-UC\_\nextUCCost & UC\_CambiaVisibilitáPlaylist & 5\\
+UC\_\nextUCCost & UC\_CambiaVisibilitàPlaylist & 5\\
 UC\_\nextUCCost & UC\_RiproduciPlaylist & 5\\
-UC\_\nextUCCost & UC\_CreaSerieTv & 5\\
-UC\_\nextUCCost & UC\_CreaAlbum & 5\\
+UC\_\nextUCCost & UC\_CreaSerieTv & 10\\
+UC\_\nextUCCost & UC\_CreaAlbum & 10\\
 UC\_\nextUCCost & UC\_AggiungiProdottoAllaCoda & 5\\
 UC\_\nextUCCost & UC\_RimuoviProdottoDallaCoda & 5\\
 UC\_\nextUCCost & UC\_MostraStatoCoda & 5\\
 UC\_\nextUCCost & UC\_RiproduciCoda & 10\\
-UC\_\nextUCCost & UC\_CalcolaQualitáContenuto & 10\\
-UC\_\nextUCCost & UC\_VotaContenuto & 5\\
+UC\_\nextUCCost & UC\_CalcolaQualitàContenuto & 5\\
+UC\_\nextUCCost & UC\_VotaContenuto & 10\\
 UC\_\nextUCCost & UC\_CommentaContenuto & 5\\
 UC\_\nextUCCost & UC\_RimuoviCommento & 5\\\hline
-\caption*{\textbf{UUCW = 400}}
+\caption*{\textbf{UUCW = 495}}
 \end{longtable}
 
 \begin{table}[hb]
@@ -169,10 +169,10 @@ F7 & Lavoratori part-time & -1.0& 2& -1.0 * 2 = -2\\\hline
 F8 & Linguaggio di programmazione difficile & -1.0& 4& -1 * 4 = -4.0\\\hline
 \end{tabular}
 \caption*{\\\textbf{EFactor = 13.0}\\~\\}
-\caption*{\\~\\\large{UUCP = UAW + UUCW = attori + use-case = 18 + 375 = 393}}
+\caption*{\\~\\\large{UUCP = UAW + UUCW = attori + use-case = 18 + 495 = 513}}
 \caption*{\\\large{TCF = 0,6 + (0,01 * TFactor) = 0,6 + (0,01 * 44.5) = 1,045}}
 \caption*{\\\large{EF = 1,4 + (-0,03 * EFactor) = 1,4 + (-0,03 * 13) = 1,01}}
-\caption*{\\\large{UCP = UUCP * TCF * EF = 393 * 1,045 * 1,01 = 414,79185}}
+\caption*{\\\large{UCP = UUCP * TCF * EF = 513 * 1,045 * 1,01 = 541,46}}
 \end{table}
 
 \clearpage
@@ -181,12 +181,12 @@ F8 & Linguaggio di programmazione difficile & -1.0& 4& -1 * 4 = -4.0\\\hline
 
 \vspace{1.0cm}
 \centerline{\large{Hours per UCP = HpUCP = 20}}\vspace{0.5cm}
-\centerline{\large{Settimane = HpUCP * UCP / (HpW * dev) = 20 * 414,8 / (30 * 5) = 55,3}}\vspace{0.5cm}
+\centerline{\large{Settimane = HpUCP * UCP / (HpW * dev) = 20 * 541,46 / (30 * 5) = 72,19}}\vspace{0.5cm}
 \centerline{\large{Paga settimanale = 50 * 30 = 1500 \$}}\vspace{0.5cm}
-\centerline{\large{Costo totale = 1500 * 55,3 * 5 = 414.750 \$}}\vspace{0.5cm}
+\centerline{\large{Costo totale = 1500 * 72,19 * 5 = 541.425 \$}}\vspace{0.5cm}
 \centerline{\large{Tempo totale ~= 1 anno e 20 giorni}}\vspace{1.0cm}
 
-\noindent Quindi in tutto la realizzazione del nostro progetto richiederà poco più di un anno e verrà a costare circa 414 mila dollari (ovvero circa 370 mila euro).
+\noindent Quindi in tutto la realizzazione del nostro progetto richiederà poco più di un anno e verrà a costare circa 541 mila dollari (ovvero circa 484 mila euro).
 
 \begin{table}[b]
 \noindent{\large \textbf{Revisioni 9}} \\ \\
