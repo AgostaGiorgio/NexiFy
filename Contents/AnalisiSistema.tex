@@ -21,17 +21,16 @@ La legenda spiega come interpretare le informazioni.
 \begin{enumerate}
     \item \textcolor{red}{Utente del sistema}: fornito di informazioni riguardanti \textcolor{orange}{nome}, \textcolor{orange}{cognome},
     \textcolor{orange}{data di nascita}, \textcolor{orange}{email}, \textcolor{orange}{password}, \textcolor{orange}{metodi di pagamento}
-    Ha la possibilità di sottoscrivere \textcolor{red}{abbonamenti}. Un tipo particolare di utente è il \textcolor{red}{partner}, che pubblica
-    sulla piattaforma;
+    Ha la possibilità di sottoscrivere \textcolor{red}{abbonamenti}. Un \textcolor{red}{partner} è un \textcolor{red}{utente} con un \textcolor{red}{abbonamento} che gli consente di pubblicare sulla piattaforma;
     \item \textcolor{red}{Piano di abbonamento}: selezionabile dagli utenti, ha proprietà quali \textcolor{orange}{nome},
     \textcolor{orange}{prezzo}, \textcolor{orange}{durata}, \textcolor{orange}{disponibilità di sottoscrizione}.
-    Esso raggruppa una lista di \textcolor{red}{servizi} offerti;
+    Esso raggruppa una lista di \textcolor{red}{servizi} \textcolor{teal}{offerti};
     \item \textcolor{red}{Servizio}: caratterizzato da \textcolor{orange}{ID} e \textcolor{orange}{descrizione};
-    \item \textcolor{red}{Prodotto multimediale}: oltre agli elementi identificativi, è caratterizzato da \textcolor{orange}{genere},
-    \textcolor{orange}{visibilità}, \textcolor{red}{Utente} \textcolor{orange}{proprietario}. Esso può essere di tipo
+    \item \textcolor{red}{Prodotto multimediale}: oltre agli elementi identificativi, è caratterizzato da\textcolor{orange}{genere},
+    \textcolor{orange}{visibilità}, \textcolor{red}{utente} \textcolor{orange}{proprietario}. Esso può essere di tipo
     \textcolor{violet}{video} o \textcolor{violet}{audio}: nel primo caso è fornito di \textcolor{orange}{traccia audio} e
-    \textcolor{orange}{traccia video}, nel secondo solo \textcolor{orange}{traccia audio}, ma con accompagnamento di
-    \textcolor{orange}{lyrics} o \textcolor{orange}{video musicale};
+    \textcolor{red}{traccia video}, nel secondo solo \textcolor{red}{traccia audio}, ma con accompagnamento di
+    \textcolor{red}{lyrics} o \textcolor{red}{video musicale};
     \item \textcolor{red}{Playlist}: contenente una lista di \textcolor{red}{prodotti multimediali}.\\
     Casi particolari di essa sono:
     \begin{enumerate}
@@ -44,7 +43,8 @@ La legenda spiega come interpretare le informazioni.
     la effettua e una \textcolor{orange}{motivazione};
     \item \textcolor{red}{Coda di riproduzione}: relativa ad un singolo \textcolor{red}{utente}, composta da una lista di  
     \textcolor{red}{prodotti multimediali};
-    \item \textcolor{red}{Amministratore del sistema}: si occupa della gestione del sistema.
+    \item \textcolor{red}{Amministratore del sistema}: \textcolor{teal}{si occupa} della gestione del sistema;
+    \item \textcolor{red}{Valutazione}: relative a contenuti e \textcolor{teal}{create} da \textcolor{red}{utenti};
 \end{enumerate}
 
 \subsubsection{Funzionalità}
@@ -55,21 +55,21 @@ La legenda spiega come interpretare le informazioni.
     Inoltre, egli \textcolor{teal}{aggiunge} e \textcolor{teal}{rimuove} \textcolor{red}{servizi} da \textcolor{red}{abbonamenti}.
     L' \textcolor{red}{amministratore} \textcolor{cyan}{può} anche \textcolor{teal}{recuperare} \textcolor{orange}{informazioni} riguardanti
     \textcolor{red}{servizi} (\textcolor{violet}{generici} o in un particolare \textcolor{red}{abbonamento}) e \textcolor{red}{piani di abbonamento};
-    \item L' \textcolor{red}{amministratore} \textcolor{teal}{effettua} pagamenti verso i \textcolor{red}{partner}.
+    \item Il sistema \textcolor{teal}{effettua} pagamenti verso i \textcolor{red}{partner}.
     \item L' \textcolor{red}{amministratore} \textcolor{cyan}{può} \textcolor{teal}{sospendere} l'account di un \textcolor{red}{utente};
     \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} operazioni sul proprio account. Egli \textcolor{teal}{si registra},
     \textcolor{teal}{fornendo} i propri dati, \textcolor{teal}{modifica} il proprio profilo ed \textcolor{teal}{effettua}
     login e logout per \textcolor{teal}{autenticarsi} sulla piattaforma.
-    \item L' \textcolor{red}{utente} \textcolor{teal}{richiede} ricerche al \textcolor{red}{sistema}. Queste sono relative
+    \item L' \textcolor{red}{utente} \textcolor{teal}{richiede} ricerche al sistema. Queste sono relative
     ad un particolare contenuto (\textcolor{red}{prodotto} o \textcolor{red}{playlist}) oppure indirizzate a contenuti
-    \textcolor{violet}{popolari}. Inoltre, il \textcolor{red}{sistema} \textcolor{teal}{suggerisci} contenuti agli
+    \textcolor{violet}{popolari}. Inoltre, il sistema \textcolor{teal}{suggerisci} contenuti agli
     \textcolor{red}{utenti}, sulla base delle loro \textcolor{orange}{preferenze};
     \item L' \textcolor{red}{utente} \textcolor{teal}{sottoscrive} nuovi \textcolor{red}{abbonamenti} e ne \textcolor{teal}{disdice} di già
     \textcolor{orange}{sottoscritti}. Egli \textcolor{cyan}{può} \textcolor{teal}{cambiare} un \textcolor{red}{abbonamento} con un altro,
-    pagando eventualmente un sovrapprezzo. Il \textcolor{red}{sistema} \textcolor{teal}{gestisce} il rinnovo automatico;
+    pagando eventualmente un sovrapprezzo. Il sistema \textcolor{teal}{gestisce} il rinnovo automatico;
     \item Il \textcolor{red}{partner} \textcolor{teal}{pubblica} nuovi \textcolor{red}{prodotti} sulla piattaforma. Egli \textcolor{teal}{compila}
     le \textcolor{orange}{informazioni di base}. Inoltre, nel caso di un 
-    \textcolor{red}{prodotto} \textcolor{violet}{video}, egli \textcolor{teal}{carica} il file video (che comprende audio) e \textcolor{violet}{opzionalmente} sottotitoli.
+    \textcolor{red}{prodotto} \textcolor{violet}{video}, egli \textcolor{teal}{carica} il file video, il file audio e \textcolor{violet}{opzionalmente} sottotitoli.
     Invece, per un \textcolor{red}{prodotto} \textcolor{violet}{audio}, egli \textcolor{teal}{carica} il file audio e \textcolor{violet}{opzionalmente} video musicale o lyrics.
     Egli, \textcolor{cyan}{può} anche \textcolor{teal}{cambiare} lo stato della pubblicazione, tra \textcolor{violet}{pubblico} e \textcolor{violet}{privato};
     \item L' \textcolor{red}{utente} \textcolor{teal}{riproduce} \textcolor{red}{prodotti} (sia video che audio) con il player. Egli \textcolor{cyan}{può} \textcolor{teal}{mettere}
@@ -87,7 +87,7 @@ La legenda spiega come interpretare le informazioni.
     \item L' \textcolor{red}{utente} \textcolor{teal}{ottiene} la cronologia dei contenuti visualizzati;
     \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} il download di un certo \textcolor{red}{prodotto};
     \item L' \textcolor{red}{utente} \textcolor{teal}{riproduce} spot pubblicitari.
-    \item Il \textcolor{red}{sistema} \textcolor{teal}{calcola} il voto di un certo contenuto, sulla base dei voti ricevuti.
+    \item Il sistema \textcolor{teal}{calcola} il voto di un certo contenuto, sulla base dei voti ricevuti.
     \item L' \textcolor{red}{utente} \textcolor{teal}{effettua} operazioni sulla \textcolor{red}{coda di riproduzione}. Egli \textcolor{teal}{aggiunge}
     e \textcolor{teal}{rimuove} \textcolor{red}{prodotti} da essa. Inoltre, egli \textcolor{cyan}{può} \textcolor{teal}{visualizzare} i 
     \textcolor{red}{prodotti} presenti nella \textcolor{red}{coda}.
