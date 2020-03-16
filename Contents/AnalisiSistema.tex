@@ -151,7 +151,81 @@ Che cosa sono\\
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboration} \\\hline
         \multicolumn{2}{|p{6cm}|}{gestire le segnalazioni} & \multicolumn{2}{|p{6cm}|}{handlerSegnalazioni} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire sospensioni account utente} & \multicolumn{2}{|p{6cm}|}{handlerSospensioni} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire sospensioni account utente} & \multicolumn{2}{|p{6cm}|}{handlerUserBan} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire sospensioni risorse segnalate} & \multicolumn{2}{|p{6cm}|}{handlerProductBan} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{UtenteNonAutenticato, UtenteAutenticato} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{richiede una ricerca} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riprodurre prodotti} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{interagire con player} & \multicolumn{2}{|p{6cm}|}{handlerPlayer} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riprodurre prodotti in background} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riprodurre playlist} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{ottenere cronologia prodotti visualizzati/ascoltati} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduce una pubblicità} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire coda riproduzione} & \multicolumn{2}{|p{6cm}|}{handlerCodaRiproduzione} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UtenteAutenticato} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{Partner} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, cognome, data di nascita, email, password, email di recupero, data di registrazione, metodo di pagamento, stato, abbonamenti sottoscritti, attivo } \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{handlerLogin} \\\hline
+        \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{handlerLogout} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica i propri dati} & \multicolumn{2}{|p{6cm}|}{handlerProfilo} \\\hline
+        \multicolumn{2}{|p{6cm}|}{sottoscrive abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{disdice abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{cambia abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{creare playlist} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica le proprie playlist} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{valutare prodotto} & \multicolumn{2}{|p{6cm}|}{handlerValutazioni} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modificare valutazione a un prodotto} & \multicolumn{2}{|p{6cm}|}{handlerValutazioni} \\\hline
+        \multicolumn{2}{|p{6cm}|}{segnalare un prodotto} & \multicolumn{2}{|p{6cm}|}{handlerSegnalazioni} \\\hline
+        \multicolumn{2}{|p{6cm}|}{scaricare prodotto} & \multicolumn{2}{|p{6cm}|}{handlerDownload} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UtenteNonAutenticato} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{- } \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{richiede la registrazione} & \multicolumn{2}{|p{6cm}|}{handlerRegistrazione} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Partner} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{UtenteAutenticato} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{metodo di ricezione pagamenti } \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{pubblica prodotti} & \multicolumn{2}{|p{6cm}|}{handlerProdotti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica prodotti} & \multicolumn{2}{|p{6cm}|}{handlerProdotti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{creare una serie TV} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{creare un Album} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
     \end{tabular}
 \end{center}
 
@@ -164,7 +238,7 @@ Che cosa sono\\
         Attributi & \multicolumn{3}{|p{9cm}|}{titolo, descrizione, età minima, genere, visibilità, proprietario} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{calcola età minima per visionare } & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
     \end{tabular}
 \end{center}
 
@@ -194,3 +268,41 @@ Che cosa sono\\
     \end{tabular}
 \end{center}
 
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{SerieTv, Album} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, descrizione, visibilità, proprietario, prodotti} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{SerieTv} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Album} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{tabular}
+\end{center}
