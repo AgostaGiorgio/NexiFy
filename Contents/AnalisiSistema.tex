@@ -100,14 +100,58 @@ La legenda spiega come interpretare le informazioni.
 
 Che cosa sono\\
 
+\textbf{Template}
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
         Nome & \multicolumn{3}{|p{9cm}|}{cell2} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{cell2} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{cell2} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{cell2} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Nome} \\\hline
+        \multicolumn{2}{|p{12cm}|}{Nome} & \multicolumn{2}{|p{12cm}|}{Collaboration} \\\hline
         \multicolumn{2}{|p{6cm}|}{nome\_1} & \multicolumn{2}{|p{6cm}|}{collaboratore\_1} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{ManagerAbbonamenti, ManagerSegnalazioni} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome,cognome,codice fiscale, recapito telefonico} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{12cm}|}{Nome} & \multicolumn{2}{|p{12cm}|}{Collaboration} \\\hline
+        \multicolumn{4}{|p{12cm}|}{-} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{ManagerAbbonamenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{12cm}|}{Nome} & \multicolumn{2}{|p{12cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire gli abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire servizi} & \multicolumn{2}{|p{6cm}|}{handlerServizi} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{ManagerSegnalazioni} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{12cm}|}{Nome} & \multicolumn{2}{|p{12cm}|}{Collaboration} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire le segnalazioni} & \multicolumn{2}{|p{6cm}|}{handlerSegnalazioni} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire sospensioni account utente} & \multicolumn{2}{|p{6cm}|}{handleUserBan} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestire sospensioni risorse segnalate} & \multicolumn{2}{|p{6cm}|}{handleProductBan} \\\hline
     \end{tabular}
 \end{center}
