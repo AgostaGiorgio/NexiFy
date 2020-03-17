@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  17 MAR 2020 15:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.23)  17 MAR 2020 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,80 +859,80 @@ Overfull \hbox (30.01045pt too wide) in paragraph at lines 103--122
 [37
 
 ] [38]
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 139--139
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 143--143
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 123--142
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 123--146
 [][] 
  []
 
 
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 160--160
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 168--168
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 144--163
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 148--171
 [][] 
  []
 
 [39
 
 ]
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 186--186
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 194--194
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 164--189
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 172--197
 [][] 
  []
 
 [40]
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 215--215
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 223--223
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 191--219
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 199--227
 [][] 
  []
 
 [41]
-Underfull \hbox (badness 1577) in paragraph at lines 239--240
+Underfull \hbox (badness 1577) in paragraph at lines 247--248
 []|\OT1/lmr/m/n/10 Esaminare pe-ri-odica-mente l'andamento dell'iterazione cor-
 
  []
 
 
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 241--241
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 249--249
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 221--244
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 229--252
 [][] 
  []
 
 [42]
-Overfull \hbox (2.30655pt too wide) in paragraph at lines 268--268
+Overfull \hbox (2.30655pt too wide) in paragraph at lines 276--276
 []|\OT1/lmr/bx/n/10 Management| 
  []
 
 
-Overfull \hbox (30.01045pt too wide) in paragraph at lines 246--271
+Overfull \hbox (30.01045pt too wide) in paragraph at lines 254--279
 [][] 
  []
 
 [43] [44])
-Underfull \hbox (badness 10000) in paragraph at lines 275--91
+Underfull \hbox (badness 10000) in paragraph at lines 283--91
 
  []
 
 
-Overfull \hbox (80.11244pt too wide) in paragraph at lines 275--91
+Overfull \hbox (80.11244pt too wide) in paragraph at lines 283--91
 []
  []
 
@@ -1765,7 +1765,7 @@ exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.
 pfb>
-Output written on main.pdf (142 pages, 1129398 bytes).
+Output written on main.pdf (142 pages, 1129805 bytes).
 PDF statistics:
  1613 PDF objects out of 1728 (max. 8388607)
  1433 compressed objects within 15 object streams
