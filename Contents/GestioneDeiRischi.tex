@@ -173,11 +173,17 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
+	\textbf{Indicatori} & - Il numero di richieste di contenuti contemporanee aumenta \newline
+						  - Guasti della CDN\\
 	\hline
-	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
+	\textbf{Trigger} & - Il numero di richieste ad un nodo è maggiore delle richieste gestibili\newline
+					   - Non ci sono abbastanza nodi per gestire la richieste in una certa area\\
 	\hline
-	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
+	\textbf{Mitigation} & Viene sottoscritta una SLA che impone delle penali e permette di rescindere il contratto nel caso in cui la qualit\'a del servizio non venga rispettata. Inoltre si definiscono nella SLA i tempi di risoluzione del disservizio ed estensione delle capacit\'a della CDN. \\ 
+	\hline
+	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi. Inoltre si valutano eventuali segnalazioni degli utenti riguardanti la qualit\'a del servizio\\ 
+	\hline
+	\textbf{Management} & Nel caso in cui la qualit\'a del servizio della CDN non rispettasse la qualit\'a definita nel contratto si richieder\'a un'incremento delle prestazioni. Se il fornitore del servizio non riuscisse a risolvere il problema si può rescindere il contratto e riscuorete le penali. \\ 
 	\hline
 \end{tabular}
 
@@ -194,11 +200,20 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Scegliere attentamente i costi che gli utenti devono pagare per poter pubblicare contenuti \\ 
+	\textbf{Indicatori} & - L'abbasssamento della quota di sottoscrizione di abbonamenti abilitati alla pubblicazione \newline
+						  - Diminuzione della popolarit\'a della piattaforma\\
 	\hline
-	\textbf{Monitoring} & Controlli periodici sui contenuti presenti sulla piattaforma. \\ 
+	\textbf{Trigger} & - La quota di iscrizione ad abbonamenti partner permette l'iscrizione a pubblicatori non affidabili\newline
+					   - La piattaforma non è popolare e ai pubblicatori di alto calibro non conviene pubblicare contenuti (affidabili) sulla piattaforma\\
 	\hline
-	\textbf{Management} &  Aumentare il prezzo richiesto per abilitare la pubblicazione di prodotti \\ 
+	\textbf{Mitigation} & - Scegliere attentamente i costi che gli utenti devono pagare per poter pubblicare contenuti
+						  - Investire nella pubblicit\'a della piattaforma \\ 
+	\hline
+	\textbf{Monitoring} & - Controlli periodici sui contenuti presenti sulla piattaforma. \newline
+						  - Controllare il calibro dei pubblicatori iscritti alla piattaforma \\ 
+	\hline
+	\textbf{Management} & - Aumentare il prezzo richiesto per abilitare la pubblicazione di prodotti \newline
+						  - Fare pubblicit\'a per nuovi abbonamenti\\ 
 	\hline
 \end{tabular}
 
