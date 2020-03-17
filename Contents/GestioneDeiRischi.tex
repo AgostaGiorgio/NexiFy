@@ -42,6 +42,11 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio\\ 
 	\hline
+	\textbf{Indicatori} & - Una funzionalità di un servizio esterno diventa deprecata\newline
+				  - \'E necessario sfruttare più funzionalità del previsto da un servizio esterno \\
+	\hline
+	\textbf{Trigger} & Le funzionalità di un servizio esterno non possono essere usare insieme alle funzionalità di un altro servizio esterno\\
+	\hline
 	\textbf{Mitigation} & Prestare attenzione durante la fase di selezione dei servizi esterni, controllando che essi si integrino bene l'uno con l'altro\\ 
 	\hline
 	\textbf{Monitoring} & Controllare periodicamente eventuali aggiornamenti nei servizi effettuati dalle aziende esterne\\ 
@@ -62,9 +67,13 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Moderato \\ 
 	\hline
-	\textbf{Mitigation} & Revisionare attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
+	\textbf{Indicatori} & L'insieme di alcuni requisiti può portare a casi limite indesiderati\\
 	\hline
-	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
+	\textbf{Trigger} & Stakeholders non soddisfatti dei requisiti\\
+	\hline
+	\textbf{Mitigation} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\%Revisionare attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
+	\hline
+	\textbf{Monitoring} & Durante le revisioni e l'analisi dei requisiti, immaginare situazioni limite che potrebbero verificarsi\\%Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
 	\hline
 	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Se dopo aver aggiunto i nuovi requisiti la durata del progetto supera di molto quella precedentemente prevista, eliminare requisiti secondari per restare nei tempi \\ 
 	\hline
