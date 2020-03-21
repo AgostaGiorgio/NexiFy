@@ -58,7 +58,6 @@ Obbiettivi &
 	\begin{compactitem}
 		\item Stesura del piano di progetto
 		\item Revisione e aggiornamento della proposta di contratto
-		\item Individuare almeno il 50\% dei requisiti funzionali con priorità primaria
 		%\item Aggiornamento del Glossario
 	\end{compactitem}\\\hline
 Stato &  Conclusa \\\hline
@@ -76,8 +75,7 @@ Obbiettivi &
 		%\item Analisi dei requisiti e stesura del relativo documento di Specifica
 		%\item Analisi e gestione dei rischi e stesura del relativo documento
 		
-		\item Individuare tutti i rimanenti requisiti funzionali con priorità primaria
-		\item Individuare almeno il 25\% dei requisiti funzionali con priorità secondaria
+		\item Individuare 5 requisiti funzionali fondamentali (che verranno usati per testare l'architettura)
 		\item Individuare almeno il 25\% dei requisiti non funzionali
 		\item Descrivere ad alto livello i requisiti individuati
 		\item Individuare almeno il 70\% dei rischi e stendere un piano di gestione per ciascun rischio
@@ -94,7 +92,8 @@ Inizio & 17/02/2020 \\\hline
 Fine &  17/02/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		\item I requisiti primari sono stati individuati e descritti correttamente
+		\item I requisiti fondamentali sono stati individuati e descritti correttamente
+		\item Vengono descritti dettagliatamenti gli attori coinvolti nel sistema
 		\item Almeno il 70\% dei rischi è stato individuato ed è stato creato un piano di gestione per ciascun rischio
 		\item Tutte le iterazioni sono state programmate
 	\end{compactitem}\\\hline
@@ -111,9 +110,7 @@ Fine &  24/02/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		\item Iniziare modello di analisi dell'architettura, individuando le classi
-		\item Definire il modello dei casi d'uso per il primo 50\% dei requisiti funzionali primari
-		\item Individuare 5 requisiti funzionali fondamentali tra i requisiti funzionali primari (che verranno usati per testare l'architettura)
-		\item Individuare e descrivere un ulteriore 25\% dei requisiti funzionali secondari
+		\item Individuare il restante 50\% dei requisiti funzionali primari
 		\item Individuare e descrivere un ulteriore 50\% dei requisiti non funzionali
 		\item Individuare un ulteriore 15\% dei rischi e stendere un piano di gestione per ciascun rischio
 	\end{compactitem}\\\hline
@@ -130,13 +127,10 @@ Fine &  03/03/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		\item Completare il modello di analisi dell'architettura (completare la descrizione delle classi ed effettuare una suddivisione in package)
-		\item Completare il modello dei casi d'uso relativo ai requisiti funzionali primari
-		\item Individuare e descrivere un ulteriore 25\% dei requisiti funzionali secondari % 75%
+		\item Individuare il 50\% dei requisiti funzionali primari
 		\item Individuare e descrivere i restanti requisiti non funzionali % 100%
 		\item Individuare i rischi rimanenti e stendere un piano di gestione per ciascun rischio % 100%
-		%\item Definire il modello dei casi d'uso per il primo 50\% dei requisiti secondari individuati
-		%\item Estendere il modello di analisi al primo 50\% dei requisiti secondari individuati
-		\item Individuare i primi test sull'architettura e sui requisiti fondamentali
+		\item Individuare i primi test sull'architettura
 		\item Effettuare una stima dei costi con casi d'uso primari
 	\end{compactitem}\\\hline
 Stato &  Conclusa \\\hline
@@ -158,8 +152,9 @@ Obbiettivi &
 		%\item Realizzazione dei test per il 50\% dei requisiti primari implementati
 		
 		\item Iniziare il modello di design dell'architettura
-		\item Definire il modello di analisi per i casi d'uso fondamentali individuati 
-		\item Individuare e descrivere i restanti requisiti funzionali secondari % 100%
+		\item Definire il modello di analisi per i casi d'uso fondamentali individuati
+		\item Definire il modello di design per i casi d'uso fondamentali individuati
+		\item Implementare i casi d'uso fondamentali individuati
 		\item Ampliare i test sull'architettura e sui requisiti fondamentali, in seguito alle scelte di progetto		
 
 	\end{compactitem}\\\hline
@@ -176,10 +171,8 @@ Fine & 25/03/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		\item Completare il modello di design dell'architettura
-		\item Definire il modello di design per i casi d'uso fondamentali individuati
-		\item Implementare l'architettura e i casi d'uso fondamentali individuati
-		\item Ultimare i test sull'architettura e sui requisiti fondamentali
-
+		\item Implementare l'architettura
+		\item Ultimare i test sull'architettura
 	\end{compactitem}\\\hline
 Stato &  Programmata \\\hline
 \end{tabular}
@@ -194,11 +187,10 @@ Fine &  26/03/2020 \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		\item Tutti i rischi sono stati individuati ed è stato creato un piano di gestione per ciascun rischio
-		\item \'E stata effettuata una stima dei costi attendibile
+		\item \'E stata effettuata una stima dei costi attendibile (basata sui requisiti non funzionali e funzionali primari)
 		\item Prendere una decisione Go/NoGo
 		\item \'E stata creata una base architetturale coerente con i requisiti ed eseguibile
 		\item I casi d'uso fondamentali risultano implementati correttamente con l'architettura prodotta
-		\item \'E stato prodotto un modello dei casi d'uso primari sufficientemente dettagliato per iniziare la fase di construction
 		%\item \'E stata effettuata un'analisi del sistema coerente con i requisiti (sia funzionali che non funzionali)
 		
 
@@ -216,9 +208,11 @@ Inizio & 27/03/2020 \\\hline
 Fine &  04/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
-		\item Definire il modello di analisi per i requisiti funzionali primari
-		\item Definire il modello dei casi d'uso per i requisiti funzionali secondari
-		\item Definire i test per i requisiti funzionali primari
+		
+		\item Definire il modello dei casi d'uso per il 30\% dei requisiti funzionali primari
+		\item Definire il modello di analisi per il 30\% dei requisiti funzionali primari
+		\item Definire il modello di design per il 30\% dei requisiti funzionali primari
+		\item Implenetazione e definizione dei test per il 30\% dei requisiti funzionali primari
 		%\item Creazione di un diagramma architetturale dell'intero sistema
 		
 		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il primo 50\% dei requisiti secondari	
@@ -242,10 +236,10 @@ Fine &  12/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		%\item Creazione di un diagramma architetturale dell'intero sistema
-		\item Definire il modello di design per i requisiti funzionali primari
-		\item Definire il modello di analisi per i requisiti funzionali secondari
-		\item Estendere i test per i requisiti funzionali primari, in seguito alle scelte di progetto
-		\item Definire i test per i requisiti funzionali secondari
+		\item Definire il modello dei casi d'uso per un altro 30\% dei requisiti funzionali primari
+		\item Definire il modello di analisi per un altro 30\% dei requisiti funzionali primari
+		\item Definire il modello di design per un altro 30\% dei requisiti funzionali primari
+		\item Implenetazione e definizione dei test per il 30\% dei requisiti funzionali primari
 		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
 		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
 		
@@ -264,9 +258,12 @@ Fine &  20/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		%\item Creazione di un diagramma architetturale dell'intero sistema
-		\item Definire il modello di design per i requisiti funzionali secondari
-		\item Implementare il primo 50\% delle funzionalità principali
-		\item Ultimare i test per tutti i requisiti funzionali
+		\item Definire il modello dei casi d'uso per un altro 30\% dei requisiti funzionali primari
+		\item Definire il modello di analisi per un altro 30\% dei requisiti funzionali primari
+		\item Definire il modello di design per un altro 30\% dei requisiti funzionali primari
+		\item Implenetazione e definizione dei test per il 30\% dei requisiti funzionali primari
+		
+		\item individuazione e descrizione dettagliata dei requisiti funzionali secondari
 		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
 		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
 		
@@ -284,8 +281,15 @@ Fine &  27/04/2020  \\\hline
 Obbiettivi & 
 	\begin{compactitem}
 		%\item Creazione di un diagramma architetturale dell'intero sistema
-		\item Implementare le rimanenti funzionalità
-		\item Effettuare i test
+		\item Definire il modello dei casi d'uso per il restante 10\% dei requisiti funzionali primari
+		\item Definire il modello di analisi per il restante 10\% dei requisiti funzionali primari
+		\item Definire il modello di design per il restante 10\% dei requisiti funzionali primari
+		\item Implenetazione e definizione dei test per il 10\% dei requisiti funzionali primari
+		
+		\item Definire il modello dei casi d'uso per i requisiti funzionali secondari
+		\item Definire il modello di analisi dei requisiti funzionali secondari
+		\item Definire il modello di design per dei requisiti funzionali secondari
+		\item Implenetazione e definizione dei test dei requisiti funzionali secondari
 		%\item Estensione del modello di design (a partire da quello di analisi) e implementazione per il restante 50\% dei requisiti secondari
 		%\item Realizzazione dei test per il restante 50\% dei requisiti secondari implementati
 		
