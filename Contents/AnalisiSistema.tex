@@ -98,7 +98,21 @@ La legenda spiega come interpretare le informazioni.
 
 \subsection{Schede CRC - Class-Responsability-Collaboration}
 
-Che cosa sono\\
+Le schede CRC (o card) vengono utilizzate per guidare lo sviluppo orientato agli oggetti del progetto.
+con le seguenti schede identifichiamo i principali oggetti e ne specifichiamo per ognuno:
+\begin{enumerate}[label=-]
+    \item Nome
+   \item Superclasse e sottoclassi
+    \item gli attributi di cui necessita
+    \item le azione che permettera di svolgere
+    \item per ogni azione di cui è responsabile verrà specificato
+    \begin{enumerate}[label=-]
+        \item il Nome
+        \item le classi con cui collabora per completare l'azione
+   \end{enumerate}
+\end{enumerate}
+
+Le basi per la scelta delle classi derivano principalente dall'anailisi dei requisitii (analisi nomi-verbi), con l'aggiunta di alcune classi utili a strutturare meglio il sistema.\\
 
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
