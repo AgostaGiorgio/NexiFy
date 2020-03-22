@@ -42,7 +42,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio\\ 
 	\hline
-	\textbf{Indicatori} & - Una funzionalità di un servizio esterno diventa deprecata\newline
+	\textbf{Indicatori} & - Una o più funzionalità di un servizio esterno diventano deprecate\newline
 				  - \'E necessario sfruttare più funzionalità del previsto da un servizio esterno \\
 	\hline
 	\textbf{Trigger} & Le funzionalità di un servizio esterno non possono essere usare insieme alle funzionalità di un altro servizio esterno\\
@@ -69,7 +69,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Indicatori} & L'insieme di alcuni requisiti può portare a casi limite indesiderati\\
 	\hline
-	\textbf{Trigger} & Stakeholders non soddisfatti dei requisiti\\
+	\textbf{Trigger} & Il numero di casi limite indesiderati che possono avvenire supera una certa soglia\\
 	\hline
 	\textbf{Mitigation} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\%Revisionare attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
 	\hline
@@ -85,7 +85,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
  	\hline
 	\textbf{ID} & RSC\_ IndisponibilitàPersonale\\ [0.5ex] 
 	\hline
-	\textbf{Descrizione} & Alcuni elementi del personale potrebbero essere indisponibili in alcuni periodi del progetto\\ 
+	\textbf{Descrizione} & Non sono presenti abbastanza elementi del personale durante alcuni periodi del progetto\\ 
 	\hline
 	\textbf{Aspetto} &  Progetto \\
 	\hline
@@ -93,13 +93,14 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Indicatori} & Malcontento del personale\\
+	\textbf{Indicatori} & - Vengono richiesti permessi di assentarsi per impegni non previsti\newline
+				  - Si verificano assenze per malattia\\
 	\hline
-	\textbf{Trigger} & -\\
+	\textbf{Trigger} & - Il numero di permessi richieste o di assenze per malattia supera una certa soglia\\
 	\hline
-	\textbf{Mitigation} & Fare una previsione di eventuali giorni di assenza mentre si pianifica lo sviluppo oltre che incoraggiare i dipendenti a comunicare in anticipo eventuali indisponibilità già previste (tipicamente indisponibilità non dovute a malattie) \\ 
+	\textbf{Mitigation} & Mantenere una comunicazione tra dipendenti e resto dell'azienda, per venire a conoscenza il prima possibile di indisponibilità \\ 
 	\hline
-	\textbf{Monitoring} & Mantenere una comunicazione tra dipendenti e resto dell'azienda, per venire a conoscenza il prima possibile di indisponibilità e monitorare periodicamente quanto prodotto effettivamente dai membri rispetto quello che avrebbero dovuto produrre secondo il piano in modo da rilevare ritardi\\ 
+	\textbf{Monitoring} & Registare i permessi richiesti e le assenze di ogni dipendente, e verificare periodicamente quanto prodotto dal dipendente rispetto a quello che avrebbero dovuto produrre secondo il piano\\ 
 	\hline
 	\textbf{Management} & Se l'indisponibilità è per un breve periodo, distribuire il lavoro del personale assente sugli altri dipendenti. Se l'indisponibilità si protrae troppo a lungo, assumere nuovi dipendenti per un certo periodo o addirittura valutare una riprogrammazione delle scadenza\\ 
 	\hline
@@ -118,9 +119,9 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio \\ 
 	\hline
-	\textbf{Indicatori} & Cambiamento nei requisiti\\
+	\textbf{Indicatori} & Cambiamenti nei requisiti\\
 	\hline
-	\textbf{Trigger} & Incomprensione nell'interpretazione dei requisiti\\
+	\textbf{Trigger} & Il numero di cambiamenti richiesti supera una certa soglia\\
 	\hline
 	\textbf{Mitigation} & Revisionare attentamente l'analisi dei requisiti prima di definire i casi d'uso.\\ 
 	\hline
@@ -169,7 +170,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Indicatori} & - Le stime iniziali sulla dimensione del software si rivelano non attendibili \\
 	\hline
-	\textbf{Trigger} & - Le stime correnti portano a superare la scadenza dell'iterazione corrente\\
+	\textbf{Trigger} & - L'errore effettuato durante le stime porta a superare la scadenza dell'iterazione corrente\\
    \hline
    \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale. Inoltre per ogni iterazione aggiungere dei giorni aggiuntivi per fare fronte a eventuali ritardi dovuti a stime sbagliate \\ 
    \hline
@@ -300,5 +301,7 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	2 & 16/02/2020 & Modificato monitoring e management di REQ\_M\_DurataSottostimata \\
 	\hline
 	3 & 15/03/2020 & Aggiunti trigger e indicatori di rischio \\
+	\hline
+	4 & 22/03/2020 & \thead{Modificati indicatori e trigger di RSC\_CambiamentoRequisiti, \\RSC\_IndisponibilitàPersonale e RSC\_CasiD'usoErrati}\\
 	\hline
 \end{tabular}
