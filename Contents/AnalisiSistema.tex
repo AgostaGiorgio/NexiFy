@@ -115,7 +115,7 @@ con le seguenti schede identifichiamo i principali oggetti e ne specifichiamo pe
 Le basi per la scelta delle classi derivano principalente dall'anailisi dei requisitii (analisi nomi-verbi), con l'aggiunta di alcune classi utili a strutturare meglio il sistema.\\
 
 \begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
         Nome & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
@@ -124,22 +124,68 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{4}{|p{12cm}|}{-} \\\hline
-    \end{tabular}
+    \end{longtable}
 \end{center}
 
 \begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
         Nome & \multicolumn{3}{|p{9cm}|}{ManagerAbbonamenti} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{4}{|p{12cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, prezzo, durata, disponibilità di sottoscrizione, lista di servizi offerti} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire gli abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire servizi} & \multicolumn{2}{|p{6cm}|}{handlerServizi} \\\hline
-    \end{tabular}
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
 \end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UtenteAutenticato} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{Partner} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, cognome, data di nascita, email, password, email di recupero, data di registrazione, metodo di pagamento, stato, abbonamenti sottoscritti, attivo } \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAbbonamenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Crea un nuovo piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Cambia visibilità di un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Aggiunge un servizio a un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento, Servizio} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Rimuove un servizio da un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento, Servizio} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Sottoscrive un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Disdice un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Cambia un piano di abbonamento con un altro} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+%============================ SCHEDE CRC DA RIVEDERE=====================================
 
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
@@ -168,36 +214,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{2}{|p{6cm}|}{richiede una ricerca} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
         \multicolumn{2}{|p{6cm}|}{ottenere cronologia prodotti visualizzati/ascoltati} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
     \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{UtenteAutenticato} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{Partner} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{nome, cognome, data di nascita, email, password, email di recupero, data di registrazione, metodo di pagamento, stato, abbonamenti sottoscritti, attivo } \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{handlerLogin} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{handlerLogout} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modifica i propri dati} & \multicolumn{2}{|p{6cm}|}{handlerProfilo} \\\hline
-        \multicolumn{2}{|p{6cm}|}{sottoscrive abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
-        \multicolumn{2}{|p{6cm}|}{disdice abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
-        \multicolumn{2}{|p{6cm}|}{cambia abbonamenti} & \multicolumn{2}{|p{6cm}|}{handlerAbbonamenti} \\\hline
-        \multicolumn{2}{|p{6cm}|}{creare playlist} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modifica le proprie playlist} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
-        \multicolumn{2}{|p{6cm}|}{valutare prodotto} & \multicolumn{2}{|p{6cm}|}{handlerValutazioni} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modificare valutazione a un prodotto} & \multicolumn{2}{|p{6cm}|}{handlerValutazioni} \\%\hline
-        \multicolumn{2}{|p{6cm}|}{segnalare un prodotto} & \multicolumn{2}{|p{6cm}|}{handlerSegnalazioni} \\\hline
-        \multicolumn{2}{|p{6cm}|}{scaricare prodotto} & \multicolumn{2}{|p{6cm}|}{handlerDownload} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riprodurre prodotti} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{interagire con player} & \multicolumn{2}{|p{6cm}|}{handlerPlayer} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riprodurre prodotti in background} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riprodurre playlist} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduce una pubblicità} & \multicolumn{2}{|p{6cm}|}{handlerRiproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire coda riproduzione} & \multicolumn{2}{|p{6cm}|}{handlerCodaRiproduzione} \\\hline
-    \end{longtable}
 \end{center}
 
 \begin{center}
@@ -385,18 +401,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
     \end{tabular}
 \end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Piano di abbonamento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{nome, prezzo, durata, disponibilità di sottoscrizione, lista di servizi offerti} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
+
 
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
