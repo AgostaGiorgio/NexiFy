@@ -570,9 +570,22 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire le segnalazioni} & \multicolumn{2}{|p{6cm}|}{handlerSegnalazioni} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire sospensioni account utente} & \multicolumn{2}{|p{6cm}|}{handlerUserBan} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestire sospensioni risorse segnalate} & \multicolumn{2}{|p{6cm}|}{handlerProductBan} \\\hline
+        \multicolumn{2}{|p{6cm}|}{visualizza le segnalazioni} & \multicolumn{2}{|p{6cm}|}{HandlerVisualizzaSegnalazione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{cancella segnalazioni} & \multicolumn{2}{|p{6cm}|}{HandlerCancellaSegnalazione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{processa le segnalazioni create} & \multicolumn{2}{|p{6cm}|}{HandlerProcessaSegnalazione} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Segnalazione} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{Utente segnalatore, prodotto segnalato, motivazione, data, esito} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
     \end{tabular}
 \end{center}
 
@@ -587,6 +600,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{richiede una ricerca} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
         \multicolumn{2}{|p{6cm}|}{ottenere cronologia prodotti visualizzati/ascoltati} & \multicolumn{2}{|p{6cm}|}{handlerRicerche} \\\hline
+        \multicolumn{2}{|p{6cm}|}{crea una segnalazione} & \multicolumn{2}{|p{6cm}|}{HandlerCreaSegnalazione} \\\hline
     \end{tabular}
 \end{center}
 
@@ -717,19 +731,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{Istante, prodotto visualizzato, utente visualizzatore} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Segnalazione} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Utente segnalatore, motivazione, prodotto segnalato} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
