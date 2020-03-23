@@ -117,6 +117,245 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 \begin{center}
     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{PianoDiAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta un piano di abbonamento sottoscrivibile da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, prezzo, durata, visibilità, lista di servizi offerti} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{SottoscrizioneAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta un piano di abbonamento sottoscritto da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{piano di abbonamento, account, data sottoscrizione, rinnovo automatico} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Servizio} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta i servizi che possono essere offerti dai vari piani di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{ID, descrizione} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{ServiziOfferti} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta i servizi offerti da un piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{servizio, piano di abbonamento} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCreaAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la creazione di un nuovo piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Verifica la presenza di un piano di abbonamento con quel nome} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Crea un nuovo piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVisibilitàAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce il rendere o meno sottoscrivibile un piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Modifica la visibilità del piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerInserisciServizioAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce l'inserimento di un servizio in un piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Aggiunge un servizio tra quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ServiziOfferti} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRimuoviServizioAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la rimozione di un servizio da un piano di abbonamento} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Rimuove il servizio da quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ServiziOfferti} \\\hline
+    \end{longtable}
+\end{center}
+
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerSottoscriviAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la sottoscrizione di un piano di abbonamento da parte di un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Aggiunge il piano di abbonamento tra quelli posseduti dall'utenti} & \multicolumn{2}{|p{6cm}|}{SottoscrizioneAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerDisdiciAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che disattiva il rinnovo automatico di un abbonamento sottostritto da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Annulla il rinnovo automatico dell'abbonamento} & \multicolumn{2}{|p{6cm}|}{SottoscrizioneAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCambiaAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce un passaggio da un piano di abbonamento ad un altro} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Verifica che le condizioni di cambio siano rispettate} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Cambia un piano di abbonamento con un altro} & \multicolumn{2}{|p{6cm}|}{SottoscrizioneAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVisualizzaPianoAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione  di informazioni relative ai piani di abbonamento sottoscrivibili da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Cerca i piani di abbonamento sottoscrivibili} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVisualizzaSottoscrizioneAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione  di informazioni relative ai piani di abbonamento sottoscritti da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Cerca i piani di abbonamento sottoscritti dall'utente} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento, SottoscrizioneAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UIGestionePianoDiAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta l'insieme degli elementi dell'interfaccia che permettono la gestione dei piani di abbonamento da parte dell'amministratore} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Nome} & \multicolumn{2}{|p{7cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Mostra i piani di abbonamento} & \multicolumn{2}{|p{7cm}|}{PianoDiAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Invia i dati alle classi di gestione} & \multicolumn{2}{|p{7cm}|}{HandlerCreaAbbonamento,\newline  HandlerVisibilitàAbbonamento,\newline   HandlerInserisciServizioAbbonamento,\newline   HandlerRimuoviServizioAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Visualizza i messaggi di risposta} & \multicolumn{2}{|p{7cm}|}{HandlerCreaAbbonamento,\newline   HandlerVisibilitàAbbonamento,\newline   HandlerInserisciServizioAbbonamento,\newline   HandlerRimuoviServizioAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UIPianoDiAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta l'insieme degli elementi dell'interfaccia che permettono la gestione dei piani di abbonamento da parte di un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Nome} & \multicolumn{2}{|p{7cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Mostra i piani di abbonamento} & \multicolumn{2}{|p{7cm}|}{HandlerVisualizzaPianoAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Invia i dati alle classi di gestione} & \multicolumn{2}{|p{7cm}|}{HandlerSottoscriviAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Visualizza i messaggi di risposta} & \multicolumn{2}{|p{7cm}|}{HandlerSottoscriviAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UIGestioneSottoscrizioneAbbonamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta l'insieme degli elementi dell'interfaccia che permettono la gestione dei piani di abbonamento sottoscritti da un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Nome} & \multicolumn{2}{|p{7cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Mostra i piani di abbonamento} & \multicolumn{2}{|p{7cm}|}{HandlerVisualizzaSottoscrizioneAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Invia i dati alle classi di gestione} & \multicolumn{2}{|p{7cm}|}{HandlerDisdiciAbbonamento,\newline HandlerCambiaAbbonamento} \\\hline
+        \multicolumn{2}{|p{5cm}|}{Visualizza i messaggi di risposta} & \multicolumn{2}{|p{7cm}|}{HandlerDisdiciAbbonamento,\newline HandlerCambiaAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
         Nome & \multicolumn{3}{|p{9cm}|}{Amministratore} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{ManagerAbbonamenti, ManagerSegnalazioni} \\\hline
@@ -143,20 +382,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 \begin{center}
     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Piano di abbonamento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{nome, prezzo, durata, disponibilità di sottoscrizione, lista di servizi offerti} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{longtable}
-\end{center}
-
-\begin{center}
-    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{UtenteAutenticato} \\\hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{Utente} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{Partner} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{nome, cognome, data di nascita, email, password, email di recupero, data di registrazione, metodo di pagamento, stato, abbonamenti sottoscritti, attivo } \\\hline
@@ -165,27 +391,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
     \end{longtable}
 \end{center}
-
-\begin{center}
-    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAbbonamenti} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Crea un nuovo piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Cambia visibilità di un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Aggiunge un servizio a un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento, Servizio} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Rimuove un servizio da un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ManagerAbbonamenti, Abbonamento, Servizio} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Sottoscrive un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Disdice un piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Cambia un piano di abbonamento con un altro} & \multicolumn{2}{|p{6cm}|}{UtenteAutenticato, Abbonamento} \\\hline
-    \end{longtable}
-\end{center}
-
-%============================ SCHEDE CRC DA RIVEDERE=====================================
 
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
@@ -395,21 +600,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{Utente proprietario, contenuto commentato, testo} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Servizio} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{ID, descrizione} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
