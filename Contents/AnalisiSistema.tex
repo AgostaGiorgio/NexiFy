@@ -717,6 +717,215 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 %======================================================================================================%
 
 
+%==================== PACKAGE GESTIONE CONTENUTI =========================
+
+\begin{center} % Entità contenuto 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{mantiene informazioni su un contenuto} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{Prodotto, Playlist} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{titolo, descrizione, visibilità, proprietario} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+
+\begin{center} % Entità prodotto 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{mantiene informazioni su un prodotto} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{ProdottoVideo, ProdottoAudio} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{genere, età minima} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+
+\begin{center} % Entità prodotto video
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{ProdottoVideo} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{mantiene informazioni su un prodotto video} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{posizione file video} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} % Entità prodotto audio
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{ProdottoAudio} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{mantiene informazioni su un prodotto audio} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{posizione file video musicale, prosizione file video lyrics} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} % Entità playlist
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{mantiene informazioni su una playlist} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{lista di prodotti, isAlbum, isSerieTv} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} % boundary gestione prodotti
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UI\_GestioneProdotti} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{contiene gli elementi dell'interfaccia per la gestione dei prodotti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Mosta i prodotti dell'utente} & \multicolumn{2}{|p{6cm}|}{Prodotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Mosta il form per la creazione di un nuovo prodotto} & \multicolumn{2}{|p{6cm}|}{HandlerCreaProdotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente la modifica di informazioni su un prodotto} & \multicolumn{2}{|p{6cm}|}{HandlerModificaProdotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Mostra il form per caricare i file multimediali di un prodotto} & \multicolumn{2}{|p{6cm}|}{HandlerCaricamentoFile} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di aggiungere un prodotto a una playlist} & \multicolumn{2}{|p{6cm}|}{HandlerAggiungiAPlaylist} \\\hline
+    \end{longtable}
+\end{center}
+
+
+\begin{center} % boundary gestione playlist
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UI\_GestionePlaylist} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{contiene gli elementi dell'interfaccia per la gestione delle playlist} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Mosta le playlist dell'utente} & \multicolumn{2}{|p{6cm}|}{Playlist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di rimuovere un prodotto da una playlist} & \multicolumn{2}{|p{6cm}|}{HandlerRimuoviDaPlaylist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di creare una nuova playlist} & \multicolumn{2}{|p{6cm}|}{HandlerCreaPlaylist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette di impostare una playlist come serie tv} & \multicolumn{2}{|p{6cm}|}{HandlerCreaSerieTv} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette di impostare una playlist come album} & \multicolumn{2}{|p{6cm}|}{HandlerCreaAlbum} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCreaProdotto} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce la creazione di prodotti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di creare un nuovo prodotto vuoto, fornendogli una tipologia e un titolo} & \multicolumn{2}{|p{6cm}|}{ProdottoVideo, ProdottoAudio} \\\hline
+    \end{longtable}
+\end{center}
+
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerModificaProdotto} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce la modifica di prodotti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di modificare la descrizione di un prodotto} & \multicolumn{2}{|p{6cm}|}{Prodotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di modificare la visibilità di un prodotto} & \multicolumn{2}{|p{6cm}|}{Prodotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di modificare il genere di un prodotto} & \multicolumn{2}{|p{6cm}|}{Prodotto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di modificare l'età minima per visionare un prodotto} & \multicolumn{2}{|p{6cm}|}{Prodotto} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCaricamentoFile} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce la modifica di prodotti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare la traccia video per un prodotto video} & \multicolumn{2}{|p{6cm}|}{ProdottoVideo} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare una traccia audio per un prodotto video} & \multicolumn{2}{|p{6cm}|}{ProdottoVideo} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare una file dei sottotitoli per un prodotto video} & \multicolumn{2}{|p{6cm}|}{ProdottoVideo} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare la traccia audio di un prodotto audio} & \multicolumn{2}{|p{6cm}|}{ProdottoAudio} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare il video musicale per un prodotto audio} & \multicolumn{2}{|p{6cm}|}{ProdottoAudio} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di caricare il file dei lyrics per un prodotto audio} & \multicolumn{2}{|p{6cm}|}{ProdottoAudio} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAggiungiAPlaylist} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce l'inserimento di prodotti in playlist} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di aggiungere un prodotto a una playlist} & \multicolumn{2}{|p{6cm}|}{Playlist} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRimuoviDaPlaylist} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce la rimozione di prodotti da una playlist} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente di rimuovere un prodotto da una playlist} & \multicolumn{2}{|p{6cm}|}{Playlist} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} 
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerPlaylistSpeciali} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{classe che gestisce la trasformazione di playlist in serie tv o album} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente impostare una playlist come serie tv} & \multicolumn{2}{|p{6cm}|}{Playlist} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Consente impostare una playlist come album} & \multicolumn{2}{|p{6cm}|}{Playlist} \\\hline
+     \end{longtable}
+\end{center}
+
+
+%=================================================================
+
+
 %============================ SCHEDE CRC DA RIVEDERE=====================================
 
 \begin{center}
@@ -793,97 +1002,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{2}{|p{6cm}|}{modifica prodotti} & \multicolumn{2}{|p{6cm}|}{handlerProdotti} \\\hline
         \multicolumn{2}{|p{6cm}|}{creare una serie TV} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
         \multicolumn{2}{|p{6cm}|}{creare un Album} & \multicolumn{2}{|p{6cm}|}{handlerPlaylist} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{Prodotto, Playlist} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{titolo, descrizione, visibilità, proprietario} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{ProdottoVideo, ProdottoAudio} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{età minima, genere} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{ProdottoVideo} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{file video, file audio, sottotitoli} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{ProdottoAudio} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Prodotto} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{file audio, file lyrics, file video musicale} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Contenuto} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{SerieTv, Album} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{prodotti} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{SerieTv} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{genere} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{Album} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{Playlist} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{genere} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
     \end{tabular}
 \end{center}
 
