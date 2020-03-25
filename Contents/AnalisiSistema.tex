@@ -160,20 +160,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 \begin{center}
     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{ServiziOfferti} \\\hline
-        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che rappresenta i servizi offerti da un piano di abbonamento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{servizio, piano di abbonamento} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-    \end{longtable}
-\end{center}
-
-\begin{center}
-    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
         Nome & \multicolumn{3}{|p{9cm}|}{HandlerCreaAbbonamento} \\\hline
         Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la creazione di un nuovo piano di abbonamento} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
@@ -213,7 +199,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Aggiunge un servizio tra quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ServiziOfferti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Aggiunge un servizio tra quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
     \end{longtable}
 \end{center}
 
@@ -228,7 +214,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{Valida l'input} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Rimuove il servizio da quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{ServiziOfferti} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Rimuove il servizio da quelli offerti dal piano di abbonamento} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento} \\\hline
     \end{longtable}
 \end{center}
 
@@ -243,6 +229,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Richiede il pagamento} & \multicolumn{2}{|p{6cm}|}{APIPagamento} \\\hline
         \multicolumn{2}{|p{6cm}|}{Aggiunge il piano di abbonamento tra quelli posseduti dall'utenti} & \multicolumn{2}{|p{6cm}|}{SottoscrizioneAbbonamento} \\\hline
     \end{longtable}
 \end{center}
@@ -272,6 +259,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{Verifica che le condizioni di cambio siano rispettate} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Richiede il pagamento} & \multicolumn{2}{|p{6cm}|}{APIPagamento} \\\hline
         \multicolumn{2}{|p{6cm}|}{Cambia un piano di abbonamento con un altro} & \multicolumn{2}{|p{6cm}|}{SottoscrizioneAbbonamento} \\\hline
     \end{longtable}
 \end{center}
@@ -301,6 +289,51 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{Cerca i piani di abbonamento sottoscritti dall'utente} & \multicolumn{2}{|p{6cm}|}{PianoDiAbbonamento, SottoscrizioneAbbonamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerEffettuaPagamentoVersoUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce il pagamento verso un partner} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Calcola l'importo da pagare} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Effettua il pagamento} & \multicolumn{2}{|p{6cm}|}{APISistemaPagamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerEffettuaPagamentoVersoUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce il pagamento di un piano di abbonamento da parte di un utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Calcola l'importo da pagare} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Effettua il pagamento} & \multicolumn{2}{|p{6cm}|}{APISistemaPagamento} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center}
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{APIPagamento} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce i vari pagamenti da e verso l'utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Gestisce il pagamento dei piani di abbonaemnto} & \multicolumn{2}{|p{6cm}|}{HandlerRiscuotiPagamentoDaUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Gestisce il pagamento verso gli utenti partner} & \multicolumn{2}{|p{6cm}|}{HandlerEffettuaPagamentoVersoUtente} \\\hline
     \end{longtable}
 \end{center}
 
