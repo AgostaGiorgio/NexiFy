@@ -495,9 +495,11 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{Permette la modifica delle informazioni dell'utente} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente, HandlerAccount} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette la modifica delle informazioni dell'utente} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente, HandlerAccountUtente} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette di gestire gli abbonamenti sottoscritti} & \multicolumn{2}{|p{6cm}|}{UIGestioneSottoscrizioneAbbonamento} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette la sottoscrizione di nuovi abbonamenti} & \multicolumn{2}{|p{6cm}|}{UIPianoDiAbbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette di effettuare il login} & \multicolumn{2}{|p{6cm}|}{HandlerLogin} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette di visualizzare la cronologia} & \multicolumn{2}{|p{6cm}|}{HandlerCronologia} \\\hline
     \end{longtable}
 \end{center}
 
@@ -511,7 +513,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{Permette il login e logout dalla piattaforma} & \multicolumn{2}{|p{6cm}|}{HandlerAccesso} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette il logout dalla piattaforma} & \multicolumn{2}{|p{6cm}|}{HandlerLogout} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette la registrazione di nuovi utenti} & \multicolumn{2}{|p{6cm}|}{HandlerRegistrazioneUtente} \\\hline
         
     \end{longtable}
@@ -587,8 +589,8 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{sbloccare un utente bloccato} & \multicolumn{2}{|p{6cm}|}{HandlerBloccaAccountUtente} \\\hline        
-        \multicolumn{2}{|p{6cm}|}{bloccare un utente} & \multicolumn{2}{|p{6cm}|}{HandlerSbloccaAccountUtente} \\\hline        
+        \multicolumn{2}{|p{6cm}|}{sbloccare un utente bloccato} & \multicolumn{2}{|p{6cm}|}{HandlerSbloccaAccountUtente} \\\hline        
+        \multicolumn{2}{|p{6cm}|}{bloccare un utente} & \multicolumn{2}{|p{6cm}|}{HandlerBloccaAccountUtente} \\\hline        
     \end{longtable}
 \end{center}
 
@@ -602,7 +604,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{mostra contenuti consigliati} & \multicolumn{2}{|p{6cm}|}{Riproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{mostra la cronologia delle riproduzioni} & \multicolumn{2}{|p{6cm}|}{Riproduzione} \\\hline
         \end{longtable}
 \end{center}
 
@@ -616,7 +618,6 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{} & \multicolumn{2}{|p{6cm}|}{Riproduzione} \\\hline
         \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
         \end{longtable}
 \end{center}
@@ -631,9 +632,8 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{} & \multicolumn{2}{|p{6cm}|}{Riproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{HandlerAccount} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
+        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
         \end{longtable}
 \end{center}
 
@@ -647,7 +647,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{gestisce l'inserimento, modifica e eliminazione delle coordinate} & \multicolumn{2}{|p{6cm}|}{Coordinatebancarie} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestisce l'inserimento, modifica e eliminazione delle coordinate} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie} \\\hline
         \end{longtable}
 \end{center}
 
@@ -695,8 +695,8 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{rimuovi abbonamenti} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
-        \multicolumn{2}{|p{6cm}|}{creazione di un utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{creazione di un account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica di email, email di recupero e password} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
     \end{longtable}
 \end{center}
 
@@ -1471,7 +1471,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 \subsection{Package di Analisi}
 Il diagramma dei package è riportato nella cartella "Diagrams/Analisi/package"
 
-\subsection{Diagrammi EBCi}
+\subsection{Diagrammi EBC}
 I diagrammi EBC sono riportati nella cartella "Diagrams/Analisi/ebc" \\
 
 \noindent{\large \textbf{Revisioni 10}} \\ \\
