@@ -495,9 +495,10 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{Permette la getione dell'utente e l'accesso} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette la modifica delle informazioni dell'utente} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente, HandlerAccountUtente} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette di gestire gli abbonamenti sottoscritti} & \multicolumn{2}{|p{6cm}|}{UIGestioneSottoscrizioneAbbonamento} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette la sottoscrizione di nuovi abbonamenti} & \multicolumn{2}{|p{6cm}|}{UIPianoDiAbbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette di effettuare il login} & \multicolumn{2}{|p{6cm}|}{HandlerLogin} \\\hline
         \multicolumn{2}{|p{6cm}|}{Permette di visualizzare la cronologia} & \multicolumn{2}{|p{6cm}|}{HandlerCronologia} \\\hline
     \end{longtable}
 \end{center}
@@ -512,8 +513,8 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{Permette il logout dalla piattaforma} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Permette la registrazione di nuovi utenti} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette il logout dalla piattaforma} & \multicolumn{2}{|p{6cm}|}{HandlerLogout} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Permette la registrazione di nuovi utenti} & \multicolumn{2}{|p{6cm}|}{HandlerRegistrazioneUtente} \\\hline
         
     \end{longtable}
 \end{center}
@@ -588,7 +589,8 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{permette di bloccare e sbloccare un utente} & \multicolumn{2}{|p{6cm}|}{HandlerBan} \\\hline        
+        \multicolumn{2}{|p{6cm}|}{sbloccare un utente bloccato} & \multicolumn{2}{|p{6cm}|}{HandlerSbloccaAccountUtente} \\\hline        
+        \multicolumn{2}{|p{6cm}|}{bloccare un utente} & \multicolumn{2}{|p{6cm}|}{HandlerBloccaAccountUtente} \\\hline        
     \end{longtable}
 \end{center}
 
@@ -606,48 +608,48 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \end{longtable}
 \end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerLogout} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni per l'accesso e la disconnessione degli utenti} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
-%         \end{longtable}
-% \end{center}
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerLogout} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni per l'accesso e la disconnessione degli utenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \end{longtable}
+\end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerLogin} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni per l'accesso e la disconnessione degli utenti} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
-%         \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
-%         \end{longtable}
-% \end{center}
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerLogin} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni per l'accesso e la disconnessione degli utenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
+        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
+        \end{longtable}
+\end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerCoordinateBancarie} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le coordinate bancarie degli utenti} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{gestisce l'inserimento, modifica e eliminazione delle coordinate} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie} \\\hline
-%         \end{longtable}
-% \end{center}
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCoordinateBancarie} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le coordinate bancarie degli utenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{gestisce l'inserimento, modifica e eliminazione delle coordinate} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie} \\\hline
+        \end{longtable}
+\end{center}
 
 \begin{center} % HANDLER %
     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
@@ -660,46 +662,43 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
         \multicolumn{2}{|p{6cm}|}{modifica anagrafica} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci dati fatturazione} & \multicolumn{2}{|p{6cm}|}{Coordinatebancarie,Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci dati pagamento} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie, Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modifica preferenze bancarie} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie,Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{registrazione nuovi utenti} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestisci dati fatturazione} & \multicolumn{2}{|p{6cm}|}{Persona, HandlerCoordinateBancarie} \\\hline
+        \multicolumn{2}{|p{6cm}|}{gestisci dati pagamento} & \multicolumn{2}{|p{6cm}|}{Persona, HandlerCoordinateBancarie} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica preferenze bancarie} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
+        \multicolumn{2}{|p{6cm}|}{crea un profilo utente} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
     \end{longtable}
 \end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerRegistrazioneUtente} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{Gestisce le operazioni sul profilo utente} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{creazione dell'anagrafica} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente} \\\hline
-%         \multicolumn{2}{|p{6cm}|}{creazione dell'account} & \multicolumn{2}{|p{6cm}|}{HandlerAccountUtente} \\\hline
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRegistrazioneUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Gestisce le operazioni sul profilo utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{creazione dell'anagrafica} & \multicolumn{2}{|p{6cm}|}{HandlerProfiloUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{creazione dell'account} & \multicolumn{2}{|p{6cm}|}{HandlerAccountUtente} \\\hline
         
-%     \end{longtable}
-% \end{center}
+    \end{longtable}
+\end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerAccountUtente} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni effettuabili su un account utente} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{creazione di un account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
-%         \multicolumn{2}{|p{6cm}|}{modifica di email, email di recupero e password} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
-%     \end{longtable}
-% \end{center}
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAccountUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni effettuabili su un account utente} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{creazione di un account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica di email, email di recupero e password} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+    \end{longtable}
+\end{center}
 
 % \begin{center} % HANDLER %
 %     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
@@ -759,45 +758,31 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 %     \end{longtable}
 % \end{center}
 
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerBloccaAccountUtente} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni sugli utenti bloccati} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{sospendi account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
-%     \end{longtable}
-% \end{center}
-
-% \begin{center} % HANDLER %
-%     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-%         \hline
-%         Nome & \multicolumn{3}{|p{9cm}|}{HandlerSbloccaAccountUtente} \\\hline
-%         Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni sugli utenti bloccati} \\\hline
-%         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-%         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
-%         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-%         \multicolumn{2}{|p{6cm}|}{riattiva account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
-%     \end{longtable}
-% \end{center}
-
 \begin{center} % HANDLER %
     \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerBan} \\\hline
-        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni di ban sugli utenti} \\\hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerBloccaAccountUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni sugli utenti bloccati} \\\hline
         SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
-        \multicolumn{2}{|p{6cm}|}{blocca e sblocca account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{sospendi account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+    \end{longtable}
+\end{center}
+
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerSbloccaAccountUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni sugli utenti bloccati} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{riattiva account utente} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
     \end{longtable}
 \end{center}
 
