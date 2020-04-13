@@ -1393,10 +1393,18 @@ CRC DA RIVEDERE!!!
 %\end{center}
 
 \subsection{Package di Analisi}
-Il diagramma dei package è riportato nella cartella "Diagrams/Analisi/package"
+Effettuiamo una divisione in package degli elementi di analisi. Ogni package può contenere casi d'uso, classi di analisi, realizzazione di casi d'uso. Ogni elemento appartiene ad un solo package. Il loro scopo è quello di raggruppare elementi in relazione semantica e facilitare lo sviluppo parallelo del sistema.\\
+Di seguito la divisione in package di Nexify. Notiamo che ogni package conterrà sia elementi di front-end che di back-end.\\ \\
+\includegraphics[width=14cm]{../Contents/Diagrams/Analisi/package/package_analisi.png}
 
 \subsection{Diagrammi EBC}
-I diagrammi EBC sono riportati nella cartella "Diagrams/Analisi/ebc". Per indicare una copia di una componente già presente in un certo diagramma, la componente viene mostrata in giallo. \\
+Si utilizzano diagrammi EBC per meglio dettagliare l'analisi dell'architettura. I tre stereotipi dei diagrammi EBC sono:
+\begin{itemize}
+\item Entity: classe che mantiene informazioni di lunga duranta, tipicamente persistenti
+\item Boundary: classe che modella l'interazione tra sistema e attori, spesso è un'astrazione di un elemento software di interfaccia
+\item Control: classe che si occupa del controllo e coordinamento di altri oggetti, tipicamente è associabile a un caso d'uso
+\end{itemize}
+I diagrammi EBC sono riportati nella cartella ``Diagrams/Analisi/ebc". Per indicare una copia di uno stereotipo già presente in un certo diagramma, lo stereotipo viene mostrato in giallo, mentre la copia ``originale'' è mostrata in blu. \\
 
 \noindent{\large \textbf{Revisioni 10}} \\ \\
 \begin{tabular}{|c | c | c | c|} 
