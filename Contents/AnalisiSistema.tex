@@ -948,6 +948,73 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
 %============================ SCHEDE CRC DA RIVEDERE=====================================
 \newpage
 CRC DA RIVEDERE!!!
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduzioni} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce le riproduzioni di contenuti multimediali} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto video} & \multicolumn{2}{|p{6cm}|}{Player,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio} & \multicolumn{2}{|p{6cm}|}{Player,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio in background} & \multicolumn{2}{|p{6cm}|}{Player,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{metti in pausa il player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{sposta il punto di riproduzione corrente sul player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{scarica il contenuto fornito dal player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{visualizza la pubblicità fornita dal player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{visualizza la pubblicità fornita dal player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{metti in pausa la riproduzione corrente del player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCommenti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce i commenti a contenuti multimediali} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{crea un commento relativo ad un contenuto multimediale} & \multicolumn{2}{|p{6cm}|}{Commento,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica un commento esistente} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{cancella un commento esistente} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerValutazioni} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce le valutazioni a contenuti multimediali} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{vota un commento multimediale} & \multicolumn{2}{|p{6cm}|}{Votazione,Contenuto} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCodeDiRiproduzione} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che le code di riproduzione} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{aggiungi un contenuto alla coda di riproduzione} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{rimuovi un contenuto alla coda di riproduzione} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione,Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{mostra stato della coda di riproduzione} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci i contenuti presenti nella la coda di riproduzione} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+    \end{tabular}
+\end{center}
+
+
 \begin{center}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
         \hline
@@ -1026,98 +1093,98 @@ CRC DA RIVEDERE!!!
     \end{tabular}
 \end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciAudioInBackground} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione in background diun prodotto musicale} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciAudioInBackground} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione in background diun prodotto musicale} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVisualizzaPubblicità} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione della pubblicità} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci visualizzazione della pubblicità} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVisualizzaPubblicità} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione della pubblicità} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci visualizzazione della pubblicità} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerScaricaProdotto} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce lo scaricamento di un prodotto} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{scarica prodotto} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerScaricaProdotto} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce lo scaricamento di un prodotto} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{scarica prodotto} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%   \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerSpostaPuntoRiproduzione} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce lo spostamento del punto di riproduzione attuale del player} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerSpostaPuntoRiproduzione} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce lo spostamento del punto di riproduzione attuale del player} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerPausaPlayer} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione in pausa del player} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerPausaPlayer} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione in pausa del player} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciVideo} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione di un prodotto video} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci video} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciVideo} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione di un prodotto video} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{riproduci video} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciAudio} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione di un prodotto musicale} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci audio} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciAudio} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione di un prodotto musicale} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{gestisci riproduzione} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{riproduci audio} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%    \end{tabular}
+%\end{center}
 
 %\begin{center}
 %    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
@@ -1132,115 +1199,115 @@ CRC DA RIVEDERE!!!
 %    \end{tabular}
 %\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCreaCommento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce creazione di commenti relativi ad un prodotto} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{commenta commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{crea commento} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCreaCommento} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce creazione di commenti relativi ad un prodotto} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{commenta commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{crea commento} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerModificaCommento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce modifica di commenti relativi ad un prodotto} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modifca commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{modifca commento contenuto} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerModificaCommento} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce modifica di commenti relativi ad un prodotto} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{modifca commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{modifca commento contenuto} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCancellaCommento} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce cancellazione di commenti relativi ad un prodotto} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{cancella commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{cancella commento contenuto} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerCancellaCommento} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce cancellazione di commenti relativi ad un prodotto} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{cancella commento} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{cancella commento contenuto} & \multicolumn{2}{|p{6cm}|}{Commento} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVotaContenuto} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce votazione di un contenuto} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{valuta contenuto} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{crea valutazione} & \multicolumn{2}{|p{6cm}|}{Valutazione} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerVotaContenuto} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce votazione di un contenuto} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{valuta contenuto} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{crea valutazione} & \multicolumn{2}{|p{6cm}|}{Valutazione} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAggiungiProdottoAllaCoda} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce l'aggiunta alla coda dei prodotti} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{aggiungi contenuto in coda} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{aggiungi prodotto} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerAggiungiProdottoAllaCoda} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce l'aggiunta alla coda dei prodotti} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{aggiungi contenuto in coda} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{aggiungi prodotto} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRimuoviProdottoDallaCoda} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la rimozione alla coda dei prodotti} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{rimuovi contenuto in coda} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{rimuovi prodotto} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRimuoviProdottoDallaCoda} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la rimozione alla coda dei prodotti} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{rimuovi contenuto in coda} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{rimuovi prodotto} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerMostraStatoCoda} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione dello stato della coda} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{mostra stato} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerMostraStatoCoda} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la visualizzazione dello stato della coda} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{mostra stato} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+%    \end{tabular}
+%\end{center}
 
-\begin{center}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-        \hline
-        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciCoda} \\\hline
-        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
-        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione dei contenuti in coda} \\\hline
-        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci contenuti} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
-    \end{tabular}
-\end{center}
+%\begin{center}
+%    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+%        \hline
+%        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRiproduciCoda} \\\hline
+%        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+%        Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce la riproduzione dei contenuti in coda} \\\hline
+%        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+%        \multicolumn{2}{|p{6cm}|}{riproduci contenuti} & \multicolumn{2}{|p{6cm}|}{CodaDiRiproduzione} \\\hline
+%    \end{tabular}
+%\end{center}
 
 %\begin{center}
 %    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
