@@ -876,9 +876,68 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
     \end{longtable}
 \end{center}
 
+% ================================================================================= %
 
-%=================================================================
+% ============================ PACKAGE GESTIONE ACCOUNT =========================== %
+\begin{center} % CLASS %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{Persona} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Memorizza le informazioni anagrafiche e di pagamento/fatturazione di una persona registrata alla piattaforma} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{nome, cognome, data di nascita, dati fatturazione (CoordinateBancarie), lista dati pagamento (lista CoordinateBancarie), riferimento pagamento predefinito} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{-} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
+    \end{longtable}
+\end{center}
 
+\begin{center} % UI %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UIRicercaContenuti} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{fornisce l'interfaccia per la ricerca dei contenuti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{permette la ricerca tramite una stringa} & \multicolumn{2}{|p{6cm}|}{HandlerRicerche} \\\hline        
+    \end{longtable}
+\end{center}
+
+\begin{center} % UI %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{UIPreferenzeUtente} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{fornisce l'interfaccia per la visualizzazione delle preferenze dei contenuti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{permette la visualizzazione dei contenuti piu visualizzati sulla piattaforma} & \multicolumn{2}{|p{6cm}|}{HandlerRicerche} \\\hline        
+        \multicolumn{2}{|p{6cm}|}{permette la visualizzazione dei contenuti consigliati all'utente} & \multicolumn{2}{|p{6cm}|}{HandlerRicerche} \\\hline        
+    \end{longtable}
+\end{center}
+
+\begin{center} % HANDLER %
+    \begin{longtable}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerRicerche} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{gestisce le operazioni per la ricerca dei contenuti} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
+        \multicolumn{2}{|p{6cm}|}{ricerca contenuto secondo stringa} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{ricerca popolari} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{ricerca consigliati per un utente} & \multicolumn{2}{|p{6cm}|}{Contenuto} \\\hline
+        \end{longtable}
+\end{center}
+% ================================================================================= %
 
 %============================ SCHEDE CRC DA RIVEDERE=====================================
 \newpage
