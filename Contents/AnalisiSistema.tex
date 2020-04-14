@@ -223,8 +223,7 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
         \multicolumn{2}{|p{6cm}|}{Calcola l'importo da pagare} & \multicolumn{2}{|p{6cm}|}{} \\\hline
         \multicolumn{2}{|p{6cm}|}{Effettua il pagamento verso partner} & \multicolumn{2}{|p{6cm}|}{APISistemaPagamento, HandlerSottoscrizioniAbbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Gestisce il rinnovo automatico delle sottoscrizoni ai piani di abbonamento} & \multicolumn{2}{|p{6cm}|}{HandlerSottoscrizioniAbbonamento} \\\hline
-        \multicolumn{2}{|p{6cm}|}{Effettua il pagamento in automatico} & \multicolumn{2}{|p{6cm}|}{APISistemaPagamento, HandlerSottoscrizioniAbbonamento} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Gestisce il rinnovo automatico delle sottoscrizoni ai piani di abbonamento} & \multicolumn{2}{|p{6cm}|}{APISistemaPagamento, HandlerSottoscrizioniAbbonamento} \\\hline
         \multicolumn{2}{|p{6cm}|}{Aggiorna lo storico dei vari pagamenti avvenuti (sia verso l'utente, sia verso il sistema)} & \multicolumn{2}{|p{6cm}|}{StoricoPagamento} \\\hline
     \end{longtable}
 \end{center}
@@ -567,12 +566,13 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline %%% RESPONSABILITA %%%
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline %%%%%%%
         \multicolumn{2}{|p{6cm}|}{modifica anagrafica} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
+        \multicolumn{2}{|p{6cm}|}{modifica informazioni account} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
         \multicolumn{2}{|p{6cm}|}{gestisci dati fatturazione} & \multicolumn{2}{|p{6cm}|}{Coordinatebancarie,Persona} \\\hline
         \multicolumn{2}{|p{6cm}|}{gestisci dati pagamento} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie, Persona} \\\hline
         \multicolumn{2}{|p{6cm}|}{modifica preferenze bancarie} & \multicolumn{2}{|p{6cm}|}{CoordinateBancarie,Persona} \\\hline
         \multicolumn{2}{|p{6cm}|}{registrazione nuovi utenti} & \multicolumn{2}{|p{6cm}|}{Persona} \\\hline
-        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
-        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{Account} \\\hline
+        \multicolumn{2}{|p{6cm}|}{valida credenziali} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
+        \multicolumn{2}{|p{6cm}|}{effettua login} & \multicolumn{2}{|p{6cm}|}{AccountUtente} \\\hline
         \multicolumn{2}{|p{6cm}|}{effettua logout} & \multicolumn{2}{|p{6cm}|}{-} \\\hline
     \end{longtable}
 \end{center}
@@ -947,13 +947,10 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{Classe per la gestione delle segnalazioni} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{crea una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione, Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{crea una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione, Prodotto} \\\hline
         \multicolumn{2}{|p{6cm}|}{visualizza una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
         \multicolumn{2}{|p{6cm}|}{riapri una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
         \multicolumn{2}{|p{6cm}|}{chiudi una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{processa una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{ottieni una segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{visualizza segnalazione} & \multicolumn{2}{|p{6cm}|}{Segnalazione} \\\hline
     \end{tabular}
 \end{center}
 
@@ -1019,14 +1016,27 @@ Le basi per la scelta delle classi derivano principalente dall'anailisi dei requ
         Attributi & \multicolumn{3}{|p{9cm}|}{Classe che gestisce le riproduzioni di contenuti multimediali} \\\hline
         \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
         \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto video} & \multicolumn{2}{|p{6cm}|}{Player, Riproduzione, Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio} & \multicolumn{2}{|p{6cm}|}{Player, Riproduzione, Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio in background} & \multicolumn{2}{|p{6cm}|}{Player, Riproduzione, Contenuto} \\\hline
-        \multicolumn{2}{|p{6cm}|}{metti in pausa il player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-        \multicolumn{2}{|p{6cm}|}{sposta il punto di riproduzione corrente sul player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-        \multicolumn{2}{|p{6cm}|}{scarica il contenuto fornito dal player multimediale} & \multicolumn{2}{|p{6cm}|}{Player, Riproduzione} \\\hline
-        \multicolumn{2}{|p{6cm}|}{visualizza la pubblicità fornita dal player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
-        \multicolumn{2}{|p{6cm}|}{metti in pausa la riproduzione corrente del player multimediale} & \multicolumn{2}{|p{6cm}|}{Player} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto video} & \multicolumn{2}{|p{6cm}|}{ Riproduzione, Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio} & \multicolumn{2}{|p{6cm}|}{ Riproduzione, Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{riproduci un contenuto audio in background} & \multicolumn{2}{|p{6cm}|}{ Riproduzione, Contenuto} \\\hline
+        \multicolumn{2}{|p{6cm}|}{metti in pausa il player multimediale} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{sposta il punto di riproduzione corrente sul player multimediale} & \multicolumn{2}{|p{6cm}|}{API\_CDN} \\\hline
+        \multicolumn{2}{|p{6cm}|}{visualizza la pubblicità fornita dal player multimediale} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+        \multicolumn{2}{|p{6cm}|}{metti in pausa la riproduzione corrente del player multimediale} & \multicolumn{2}{|p{6cm}|}{} \\\hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+        \hline
+        Nome & \multicolumn{3}{|p{9cm}|}{HandlerDownload} \\\hline
+        Descrizione & \multicolumn{3}{|p{9cm}|}{Classe che gestisce i download di contenuti multimediali} \\\hline
+        SuperClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        SottoClassi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        Attributi & \multicolumn{3}{|p{9cm}|}{-} \\\hline
+        \multicolumn{4}{|p{12cm}|}{Responsabilit\'a} \\\hline
+        \multicolumn{2}{|p{6cm}|}{Nome} & \multicolumn{2}{|p{6cm}|}{Collaboratore} \\\hline
+        \multicolumn{2}{|p{6cm}|}{scarica il contenuto fornito dal player multimediale} & \multicolumn{2}{|p{6cm}|}{API\_CDN} \\\hline
     \end{tabular}
 \end{center}
 
