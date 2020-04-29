@@ -1,4 +1,12 @@
-Descriviamo in questa sezione le tecnologie che sono state scelte per la realizzazione di Nexify.\\
+L’architettura di Nexify utilizzerà la struttura a microservizi in quanto ci permette di realizzare un’architettura che scala e che permette di variare la potenza e le risorse assegnate ad ogni microservizio.\\
+Inoltre porta un grande vantaggio in termini di deployment e developement in quanto permette l’assegnazione di ogni microservizio a piccoli team indipendenti (“two pizzas” team), facilita il coinvolgimento di nuovo personale e permette di scomporre l’applicativo monolitico in tanti semplici e più facilmente gestibili servizi. Per questi motivi sono facilitati il testing e la continua integrazione.\\
+Per la suddivisione del software in microservizi utilizziamo in pattern Decompose by subdomains che ci permette di assegnare un microservizio ad ogni sottodominio che comprende azioni tutte strettamente legate fra loro (così da evitare accoppiamento).\\
+La memoria persistente (database) verranno gestiti secondo il pattern Database per Service, che prevede l’utilizzo di un database per ogni servizio, cosi da rendere il servizio completamente indipendente dal resto del software. La distribuzione del database verrà gestita tramite il pattern Saga in modalità Choreography per la corretta esecuzione delle transazioni.\\
+L’accesso ai servizi sarà garantito attraverso un API Gateway che interagisce con i singoli servizi attraverso delle API REST. Ogni tipo di client (Web o Desktop) si interfaccerà con il proprio API Gateway.\\
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.24]{../Contents/Diagrams/Design/architecture/Architecture.png}
+\end{figure}\\
 Per la CDN è stato scelto Amazon CloudFront, che ha dimostrato con altre piattaforme di essere in grado di scalare a livello mondiale e fornisce costi che dipendono dal consumo effettuato. In realtà CloudFront sarà affiancato da altri servizi Amazon, e in particolare verrà adottata l'architettura di video streaming on demand proposta da Amazon:\\
 \begin{figure}[!h]
 \centering
