@@ -6,7 +6,23 @@ L’accesso ai servizi sarà garantito attraverso un API Gateway che interagisce
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.24]{../Contents/Diagrams/Design/architecture/Architecture.png}
-\end{figure}\\
+\end{figure}
+\subsection{Implementazione microservizi}
+Potenzialmente è possibile usare tecnologie diverse per ciascun microservizio (questo è un altro vantaggio di quest'architettura), nel nostro caso si è però scelto di utilizzare Django per l'implementazione di ciascun microservizio. Questo perché Django è stato ritenuto adatto a tutte le funzionalità da implementare e non si avrebbero grandi benefici a differenziare le tecnologie in questo caso. Django è un framework basato su python, contenente svariati moduli per la gestione di task ricorrenti nella programmazione web. La comunicazione tra gli elementi di frontend e Django avviene tramite protocollo https, nelle request verrà sempre inviato un oggetto di session per ottenere dati sull'utente.
+\subsubsection{Django authentication system}
+Uno dei moduli di django è django.contrib.auth che consente di gestire l'autenticazione degli utenti. La classe di default per rappresentare l'account di un utente è User, ma si possono facilmente definire account custom ereditando dalla classe AbstractBaseUser, e nel nostro caso verrà seguita questa strategia in modo da creare un Account secondo le esigenze di Nexify. Il modulo mette poi a disposizione le funzioni:
+\begin{itemize}
+\item authenticate($<$username$>$, $<$password$>$), che verifica la presenza di un account con le credenziali fornite ed eventualmente lo restituisce (restituisce None altrimenti). Si occupa quindi anche di interfacciarsi al database degli account, e inoltre effettua l'hashing delle password. Notiamo infatti che le password vengono inviate non hashate, ma non si creano problemi di sicurezza in quanto viene utilizzato il protocollo https che si occupa di criptare i pacchetti. 
+\item login($<$session$>$, $<$account$>$) che viene usato per collegare l'id dell'account alla sessione dell'utente, in modo da poter ottenere l'account dell'utente in seguito a request successive
+\item logout($<$session$>$) che viene usato per scollegare la sessione dell'utente dall'account
+\end{itemize}
+\subsection{Pattern DAO}
+Nonostante Django abbia molti moduli standard che permettono un'astrazione dal database (come nel caso dell'autenticazione, in cui è Django a interfacciarsi col database), in molti casi sarà necessario interfacciarsi ai vari database. Si è quindi deciso di adottare il pattern DAO (data access object), che permette di separare l'accesso ai dati a basso livello da richieste ad alto livello per ricevere dati, è infatti implementato, in generale, mediante due classi:
+\begin{itemize}
+\item la classe DAO, che si occupa di interfacciarsi con la sorgente di dati a basso livello (nel nostro caso si tratterà principalmente di database), consentendo quindi alle altre classi di effettuare query senza conoscere dettagli di implementazione a basso livello
+\item una classe tipicamente chiamava ValueObject che contiene i dati ricavati dalla classe DAO e viene fornita come risultato alle classi che fanno richieste a DAO
+\end{itemize}
+\subsection{CDN}
 Per la CDN è stato scelto Amazon CloudFront, che ha dimostrato con altre piattaforme di essere in grado di scalare a livello mondiale e fornisce costi che dipendono dal consumo effettuato. In realtà CloudFront sarà affiancato da altri servizi Amazon, e in particolare verrà adottata l'architettura di video streaming on demand proposta da Amazon:\\
 \begin{figure}[!h]
 \centering
@@ -20,5 +36,7 @@ Quando un utente carica un video, questo viene memorizzato usando Amazon S3, che
 	 Numero & Data & Descrizione \\ [0.5ex] 
 	\hline\hline
 	1 & 20/04/2020 & Stesura iniziale \\ 
+	\hline
+	2 & 08/05/2020 & Scelta di Django come tecnologia \\
 	\hline
 \end{tabular}
