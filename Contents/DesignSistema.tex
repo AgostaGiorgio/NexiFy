@@ -20,7 +20,7 @@ Uno dei moduli di django è django.contrib.auth che consente di gestire l'autent
 Nonostante Django abbia molti moduli standard che permettono un'astrazione dal database (come nel caso dell'autenticazione, in cui è Django a interfacciarsi col database), in molti casi sarà necessario interfacciarsi ai vari database. Si è quindi deciso di adottare il pattern DAO (data access object), che permette di separare l'accesso ai dati a basso livello da richieste ad alto livello per ricevere dati, è infatti implementato, in generale, mediante due classi:
 \begin{itemize}
 \item la classe DAO, che si occupa di interfacciarsi con la sorgente di dati a basso livello (nel nostro caso si tratterà principalmente di database), consentendo quindi alle altre classi di effettuare query senza conoscere dettagli di implementazione a basso livello
-\item una classe tipicamente chiamava ValueObject che contiene i dati ricavati dalla classe DAO e viene fornita come risultato alle classi che fanno richieste a DAO
+\item una classe tipicamente chiamata ValueObject che contiene i dati ricavati dalla classe DAO e viene fornita come risultato alle classi che fanno richieste a DAO.
 \end{itemize}
 \subsection{CDN}
 Per la CDN è stato scelto Amazon CloudFront, che ha dimostrato con altre piattaforme di essere in grado di scalare a livello mondiale e fornisce costi che dipendono dal consumo effettuato. In realtà CloudFront sarà affiancato da altri servizi Amazon, e in particolare verrà adottata l'architettura di video streaming on demand proposta da Amazon:\\
