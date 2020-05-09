@@ -13,7 +13,7 @@ Potenzialmente è possibile usare tecnologie diverse per ciascun microservizio (
 Uno dei moduli di django è django.contrib.auth che consente di gestire l'autenticazione degli utenti. La classe di default per rappresentare l'account di un utente è User, ma si possono facilmente definire account custom ereditando dalla classe AbstractBaseUser, e nel nostro caso verrà seguita questa strategia in modo da creare un Account secondo le esigenze di Nexify. Il modulo mette poi a disposizione le funzioni:
 \begin{itemize}
 \item authenticate($<$username$>$, $<$password$>$), che verifica la presenza di un account con le credenziali fornite ed eventualmente lo restituisce (restituisce None altrimenti). Si occupa quindi anche di interfacciarsi al database degli account, e inoltre effettua l'hashing delle password. Notiamo infatti che le password vengono inviate non hashate, ma non si creano problemi di sicurezza in quanto viene utilizzato il protocollo https che si occupa di criptare i pacchetti. 
-\item login($<$session$>$, $<$account$>$) che viene usato per collegare l'id dell'account alla sessione dell'utente, in modo da poter ottenere l'account dell'utente in seguito a request successive
+\item login($<$session$>$, $<$account$>$) che viene usato per collegare l'id dell'account alla sessione dell'utente, in modo da poter ottenere l'account dell'utente in seguito a request successive (l'account sarà infatti ottenibile con con request.user)
 \item logout($<$session$>$) che viene usato per scollegare la sessione dell'utente dall'account
 \end{itemize}
 \subsection{Pattern DAO}
