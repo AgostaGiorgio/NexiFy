@@ -1145,15 +1145,15 @@ Nome & UC\_StreamingMusica\\\hline
 Priorità & Alta \\\hline
 Attori &  UtenteAttivo, ManagerSegnalazioni, CDN \\\hline
 Descrizione & Riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
-Pre-condizioni & \'E stato fornito uno specifico prodotto musicale che si intende riprodurre\\\hline
+Pre-condizioni & \'E stato fornito uno specifico prodotto musicale che si intende riprodurre, e si è scelto un tipo di riproduzione tra quelli disponibili (solo audio, video musicale, video lyrics)\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
 			\item Il client contatta il nodo e stabiliscono una connessione
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se il prodotto ha associato un file di lyrics: verr\'a riprodotto il video lyrics insieme al file audio;
-				\item \textbf{\# alt2}: Altrimenti, se il prodotto non ha associato un file lyrics, ma ha associato un file video musicale: verr\'a riprodotto il video musicale insieme al file audio
-				\item \textbf{\# alt3}: Altrimenti, se il prodotto non ha associato nè un file lyrics nè un file video musicale: verr\'a riprodotta solo la traccia audio
+				\item \textbf{\# alt1}: Se è stata scelta la riproduzione con lyrics: verr\'a riprodotto il video lyrics insieme al file audio;
+				\item \textbf{\# alt2}: Altrimenti, se se è stata scelta la riproduzione con video musicale: verr\'a riprodotto il video musicale insieme al file audio
+				\item \textbf{\# alt3}: Altrimenti, se è stata scelta la riproduzione con solo audio: verr\'a riprodotta solo la traccia audio
 			\end{enumerate}
 			\item Inizia lo stream del file audio e dell'eventuale file video
 			\item I pacchetti ricevuti dalla CDN vengono riprodotti dal player
