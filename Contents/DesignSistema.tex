@@ -16,12 +16,28 @@ Uno dei moduli di django è django.contrib.auth che consente di gestire l'autent
 \item login($<$session$>$, $<$account$>$) che viene usato per collegare l'id dell'account alla sessione dell'utente, in modo da poter ottenere l'account dell'utente in seguito a request successive (l'account sarà infatti ottenibile con con request.user)
 \item logout($<$session$>$) che viene usato per scollegare la sessione dell'utente dall'account
 \end{itemize}
+\subsection{Databases}
+Verranno usati database relazionali per i database:
+\begin{itemize}
+\item Utenti
+\item Abbonamenti
+\item CodaDiRiproduzione
+\end{itemize}
+mentre si useranno database nosql per i database:
+\begin{itemize}
+\item Sottoscrizioni
+\item Contenuti
+\item Commenti
+\item Riproduzioni
+\end{itemize}
+in quanto ci si aspetta una grande quantità di commenti, riproduzioni, sottoscrizioni ad abbonamenti e contenuti. Come database relazione verrà usato PostgreSQL, mentre come non relazionale si userà MongoDB. Django permette di accedere a database relazioni tramite ORM, quindi sostanzialmente si possono fare query al database in uno stile Object Oriented. Inoltre usando l'estensione Django-MongoDB-engine è possibile accedere a database nosql in maniera pressoché identica a come si fa con un ORM (ci sono alcune funzionalità che non saranno disponibili ma di cui non faremo uso). Guardare la sezione sui diagrammi di sequenza per un maggiore approfondimento sull'accesso ai database.
 \subsection{Pattern DAO}
 Nonostante Django abbia molti moduli standard che permettono un'astrazione dal database (come nel caso dell'autenticazione, in cui è Django a interfacciarsi col database), in molti casi sarà necessario interfacciarsi ai vari database. Si è quindi deciso di adottare il pattern DAO (data access object), che permette di separare l'accesso ai dati a basso livello da richieste ad alto livello per ricevere dati, è infatti implementato, in generale, mediante due classi:
 \begin{itemize}
 \item la classe DAO, che si occupa di interfacciarsi con la sorgente di dati a basso livello (nel nostro caso si tratterà principalmente di database), consentendo quindi alle altre classi di effettuare query senza conoscere dettagli di implementazione a basso livello
 \item una classe tipicamente chiamata ValueObject che contiene i dati ricavati dalla classe DAO e viene fornita come risultato alle classi che fanno richieste a DAO.
 \end{itemize}
+La scelta di adottare DAO è stata anche dettata dal fatto che, nonostante utilizzeremo Django per tutti i microservizi, l'accesso a database relazionali è diverso dall'accesso a database nosql, e quindi attraverso DAO si possono fare richieste senza preoccuparsi dell'eterogeneità dei database.
 \subsection{CDN}
 Per la CDN è stato scelto Amazon CloudFront, che ha dimostrato con altre piattaforme di essere in grado di scalare a livello mondiale e fornisce costi che dipendono dal consumo effettuato. In realtà CloudFront sarà affiancato da altri servizi Amazon, e in particolare verrà adottata l'architettura di video streaming on demand proposta da Amazon:\\
 \begin{figure}[!h]
@@ -38,6 +54,32 @@ I file caricati su S3 saranno file MKV: gli utenti potranno caricare singoli fil
 \end{itemize}
 \subsubsection{CloudFront Signed URLs}
 L'accesso a un URL CloudFront associato a una risorsa verrà negato agli utenti, in quanto chiunque dovesse riuscire ad avere tale URL potrebbe altrimenti accedere alla risorsa, anche non passando attraverso la piattaforma. Per assicurarci che le richieste a CloudFront arrivino da Nexify, si utilizzeranno i signed URLs messi a disposizione da CloudFront: partendo dall'URL CloudFront della risorsa, si genera un altro URL firmato e che contiene una politica di accesso. Nella politica è possibile specificare gli indirizzi IP che possono accedere all'URL e per quanto tempo è possibile accedere a tale URL. Visto che gli URL verranno firmati con una chiave privata di Nexify, questo ci assicurerà che per ottenere degli URL accessibili si sia passati attraverso la piattaforma.
+\subsection{FrontEnd}
+La piattaforma sarà disponibile sia in versione web che mobile, il backend sarà ovviamente comune a tali versioni, mentre il frontend web verrà realizzato con ReactJS e Bootstrap, mentre il frontend mobile attraverso Flutter. Alcune classi del backend saranno presenti anche nel frontend (o meglio, nel frontend avremo una classe corrispondente, visto che i linguaggi di frontend e backend sono diversi), in modo da poter salvare più agevolmente risultati di richieste, e lavorare con la stessa struttura dei dati.
+\subsection{Diagrammi di Sequenza}
+Nella cartella ``Diagrams/Design/sequence'' sono riportati i diagrammi di sequenza di design, che sono il raffinamento, in seguito alla scelta della tecnologia, dei corrispettivi diagrammi di analisi.\\
+Nei diagrammi, per non appesantirli troppo, non saranno mostrate le interazioni tra le classi DAO ed i database (quando opportuno, sarà però mostrata la generazione dei risultati delle query). Mostriamo però qui degli esempi di query/insert/update/delete generici, le operazioni richieste negli altri diagrammi di sequenza saranno quindi facilmente derivabili. Sono mostrate, in ordine, le operazioni di create, query, update e delete. I diagrammi sono essenzialmente uguali anche per i database nosql, e quindi non vengono mostrati.\\
+\includegraphics[scale=0.7]{../Contents/Diagrams/Design/sequence/DAO/create.png}\\ \\
+\includegraphics[scale=0.7]{../Contents/Diagrams/Design/sequence/DAO/query.png}\\ \\
+\includegraphics[scale=0.7]{../Contents/Diagrams/Design/sequence/DAO/update.png}\\ \\
+\includegraphics[scale=0.7]{../Contents/Diagrams/Design/sequence/DAO/delete.png}\\
+Alcuni diagrammi di sequenza di analisi, in design si traducono in delle query, e di conseguenza non verrà mostrato il diagramma di design corrispondente. Tali diagrammi sono:
+\begin{itemize}
+\item RecuperaAbbonamentiEsistenti
+\item RecuperaAbbonamentiUtente
+\item RecuperaProdottiUtente
+\item RecuperaServizi
+\item RecuperaServiziAbbonamento
+\end{itemize}
+mostriamo quindi qui, per completezza, l'implementazione di queste query:
+\begin{itemize}
+\item PianoDiAbbonamento.objects.all()
+\item SottoscrizioneAbbonamento.objects.filter(account=Acc).filter(F(data)+F(piano\_\_durata)\_\_gt=now())
+\item Prodotto.objects.filter(proprietario=Acc)
+\item Servizio.objects.all()
+\item PianoServizioRelationship.objects.filter(piano=P)
+\end{itemize}
+Sono state scritte solo le query vere e proprie, che vanno immaginate nel contesto del diagramma generico per le query. Per effettuare le proiezioni verranno restituiti da DAO solo i campi necessari.
 \newline\newline
 \noindent{\large \textbf{Revisioni 11}} \\ \\
 \begin{tabular}{|c | c | c | c|} 
