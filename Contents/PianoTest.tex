@@ -39,7 +39,9 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
 \begin{itemize}
     \item Token autenticazione amministratore auth\_admin\_t
     \item Token autenticazione auth\_t
-    \item PianoDiAbbonamento piano\_abb\_att
+    \item PianoDiAbbonamento piano\_abb
+    \item PianoDiAbbonamento piano\_abb\_full
+    \item PianoDiAbbonamento piano\_abb\_empty
     
 % ----
 
@@ -233,13 +235,132 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID & T\_5 \\\hline
         Caso d'uso & UC\_DisattivaAbbonamento \\\hline   
         Obbiettivo & Testare che la un abbonamento non sia più sottoscrivibile  \\\hline
-        Prerequsiti & \emph{piano\_abb\_att} è un abbonamento attivo \\\hline
+        Prerequsiti & - \\\hline
         Tipologia & Black box \\\hline
         Azioni & 
         TEST1:
         \begin{enumerate}[topsep=0pt]
-            \item richiedere la disattivazione di \emph{piano\_abb\_att}
+            \item richiedere la disattivazione di \emph{piano\_abb}
             \item verificare che il sistema ritorni il messaggio di avvenuta disattivazione dell'abbonamento;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_6 \\\hline
+        Caso d'uso & UC\_AggiungiServizioAbbonamento \\\hline   
+        Obbiettivo & Testare l'aggiunta del servizio di abbonamento al piano di abbonamento specificato \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb\_full};
+            \item verificare che il sistema mostri l'errore "Il piano possiede già tutti i servizi";
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb};
+            \item verifica che il sistema restituisca la lista di servizi \emph{L} che possono essere aggiunti;
+            \item fornire il servizio richiesto scegliendolo da \emph{L};
+            \item verificare che il sistema mostri un errore generico oppure modifica effettuata con successo;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_7 \\\hline
+        Caso d'uso & UC\_RimuoviServizioAbbonamento \\\hline   
+        Obbiettivo & Testare la rimozione del servizio di abbonamento dal piano di abbonamento specificato \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb\_empty};
+            \item verificare che il sistema mostri l'errore "Non ci sono servizi da rimuovere";
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb};
+            \item verifica che il sistema restituisca la lista di servizi \emph{L} che possono essere rimossi;
+            \item fornire il servizio richiesto scegliendolo da \emph{L};
+            \item verificare che il sistema mostri un errore generico oppure modifica effettuata con successo;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_8 \\\hline
+        Caso d'uso & UC\_RecuperaServiziAbbonamento \\\hline   
+        Obbiettivo & Testare il recupero di tutti i servizi di abbonamento associati ad un piano di abbonamento \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb};
+            \item verificare che vengano mostrati tutti i servizi esistenti associati al piano di abbonamento specificato;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un piano di abbonamento \emph{piano\_abb\_empty};
+            \item verificare la lista dei servizi restituita sia vuota;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_9 \\\hline
+        Caso d'uso & UC\_RecuperaPianiAbbonamentoUtente \\\hline   
+        Obbiettivo & Testare il recupero di tutti i piani di abbonamento sottoscritti da un utente \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire un utente \emph{utente};
+            \item verificare che vengano mostrati tutti i piani di abbonamenti sottoscritti da \emph{utente};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_12 \\\hline
+        Caso d'uso & UC\_GestisciSottoscrizioniAbbonamenti \\\hline   
+        Obbiettivo & Testare l'interfaccia per la gestione delle sottoscrizioni ai piani di abbonamenti \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la visualizzazione della gestione sottoscrizioni, fornendo il token di autenticazione \emph{auth\_t\_wrong};
+            \item verificare che il sistema restituisca errore di permesso negato;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t};
+            \item verificare che il sistema restituisca la pagina con la lista delle sottoscrizioni;
         \end{enumerate}
         \\\hline
     \end{tabular}
