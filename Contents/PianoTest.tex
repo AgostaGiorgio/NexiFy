@@ -43,6 +43,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     
 % ----
 
+    \item Utente utente
+
 \end{itemize}
 
 \subsection*{Descrizione priorità dei test}
@@ -246,4 +248,60 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 \end{table}
 
 % ----
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_9 \\\hline
+        Caso d'uso & UC\_RecuperaPianiAbbonamentoUtente \\\hline   
+        Obbiettivo & Testare che la lista degli abbonamenti restituita sia quella degli abbonamenti
+        sottoscritti dall'utente \\\hline
+        Prerequsiti & \emph{utente} è un utente attivo \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere lista \emph{L} piani di abbonamento sottoscritti da \emph{utente};
+            \item verificare che \emph{L} sia la lista degli abbonamenti sottoscritti da \emph{utente};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_10 \\\hline
+        Caso d'uso & UC\_EffettuaPagamentoPartner \\\hline   
+        Obbiettivo & Verificare che il pagamento verso i partner avvenga correttamente \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la lista di tutti gli utenti \emph{LU};
+            \item verificare che \emph{LU} sia la lista di tutti gli utenti;
+            \item tra tutti gli utenti in \emph{LU}, controllare tutti coloro che 
+            hanno un servizio per pubblicare prodotti e salvarli in \emph{LP};
+            \item verificare che \emph{LP} sia la lista di tutti gli utenti che
+            hanno un servizio per pubblicare prodotti;
+            \item per ogni utente \emph{U} in \emph{LP}:
+            \begin{itemize}
+                \item ottenere coordinate le bancarie \emph{CB} di \emph{U}
+                \item controllare che \emph{CB} siano valide
+                \item ottenere l'importo da pagare \emph{I}
+                \item effettuare pagamento verso \emph{CB} attraverso il sistema
+                di pagamento.
+                \item controllare che se il pagamento è andato a buon fine, venga aggiornato il giorno di 
+                pagamento utente e inviata una mail con messaggio di avvenuto pagamento a \emph{U}
+                \item controllare che se il pagamento non è andato a buon fine, venga inviata una mail
+                con messaggio di errore a \emph{U}
+            \end{itemize}
+
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
