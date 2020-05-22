@@ -346,21 +346,17 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID & T\_12 \\\hline
-        Caso d'uso & UC\_GestisciSottoscrizioniAbbonamenti \\\hline   
-        Obbiettivo & Testare l'interfaccia per la gestione delle sottoscrizioni ai piani di abbonamenti \\\hline
-        Prerequsiti & - \\\hline
+        ID & T\_13 \\\hline
+        Caso d'uso & UC\_SottoscriviAbbonamento \\\hline   
+        Obbiettivo & Testare la sottoscrizione di un abbonamento da parte di un utente \\\hline
+        Prerequsiti & l'utente ha fornito l'abbonamento selezionato \\\hline
         Tipologia & White box \\\hline
         Azioni & 
         TEST1:
         \begin{enumerate}[topsep=0pt]
-            \item richiedere la visualizzazione della gestione sottoscrizioni, fornendo il token di autenticazione \emph{auth\_t\_wrong};
-            \item verificare che il sistema restituisca errore di permesso negato;
-        \end{enumerate}
-        \vspace{0.5cm} TEST2:
-        \begin{enumerate}[topsep=0pt]
-            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t};
-            \item verificare che il sistema restituisca la pagina con la lista delle sottoscrizioni;
+            \item richiedere la sottoscrizione di un abbonamento, fornendo \emph{piano\_abb} e le coordinate bancarie \emph{CB} dell'utente;
+            \item verificare che il pagamento venga registrato;
+            \item verificare che l'abbonamento venga aggiunto alle sottoscrizioni dell'utente oppure che il sistema restituisca un errore durante l'aggiunta dell'abbonamento;
         \end{enumerate}
         \\\hline
     \end{tabular}
