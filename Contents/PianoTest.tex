@@ -1,0 +1,53 @@
+\subsection*{Tipologia}
+I test saranno effettuati in due diverse tipologie:
+\begin{itemize}
+    \item Black box: valutano le funzionalità dell'applicazione a partire dall'interfaccia utente, che
+    sia quella degli amministratori o degli utenti fruitori del servizio. Quindi si ignorano le dinamiche
+    interne al sistema. Contengono anche test di esperienza e usabilità utente, ovvero quelli che richiedono
+    un interazione umana.
+    \item White box: provano la correttezza del sistema con test unitari sui suoi componenti interni, 
+    così come le interazioni tra i vari componenti.
+\end{itemize}
+
+\subsection*{Ambiente di test}
+Per i test di tipo White Box vengono definiti i seguenti programmi di supporto:
+\begin{itemize}
+    \item Un programma per intercettare le comunicazioni client-server e server-server, per controllare che le
+    comunicazioni avvengano in modo corretto;
+    \item Un programma per verificare lo stato ed il contenuto del database;
+    \item Un profiler per controllare lo stato delle performance e verificare l’assenza di colli di bottiglia;
+\end{itemize}
+L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un container.
+
+\subsection*{Dati su cui vengono eseguiti i test}
+
+\subsubsection*{Dati non presenti nel database}
+\begin{itemize}
+    \item utente\_signup
+    \begin{itemize}
+        \item username
+        \item password
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Dati presenti nel database}
+\begin{itemize}
+    \item utente\_login
+    \begin{itemize}
+        \item username
+        \item password
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Descrizione priorità dei test}
+
+Vengono definite le seguenti priorità per classificare i vari test in base a quanto importante sia la 
+loro corretta e periodica esecuzione sull'integrità del sistema.
+\begin{itemize}
+    \item H (alta priorità): relativa ai test che devono essere eseguiti correttamente per garantire l'integrità
+    del sistema;
+    \item M (media priorità): relativa ai test che devono essere eseguiti correttamente per garantire l'integrità
+    del sistema, ma solo successivamente ai test di priorità H;
+    \item L (bassa priorità): relativa ai test che possono essere eseguiti, per garantire una migliore funzionalità
+    del sistema, ma solo successivamente ai test di priorità M.
+\end{itemize}
