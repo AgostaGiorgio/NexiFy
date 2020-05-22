@@ -23,20 +23,32 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
 
 \subsubsection*{Dati non presenti nel database}
 \begin{itemize}
-    \item utente\_signup
-    \begin{itemize}
-        \item username
-        \item password
-    \end{itemize}
+    \item Token autenticazione auth\_t\_wrong
+    \item Nome abbonamento nome\_abb\_nv
+    \item Nome abbonamento nome\_abb\_v
+    \item Prezzo abbonamento prezzo\_abb\_v
+    \item Prezzo abbonamento prezzo\_abb\_nv
+    \item Durata abbonamento duarata\_abb\_v
+    \item Durata abbonamento duarata\_abb\_nv
+
+    %\item utente\_signup
+    %\begin{itemize}
+     %   \item username
+    %    \item password
+    %\end{itemize}
 \end{itemize}
 
 \subsubsection*{Dati presenti nel database}
 \begin{itemize}
-    \item utente\_login
-    \begin{itemize}
-        \item username
-        \item password
-    \end{itemize}
+    \item Token autenticazione amministratore auth\_admin\_t
+    \item Token autenticazione auth\_t
+    \item PianoDiAbbonamento piano\_abb\_att
+
+   % \item utente\_login
+    %\begin{itemize}
+    %    \item username
+    %    \item password
+   % \end{itemize}
 \end{itemize}
 
 \subsection*{Descrizione priorità dei test}
@@ -121,3 +133,120 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     T\_62 & UC\_RimuoviCommento & L\\\hline
     T\_63 & UC\_AttivaAbbonamento & H\\\hline
  \end{longtable}
+
+\subsection*{Realizzazione dei test}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_1 \\\hline
+        Caso d'uso & UC\_GestisciAbbonamenti \\\hline   
+        Obbiettivo & Testare l'interfaccia per la gestione dei piani di abbonamento \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t\_wrong};
+            \item verificare che il sistema restituisca errore di permesso negato;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t};
+            \item verificare che il sistema restituisca errore di permesso negato;
+        \end{enumerate}
+        \vspace{0.5cm}TEST3:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_admin\_t};
+            \item verificare che il sistema restituisca la pagina con la lista di abbonamenti richiesti;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_2 \\\hline
+        Caso d'uso & UC\_CreaAbbonamento \\\hline   
+        Obbiettivo & Testare la creazione di un nuovo piano di abbonamento \\\hline
+        Prerequsiti & Il sistema permette di inserire nuovi piani di abbonamento \\\hline
+        Tipologia & White box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire i seguenti valori \emph{nome\_abb\_nv}, \emph{prezzo\_abb\_nv}, \emph{durata\_abb\_nv};
+            \item verifica che il sistema restituisca errore nella validazione dei dati;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire i seguenti valori \emph{nome\_abb\_nv}, \emph{prezzo\_abb\_v}, \emph{durata\_abb\_v};
+            \item verifica che il sistema restituisca errore nell'inserimento di un piano di abbonamento duplicato;
+        \end{enumerate}
+        \vspace{0.5cm} TEST3:
+        \begin{enumerate}[topsep=0pt]
+            \item fornire i seguenti valori \emph{nome\_abb\_v}, \emph{prezzo\_abb\_v}, \emph{durata\_abb\_v};
+            \item verifica che il sistema restituisca errore generico nella crezione di un abbonamento oppure creazione effettuata correttamente;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_3 \\\hline
+        Caso d'uso & UC\_RecuperaAbbonamentiEsistenti \\\hline   
+        Obbiettivo & Testare che tutti i piani di abbonamenti esistenti sono recuperati \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere di visualizzare la lista degli abbonamenti esistenti;
+            \item verificare che vengano mostrati tutti gli abbonamenti esistenti;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_4 \\\hline
+        Caso d'uso & UC\_RecuperaServizi \\\hline   
+        Obbiettivo & Testare che tutti i servizi esistenti sono recuperati \\\hline
+        Prerequsiti & - \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere di visualizzare la lista degli servizi esistenti;
+            \item verificare che vengano mostrati tutti i servizi esistenti;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID & T\_5 \\\hline
+        Caso d'uso & UC\_DisattivaAbbonamento \\\hline   
+        Obbiettivo & Testare che la un abbonamento non sia più sottoscrivibile  \\\hline
+        Prerequsiti & \emph{piano\_abb\_att} è un abbonamento attivo \\\hline
+        Tipologia & Black box \\\hline
+        Azioni & 
+        TEST1:
+        \begin{enumerate}[topsep=0pt]
+            \item richiedere la disattivazione di \emph{piano\_abb\_att}
+            \item verificare che il sistema ritorni il messaggio di avvenuta disattivazione dell'abbonamento;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
