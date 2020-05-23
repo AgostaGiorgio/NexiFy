@@ -1,4 +1,4 @@
-\subsection*{Tipologia}
+\subsection{Tipologia}
 I test saranno effettuati in due diverse tipologie:
 \begin{itemize}
     \item Black box: valutano le funzionalità dell'applicazione a partire dall'interfaccia utente, che
@@ -9,7 +9,7 @@ I test saranno effettuati in due diverse tipologie:
           così come le interazioni tra i vari componenti.
 \end{itemize}
 
-\subsection*{Ambiente di test}
+\subsection{Ambiente di test}
 Per i test di tipo White Box vengono definiti i seguenti programmi di supporto:
 \begin{itemize}
     \item Un programma per intercettare le comunicazioni client-server e server-server, per controllare che le
@@ -19,9 +19,9 @@ Per i test di tipo White Box vengono definiti i seguenti programmi di supporto:
 \end{itemize}
 L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un container.
 
-\subsection*{Dati su cui vengono eseguiti i test}
+\subsection{Dati su cui vengono eseguiti i test}
 
-\subsubsection*{Dati non presenti nel database}
+\subsubsection{Dati non presenti nel database}
 \begin{itemize}
     \item Token autenticazione auth\_t\_wrong
     \item Nome abbonamento nome\_abb\_nv
@@ -33,7 +33,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
 
 \end{itemize}
 
-\subsubsection*{Dati presenti nel database}
+\subsubsection{Dati presenti nel database}
 \begin{itemize}
     \item Token autenticazione amministratore auth\_admin\_t
     \item Token autenticazione auth\_t
@@ -44,7 +44,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
 
 \end{itemize}
 
-\subsection*{Descrizione priorità dei test}
+\subsection{Descrizione priorità dei test}
 
 Vengono definite le seguenti priorità per classificare i vari test in base a quanto importante sia la
 loro corretta e periodica esecuzione sull'integrità del sistema.
@@ -127,7 +127,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     T\_63            & UC\_AttivaAbbonamento                 & H                 \\\hline
 \end{longtable}
 
-\subsection*{Realizzazione dei test}
+\subsection{Realizzazione dei test}
 
 \begin{table}[hb]
     \centering
