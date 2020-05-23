@@ -3645,7 +3645,27 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 
 
 
-
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_50                                                                 \\\hline
+        Caso d'uso  & UC\_RimuoviProdottoPlaylist                                                    \\\hline
+        Obbiettivo  & Verificare che il prodotto venga rimosso dalla playlist con successo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{playlist\_p\_v}
+        è una playlist scelta \\\hline
+        Tipologia   & White box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere al sistema la lista \emph{L} dei prodotti in \emph{playlist\_p\_v}
+            \item richiedere al sistema la rimozione di un prodotto \emph{P} in \emph{L} da \emph{playlist\_p\_v};
+            \item verificare che il messaggio ricevuto dal sistema sia di successo;
+            \item verificare che nel database \emph{P} non sia in \emph{playlist\_p\_v};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 \begin{table}[hb]
     \centering
