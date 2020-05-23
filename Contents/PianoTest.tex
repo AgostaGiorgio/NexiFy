@@ -33,11 +33,17 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Stringa nome\_np\_v
     \item Stringa cognome\_np\_v
     \item Email email\_np\_v
-    \item Stringa password\_np\_v
+    \item String password\_np\_v
     \item Commento commento\_np\_v
     \item Commento commento\_np\_nv
     \item String descrizione\_np\_v
     \item String descrizione\_np\_nv
+    \item FileVideo file\_video\_np\_v
+    \item FileAudio file\_video\_np\_v
+    \item Lista<File, Lingua> subs\_np\_v
+    \item Lista<FileAudio, Lingua> audios\_np\_v
+    \item FileVideo lyrics\_np\_v;
+    \item FileVideo video\_np\_v;
 
 \end{itemize}
 
@@ -57,6 +63,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Prodotto contenuto\_p\_v
     \item String genere\_p\_v
     \item String genere\_p\_nv
+    \item String visibilita\_p\_v
+    \item AudioType audio\_type\_p\_v
 
 \end{itemize}
 
@@ -340,12 +348,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_9                                                                                                      \\\hline
-        Caso d'uso  & UC\_RecuperaPianiAbbonamentoUtente                                                                        \\\hline
+        ID          & T\_9                                                                                                         \\\hline
+        Caso d'uso  & UC\_RecuperaPianiAbbonamentoUtente                                                                           \\\hline
         Obbiettivo  & Testare che la lista degli abbonamenti restituita sia quella degli abbonamenti
-        sottoscritti dall'utente                                                                                                \\\hline
+        sottoscritti dall'utente                                                                                                   \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account attivo \\\hline
-        Tipologia   & Black box                                                                                                 \\\hline
+        Tipologia   & Black box                                                                                                    \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -396,11 +404,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_11                                                                                                     \\\hline
-        Caso d'uso  & UC\_CalcolaImportoDaPagare                                                                                \\\hline
-        Obbiettivo  & Testare il corretto funzionamento del calcolo dell'importo da pagare ad un utente                         \\\hline
+        ID          & T\_11                                                                                                        \\\hline
+        Caso d'uso  & UC\_CalcolaImportoDaPagare                                                                                   \\\hline
+        Obbiettivo  & Testare il corretto funzionamento del calcolo dell'importo da pagare ad un utente                            \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account attivo \\\hline
-        Tipologia   & White box                                                                                                 \\\hline
+        Tipologia   & White box                                                                                                    \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -541,11 +549,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_17                                                                                                      \\\hline
-        Caso d'uso  & UC\_SospendiAccount                                                                                        \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                    \\\hline
+        ID          & T\_17                                                                                                         \\\hline
+        Caso d'uso  & UC\_SospendiAccount                                                                                           \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                       \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e  \emph{utente\_p\_v} è un account attivo \\\hline
-        Tipologia   & White box                                                                                                  \\\hline
+        Tipologia   & White box                                                                                                     \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -561,11 +569,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_18                                                                                                       \\\hline
-        Caso d'uso  & UC\_RiattivaAccount                                                                                         \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento                                   \\\hline
+        ID          & T\_18                                                                                                          \\\hline
+        Caso d'uso  & UC\_RiattivaAccount                                                                                            \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento                                      \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account bloccato \\\hline
-        Tipologia   & White box                                                                                                   \\\hline
+        Tipologia   & White box                                                                                                      \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -580,11 +588,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_19                                                                                                       \\\hline
-        Caso d'uso  & UC\_RiattivaAccountAutomatico                                                                               \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento automatico                        \\\hline
+        ID          & T\_19                                                                                                          \\\hline
+        Caso d'uso  & UC\_RiattivaAccountAutomatico                                                                                  \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento automatico                           \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account bloccato \\\hline
-        Tipologia   & White box                                                                                                   \\\hline
+        Tipologia   & White box                                                                                                      \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -671,11 +679,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_23                                                                                                                      \\\hline
-        Caso d'uso  & UC\_EffettuaLogout                                                                                                         \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della funzionalità di logout                                                             \\\hline
+        ID          & T\_23                                                                                                                         \\\hline
+        Caso d'uso  & UC\_EffettuaLogout                                                                                                            \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità di logout                                                                \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{utente\_p\_v} è un account attualmente connesso al sistema \\\hline
-        Tipologia   & White box                                                                                                                  \\\hline
+        Tipologia   & White box                                                                                                                     \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -710,11 +718,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
 
-        ID          & T\_25                                                                      \\\hline
-        Caso d'uso  & UC\_GestisciProdotti                                                      \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della schermata per visualizzare i prodotti  \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                 \\\hline
-        Tipologia   & White box                                                                  \\\hline
+        ID          & T\_25                                                                         \\\hline
+        Caso d'uso  & UC\_GestisciProdotti                                                          \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della schermata per visualizzare i prodotti \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                    \\\hline
+        Tipologia   & White box                                                                     \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -735,11 +743,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_26                                                                      \\\hline
-        Caso d'uso  & UC\_CreaProdotto                                                      \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della creazione di nuovi prodotti da parte dell'utente  \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                 \\\hline
-        Tipologia   & White box                                                                  \\\hline
+        ID          & T\_26                                                                                    \\\hline
+        Caso d'uso  & UC\_CreaProdotto                                                                         \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della creazione di nuovi prodotti da parte dell'utente \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                               \\\hline
+        Tipologia   & White box                                                                                \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -774,11 +782,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_27                                                                      \\\hline
-        Caso d'uso  & UC\_ModificaInformazioniDiBase                                                      \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della funzionalità per la modifica della informazioni di base di un prodotto  \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                 \\\hline
-        Tipologia   & White box                                                                  \\\hline
+        ID          & T\_27                                                                                                          \\\hline
+        Caso d'uso  & UC\_ModificaInformazioniDiBase                                                                                 \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità per la modifica della informazioni di base di un prodotto \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                                                     \\\hline
+        Tipologia   & White box                                                                                                      \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -798,10 +806,136 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \end{tabular}
 \end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_28                                                                          \\\hline
+        Caso d'uso  & UC\_CaricaFile                                                                 \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità di caricamento file       \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore o di Utente \\\hline
+        Tipologia   & White box                                                                      \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere il caricamento di un file video, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_video\_np\_v}, \emph{subs\_np\_v}, \emph{audios\_np\_v};
+            \item verificare che il sistema validi correttamente la richiesta;
+            \item verificare che il sistema elabori elabori tutte le informazioni fornite in un file MKV \emph{F};
+            \item verificare che nel database sia contenuto \emph{F};
+            \item verificare che le CDN siano aggiornate rispetto a \emph{F};
+            \item verificare che il sistema mostri una pagina di conferma del caricamento effettuato;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere il caricamento di un file audio, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_audio\_np\_v}, \emph{lyrics\_np\_v}, \emph{video\_np\_v};
+            \item verificare che il sistema validi correttamente la richiesta;
+            \item verificare che il sistema elabori elabori tutte le informazioni fornite in una tripla di file MKV: \emph{F1}, \emph{F2} ed \emph{F3}.;
+            \item verificare che \emph{F1} contenga i lyrics e la traccia musicale, che \emph{F2} contenga la traccia video e quella musicale e che \emph{F3} contenga la traccia musicale;
+            \item verificare che nel database siano contenuti \emph{F1}, \emph{F2} ed \emph{F3};
+            \item verificare che le CDN siano aggiornate rispetto a \emph{F1}, \emph{F2} ed \emph{F3};
+            \item verificare che il sistema mostri una pagina di conferma dei caricamenti effettuati;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_29                                                                                      \\\hline
+        Caso d'uso  & UC\_CambiaVisibilitàProdotto                                                               \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità cambiare la visibilità di un prodotto \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                                 \\\hline
+        Tipologia   & White box                                                                                  \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di modificare la visibilità di un prodotto, fornendo \emph{contenuto\_p\_v} e \emph{visibilita\_p\_v};
+            \item verificare che nel database lo stato del prodotto \emph{contenuto\_p\_v} sia impostato a \emph{visibilita\_p\_v};
+            \item verificare che il sistema ritorni un messaggio di modifica effettuata con successo oppure di errore generico;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_30                                                               \\\hline
+        Caso d'uso  & UC\_RiproduciProdotto                                               \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della riproduzione di un prodotto \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente          \\\hline
+        Tipologia   & White box                                                           \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_nv} e \emph{contenuto\_p\_v};
+            \item verificare che la connessione ad internet sia disponibile;
+            \item verificare che il sistema rifiuti la richiesta di riproduzione di \emph{contenuto\_p\_v}, di tipologia che non è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_nv};
+            \item verificare che il sistema mostri una pagina con l'errore "non si dispone del servizio necessario a riprodurre il contenuto";
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_v} e \emph{contenuto\_p\_v};
+            \item verificare che il sistema valuti nel flag \emph{INTERNET} se la connessione ad internet è presente;
+            \item verificare che il sistema validi la richiesta di riproduzione di \emph{contenuto\_p\_v}, di tipologia che è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_v};
+            \item verificare che il sistema aggiunga la riproduzione generata al database e valuti nel flag \emph{ADS} se inserire spot pubblicitari durante la riproduzione;
+            \item verificare che il sistema, dopo aver valutato nel flag \emph{DOWNLOADED} se il prodotto è stato o meno scaricato, agisca come segua:
+                  \begin{itemize}
+                      \item riproduca il prodotto offline sse il flag \emph{DOWNLOADED} è vero, inserendo spot pubblicitari sse \emph{ADS} è vero;
+                      \item mostri una pagina con errore "è necessaria una connessione ad internet" sse sia \emph{DOWNLOADED} che \emph{INTERNET} sono falsi;
+                      \item riproduca il prodotto in streaming sse \emph{DOWNLOADED} è falso ma \emph{INTERNET} è vero, inserendo spot pubblicitari sse \emph{ADS} è vero;
+                  \end{itemize}
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_31                                                                          \\\hline
+        Caso d'uso  & UC\_StreamingVideo                                                             \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità di streaming video        \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore o di Utente \\\hline
+        Tipologia   & White box                                                                      \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{contenuto\_p\_v};
+            \item verificare che il sistema reperisca correttamente la \emph{URL} associata al contenuto video indicato, l'\emph{IP} dell'utente richiedente e la durata \emph{DUR};
+            \item verificare che il sistema generi una policy di visualizzazione \emph{P} per l'utente richiedente, a partire da \emph{IP} e \emph{DUR};
+            \item verificare che il sistema generi una \emph{SIGNED\_URL} a partire da \emph{URL} e \emph{P} che garantisca all'utente di visionare il video;
+            \item verificare che il sistema player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_32                                                                          \\\hline
+        Caso d'uso  & UC\_StreamingMusica                                                            \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità di streaming musica       \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore o di Utente \\\hline
+        Tipologia   & White box                                                                      \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{contenuto\_p\_v} e il tipo di riproduzione preferito \emph{audio\_type\_p\_v};
+            \item verificare che il sistema reperisca correttamente la \emph{URL} associata al contenuto video indicato e a \emph{audio\_type\_p\_v}, l'\emph{IP} dell'utente richiedente e la durata \emph{DUR};
+            \item verificare che il sistema generi una policy di visualizzazione \emph{P} per l'utente richiedente, a partire da \emph{IP} e \emph{DUR};
+            \item verificare che il sistema generi una \emph{SIGNED\_URL} a partire da \emph{URL} e \emph{P} che garantisca all'utente di visionare il video;
+            \item verificare che il sistema player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 
 
@@ -3367,22 +3501,22 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_58                                                              \\\hline
-        Caso d'uso  & UC\_RiproduciCoda                                             \\\hline
+        ID          & T\_58                                                                 \\\hline
+        Caso d'uso  & UC\_RiproduciCoda                                                     \\\hline
         Obbiettivo  & Verificare che la riproduzione della coda venga avviata correttamente \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente \\\hline
-        Tipologia   & Black box                                                          \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente            \\\hline
+        Tipologia   & Black box                                                             \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la riproduzione della coda coda\_p\_v che contiene almeno un prodotto; 
+            \item richiedere la riproduzione della coda coda\_p\_v che contiene almeno un prodotto;
             \item verificare che il player inizi a riprodurre il prossimo prodotto in coda\_p\_v;
             \item verificare che, dopo la riproduzione del prodotto, il player inizi a riprodurre
-             il prossimo prodotto, se esso esiste (e si ripete il punto 3), oppure termini\_p\_v;
+                  il prossimo prodotto, se esso esiste (e si ripete il punto 3), oppure termini\_p\_v;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la riproduzione della coda coda\_p\_nv che non contiene prodotti; 
+            \item richiedere la riproduzione della coda coda\_p\_nv che non contiene prodotti;
             \item verificare che il sistema restituisca un messaggio di errore per coda vuota;
         \end{enumerate}
         \\\hline
@@ -3393,23 +3527,23 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_59                                                             \\\hline
-        Caso d'uso  & UC\_CalcolaQualitàContenuto                                             \\\hline
-        Obbiettivo  & Verificare che il voto del contenuto sia corretto, in base ai voti ricevuti \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
-        è un contenuto scelto \\\hline
-        Tipologia   & Black box                                                          \\\hline
+        ID          & T\_59                                                                              \\\hline
+        Caso d'uso  & UC\_CalcolaQualitàContenuto                                                        \\\hline
+        Obbiettivo  & Verificare che il voto del contenuto sia corretto, in base ai voti ricevuti        \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        è un contenuto scelto                                                                            \\\hline
+        Tipologia   & Black box                                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere il voto \emph{V} della qualità di \emph{contenuto\_p\_v};
             \item se \emph{contenuto\_p\_v} è un prodotto Video o Musicale,
-            verificare che il sistema restituisca \emph{V} = \emph{contenuto\_p\_v.sommavoti} / \emph{contenuto\_p\_v.voti\_totali}
+                  verificare che il sistema restituisca \emph{V} = \emph{contenuto\_p\_v.sommavoti} / \emph{contenuto\_p\_v.voti\_totali}
             \item se \emph{contenuto\_p\_v} è una Playlist,
-            verificare che il sistema restituisca \emph{V} = 
-            $\sum_{p\ in\ all\ Prodotto\ in\ \emph{contenuto\_p\_v}} \emph{p.sommavoti}$ 
-            /
-            $\sum_{p in all Prodotto in \emph{contenuto\_p\_v}} \emph{p.voti\_totali}$
+                  verificare che il sistema restituisca \emph{V} =
+                  $\sum_{p\ in\ all\ Prodotto\ in\ \emph{contenuto\_p\_v}} \emph{p.sommavoti}$
+                  /
+                  $\sum_{p in all Prodotto in \emph{contenuto\_p\_v}} \emph{p.voti\_totali}$
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -3419,27 +3553,27 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_60                                                              \\\hline
-        Caso d'uso  & UC\_VotaContenuto                                             \\\hline
-        Obbiettivo  & Verificare che il feedback venga aggiunto al contenuto correttamente \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
-        è un contenuto scelto \\\hline
-        Tipologia   & White box                                                          \\\hline
+        ID          & T\_60                                                                              \\\hline
+        Caso d'uso  & UC\_VotaContenuto                                                                  \\\hline
+        Obbiettivo  & Verificare che il feedback venga aggiunto al contenuto correttamente               \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        è un contenuto scelto                                                                            \\\hline
+        Tipologia   & White box                                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire un numero \emph{NUM} \textgreater 0 e \textless 6 al sistema
-            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione 
-            di un feedback con voto \emph{NUM} per \emph{contenuto\_p\_v};
-            \item verificare che nel database esista un feedback con voto \emph{NUM} associato a 
-            \emph{contenuto\_p\_v};
+            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione
+                  di un feedback con voto \emph{NUM} per \emph{contenuto\_p\_v};
+            \item verificare che nel database esista un feedback con voto \emph{NUM} associato a
+                  \emph{contenuto\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire un numero \emph{NUM} \textless 1 o \textgreater 5 al sistema
             \item verificare che il sistema ritorni il messaggio di errore per input invalido;
-            \item verificare che nel database non esista un feedback con voto \emph{NUM} associato a 
-            \emph{contenuto\_p\_v};
+            \item verificare che nel database non esista un feedback con voto \emph{NUM} associato a
+                  \emph{contenuto\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -3449,27 +3583,27 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_61                                                              \\\hline
-        Caso d'uso  & UC\_CommentaContenuto                                             \\\hline
-        Obbiettivo  & Verificare che il commento venga aggiunto al contenuto correttamente \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
-        è un contenuto scelto \\\hline
-        Tipologia   & White box                                                          \\\hline
+        ID          & T\_61                                                                              \\\hline
+        Caso d'uso  & UC\_CommentaContenuto                                                              \\\hline
+        Obbiettivo  & Verificare che il commento venga aggiunto al contenuto correttamente               \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        è un contenuto scelto                                                                            \\\hline
+        Tipologia   & White box                                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire \emph{commento\_np\_v} al sistema
-            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione 
-            di \emph{commento\_np\_v} per \emph{contenuto\_p\_v};
-            \item verificare che nel database esista \emph{commento\_np\_v} associato a 
-            \emph{contenuto\_p\_v};
+            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione
+                  di \emph{commento\_np\_v} per \emph{contenuto\_p\_v};
+            \item verificare che nel database esista \emph{commento\_np\_v} associato a
+                  \emph{contenuto\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire \emph{commento\_np\_nv} al sistema
             \item verificare che il sistema ritorni il messaggio di errore per input non valido;
-            \item verificare che nel database non esista \emph{commento\_np\_nv} associato a 
-            \emph{contenuto\_p\_v};
+            \item verificare che nel database non esista \emph{commento\_np\_nv} associato a
+                  \emph{contenuto\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -3479,11 +3613,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_62                                                              \\\hline
-        Caso d'uso  & UC\_RimuoviCommento                                             \\\hline
-        Obbiettivo  & Verificare che il commento venga rimosso correttamente             \\\hline
+        ID          & T\_62                                                      \\\hline
+        Caso d'uso  & UC\_RimuoviCommento                                        \\\hline
+        Obbiettivo  & Verificare che il commento venga rimosso correttamente     \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente \\\hline
-        Tipologia   & White box                                                          \\\hline
+        Tipologia   & White box                                                  \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -3501,8 +3635,8 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
         ID          & T\_63                                                              \\\hline
-        Caso d'uso  & UC\_AttivaAbbonamento                                           \\\hline
-        Obbiettivo  & Testare che un abbonamento diventi sottoscrivibile             \\\hline
+        Caso d'uso  & UC\_AttivaAbbonamento                                              \\\hline
+        Obbiettivo  & Testare che un abbonamento diventi sottoscrivibile                 \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
         Tipologia   & Black box                                                          \\\hline
         Azioni      &
