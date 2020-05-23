@@ -50,6 +50,9 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Email email\_p\_nv
     \item Stringa password\_p\_nv
     \item Commento commento\_p\_v
+    \item Coda di riproduzione coda\_p\_v
+    \item Coda di riproduzione coda\_p\_nv
+
 
 \end{itemize}
 
@@ -3330,29 +3333,113 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 
 
 
-
-
-
-
-
-
-
-
-
 \begin{table}[hb]
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-                ID          & T\_61                                                              \\\hline
-        Caso d'uso  & UC\_CommentaContenuto                                             \\\hline
-        Obbiettivo  & Verificare che il commento venga aggiunto al contenuto correttamente \\\hline
+        ID          & T\_58                                                              \\\hline
+        Caso d'uso  & UC\_RiproduciCoda                                             \\\hline
+        Obbiettivo  & Verificare che la riproduzione della coda venga avviata correttamente \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente \\\hline
         Tipologia   & Black box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la rimozione di \emph{commento\_v}
-            \item verificare che il sistema ritorni il messaggio di avvenuta cancellazione di \emph{commento\_v};
+            \item richiedere la riproduzione della coda coda\_p\_v che contiene almeno un prodotto; 
+            \item verificare che il player inizi a riprodurre il prossimo prodotto in coda\_p\_v;
+            \item verificare che, dopo la riproduzione del prodotto, il player inizi a riprodurre
+             il prossimo prodotto, se esso esiste (e si ripete il punto 3), oppure termini\_p\_v;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la riproduzione della coda coda\_p\_nv che non contiene prodotti; 
+            \item verificare che il sistema restituisca un messaggio di errore per coda vuota;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_59                                                             \\\hline
+        Caso d'uso  & UC\_CalcolaQualitàContenuto                                             \\\hline
+        Obbiettivo  & Verificare che il voto del contenuto sia corretto, in base ai voti ricevuti \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
+        è un contenuto scelto \\\hline
+        Tipologia   & Black box                                                          \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere il voto \emph{V} della qualità di \emph{contenuto\_p\_v};
+            \item se \emph{contenuto\_p\_v} è un prodotto Video o Musicale,
+            verificare che il sistema restituisca \emph{V} = \emph{contenuto\_p\_v.sommavoti} / \emph{contenuto\_p\_v.voti\_totali}
+            \item se \emph{contenuto\_p\_v} è una Playlist,
+            verificare che il sistema restituisca \emph{V} = 
+            $\sum_{p\ in\ all\ Prodotto\ in\ \emph{contenuto\_p\_v}} \emph{p.sommavoti}$ 
+            /
+            $\sum_{p in all Prodotto in \emph{contenuto\_p\_v}} \emph{p.voti\_totali}$
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_60                                                              \\\hline
+        Caso d'uso  & UC\_VotaContenuto                                             \\\hline
+        Obbiettivo  & Verificare che il feedback venga aggiunto al contenuto correttamente \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
+        è un contenuto scelto \\\hline
+        Tipologia   & White box                                                          \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item fornire un numero \emph{NUM} \textgreater 0 e \textless 6 al sistema
+            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione 
+            di un feedback con voto \emph{NUM} per \emph{contenuto\_p\_v};
+            \item verificare che nel database esista un feedback con voto \emph{NUM} associato a 
+            \emph{contenuto\_p\_v};
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item fornire un numero \emph{NUM} \textless 1 o \textgreater 5 al sistema
+            \item verificare che il sistema ritorni il messaggio di errore per input invalido;
+            \item verificare che nel database non esista un feedback con voto \emph{NUM} associato a 
+            \emph{contenuto\_p\_v};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_61                                                              \\\hline
+        Caso d'uso  & UC\_CommentaContenuto                                             \\\hline
+        Obbiettivo  & Verificare che il commento venga aggiunto al contenuto correttamente \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v} 
+        è un contenuto scelto \\\hline
+        Tipologia   & White box                                                          \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item fornire \emph{commento\_np\_v} al sistema
+            \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione 
+            di \emph{commento\_np\_v} per \emph{contenuto\_p\_v};
+            \item verificare che nel database esista \emph{commento\_np\_v} associato a 
+            \emph{contenuto\_p\_v};
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item fornire \emph{commento\_np\_nv} al sistema
+            \item verificare che il sistema ritorni il messaggio di errore per input non valido;
+            \item verificare che nel database non esista \emph{commento\_np\_nv} associato a 
+            \emph{contenuto\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -3366,12 +3453,13 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Caso d'uso  & UC\_RimuoviCommento                                             \\\hline
         Obbiettivo  & Verificare che il commento venga rimosso correttamente             \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente \\\hline
-        Tipologia   & Black box                                                          \\\hline
+        Tipologia   & White box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la rimozione di \emph{commento\_v}
-            \item verificare che il sistema ritorni il messaggio di avvenuta cancellazione di \emph{commento\_v};
+            \item richiedere la rimozione di \emph{commento\_p\_v}
+            \item verificare che il sistema ritorni il messaggio di avvenuta cancellazione di \emph{commento\_p\_v};
+            \item verificare che nel database non esista \emph{commento\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -3390,7 +3478,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere l'attivazione di \emph{piano\_abb\_v}
+            \item richiedere l'attivazione di \emph{piano\_abb\_p\_v}
             \item verificare che il sistema ritorni il messaggio di avvenuta attivazione dell'abbonamento;
         \end{enumerate}
         \\\hline
