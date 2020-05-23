@@ -28,20 +28,22 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Nome abbonamento nome\_abb\_np\_v
     \item Prezzo abbonamento prezzo\_abb\_np\_v
     \item Prezzo abbonamento prezzo\_abb\_np\_nv
-    \item Durata abbonamento duarata\_abb\_np\_v
-    \item Durata abbonamento duarata\_abb\_np\_nv
+    \item Durata abbonamento durata\_abb\_np\_v
+    \item Durata abbonamento durata\_abb\_np\_nv
     \item Stringa nome\_np\_v
     \item Stringa cognome\_np\_v
     \item Email email\_np\_v
     \item Stringa password\_np\_v
     \item Commento commento\_np\_v
     \item Commento commento\_np\_nv
+    \item String descrizione\_np\_v
+    \item String descrizione\_np\_nv
 
 \end{itemize}
 
 \subsubsection{Dati presenti nel database}
 \begin{itemize}
-    \item Token autenticazione amministratore auth\_admin\_t\_p
+    \item Token autenticazione amministratore auth\_admin\_t\_p\_v
     \item Token autenticazione auth\_t\_p\_v
     \item PianoDiAbbonamento piano\_abb\_p\_v
     \item PianoDiAbbonamento piano\_abb\_p\_nv
@@ -52,7 +54,9 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Commento commento\_p\_v
     \item Coda di riproduzione coda\_p\_v
     \item Coda di riproduzione coda\_p\_nv
-
+    \item Prodotto contenuto\_p\_v
+    \item String genere\_p\_v
+    \item String genere\_p\_nv
 
 \end{itemize}
 
@@ -153,17 +157,17 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t\_nv};
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t\_p\_nv};
             \item verificare che il sistema restituisca errore di permesso negato;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t\_v};
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_t\_p\_v};
             \item verificare che il sistema restituisca errore di permesso negato;
         \end{enumerate}
         \vspace{0.5cm}TEST3:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_admin\_t};
+            \item richiedere la visualizzazione della gestione abbonamenti, fornendo il token di autenticazione \emph{auth\_admin\_t\_p\_v};
             \item verificare che il sistema restituisca la pagina con la lista di abbonamenti richiesti;
         \end{enumerate}
         \\\hline
@@ -182,17 +186,17 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item fornire i seguenti valori \emph{nome\_abb\_nv}, \emph{prezzo\_abb\_nv}, \emph{durata\_abb\_nv};
+            \item fornire i seguenti valori \emph{nome\_abb\_np\_nv}, \emph{prezzo\_abb\_np\_nv}, \emph{durata\_abb\_np\_nv};
             \item verifica che il sistema restituisca errore nella validazione dei dati;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item fornire i seguenti valori \emph{nome\_abb\_nv}, \emph{prezzo\_abb\_v}, \emph{durata\_abb\_v};
+            \item fornire i seguenti valori \emph{nome\_abb\_np\_nv}, \emph{prezzo\_abb\_np\_v}, \emph{durata\_abb\_np\_v};
             \item verifica che il sistema restituisca errore nell'inserimento di un piano di abbonamento duplicato;
         \end{enumerate}
         \vspace{0.5cm} TEST3:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item fornire i seguenti valori \emph{nome\_abb\_v}, \emph{prezzo\_abb\_v}, \emph{durata\_abb\_v};
+            \item fornire i seguenti valori \emph{nome\_abb\_np\_v}, \emph{prezzo\_abb\_np\_v}, \emph{durata\_abb\_np\_v};
             \item verifica che il sistema restituisca errore generico nella crezione di un abbonamento oppure creazione effettuata correttamente;
         \end{enumerate}
         \\\hline
@@ -340,13 +344,13 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Caso d'uso  & UC\_RecuperaPianiAbbonamentoUtente                                                                        \\\hline
         Obbiettivo  & Testare che la lista degli abbonamenti restituita sia quella degli abbonamenti
         sottoscritti dall'utente                                                                                                \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_v} è un account attivo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account attivo \\\hline
         Tipologia   & Black box                                                                                                 \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere lista \emph{L} piani di abbonamento sottoscritti da \emph{utente\_v};
-            \item verificare che \emph{L} sia la lista degli abbonamenti sottoscritti da \emph{utente\_v};
+            \item richiedere lista \emph{L} piani di abbonamento sottoscritti da \emph{utente\_p\_v};
+            \item verificare che \emph{L} sia la lista degli abbonamenti sottoscritti da \emph{utente\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -395,14 +399,14 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_11                                                                                                     \\\hline
         Caso d'uso  & UC\_CalcolaImportoDaPagare                                                                                \\\hline
         Obbiettivo  & Testare il corretto funzionamento del calcolo dell'importo da pagare ad un utente                         \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_v} è un account attivo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account attivo \\\hline
         Tipologia   & White box                                                                                                 \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il calcolo dell'importo dovuto, fornendo \emph{utente\_v};
+            \item richiedere il calcolo dell'importo dovuto, fornendo \emph{utente\_p\_v};
             \item verificare che il sistema consideri l'intervallo di tempo [\emph{DA}, \emph{A}], dove \emph{DA} è null sse non esistono pagamenti precedenti verso quell'utente;
-            \item verificare che il sistema consideri la lista dei prodotti relativa ad \emph{utente\_v} e che il totale dovuto \emph{TOT} sia initializzato a 0;
+            \item verificare che il sistema consideri la lista dei prodotti relativa ad \emph{utente\_p\_v} e che il totale dovuto \emph{TOT} sia initializzato a 0;
             \item verificare che il sistema ritorni \emph{R = TOT + V}, con V il numero complessivo di visualizzazioni, assieme alla funzione \emph{F} che indica come calcolare l'importo da pagare a partire da \emph{R};
         \end{enumerate}
         \\\hline
@@ -421,7 +425,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la visualizzazione della gestione delle sottoscrizioni dei piani di abbonamento, fornendo il token di autenticazione \emph{auth\_t\_nv};
+            \item richiedere la visualizzazione della gestione delle sottoscrizioni dei piani di abbonamento, fornendo il token di autenticazione \emph{auth\_t\_np\_nv};
             \item verificare che il sistema restituisca errore di permesso negato;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
@@ -540,13 +544,13 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_17                                                                                                      \\\hline
         Caso d'uso  & UC\_SospendiAccount                                                                                        \\\hline
         Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                    \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e  \emph{utente\_v} è un account attivo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e  \emph{utente\_p\_v} è un account attivo \\\hline
         Tipologia   & White box                                                                                                  \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item fornire la durata \emph{D} per il quale si vuole sospendere l'account \emph{utente\_v};
-            \item verificare che il sistema sospenda \emph{utente\_v} per la durata richiesta;
+            \item fornire la durata \emph{D} per il quale si vuole sospendere l'account \emph{utente\_p\_v};
+            \item verificare che il sistema sospenda \emph{utente\_p\_v} per la durata richiesta;
         \end{enumerate}
 
         \\\hline
@@ -560,12 +564,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_18                                                                                                       \\\hline
         Caso d'uso  & UC\_RiattivaAccount                                                                                         \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento                                   \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_v} è un account bloccato \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account bloccato \\\hline
         Tipologia   & White box                                                                                                   \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la riattivazione dell'account \emph{utente\_v};
+            \item richiedere la riattivazione dell'account \emph{utente\_p\_v};
             \item verificare che il sistema riattivi l'account richiesto;
         \end{enumerate}
         \\\hline
@@ -579,7 +583,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_19                                                                                                       \\\hline
         Caso d'uso  & UC\_RiattivaAccountAutomatico                                                                               \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento automatico                        \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_v} è un account bloccato \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente\_p\_v} è un account bloccato \\\hline
         Tipologia   & White box                                                                                                   \\\hline
         Azioni      &
         TEST1:
@@ -604,13 +608,13 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome\_v, cognome\_v, email\_v, password\_v};
+            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome\_np\_v, cognome\_np\_v, email\_np\_v, password\_np\_v};
             \item verificare che il sistema crei un nuovo account utente con i dati forniti;
             \item verificare che il sistema ritorni una pagina mostrando "utente registrato con successo";
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome\_v, cognome\_v, email\_nv, password\_v};
+            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome\_np\_v, cognome\_np\_v, email\_p\_nv, password\_np\_v};
             \item verificare che il sistema non crei un account utente con i dati forniti e che ritorni una pagina di errore;
         \end{enumerate}
         \\\hline
@@ -629,10 +633,10 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la modifica di un profilo utente, fornendo \emph{utente\_v};
+            \item richiedere la modifica di un profilo utente, fornendo \emph{utente\_p\_v};
             \item verificare che il sistema ritorni la lista \emph{L} dei campi modificabili per l'account richiesto;
             \item fornire la coppia \emph{K,V} dove \emph{K} è un sottoinsieme dei campi modificabili contenuti in \emph{L}, e \emph{V} sono i valori assegnati;
-            \item verificare che il sistema applichi le modifiche all'account \emph{utente\_v};
+            \item verificare che il sistema applichi le modifiche all'account \emph{utente\_p\_v};
             \item verificare che il sistema mostri una pagina con un messaggio indicante l'avvenuta conferma dei campi inseriti , oppure un errore generico;
         \end{enumerate}
         \\\hline
@@ -651,12 +655,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di effettuare l'accesso, fornendo \emph{email\_v, password\_v};
+            \item richiedere di effettuare l'accesso, fornendo \emph{email\_np\_v, password\_np\_v};
             \item verificare che il sistema validi con successo i dati inseriti e che torni un errore sse l'account è bloccato, altrimenti mostra "login effettuato con successo";
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di effettuare l'accesso, fornendo \emph{email\_nv, password\_nv};
+            \item richiedere di effettuare l'accesso, fornendo \emph{email\_p\_nv, password\_p\_nv};
             \item verificare che il sistema ritorni un errore in fase di validazione dei dati, l'accesso al sistema non è consentito;
         \end{enumerate}
         \\\hline
@@ -670,12 +674,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_23                                                                                                                      \\\hline
         Caso d'uso  & UC\_EffettuaLogout                                                                                                         \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità di logout                                                             \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{utente\_v} è un account attualmente connesso al sistema \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{utente\_p\_v} è un account attualmente connesso al sistema \\\hline
         Tipologia   & White box                                                                                                                  \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di effettuare il logout, fornendo l'account \emph{utente\_v};
+            \item richiedere di effettuare il logout, fornendo l'account \emph{utente\_p\_v};
             \item verificare che l'account sia correttamente disconnesso dal sistema e che venga mostrata una pagina di disconnessione effettuata con successo;
         \end{enumerate}
         \\\hline
@@ -694,7 +698,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di ottenere la cronologia dell'account \emph{utente\_v};
+            \item richiedere di ottenere la cronologia dell'account \emph{utente\_p\_v};
             \item verificare che il sistema consideri la lista \emph{L} dei soli prodotti visualizzati dall'utente indicato, ritornando infine una pagina per mostrare l'elenco dei prodotti in \emph{L}
         \end{enumerate}
         \\\hline
@@ -720,7 +724,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di ottenere la lista dei prodotti creati, fornendo il token di autenticazione \emph{auth\_t\_nv};
+            \item richiedere di ottenere la lista dei prodotti creati, fornendo il token di autenticazione \emph{auth\_t\_np\_nv};
             \item verificare che il sistema neghi la richiesta di visualizzazione prodotti e che mostri la relativa pagina di errore;
         \end{enumerate}
         \\\hline
@@ -739,26 +743,26 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la creazione di un nuovo prodotto di tipo video, fornendo \emph{nome\_v} e il token di autenticazione \emph{auth\_t\_v};
+            \item richiedere la creazione di un nuovo prodotto di tipo video, fornendo \emph{nome\_np\_v} e il token di autenticazione \emph{auth\_t\_v};
             \item verificare che il token di autenticazione sia correttamente validato dal sistema;
             \item verificare che il sistema crei il prodotto e che venga conseguentemente mostrata una pagina con l'esito dell'operazione;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la creazione di un nuovo prodotto di tipo video, fornendo \emph{nome\_nv} e il token di autenticazione \emph{auth\_t\_nv};
+            \item richiedere la creazione di un nuovo prodotto di tipo video, fornendo \emph{nome\_nv} e il token di autenticazione \emph{auth\_t\_np\_nv};
             \item verificare che il sistema ritorni un errore in fase di validazione oppure nella creazione di un contenuto già esistente;
             \item verificare che il sistema mostri una pagina esplicativa dell'errore avvenuto;
         \end{enumerate}
         \vspace{0.5cm}
         TEST3:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la creazione di un nuovo prodotto di tipo audio, fornendo \emph{nome\_v} e il token di autenticazione \emph{auth\_t\_v};
+            \item richiedere la creazione di un nuovo prodotto di tipo audio, fornendo \emph{nome\_np\_v} e il token di autenticazione \emph{auth\_t\_v};
             \item verificare che il token di autenticazione sia correttamente validato dal sistema;
             \item verificare che il sistema crei il prodotto e che venga conseguentemente mostrata una pagina con l'esito dell'operazione;
         \end{enumerate}
         \vspace{0.5cm} TEST4:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la creazione di un nuovo prodotto di tipo audio, fornendo \emph{nome\_nv} e il token di autenticazione \emph{auth\_t\_nv};
+            \item richiedere la creazione di un nuovo prodotto di tipo audio, fornendo \emph{nome\_nv} e il token di autenticazione \emph{auth\_t\_np\_nv};
             \item verificare che il sistema ritorni un errore in fase di validazione oppure nella creazione di un contenuto già esistente;
             \item verificare che il sistema mostri una pagina esplicativa dell'errore avvenuto;
         \end{enumerate}
@@ -766,7 +770,33 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \end{tabular}
 \end{table}
 
-
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_27                                                                      \\\hline
+        Caso d'uso  & UC\_ModificaInformazioniDiBase                                                      \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità per la modifica della informazioni di base di un prodotto  \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                 \\\hline
+        Tipologia   & White box                                                                  \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_v} e \emph{genere\_p\_v};
+            \item verificare che il sistema validi la richiesta e che le nuove informazioni vengano memorizzate;
+            \item verificare che il sistema presenti un questionario a domande chiuse per la valutazione dell'età minima per visionarlo/riprodurlo;
+            \item fornire le risposte al questionario;
+            \item verificare che il sistema calcoli e aggiorni l'età minima per visionare/riprodurre il prodotto;
+            \item verificare che il sistema mostri la pagina riepilogativa con le modifiche apportate;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_nv} e \emph{genere\_p\_nv};
+            \item verificare che il sistema mostri a schermo un errore di validazione delle informazioni fornite;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 
 
