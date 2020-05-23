@@ -30,6 +30,11 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Prezzo abbonamento prezzo\_abb\_nv
     \item Durata abbonamento duarata\_abb\_v
     \item Durata abbonamento duarata\_abb\_nv
+    \item AccountUtente utente\_new
+    \item Stringa nome
+    \item Stringa cognome
+    \item Email email
+    \item Stringa password
 
 \end{itemize}
 
@@ -41,6 +46,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item PianoDiAbbonamento piano\_abb\_full
     \item PianoDiAbbonamento piano\_abb\_empty
     \item AccountUtente utente
+    \item Email email\_utente
 
 \end{itemize}
 
@@ -489,7 +495,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
             \item fornire al sistema un piano di abbonamento \emph{P2} con prezzo \emph{PRICE2} $<$ \emph{PRICE}, dove \emph{PRICE} è il prezzo di \emph{piano\_abb};
             \item verificare che il sistema calcoli l'importo di pagamento \emph{R = 0};
             \item fornire le coordinate bancarie \emph{CB} per procedere al pagamento;
-            \item verificare che il sistema processi correttamente il pagamento e che l'importo \emph{R} venga correttamente accreditato;
+            \item verificare che il sistema processi correttamente il pagamento e che l'importo \emph{R} venga accreditato;
             \item verificare che il sistema registri il pagamento effettuato e che \emph{piano\_abb} venga sostituito col piano di abbonamento \emph{P2};
             \item verificare che il sistema mostri la pagina di cambiamento effettuato oppure di errore generico;
         \end{enumerate}
@@ -515,7 +521,6 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
                       \item se \emph{S} è ancora sottoscrivibile ed è attivo il rinnovo automatico, allora il sistema processi il pagamento per il rinnovo di \emph{S}. Verificare inoltre che \emph{S} sia rinnovata sse il pagamento va a buon fine, altrimenti verificare che \emph{S} sia rimossa dai piani di abbonamento dell'utente che lo deteneva;
                       \item se \emph{S} non è più sottoscrivibile oppure il rinnovo automatico è disattivo verificare che \emph{S} sia rimossa dai piani di abbonamento dell'utente che lo deteneva;
                   \end{itemize}
-
         \end{enumerate}
 
         \\\hline
@@ -549,13 +554,58 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_18                                                                                                     \\\hline
         Caso d'uso  & UC\_RiattivaAccount                                                                                       \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento                                 \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account disattivo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account bloccato \\\hline
         Tipologia   & White box                                                                                                 \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere la riattivazione dell'account \emph{utente};
             \item verificare che il sistema riattivi l'account richiesto;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_19                                                                                                     \\\hline
+        Caso d'uso  & UC\_RiattivaAccountAutomatico                                                                             \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento automatico                      \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account bloccato \\\hline
+        Tipologia   & White box                                                                                                 \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item verificare che il sistema consideri la lista degli account bloccati \emph{B}, previsti da sbloccare nella giornata corrente;
+            \item verificare che il sistema sblocchi con successo tutti gli account in \emph{B};
+            \item verificare che il sistema ritorni l'esito della procedura che può essere errore generico oppure account riattivati con successo;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_20                                                                                                     \\\hline
+        Caso d'uso  & UC\_EffettuaRegistrazione                                                                             \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della registrazione di un account utente                      \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente\\\hline
+        Tipologia   & White box                                                                                                 \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome, cognome, email, password};
+            \item verificare che il sistema crei un account utente \emph{utente\_new} con i dati forniti;
+            \item verificare che il sistema ritorni una pagina mostrando "utente registrato con successo";
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la registrazione di un nuovo account utente, fornendo: \emph{nome, cognome, email\_utente, password};
+            \item verificare che il sistema non crei un account utente con i dati forniti e che ritorni una pagina di errore;
         \end{enumerate}
         \\\hline
     \end{tabular}
