@@ -3647,9 +3647,53 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 
 
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_51                                                                 \\\hline
+        Caso d'uso  & UC\_CambiaVisibilitàPlaylist                                                    \\\hline
+        Obbiettivo  & Verificare che la visibilità della playlist venga cambiata correttamente \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{playlist\_p\_v}
+        è una playlist scelta \\\hline
+        Tipologia   & White box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di impostare la visibilità di \emph{playlist\_p\_v} a pubblica;
+            \item verificare che il sistema risponda con un messaggio di successo;
+            \item verificare che nel database \emph{playlist\_p\_v} sia pubblica;
+        \end{enumerate}
+        TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di impostare la visibilità di \emph{playlist\_p\_v} a privata;
+            \item verificare che il sistema risponda con un messaggio di successo;
+            \item verificare che nel database \emph{playlist\_p\_v} sia privata;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
-
-
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_52                                                                 \\\hline
+        Caso d'uso  & UC\_RiproduciPlaylist                                                    \\\hline
+        Obbiettivo  & Verificare che i prodotti nella playlist vengano aggiunti alla coda di riproduzione correttamente \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{playlist\_p\_v}
+        è una playlist scelta \\\hline
+        Tipologia   & White box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la riproduzione di \emph{playlist\_p\_v};
+            \item verificare che il player avvi la riproduzione dei prodotti della playlist;
+            \item verificare che nel database in \emph{coda\_p\_v} contenga tutti e soli i prodotti di \emph{playlist\_p\_v};
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 \begin{table}[hb]
     \centering
