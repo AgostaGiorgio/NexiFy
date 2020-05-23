@@ -66,6 +66,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item String genere\_p\_nv
     \item String visibilita\_p\_v
     \item AudioType audio\_type\_p\_v
+    \item Playlist playlist\_p\_v
+    \item Playlist playlist\_p\_nv
 
 \end{itemize}
 
@@ -3488,9 +3490,85 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 
 
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_53                                                                              \\\hline
+        Caso d'uso  & UC\_CreaSerieTv                                                             \\\hline
+        Obbiettivo  & Verificare la playlist venga convertita in serie tv correttamente               \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{playlist\_p\_v} e \emph{playlist\_p\_nv}
+        sono playlist scelte                                                                            \\\hline
+        Tipologia   & White box                                                                          \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_v} (dove tutti i prodotti sono video, appartengono
+            all'utente stesso e non esiste alcuna serie tv che contiene neanche uno di questi) in Serie tv;
+            \item verificare che il sistema ritorni il messaggio di successo;
+            \item verificare che nel database \emph{playlist\_p\_v} sia una serie tv;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto non appartiene all'utente stesso) in Serie tv;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto non posseduto;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia una serie tv;
+        \end{enumerate}
+        \vspace{0.5cm} TEST3:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto non è video) in Serie tv;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto non video;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia una serie tv;
+        \end{enumerate}
+        \vspace{0.5cm} TEST4:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto appartiene ad un'altra serie tv) in Serie tv;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto appartenente ad altra serie tv;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia una serie tv;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
-
-
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_54                                                                              \\\hline
+        Caso d'uso  & UC\_CreaAlbum                                                             \\\hline
+        Obbiettivo  & Verificare la playlist venga convertita in album correttamente               \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{playlist\_p\_v} e \emph{playlist\_p\_nv}
+        sono playlist scelte                                                                            \\\hline
+        Tipologia   & White box                                                                          \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_v} (dove tutti i prodotti sono musicali, appartengono
+            all'utente stesso e non esiste alcun album che contiene neanche uno di questi) in Album;
+            \item verificare che il sistema ritorni il messaggio di successo;
+            \item verificare che nel database \emph{playlist\_p\_v} sia un Album;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto non appartiene all'utente stesso) in Album;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto non posseduto;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia un Album;
+        \end{enumerate}
+        \vspace{0.5cm} TEST3:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto non è musicale) in Album;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto non musicale;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia un Album;
+        \end{enumerate}
+        \vspace{0.5cm} TEST4:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la conversione di \emph{playlist\_p\_nv} (dove un prodotto appartiene ad un altro album) in Album;
+            \item verificare che il sistema ritorni il messaggio di errore per prodotto appartenente ad altro album;
+            \item verificare che nel database \emph{playlist\_p\_nv} non sia un Album;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 \begin{table}[hb]
     \centering
@@ -3501,7 +3579,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Obbiettivo  & Verificare che il prodotto venga aggiunto alla coda di riproduzione con successo \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
         e contenuto\_p\_nv sono i contenuti forniti           \\\hline
-        Tipologia   & Black box                                                             \\\hline
+        Tipologia   & White box                                                             \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -3529,7 +3607,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Obbiettivo  & Verificare che il prodotto venga rimosso dalla coda di riproduzione con successo \\\hline
         Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
         e contenuto\_p\_nv sono i contenuti forniti           \\\hline
-        Tipologia   & Black box                                                             \\\hline
+        Tipologia   & White box                                                             \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
