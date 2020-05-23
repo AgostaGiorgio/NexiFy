@@ -36,6 +36,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Stringa password\_np\_v
     \item Commento commento\_np\_v
     \item Commento commento\_np\_nv
+    \item String descrizione\_np\_v
+    \item String descrizione\_np\_nv
 
 \end{itemize}
 
@@ -51,6 +53,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Stringa password\_p\_nv
     \item Commento commento\_p\_v
     \item Prodotto contenuto\_p\_v
+    \item String genere\_p\_v
+    \item String genere\_p\_nv
 
 \end{itemize}
 
@@ -776,15 +780,18 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{DESC, GEN};
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_v} e \emph{genere\_p\_v};
             \item verificare che il sistema validi la richiesta e che le nuove informazioni vengano memorizzate;
             \item verificare che il sistema presenti un questionario a domande chiuse per la valutazione dell'età minima per visionarlo/riprodurlo;
             \item fornire le risposte al questionario;
             \item verificare che il sistema calcoli e aggiorni l'età minima per visionare/riprodurre il prodotto;
-            \item verificare che il sistema mostri la pagina riepilogativa con le 
+            \item verificare che il sistema mostri la pagina riepilogativa con le modifiche apportate;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
-        
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_nv} e \emph{genere\_p\_nv};
+            \item verificare che il sistema mostri a schermo un errore di validazione delle informazioni fornite;
+        \end{enumerate}
         \\\hline
     \end{tabular}
 \end{table}
