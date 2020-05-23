@@ -62,6 +62,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Coda di riproduzione coda\_p\_v
     \item Coda di riproduzione coda\_p\_nv
     \item Prodotto contenuto\_p\_v
+    \item Prodotto contenuto\_p\_nv
     \item String genere\_p\_v
     \item String genere\_p\_nv
     \item String visibilita\_p\_v
@@ -3652,11 +3653,80 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
 
 
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_55                                                                 \\\hline
+        Caso d'uso  & UC\_AggiungiProdottoAllaCoda                                                    \\\hline
+        Obbiettivo  & Verificare che il prodotto venga aggiunto alla coda di riproduzione con successo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
+        e contenuto\_p\_nv sono i contenuti forniti           \\\hline
+        Tipologia   & Black box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere al sistema l'aggiunta di \emph{contenuto\_p\_v} alla coda\_p\_v;
+            \item verificare che il messaggio ricevuto dal sistema sia di successo;
+            \item verificare che nel database \emph{contenuto\_p\_v} sia in coda\_p\_v;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere al sistema l'aggiunta di \emph{contenuto\_p\_nv} alla coda\_p\_v;
+            \item verificare che il messaggio ricevuto dal sistema contenga l'errore per
+            prodotto fornito non valido;
+            \item verificare che nel database \emph{contenuto\_p\_nv} non sia in coda\_p\_v;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_56                                                                 \\\hline
+        Caso d'uso  & UC\_RimuoviProdottoDallaCoda                                                    \\\hline
+        Obbiettivo  & Verificare che il prodotto venga rimosso dalla coda di riproduzione con successo \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
+        e contenuto\_p\_nv sono i contenuti forniti           \\\hline
+        Tipologia   & Black box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere al sistema la rimozione di \emph{contenuto\_p\_v} da coda\_p\_v;
+            \item verificare che il messaggio ricevuto dal sistema sia di successo;
+            \item verificare che nel database \emph{contenuto\_p\_v} non sia in coda\_p\_v;
+        \end{enumerate}
+        \vspace{0.5cm} TEST2:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere al sistema la rimozione di \emph{contenuto\_p\_nv} da coda\_p\_v;
+            \item verificare che il messaggio ricevuto dal sistema contenga l'errore per
+            contenuto non presente in coda;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
-
-
-
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_57                                                                 \\\hline
+        Caso d'uso  & UC\_MostraStatoCoda                                                    \\\hline
+        Obbiettivo  & Verificare che vengano visualizzati tutti e soli gli elementi nella coda \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente            \\\hline
+        Tipologia   & Black box                                                             \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la lista \emph{L} dei prodotti in coda\_p\_v;
+            \item verificare che gli elementi in \emph{L} siano tutti e soli i prodotti che sono nella
+            coda di riproduzione;
+        \end{enumerate}
+        \\\hline
+    \end{tabular}
+\end{table}
 
 \begin{table}[hb]
     \centering
