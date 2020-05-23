@@ -40,7 +40,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item PianoDiAbbonamento piano\_abb
     \item PianoDiAbbonamento piano\_abb\_full
     \item PianoDiAbbonamento piano\_abb\_empty
-    \item Utente utente
+    \item AccountUtente utente
 
 \end{itemize}
 
@@ -133,11 +133,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_1                                                                   \\\hline
-        Caso d'uso  & UC\_GestisciAbbonamenti                                                \\\hline
-        Obbiettivo  & Testare l'interfaccia per la gestione dei piani di abbonamento         \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore \\\hline
-        Tipologia   & White box                                                              \\\hline
+        ID          & T\_1                                                               \\\hline
+        Caso d'uso  & UC\_GestisciAbbonamenti                                            \\\hline
+        Obbiettivo  & Testare l'interfaccia per la gestione dei piani di abbonamento     \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
+        Tipologia   & White box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -162,11 +162,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_2                                                                                                                                \\\hline
-        Caso d'uso  & UC\_CreaAbbonamento                                                                                                                 \\\hline
-        Obbiettivo  & Testare la creazione di un nuovo piano di abbonamento                                                                               \\\hline
-        Prerequsiti & Il sistema permette di inserire nuovi piani di abbonamento e la persona è autenticata nel sistema ed ha privilegi di Amministratore \\\hline
-        Tipologia   & White box                                                                                                                           \\\hline
+        ID          & T\_2                                                                                                                            \\\hline
+        Caso d'uso  & UC\_CreaAbbonamento                                                                                                             \\\hline
+        Obbiettivo  & Testare la creazione di un nuovo piano di abbonamento                                                                           \\\hline
+        Prerequsiti & Il sistema permette di inserire nuovi piani di abbonamento e l'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
+        Tipologia   & White box                                                                                                                       \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -191,11 +191,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_3                                                                               \\\hline
-        Caso d'uso  & UC\_RecuperaAbbonamentiEsistenti                                                   \\\hline
-        Obbiettivo  & Testare che tutti i piani di abbonamenti esistenti sono recuperati                 \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore o di Utente \\\hline
-        Tipologia   & Black box                                                                          \\\hline
+        ID          & T\_3                                                                           \\\hline
+        Caso d'uso  & UC\_RecuperaAbbonamentiEsistenti                                               \\\hline
+        Obbiettivo  & Testare che tutti i piani di abbonamenti esistenti sono recuperati             \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore o di Utente \\\hline
+        Tipologia   & Black box                                                                      \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -210,11 +210,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_4                                                                   \\\hline
-        Caso d'uso  & UC\_RecuperaServizi                                                    \\\hline
-        Obbiettivo  & Testare che tutti i servizi esistenti sono recuperati                  \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore \\\hline
-        Tipologia   & Black box                                                              \\\hline
+        ID          & T\_4                                                               \\\hline
+        Caso d'uso  & UC\_RecuperaServizi                                                \\\hline
+        Obbiettivo  & Testare che tutti i servizi esistenti sono recuperati              \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
+        Tipologia   & Black box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -229,11 +229,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_5                                                                   \\\hline
-        Caso d'uso  & UC\_DisattivaAbbonamento                                               \\\hline
-        Obbiettivo  & Testare che un abbonamento non sia più sottoscrivibile                 \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore \\\hline
-        Tipologia   & Black box                                                              \\\hline
+        ID          & T\_5                                                               \\\hline
+        Caso d'uso  & UC\_DisattivaAbbonamento                                           \\\hline
+        Obbiettivo  & Testare che un abbonamento non sia più sottoscrivibile             \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
+        Tipologia   & Black box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -251,7 +251,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_6                                                                               \\\hline
         Caso d'uso  & UC\_AggiungiServizioAbbonamento                                                    \\\hline
         Obbiettivo  & Testare l'aggiunta del servizio di abbonamento al piano di abbonamento specificato \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore             \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore                 \\\hline
         Tipologia   & White box                                                                          \\\hline
         Azioni      &
         TEST1:
@@ -277,7 +277,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_7                                                                                  \\\hline
         Caso d'uso  & UC\_RimuoviServizioAbbonamento                                                        \\\hline
         Obbiettivo  & Testare la rimozione del servizio di abbonamento dal piano di abbonamento specificato \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore                                                                                     \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore                    \\\hline
         Tipologia   & White box                                                                             \\\hline
         Azioni      &
         TEST1:
@@ -303,7 +303,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_8                                                                                       \\\hline
         Caso d'uso  & UC\_RecuperaServiziAbbonamento                                                             \\\hline
         Obbiettivo  & Testare il recupero di tutti i servizi di abbonamento associati ad un piano di abbonamento \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore o di Utente                                                                                          \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore o di Utente             \\\hline
         Tipologia   & Black box                                                                                  \\\hline
         Azioni      &
         TEST1:
@@ -324,12 +324,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_9                                                                           \\\hline
-        Caso d'uso  & UC\_RecuperaPianiAbbonamentoUtente                                             \\\hline
+        ID          & T\_9                                                                                                   \\\hline
+        Caso d'uso  & UC\_RecuperaPianiAbbonamentoUtente                                                                     \\\hline
         Obbiettivo  & Testare che la lista degli abbonamenti restituita sia quella degli abbonamenti
-        sottoscritti dall'utente                                                                     \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore e \emph{utente} è un utente attivo                                               \\\hline
-        Tipologia   & Black box                                                                      \\\hline
+        sottoscritti dall'utente                                                                                             \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account attivo \\\hline
+        Tipologia   & Black box                                                                                              \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -344,11 +344,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_10                                                             \\\hline
-        Caso d'uso  & UC\_EffettuaPagamentoPartner                                      \\\hline
-        Obbiettivo  & Verificare che il pagamento verso i partner avvenga correttamente \\\hline
-        Prerequsiti & Il processo ha privilegi di Amministratore                                                                 \\\hline
-        Tipologia   & White box                                                         \\\hline
+        ID          & T\_10                                                              \\\hline
+        Caso d'uso  & UC\_EffettuaPagamentoPartner                                       \\\hline
+        Obbiettivo  & Verificare che il pagamento verso i partner avvenga correttamente  \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore \\\hline
+        Tipologia   & White box                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -380,11 +380,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_11                                                                             \\\hline
-        Caso d'uso  & UC\_CalcolaImportoDaPagare                                                        \\\hline
-        Obbiettivo  & Testare il corretto funzionamento del calcolo dell'importo da pagare ad un utente \\\hline
-        Prerequsiti & \emph{utente} è un utente attivo                                                  \\\hline
-        Tipologia   & White box                                                                         \\\hline
+        ID          & T\_11                                                                                                  \\\hline
+        Caso d'uso  & UC\_CalcolaImportoDaPagare                                                                             \\\hline
+        Obbiettivo  & Testare il corretto funzionamento del calcolo dell'importo da pagare ad un utente                      \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account attivo \\\hline
+        Tipologia   & White box                                                                                              \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -404,7 +404,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_12                                                                               \\\hline
         Caso d'uso  & UC\_GestisciSottoscrizioniAbbonamenti                                               \\\hline
         Obbiettivo  & Testare l'interfaccia per la gestione delle sottoscrizioni dei piani di abbonamento \\\hline
-        Prerequsiti & -                                                                                   \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente                          \\\hline
         Tipologia   & White box                                                                           \\\hline
         Azioni      &
         TEST1:
@@ -428,7 +428,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_13                                                             \\\hline
         Caso d'uso  & UC\_SottoscriviAbbonamento                                        \\\hline
         Obbiettivo  & Testare la sottoscrizione di un abbonamento da parte di un utente \\\hline
-        Prerequsiti & -                                                                 \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente        \\\hline
         Tipologia   & White box                                                         \\\hline
         Azioni      &
         TEST1:
@@ -445,11 +445,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_14                                                                                              \\\hline
-        Caso d'uso  & UC\_DisdiciAbbonamento                                                                             \\\hline
-        Obbiettivo  & Testare la disdetta di un piano di abbonamento e la relativa disattivazione del rinnovo automatico \\\hline
-        Prerequsiti & \emph{piano\_abb} è un piano di abbonamento attivo dell'utente corrente                            \\\hline
-        Tipologia   & White box                                                                                          \\\hline
+        ID          & T\_14                                                                                                                                \\\hline
+        Caso d'uso  & UC\_DisdiciAbbonamento                                                                                                               \\\hline
+        Obbiettivo  & Testare la disdetta di un piano di abbonamento e la relativa disattivazione del rinnovo automatico                                   \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{piano\_abb} è un piano di abbonamento attivo dell'utente corrente \\\hline
+        Tipologia   & White box                                                                                                                            \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -465,11 +465,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_15                                                                                       \\\hline
-        Caso d'uso  & UC\_CambiaAbbonamento                                                                       \\\hline
-        Obbiettivo  & Testare il corretto funzionamento del cambio di piano di abbonamento associato ad un utente \\\hline
-        Prerequsiti & \emph{piano\_abb} è un piano di abbonamento attivo dell'utente corrente                     \\\hline
-        Tipologia   & White box                                                                                   \\\hline
+        ID          & T\_15                                                                                                                                \\\hline
+        Caso d'uso  & UC\_CambiaAbbonamento                                                                                                                \\\hline
+        Obbiettivo  & Testare il corretto funzionamento del cambio di piano di abbonamento associato ad un utente                                          \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{piano\_abb} è un piano di abbonamento attivo dell'utente corrente \\\hline
+        Tipologia   & White box                                                                                                                            \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -501,11 +501,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_16                                                                                                              \\\hline
-        Caso d'uso  & UC\_GestisciScadenzeAbbonamenti                                                                                    \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                            \\\hline
-        Prerequsiti & Il processo ha privilegi di Amministratore \\\hline
-        Tipologia   & White box                                                                                                          \\\hline
+        ID          & T\_16                                                                                   \\\hline
+        Caso d'uso  & UC\_GestisciScadenzeAbbonamenti                                                         \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore                      \\\hline
+        Tipologia   & White box                                                                               \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -526,11 +526,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
     \centering
     \begin{tabular}{ |p{2cm}|p{10cm}|  }
         \hline
-        ID          & T\_17                                                                                                    \\\hline
-        Caso d'uso  & UC\_SospendiAccount                                                                                      \\\hline
-        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                  \\\hline
-        Prerequsiti & La persona è autenticata nel sistema ed ha privilegi di Amministratore, \emph{utente} è un utente attivo \\\hline
-        Tipologia   & White box                                                                                                \\\hline
+        ID          & T\_17                                                                                                   \\\hline
+        Caso d'uso  & UC\_SospendiAccount                                                                                     \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della gestione di un piano di abbonamento in scadenza                 \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e  \emph{utente} è un account attivo \\\hline
+        Tipologia   & White box                                                                                               \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
@@ -538,6 +538,25 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
             \item verificare che il sistema sospenda \emph{utente} per la durata richiesta;
         \end{enumerate}
 
+        \\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[hb]
+    \centering
+    \begin{tabular}{ |p{2cm}|p{10cm}|  }
+        \hline
+        ID          & T\_18                                                                                                     \\\hline
+        Caso d'uso  & UC\_RiattivaAccount                                                                                       \\\hline
+        Obbiettivo  & Testare il corretto funzionamento della funzionalità riattiva abbonamento                                 \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Amministratore e \emph{utente} è un account disattivo \\\hline
+        Tipologia   & White box                                                                                                 \\\hline
+        Azioni      &
+        TEST1:
+        \begin{enumerate}[nosep, topsep=0pt]
+            \item richiedere la riattivazione dell'account \emph{utente};
+            \item verificare che il sistema riattivi l'account richiesto;
+        \end{enumerate}
         \\\hline
     \end{tabular}
 \end{table}
