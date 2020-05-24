@@ -60,7 +60,7 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Segnalazione segnalazione\_np\_v
     \item String titolo\_np\_v;
     \item String titolo\_np\_nv;
-    \item Prodotto contenuto\_np\_v
+    \item Prodotto prodotto\_np\_v
 
 \end{itemize}
 
@@ -77,8 +77,8 @@ L’ambiente viene re-inizializzato per ogni test, in quanto eseguito su un cont
     \item Commento commento\_p\_v
     \item Coda di riproduzione coda\_p\_v
     \item Coda di riproduzione coda\_p\_nv
-    \item Prodotto contenuto\_p\_v
-    \item Prodotto contenuto\_p\_nv
+    \item Prodotto prodotto\_p\_v
+    \item Prodotto prodotto\_p\_nv
     \item String genere\_p\_v
     \item String genere\_p\_nv
     \item String visibilita\_p\_v
@@ -823,16 +823,16 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_v} e \emph{genere\_p\_v};
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{prodotto\_p\_v}, fornendo \emph{descrizione\_np\_v} e \emph{genere\_p\_v};
             \item verificare che il sistema validi la richiesta e che le nuove informazioni vengano memorizzate;
             \item verificare che il sistema presenti un questionario a domande chiuse per la valutazione dell'età minima per visionarlo/riprodurlo;
             \item fornire le risposte al questionario;
-            \item verificare che il sistema calcoli e aggiorni l'età minima per visionare/riprodurre il prodotto;
             \item verificare che il sistema mostri la pagina riepilogativa con le modifiche apportate;
+            \item verificare che nel database sia associata al prodotto l'età minima per visionarlo/riprodurlo;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di modificare le informazioni di base di un prodotto \emph{contenuto\_p\_v}, fornendo \emph{descrizione\_np\_nv} e \emph{genere\_p\_nv};
+            \item richiedere di modificare le informazioni di base di un prodotto \emph{prodotto\_p\_v}, fornendo \emph{descrizione\_np\_nv} e \emph{genere\_p\_nv};
             \item verificare che il sistema mostri a schermo un errore di validazione delle informazioni fornite;
         \end{enumerate}
         \\\hline
@@ -853,7 +853,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere il caricamento di un file video, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_video\_np\_v}, \emph{subs\_np\_v}, \emph{audios\_np\_v};
             \item verificare che il sistema validi correttamente la richiesta;
-            \item verificare che il sistema elabori elabori tutte le informazioni fornite in un file MKV \emph{F};
+            \item verificare che il sistema elabori tutte le informazioni fornite in un file MKV \emph{F};
             \item verificare che nel database sia contenuto \emph{F};
             \item verificare che le CDN siano aggiornate rispetto a \emph{F};
             \item verificare che il sistema mostri una pagina di conferma del caricamento effettuato;
@@ -884,8 +884,8 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di modificare la visibilità di un prodotto, fornendo \emph{contenuto\_p\_v} e \emph{visibilita\_p\_v};
-            \item verificare che nel database lo stato del prodotto \emph{contenuto\_p\_v} sia impostato a \emph{visibilita\_p\_v};
+            \item richiedere di modificare la visibilità di un prodotto, fornendo \emph{prodotto\_p\_v} e \emph{visibilita\_p\_v};
+            \item verificare che nel database lo stato del prodotto \emph{prodotto\_p\_v} sia impostato a \emph{visibilita\_p\_v};
             \item verificare che il sistema ritorni un messaggio di modifica effettuata con successo oppure di errore generico;
         \end{enumerate}
         \\\hline
@@ -904,16 +904,16 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_nv} e \emph{contenuto\_p\_v};
+            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_nv} e \emph{prodotto\_p\_v};
             \item verificare che la connessione ad internet sia disponibile;
-            \item verificare che il sistema rifiuti la richiesta di riproduzione di \emph{contenuto\_p\_v}, di tipologia che non è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_nv};
+            \item verificare che il sistema rifiuti la richiesta di riproduzione di \emph{prodotto\_p\_v}, di tipologia che non è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_nv};
             \item verificare che il sistema mostri una pagina con l'errore "non si dispone del servizio necessario a riprodurre il contenuto";
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_v} e \emph{contenuto\_p\_v};
+            \item richiedere di iniziare la riproduzione di un prodotto, fornendo \emph{auth\_t\_p\_v} e \emph{prodotto\_p\_v};
             \item verificare che il sistema valuti nel flag \emph{INTERNET} se la connessione ad internet è presente;
-            \item verificare che il sistema validi la richiesta di riproduzione di \emph{contenuto\_p\_v}, di tipologia che è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_v};
+            \item verificare che il sistema validi la richiesta di riproduzione di \emph{prodotto\_p\_v}, di tipologia che è inclusa nel piano dell'utente associato a \emph{auth\_t\_p\_v};
             \item verificare che il sistema aggiunga la riproduzione generata al database e valuti nel flag \emph{ADS} se inserire spot pubblicitari durante la riproduzione;
             \item verificare che il sistema, dopo aver valutato nel flag \emph{DOWNLOADED} se il prodotto è stato o meno scaricato, agisca come segua:
                   \begin{itemize}
@@ -938,11 +938,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{contenuto\_p\_v};
+            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{prodotto\_p\_v};
             \item verificare che il sistema reperisca correttamente la \emph{URL} associata al contenuto video indicato, l'\emph{IP} dell'utente richiedente e la durata \emph{DUR};
             \item verificare che il sistema generi una policy di visualizzazione \emph{P} per l'utente richiedente, a partire da \emph{IP} e \emph{DUR};
             \item verificare che il sistema generi una \emph{SIGNED\_URL} a partire da \emph{URL} e \emph{P} che garantisca all'utente di visionare il video;
-            \item verificare che il sistema player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
+            \item verificare che il player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -960,11 +960,11 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{contenuto\_p\_v} e il tipo di riproduzione preferito \emph{audio\_type\_p\_v};
+            \item richiedere di visualizzare in streaming un prodotto video, fornendo \emph{prodotto\_p\_v} e il tipo di riproduzione preferito \emph{audio\_type\_p\_v};
             \item verificare che il sistema reperisca correttamente la \emph{URL} associata al contenuto video indicato e a \emph{audio\_type\_p\_v}, l'\emph{IP} dell'utente richiedente e la durata \emph{DUR};
             \item verificare che il sistema generi una policy di visualizzazione \emph{P} per l'utente richiedente, a partire da \emph{IP} e \emph{DUR};
             \item verificare che il sistema generi una \emph{SIGNED\_URL} a partire da \emph{URL} e \emph{P} che garantisca all'utente di visionare il video;
-            \item verificare che il sistema player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
+            \item verificare che il player inizi la riproduzione del contenuto richiesto utilizzando \emph{SIGNED\_URL};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -977,12 +977,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_33                                                                                                                                   \\\hline
         Caso d'uso  & UC\_PausaPlayer                                                                                                                         \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità di pausa della riproduzione                                                        \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{contenuto\_p\_v} attualmente in riproduzione sul player multimediale \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{prodotto\_p\_v} attualmente in riproduzione sul player multimediale \\\hline
         Tipologia   & White box                                                                                                                               \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la messa in pausa della riproduzione di \emph{contenuto\_p\_v};
+            \item richiedere la messa in pausa della riproduzione di \emph{prodotto\_p\_v};
             \item verificare che il sistema blocchi la riproduzione del contenuto sul player multimediale, mostrando il pulsante di play al posto di quello di pausa;
             \item verificare che la CDN continui ad inviare pacchetti sino alla saturazione del buffer di riproduzione;
         \end{enumerate}
@@ -997,12 +997,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_34                                                                                                                               \\\hline
         Caso d'uso  & UC\_SpostaPuntoRiproduzionePlayer                                                                                                   \\\hline
         Obbiettivo  & Testare il corretto funzionamento della funzionalità di spostamento del punto di riproduzione del player                            \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{contenuto\_p\_v} attualmente in caricato nel player multimediale \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente e \emph{prodotto\_p\_v} attualmente in caricato nel player multimediale \\\hline
         Tipologia   & White box                                                                                                                           \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere lo spostamento del punto di riproduzione di \emph{contenuto\_p\_v} nel player multimediale;
+            \item richiedere lo spostamento del punto di riproduzione di \emph{prodotto\_p\_v} nel player multimediale;
             \item verificare che il sistema comunichi alla CDN il nuovo punto di riproduzione affinchè quest'ultimo possa inviare i pacchetti desiderati;
             \item verificare che il player multimediale riprenda l'esecuzione non appena riceve un numero sufficiente di pacchetti, oppure che attenda la ricezione di ulteriori pacchetti;
         \end{enumerate}
@@ -1022,7 +1022,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il dowload di un prodotto multimediale \emph{contenuto\_p\_v}, fornendo \emph{auth\_t\_p\_v};
+            \item richiedere il dowload di un prodotto multimediale \emph{prodotto\_p\_v}, fornendo \emph{auth\_t\_p\_v};
             \item verificare che il sistema validi correttamente la richiesta di download del prodotto indicato;
             \item verificare che il sistema contatti un nodo per la ricezione del file richiesto;
             \item verificare che il sistema salvi sul dispositivo il prodotto scaricato, se questo può essere scaricato;
@@ -1030,7 +1030,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il dowload di un prodotto multimediale \emph{contenuto\_p\_nv}, fornendo \emph{auth\_t\_p\_v};
+            \item richiedere il dowload di un prodotto multimediale \emph{prodotto\_p\_nv}, fornendo \emph{auth\_t\_p\_v};
             \item verificare che il sistema rifiuti la richiesta di download del prodotto indicato;
             \item verificare che il sistema mostri un errore di "prodotto non disponibile per il download";
         \end{enumerate}
@@ -1067,12 +1067,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_37                                                                                                                                                                  \\\hline
         Caso d'uso  & UC\_RiproduciAudioInBackground                                                                                                                                         \\\hline
         Obbiettivo  & Testare il corretto funzionamento della riproduzione di audio in background                                                                                            \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, è in corso la riproduzione del prodotto audio \emph{contenuto\_p\_v} e il client viene messo in background \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, è in corso la riproduzione del prodotto audio \emph{prodotto\_p\_v} e il client viene messo in background \\\hline
         Tipologia   & White box                                                                                                                                                              \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item verificare che il sistema sposti la riproduzione del contenuto multimediale \emph{contenuto\_p\_v} in modalità riproduzione in background sse l'utente richiedente ha associato il servizio di riproduzione di audio in background, altrimenti nel blocca la riproduzione;
+            \item verificare che il sistema sposti la riproduzione del contenuto multimediale \emph{prodotto\_p\_v} in modalità riproduzione in background sse l'utente richiedente ha associato il servizio di riproduzione di audio in background, altrimenti nel blocca la riproduzione;
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1090,9 +1090,9 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere l'apertura di una segnalazione \emph{segnalazione\_np\_v} relativa ad un prodotto \emph{contenuto\_p\_v};
+            \item richiedere l'apertura di una segnalazione \emph{segnalazione\_np\_v} relativa ad un prodotto \emph{prodotto\_p\_v};
             \item verificare che nel database sia presente \emph{segnalazione\_np\_v};
-            \item verificare che il sistema mostri un messaggio di errore durante l'inserimento della segnalazione oppure di segnalazione inserita;
+            \item verificare che il sistema mostri un messaggio di segnalazione inserita;
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1130,7 +1130,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la visualizzazione delle segnalazioni presenti nel database relative ad un prodotto \emph{contenuto\_p\_v};
+            \item richiedere la visualizzazione delle segnalazioni presenti nel database relative ad un prodotto \emph{prodotto\_p\_v};
             \item verificare che il sistema mostri tutte le segnalazioni relative al prodotto indicato;
         \end{enumerate}
         \\\hline
@@ -1152,7 +1152,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere la chiusura di una segnalazione \emph{segnalazione\_p\_v}, fornendo una descrizione \emph{descrizione\_np\_v};
             \item verificare che il database registri l'avvenuta chiusura della segnalazione \emph{segnalazione\_p\_v};
-            \item verificare che il sistema mostri un messaggio di avvenuta chiusura della segnalazione oppure di errore generico;
+            \item verificare che il sistema mostri un messaggio di avvenuta chiusura della segnalazione;
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1172,7 +1172,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere la riapertura di una segnalazione \emph{segnalazione\_p\_v};
             \item verificare che il database registri l'avvenuta riapertura della segnalazione \emph{segnalazione\_p\_v};
-            \item verificare che il sistema mostri un messaggio di avvenuta riapertura della segnalazione oppure di errore generico;
+            \item verificare che il sistema mostri un messaggio di avvenuta riapertura della segnalazione;
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1312,12 +1312,12 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
             \item richiedere creazione di una playlist vuota, fornendo come titolo \emph{titolo\_np\_v};
             \item verificare che il sistema crei una playlist vuota \emph{P};
             \item verificare che il database contenga \emph{P};
-            \item verificare che il sistema mostri un messaggio riepilogativo della creazione della playlist oppure un errore generico;
+            \item verificare che il sistema mostri un messaggio riepilogativo della creazione della playlist;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere creazione di una playlist vuota, fornendo come titolo \emph{titolo\_p\_v};
-            \item verificare che il sistema non crei una playlist vuota \emph{P};
+            \item verificare che nel database non esista la playlist vuota \emph{P};
             \item verificare che il sistema mostri un messaggio di errore per mostrare che la playlist con il nome fornito esiste già;
         \end{enumerate}
         \\\hline
@@ -1338,17 +1338,18 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere l'aggiunta di prodotto a playlist;
             \item verificare che il sistema ritorni la lista \emph{L} delle playlist associate all'utente corrente;
-            \item fornire una playlist \emph{P} scelta in \emph{L} ed un prodotto \emph{contenuto\_np\_v};
+            \item fornire una playlist \emph{P} scelta in \emph{L} ed un prodotto \emph{prodotto\_np\_v};
             \item verificare che il sistema validi la richiesta di inserimento del prodotto nella playlist indicata;
-            \item verificare che il database contenga \emph{contenuto\_np\_v} tra i prodotti della plyalist \emph{P};
-            \item verificare che il sistema mostri un messaggio di avvenuto inserimento del prodotto nella playlist oppure di errore esplicativo;
+            \item verificare che il database contenga \emph{prodotto\_np\_v} tra i prodotti della playlist \emph{P};
+            \item verificare che il sistema mostri un messaggio di avvenuto inserimento del prodotto nella playlist;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere l'aggiunta di prodotto a playlist;
             \item verificare che il sistema ritorni la lista \emph{L} delle playlist associate all'utente corrente;
-            \item fornire una playlist \emph{P} scelta in \emph{L} ed un prodotto \emph{contenuto\_np\_nv};
+            \item fornire una playlist \emph{P} scelta in \emph{L} ed un prodotto \emph{prodotto\_np\_nv};
             \item verificare che il sistema non validi la richiesta di inserimento del prodotto nella playlist indicata;
+            \item verificare che il database non contenga \emph{prodotto\_np\_v} tra i prodotti della playlist \emph{P};
             \item verificare che il sistema mostri un messaggio di errore di prodotto non adatto alla playlist;
         \end{enumerate}
         \\\hline
@@ -1512,22 +1513,22 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_55                                                                 \\\hline
         Caso d'uso  & UC\_AggiungiProdottoAllaCoda                                                    \\\hline
         Obbiettivo  & Verificare che il prodotto venga aggiunto alla coda di riproduzione con successo \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
-        e contenuto\_p\_nv sono i contenuti forniti           \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, prodotto\_p\_v
+        e prodotto\_p\_nv sono i prodotti forniti           \\\hline
         Tipologia   & White box                                                             \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere al sistema l'aggiunta di \emph{contenuto\_p\_v} alla coda\_p\_v;
+            \item richiedere al sistema l'aggiunta di \emph{prodotto\_p\_v} alla \emph{coda\_p\_v};
             \item verificare che il messaggio ricevuto dal sistema sia di successo;
-            \item verificare che nel database \emph{contenuto\_p\_v} sia in coda\_p\_v;
+            \item verificare che nel database \emph{prodotto\_p\_v} sia in \emph{coda\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere al sistema l'aggiunta di \emph{contenuto\_p\_nv} alla coda\_p\_v;
+            \item richiedere al sistema l'aggiunta di \emph{prodotto\_p\_nv} alla \emph{coda\_p\_v};
             \item verificare che il messaggio ricevuto dal sistema contenga l'errore per
             prodotto fornito non valido;
-            \item verificare che nel database \emph{contenuto\_p\_nv} non sia in coda\_p\_v;
+            \item verificare che nel database \emph{prodotto\_p\_nv} non sia in \emph{coda\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1540,19 +1541,19 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_56                                                                 \\\hline
         Caso d'uso  & UC\_RimuoviProdottoDallaCoda                                                    \\\hline
         Obbiettivo  & Verificare che il prodotto venga rimosso dalla coda di riproduzione con successo \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, contenuto\_p\_v
-        e contenuto\_p\_nv sono i contenuti forniti           \\\hline
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, prodotto\_p\_v
+        e prodotto\_p\_nv sono i contenuti forniti           \\\hline
         Tipologia   & White box                                                             \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere al sistema la rimozione di \emph{contenuto\_p\_v} da coda\_p\_v;
+            \item richiedere al sistema la rimozione di \emph{prodotto\_p\_v} da \emph{coda\_p\_v};
             \item verificare che il messaggio ricevuto dal sistema sia di successo;
-            \item verificare che nel database \emph{contenuto\_p\_v} non sia in coda\_p\_v;
+            \item verificare che nel database \emph{prodotto\_p\_v} non sia in \emph{coda\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere al sistema la rimozione di \emph{contenuto\_p\_nv} da coda\_p\_v;
+            \item richiedere al sistema la rimozione di \emph{prodotto\_p\_nv} da \emph{coda\_p\_v};
             \item verificare che il messaggio ricevuto dal sistema contenga l'errore per
             contenuto non presente in coda;
         \end{enumerate}
@@ -1572,7 +1573,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la lista \emph{L} dei prodotti in coda\_p\_v;
+            \item richiedere la lista \emph{L} dei prodotti in \emph{coda\_p\_v};
             \item verificare che gli elementi in \emph{L} siano tutti e soli i prodotti che sono nella
             coda di riproduzione;
         \end{enumerate}
@@ -1592,14 +1593,14 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la riproduzione della coda coda\_p\_v che contiene almeno un prodotto;
-            \item verificare che il player inizi a riprodurre il prossimo prodotto in coda\_p\_v;
+            \item richiedere la riproduzione della coda \emph{coda\_p\_v} che contiene almeno un prodotto;
+            \item verificare che il player inizi a riprodurre il prossimo prodotto in \emph{coda\_p\_v};
             \item verificare che, dopo la riproduzione del prodotto, il player inizi a riprodurre
-                  il prossimo prodotto, se esso esiste (e si ripete il punto 3), oppure termini\_p\_v;
+                  il prossimo prodotto, se esso esiste (e si ripete il punto 3), oppure termini;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere la riproduzione della coda coda\_p\_nv che non contiene prodotti;
+            \item richiedere la riproduzione della coda \emph{coda\_p\_nv} che non contiene prodotti;
             \item verificare che il sistema restituisca un messaggio di errore per coda vuota;
         \end{enumerate}
         \\\hline
@@ -1613,20 +1614,20 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_59                                                                              \\\hline
         Caso d'uso  & UC\_CalcolaQualitàContenuto                                                        \\\hline
         Obbiettivo  & Verificare che il voto del contenuto sia corretto, in base ai voti ricevuti        \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{prodotto\_p\_v}
         è un contenuto scelto                                                                            \\\hline
         Tipologia   & Black box                                                                          \\\hline
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il voto \emph{V} della qualità di \emph{contenuto\_p\_v};
-            \item se \emph{contenuto\_p\_v} è un prodotto Video o Musicale,
-                  verificare che il sistema restituisca \emph{V} = \emph{contenuto\_p\_v.sommavoti} / \emph{contenuto\_p\_v.voti\_totali}
-            \item se \emph{contenuto\_p\_v} è una Playlist,
+            \item richiedere il voto \emph{V} della qualità di \emph{prodotto\_p\_v};
+            \item se \emph{prodotto\_p\_v} è un prodotto Video o Musicale,
+                  verificare che il sistema restituisca \emph{V} = \emph{prodotto\_p\_v.sommavoti} / \emph{prodotto\_p\_v.voti\_totali}
+            \item se \emph{prodotto\_p\_v} è una Playlist,
                   verificare che il sistema restituisca \emph{V} =
-                  $\sum_{p\ in\ all\ Prodotto\ in\ \emph{contenuto\_p\_v}} \emph{p.sommavoti}$
+                  $\sum_{p\ in\ all\ Prodotto\ in\ \emph{prodotto\_p\_v}} \emph{p.sommavoti}$
                   /
-                  $\sum_{p in all Prodotto in \emph{contenuto\_p\_v}} \emph{p.voti\_totali}$
+                  $\sum_{p\ in\ all\ Prodotto\ in\ \emph{prodotto\_p\_v}} \emph{p.voti\_totali}$
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1639,7 +1640,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_60                                                                              \\\hline
         Caso d'uso  & UC\_VotaContenuto                                                                  \\\hline
         Obbiettivo  & Verificare che il feedback venga aggiunto al contenuto correttamente               \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{prodotto\_p\_v}
         è un contenuto scelto                                                                            \\\hline
         Tipologia   & White box                                                                          \\\hline
         Azioni      &
@@ -1647,16 +1648,16 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire un numero \emph{NUM} \textgreater 0 e \textless 6 al sistema
             \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione
-                  di un feedback con voto \emph{NUM} per \emph{contenuto\_p\_v};
+                  di un feedback con voto \emph{NUM} per \emph{prodotto\_p\_v};
             \item verificare che nel database esista un feedback con voto \emph{NUM} associato a
-                  \emph{contenuto\_p\_v};
+                  \emph{prodotto\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire un numero \emph{NUM} \textless 1 o \textgreater 5 al sistema
             \item verificare che il sistema ritorni il messaggio di errore per input invalido;
             \item verificare che nel database non esista un feedback con voto \emph{NUM} associato a
-                  \emph{contenuto\_p\_v};
+                  \emph{prodotto\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1669,7 +1670,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         ID          & T\_61                                                                              \\\hline
         Caso d'uso  & UC\_CommentaContenuto                                                              \\\hline
         Obbiettivo  & Verificare che il commento venga aggiunto al contenuto correttamente               \\\hline
-        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{contenuto\_p\_v}
+        Prerequsiti & L'esecuzione del test è effettuata con privilegi di Utente, \emph{prodotto\_p\_v}
         è un contenuto scelto                                                                            \\\hline
         Tipologia   & White box                                                                          \\\hline
         Azioni      &
@@ -1677,16 +1678,16 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire \emph{commento\_np\_v} al sistema
             \item verificare che il sistema ritorni il messaggio di avvenuta pubblicazione
-                  di \emph{commento\_np\_v} per \emph{contenuto\_p\_v};
+                  di \emph{commento\_np\_v} per \emph{prodotto\_p\_v};
             \item verificare che nel database esista \emph{commento\_np\_v} associato a
-                  \emph{contenuto\_p\_v};
+                  \emph{prodotto\_p\_v};
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
             \item fornire \emph{commento\_np\_nv} al sistema
             \item verificare che il sistema ritorni il messaggio di errore per input non valido;
             \item verificare che nel database non esista \emph{commento\_np\_nv} associato a
-                  \emph{contenuto\_p\_v};
+                  \emph{prodotto\_p\_v};
         \end{enumerate}
         \\\hline
     \end{tabular}
@@ -1727,6 +1728,7 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         \begin{enumerate}[nosep, topsep=0pt]
             \item richiedere l'attivazione di \emph{piano\_abb\_p\_v}
             \item verificare che il sistema ritorni il messaggio di avvenuta attivazione dell'abbonamento;
+            \item verificare che nel database \emph{piano\_abb\_p\_v} sia attivo;
         \end{enumerate}
         \\\hline
     \end{tabular}
