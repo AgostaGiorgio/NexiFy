@@ -851,21 +851,21 @@ loro corretta e periodica esecuzione sull'integrità del sistema.
         Azioni      &
         TEST1:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il caricamento di un file video, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_video\_np\_v}, \emph{subs\_np\_v}, \emph{audios\_np\_v};
+            \item richiedere il caricamento di un file video, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_video\_np\_v}, \emph{subs\_np\_v}, \emph{audios\_np\_v}, \emph{prodotto\_p\_v};
             \item verificare che il sistema validi correttamente la richiesta;
             \item verificare che il sistema elabori tutte le informazioni fornite in un file MKV \emph{F};
-            \item verificare che nel database sia contenuto \emph{F};
             \item verificare che le CDN siano aggiornate rispetto a \emph{F};
+            \item verificare che nel database in corrispondenza di \emph{prodotto\_p\_v} sia contenuta la url relativa a \emph{F};
             \item verificare che il sistema mostri una pagina di conferma del caricamento effettuato;
         \end{enumerate}
         \vspace{0.5cm} TEST2:
         \begin{enumerate}[nosep, topsep=0pt]
-            \item richiedere il caricamento di un file audio, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_audio\_np\_v}, \emph{lyrics\_np\_v}, \emph{video\_np\_v};
+            \item richiedere il caricamento di un file audio, fornendo: \emph{auth\_t\_p\_v}, \emph{file\_audio\_np\_v}, \emph{lyrics\_np\_v}, \emph{video\_np\_v}, \emph{prodotto\_p\_v};
             \item verificare che il sistema validi correttamente la richiesta;
-            \item verificare che il sistema elabori elabori tutte le informazioni fornite in una tripla di file MKV: \emph{F1}, \emph{F2} ed \emph{F3}.;
+            \item verificare che il sistema elabori elabori tutte le informazioni fornite in una tripla di file MKV: \emph{F1}, \emph{F2} ed \emph{F3};
             \item verificare che \emph{F1} contenga i lyrics e la traccia musicale, che \emph{F2} contenga la traccia video e quella musicale e che \emph{F3} contenga la traccia musicale;
-            \item verificare che nel database siano contenuti \emph{F1}, \emph{F2} ed \emph{F3};
             \item verificare che le CDN siano aggiornate rispetto a \emph{F1}, \emph{F2} ed \emph{F3};
+            \item verificare che nel database in corrispondenza di \emph{prodotto\_p\_v} siano contenute le url relative a \emph{F1}, \emph{F2} ed \emph{F3};
             \item verificare che il sistema mostri una pagina di conferma dei caricamenti effettuati;
         \end{enumerate}
         \\\hline
