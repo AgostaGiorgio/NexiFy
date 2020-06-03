@@ -73,6 +73,7 @@ Alcuni diagrammi di sequenza di analisi, in design si traducono in delle query, 
 \item RecuperaProdottiUtente
 \item RecuperaServizi
 \item RecuperaServiziAbbonamento
+\item OttieniSegnalazioni
 \end{itemize}
 mostriamo quindi qui, per completezza, l'implementazione di queste query:
 \begin{itemize}
@@ -81,6 +82,7 @@ mostriamo quindi qui, per completezza, l'implementazione di queste query:
 \item Prodotto.objects.filter(proprietario=Acc)
 \item Servizio.objects.all()
 \item PianoServizioRelationship.objects.filter(piano=P)
+\item Segnalazione.objects.all()
 \end{itemize}
 Sono state scritte solo le query vere e proprie, che vanno immaginate nel contesto del diagramma generico per le query. Per effettuare le proiezioni verranno restituiti da DAO solo i campi necessari.
 \newline\newline
