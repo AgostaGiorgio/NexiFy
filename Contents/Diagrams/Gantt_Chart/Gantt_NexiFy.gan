@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="NexiFy" company="" webLink="http://" view-date="2020-02-01" view-index="0" gantt-divider-location="659" resource-divider-location="300" version="2.8.10" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="NexiFy" company="" webLink="http://" view-date="2019-10-01" view-index="0" gantt-divider-location="728" resource-divider-location="300" version="2.8.11" locale="it_IT">
     <description/>
     <view zooming-state="default:8" id="gantt-chart">
-        <field id="tpd3" name="Name" width="488" order="0"/>
-        <field id="tpd4" name="Begin date" width="73" order="1"/>
-        <field id="tpd5" name="End date" width="76" order="2"/>
+        <field id="tpd3" name="Nome" width="517" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="120" order="1"/>
+        <field id="tpd5" name="Data di fine" width="87" order="2"/>
         <option id="color.recent">
             <![CDATA[#993300 #006600 #009999 #99ffff]]>
         </option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="208" order="0"/>
-        <field id="1" name="Default role" width="85" order="1"/>
+        <field id="0" name="Nome" width="209" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="87" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -36,47 +36,47 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
+        <task id="27" name="Formulazione documento glossario" color="#8cb6ce" meeting="false" start="2019-11-20" duration="8" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
         <task id="12" name="Proposta di contratto" color="#006600" meeting="false" start="2019-11-20" duration="21" complete="0" thirdDate="2019-11-20" thirdDate-constraint="0" expand="true">
             <task id="13" name="Analisi del problema" color="#8cb6ce" meeting="false" start="2019-11-20" duration="8" complete="0" thirdDate="2020-02-21" thirdDate-constraint="0" expand="true"/>
             <task id="17" name="Stesura visione del sistema" color="#8cb6ce" meeting="false" start="2019-11-20" duration="8" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
             <task id="22" name="Analisi fattibilità del progetto" color="#8cb6ce" meeting="false" start="2019-11-20" duration="8" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
             <task id="26" name="Stesura della proposta di contratto" color="#8cb6ce" meeting="false" start="2019-11-20" duration="21" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="27" name="Formulazione documento glossario" color="#8cb6ce" meeting="false" start="2019-11-20" duration="8" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
         <task id="30" name="Definizione piano di progetto" color="#8cb6ce" meeting="false" start="2019-12-16" duration="3" complete="0" thirdDate="2019-11-14" thirdDate-constraint="0" expand="true"/>
-        <task id="37" name="Definizione documento requisiti" color="#006600" meeting="false" start="2019-12-16" duration="86" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true">
-            <task id="42" name="Individuazione requisiti funzionali con priorità primaria" color="#8cb6ce" meeting="false" start="2019-12-16" duration="75" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
-            <task id="48" name="Individuazione requisiti non funzionali" color="#8cb6ce" meeting="false" start="2020-03-03" duration="22" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
-            <task id="51" name="Descrizione requisiti" color="#8cb6ce" meeting="false" start="2020-03-03" duration="30" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
+        <task id="37" name="Definizione documento requisiti" color="#006600" meeting="false" start="2019-12-16" duration="80" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true">
+            <task id="42" name="Individuazione requisiti funzionali con priorità primaria" color="#8cb6ce" meeting="false" start="2019-12-16" duration="65" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
+            <task id="48" name="Individuazione requisiti non funzionali" color="#8cb6ce" meeting="false" start="2020-02-03" duration="45" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
+            <task id="51" name="Descrizione requisiti" color="#8cb6ce" meeting="false" start="2020-02-03" duration="45" complete="0" thirdDate="2019-11-18" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="53" name="Definizione documento rischi" color="#006600" meeting="false" start="2020-03-03" duration="22" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true">
-            <task id="56" name="Individuazione rischi" color="#8cb6ce" meeting="false" start="2020-03-03" duration="22" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true"/>
-            <task id="58" name="Stesura piano di gestione per ciascun rischio" color="#8cb6ce" meeting="false" start="2020-03-03" duration="22" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true"/>
+        <task id="53" name="Definizione documento rischi" color="#006600" meeting="false" start="2020-02-03" duration="45" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true">
+            <task id="56" name="Individuazione rischi" color="#8cb6ce" meeting="false" start="2020-02-03" duration="45" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true"/>
+            <task id="58" name="Stesura piano di gestione per ciascun rischio" color="#8cb6ce" meeting="false" start="2020-02-03" duration="45" complete="0" thirdDate="2020-01-29" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="131" name="Requisiti e 70% dei rischi individuati, iterazioni programmate" color="#993300" meeting="true" start="2020-03-17" duration="0" complete="0" thirdDate="2020-02-17" thirdDate-constraint="0" expand="true"/>
+        <task id="137" name="Individuazione di 5 requisiti fondamentali per effettuare test dell'architettura" color="#8cb6ce" meeting="false" start="2020-03-17" duration="6" complete="0" thirdDate="2020-02-17" thirdDate-constraint="0" expand="true"/>
         <task id="61" name="Definizione di modello di analisi architetturale" color="#8cb6ce" meeting="false" start="2020-03-17" duration="12" complete="0" thirdDate="2020-01-27" thirdDate-constraint="0" expand="true"/>
         <task id="64" name="Definizione modello di casi d'uso per requisiti funzionali primari" color="#8cb6ce" meeting="false" start="2020-03-17" duration="12" complete="0" thirdDate="2020-01-27" thirdDate-constraint="0" expand="true"/>
-        <task id="137" name="Individuazione di 5 requisiti fondamentali per effettuare test dell'architettura" color="#ff6666" meeting="false" start="2020-03-17" duration="6" complete="0" thirdDate="2020-02-17" thirdDate-constraint="0" expand="true"/>
         <task id="67" name="Effettuazione stima dei costi" color="#8cb6ce" meeting="false" start="2020-03-26" duration="5" complete="0" thirdDate="2020-02-07" thirdDate-constraint="0" expand="true"/>
         <task id="103" name="Individuazione di test sull'architettura e sui requisiti fondamentali" color="#8cb6ce" meeting="false" start="2020-03-26" duration="21" complete="0" thirdDate="2019-11-11" thirdDate-constraint="0" expand="true"/>
-        <task id="138" name="Definizione di modello di analisi per i casi d’uso fondamentali individuati" color="#ff6666" meeting="false" start="2020-04-06" duration="7" complete="0" thirdDate="2020-03-05" thirdDate-constraint="0" expand="true"/>
+        <task id="138" name="Definizione di modello di analisi per i casi d’uso fondamentali individuati" color="#8cb6ce" meeting="false" start="2020-04-06" duration="7" complete="0" thirdDate="2020-03-05" thirdDate-constraint="0" expand="true"/>
         <task id="73" name="Definizione del modello di design dell'architettura" color="#8cb6ce" meeting="false" start="2020-04-06" duration="15" complete="0" thirdDate="2020-03-02" thirdDate-constraint="0" expand="true"/>
-        <task id="139" name="Definire il modello di design per i casi d’uso fondamentali individuati" color="#ff6666" meeting="false" start="2020-04-16" duration="8" complete="0" thirdDate="2020-03-16" thirdDate-constraint="0" expand="true"/>
-        <task id="108" name="Implementazione dell'architettura" color="#ff6666" meeting="false" start="2020-04-16" duration="8" complete="0" thirdDate="2020-03-16" thirdDate-constraint="0" expand="true"/>
+        <task id="139" name="Definire il modello di design per i casi d’uso fondamentali individuati" color="#8cb6ce" meeting="false" start="2020-04-16" duration="8" complete="0" thirdDate="2020-03-16" thirdDate-constraint="0" expand="true"/>
+        <task id="108" name="Implementazione dell'architettura" color="#8cb6ce" meeting="false" start="2020-04-16" duration="8" complete="0" thirdDate="2020-03-16" thirdDate-constraint="0" expand="true"/>
         <task id="80" name="Gestione dei rischi, stima dei costi e analisi del sistema coerente con i requisiti" color="#993300" meeting="true" start="2020-04-27" duration="0" complete="0" thirdDate="2020-03-05" thirdDate-constraint="0" expand="true"/>
         <task id="71" name="Definizione modello di analisi per i requisiti funzionali" color="#8cb6ce" meeting="false" start="2020-04-27" duration="22" complete="0" thirdDate="2020-02-07" thirdDate-constraint="0" expand="true"/>
-        <task id="141" name="Definizione modello di design per i requisiti funzionali" color="#ff6666" meeting="false" start="2020-04-27" duration="22" complete="0" thirdDate="2020-03-27" thirdDate-constraint="0" expand="true"/>
-        <task id="143" name="Implementazione e definizione di test per i requisiti funzionali" color="#ff6666" meeting="false" start="2020-04-27" duration="22" complete="0" thirdDate="2020-03-27" thirdDate-constraint="0" expand="true"/>
-        <task id="133" name="Definizione modello di casi d'uso per requisiti funzionali con secondari" color="#ff6666" meeting="false" start="2020-05-13" duration="6" complete="0" thirdDate="2020-04-13" thirdDate-constraint="0" expand="true"/>
-        <task id="132" name="Definizione modello di analisi per requisiti funzionali secondari" color="#ff6666" meeting="false" start="2020-05-21" duration="5" complete="0" thirdDate="2020-04-21" thirdDate-constraint="0" expand="true"/>
-        <task id="145" name="Definizione modello di design per requisiti funzionali secondari" color="#ff6666" meeting="false" start="2020-05-21" duration="5" complete="0" thirdDate="2020-04-21" thirdDate-constraint="0" expand="true"/>
+        <task id="141" name="Definizione modello di design per i requisiti funzionali" color="#8cb6ce" meeting="false" start="2020-04-27" duration="22" complete="0" thirdDate="2020-03-27" thirdDate-constraint="0" expand="true"/>
+        <task id="143" name="Implementazione e definizione di test per i requisiti funzionali" color="#8cb6ce" meeting="false" start="2020-04-27" duration="22" complete="0" thirdDate="2020-03-27" thirdDate-constraint="0" expand="true"/>
+        <task id="133" name="Definizione modello di casi d'uso per requisiti funzionali con secondari" color="#8cb6ce" meeting="false" start="2020-05-13" duration="6" complete="0" thirdDate="2020-04-13" thirdDate-constraint="0" expand="true"/>
+        <task id="132" name="Definizione modello di analisi per requisiti funzionali secondari" color="#8cb6ce" meeting="false" start="2020-05-21" duration="5" complete="0" thirdDate="2020-04-21" thirdDate-constraint="0" expand="true"/>
+        <task id="145" name="Definizione modello di design per requisiti funzionali secondari" color="#8cb6ce" meeting="false" start="2020-05-21" duration="5" complete="0" thirdDate="2020-04-21" thirdDate-constraint="0" expand="true"/>
         <task id="120" name="Superamento di tutti i test da parte del sistema" color="#993300" meeting="true" start="2020-05-28" duration="0" complete="0" thirdDate="2019-11-11" thirdDate-constraint="0" expand="true"/>
         <task id="85" name="Raccolta feedback utenti" color="#006600" meeting="false" start="2020-05-29" duration="5" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true">
-            <task id="89" name="Raccolta feedback" color="#8cb6ce" meeting="false" start="2020-05-29" duration="3" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true"/>
+            <task id="89" name="Raccolta feedback" color="#8cb6ce" meeting="false" start="2020-05-29" duration="4" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true"/>
             <task id="92" name="Creazione test basati su feedback" color="#8cb6ce" meeting="false" start="2020-05-29" duration="5" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="94" name="Creazione release finale" color="#8cb6ce" meeting="false" start="2020-06-04" duration="1" complete="0" thirdDate="2020-03-19" thirdDate-constraint="0" expand="true"/>
         <task id="95" name="Release finale e superamento dei test di feedback utente" color="#993300" meeting="true" start="2020-06-04" duration="0" complete="0" thirdDate="2020-03-19" thirdDate-constraint="0" expand="true"/>
+        <task id="94" name="Creazione release finale" color="#8cb6ce" meeting="false" start="2020-06-04" duration="1" complete="0" thirdDate="2020-03-19" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
