@@ -1,2 +1,15 @@
 # macOS
 .DS_Store
+
+# latex
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.toc
+*.synctex.gz

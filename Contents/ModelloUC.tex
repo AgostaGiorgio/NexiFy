@@ -4,9 +4,15 @@
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
+\newcounter{ucCounter}
+\newcommand{\lastUC}{\theucCounter}
+\newcommand{\nextUC}{\stepcounter{ucCounter}{\theucCounter}}
+
+
 \subsection{Introduzione}
 La seguente sezione mira all'identificazione dei casi d'uso presenti nel progetto. Di seguito vengono identificati oltre ai casi d'uso, anche gli attori coinvolti nel loro utilizzo.
-Lo scopo principale del documento, è quello di avere un riferimento sui casi d'uso leggibile da chiunque, anche a personale non interno al progetto. Questo è utile al fine di permettere a tutti una comprensione e quindi una discussione sui casi d'uso.
+Lo scopo principale del documento, è quello di avere un riferimento sui casi d'uso leggibile da chiunque, anche a personale non interno al progetto. Questo è utile al fine di permettere a tutti una comprensione e quindi una discussione sui casi d'uso.\\\\
+Alleghiamo inoltre i vari diagrammi dei casi d'uso nella cartella ``/Contents/Diagrams/Use Case Model/'' indicando con uno use case di colore giallo una copia di uno use case, usiamo invece il colore blu per indicare uno use case ``originale''. Il diagramma ``/Contents/Diagrams/Use Case Model/attori.png'' mostra tutti gli attori del sistema, che non vengono quindi ripetuti, se non necessario, negli altri diagrammi.
 
 \subsection{Legenda}
 \large{\textbf{Attori}} \\
@@ -16,22 +22,21 @@ Lo scopo principale del documento, è quello di avere un riferimento sui casi d'
 	\item \textbf{Genitore}: indica l'identificatore del primo antenato nella gerarchia degli attori.
 	\item \textbf{Livello}: indica il grado di rilevanza dell'attore all'interno dell'intero sistema. Può assumere il valore di {Primario, Secondario, Di Supporto}.
 	\item \textbf{Tipologia}: classifica l'attore in {Umano, Sistema}
-	\item \textbf{Descrizione}: descrive brevemente cosa rappresenta all'interno del sistema l'attore.\\
-
+	\item \textbf{Descrizione}: descrive brevemente cosa rappresenta all'interno del sistema l'attore.
 \end{itemize}
 
 
 \noindent \large{\textbf{Use Case}} \\
 \begin{itemize}[]
 	\item \textbf{ID}: identificativo univoco del caso d'uso, è della forma UC\_X dove X è una stringa di interi separati da punto che rappresenta la gerarchia di relazioni padre-figlio.
-	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori {User, Subscriptions, Management}
+	\item \textbf{Categoria}: Macroarea di appartenza della funzionalità. Può assumere i valori \emph{Abbonamenti, Account, Prodotti, Segnalazioni, Playlist, CodaDiRiproduzione, Recensioni}.
 	\item \textbf{Nome}: Nome identificativo del caso d'uso, serve anche per dare un'idea del tipo di attività.
-	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {High, Medium, Low}. 
+	\item \textbf{Priorità}: Livello di priorità del caso d'uso. Può assumere i valori {Alta, Media, Bassa}. 
 	\item \textbf{Attori}: Lista di identificativi degli attori coinvolti nel caso d'uso.
 	\item \textbf{Descrizione}: Breve descrizione della funzione svolta dal caso d'uso.
-	\item \textbf{Flusso}: Passi logici eseguiti dal caso d'uso per ottenere il risultato desiderato.
 	\item \textbf{Pre-condizioni}: Condizioni che devono essere verificate prima che il caso d'uso inizi, altrimenti non potrà essere svolto.
 	\item \textbf{Post-condizioni}: Condizioni che devono essere verificate subito dopo l'esecuzione del caso d'uso.
+	\item \textbf{Flusso}: Passi logici eseguiti dal caso d'uso per ottenere il risultato desiderato.
 	%\item \textbf{Flusso Alternativo}: 
 
 \end{itemize}
@@ -77,69 +82,69 @@ Descrizione &  Questo ruolo è assunto da tutti gli utenti che hanno sottoscritt
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
-ID & A\_1.3 \\\hline
-Nome & Staff\\\hline
-Genitore & A\_1\\\hline
+ID & A\_1.2.1 \\\hline
+Nome & UtenteAttivo\\\hline
+Genitore & A\_1.2 \\\hline
 Livello &  Primario \\\hline
 Tipologia & Umano \\\hline
-Descrizione &  Rappresenta il ruolo di staff della piattaforma \\\hline
+Descrizione &  Questo ruolo è assunto da tutti gli utenti autenticati il cui account è attivo \\\hline
 \end{tabular}
-\label{table_attore:1.3}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_1.3.1 \\\hline
-Nome & ManagerAbbonamenti\\\hline
-Genitore & A\_1.3\\\hline
-Livello &  Primario \\\hline
-Tipologia & Umano \\\hline
-Descrizione &  Rappresenta il ruolo di chi gestisce i servizi offerti dalla piattaforma \\\hline
-\end{tabular}
-\label{table_attore:1.3.1}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_1.3.2 \\\hline
-Nome & ManagerPagamenti\\\hline
-Genitore & A\_1.3\\\hline
-Livello &  Primario \\\hline
-Tipologia & Sistema \\\hline
-Descrizione &  Rappresenta il sistema di gestione dei pagamenti verso i partner \\\hline
-\end{tabular}
-\label{table_attore:1.3.1}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_1.3.3 \\\hline
-Nome & ManagerSegnalazioni\\\hline
-Genitore & A\_1.3\\\hline
-Livello &  Primario \\\hline
-Tipologia & Umano \\\hline
-Descrizione &  Rappresenta il ruolo di chi gestisce tutte le segnalazioni verso prodotti o utenti \\\hline
-\end{tabular}
-\label{table_attore:1.3.1}\newline
+\label{table_attore:1.2.1}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
 ID & A\_2 \\\hline
+Nome & Staff\\\hline
+Genitore & -\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo di staff della piattaforma \\\hline
+\end{tabular}
+\label{table_attore:2}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_2.1 \\\hline
+Nome & Amministratore\\\hline
+Genitore & A\_2\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo amministratore della piattaforma, cioè un membro dello staff incaricato della gestione di vari aspetti della piattaforma \\\hline
+\end{tabular}
+\label{table_attore:2.1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_2.1.1 \\\hline
+Nome & ManagerAbbonamenti\\\hline
+Genitore & A\_2.1\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo di chi gestisce i servizi offerti dalla piattaforma \\\hline
+\end{tabular}
+\label{table_attore:2.1.1}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_2.1.2 \\\hline
+Nome & ManagerSegnalazioni\\\hline
+Genitore & A\_2.1\\\hline
+Livello &  Primario \\\hline
+Tipologia & Umano \\\hline
+Descrizione &  Rappresenta il ruolo di chi gestisce tutte le segnalazioni verso prodotti o utenti \\\hline
+\end{tabular}
+\label{table_attore:2.1.2}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_3 \\\hline
 Nome & Pagamento\\\hline
 Genitore & - \\\hline
 Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di pagamento esterno al sistema della piattaforma \\\hline
 \end{tabular}
-\label{table_attore:2}\newline
-
-\begin{tabular}{ |p{2cm}|p{10cm}|  }
-\hline
-ID & A\_3 \\\hline
-Nome & Database\\\hline
-Genitore & - \\\hline
-Livello &  Primario \\\hline
-Tipologia & Sistema \\\hline
-Descrizione &  Rappresenta il sistema usato per la memorizzazione di informazioni. \\\hline
-\end{tabular}
-\label{table_attore:1}\newline
+\label{table_attore:3}\newline
 
 \begin{tabular}{ |p{2cm}|p{10cm}|  }
 \hline
@@ -150,13 +155,128 @@ Livello &  Primario \\\hline
 Tipologia & Sistema \\\hline
 Descrizione &  Rappresenta il sistema di distribuzione dei contenuti. \\\hline
 \end{tabular}
-\label{table_attore:1}\newline
+\label{table_attore:5}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_5 \\\hline
+Nome & Timer\\\hline
+Genitore & - \\\hline
+Livello &  Primario \\\hline
+Tipologia & Sistema \\\hline
+Descrizione &  Rappresenta la componente responsabile dello scheduling delle operazioni \\\hline
+\end{tabular}
+\label{table_attore:6}\newline
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & A\_6 \\\hline
+Nome & Pubblicità \\\hline
+Genitore & - \\\hline
+Livello &  Primario \\\hline
+Tipologia & Sistema \\\hline
+Descrizione &  Rappresenta il sistema che fornisce spot pubblicitari \\\hline
+\end{tabular}
+\label{table_attore:7}\newline
 
 \end{center}
+
+%==== gestione errori di default ====
+\subsection{Gestione Fallimenti}
+Specifichiamo qui le politiche standard di gestione dei fallimenti di sistemi esterni. Se negli use case non viene specificato esplicitamente come gestire un fallimento di questi sistemi, si assume che entrino in atto queste politiche.
+
+\begin{tabular}{ |p{2cm}|p{10cm}|  }
+\hline
+ID & F\_1\\\hline
+Nome & F\_FallimentoCDN\\\hline
+Attore & CDN\\\hline
+Descrizione & una richiesta alla CDN produce un errore\\\hline
+Gestione &  La procedura che ha effettuato la richiesta alla CDN viene abortita, riportando un messaggio di errore \\\hline
+\end{tabular}
+\label{table_fail:1}\newline
 
 % ================ USE CASE CHE VANNO BENE ===========
 \subsection{Specifica Use Case}
 
+%variabili per fare riferimento a un UC dentro un altro UC
+\newcounter{tmpCounter}
+
+\newcommand\nextUcName[1]%
+{%
+  \stepcounter{tmpCounter}%
+  \expandafter\edef\csname#1\endcsname{\thetmpCounter}%
+}
+
+\nextUcName{ucGestisciAbbonamenti}
+\nextUcName{ucCreaAbbonamento}
+\nextUcName{ucRecuperaAbbonamentiEsistenti}
+\nextUcName{ucRecuperaServizi}
+\nextUcName{ucDisattivaAbbonamento}
+\nextUcName{ucAttivaAbbonamento}
+\nextUcName{ucAggiungiServizioAbbonamento}
+\nextUcName{ucRimuoviServizioAbbonamento}
+\nextUcName{ucRecuperaServiziAbbonamento}
+\nextUcName{ucRecuperaPianiAbbonamentoUtente}
+\nextUcName{ucEffettuaPagamentoPartner}
+\nextUcName{ucCalcolaImportoDaPagare}
+\nextUcName{ucGestisciSottoscrizioniAbbonamenti}
+\nextUcName{ucSottoscriviAbbonamento}
+\nextUcName{ucDisdiciAbbonamento}
+\nextUcName{ucCambiaAbbonamento}
+\nextUcName{ucGestisciScadenzeAbbonamenti}
+
+\nextUcName{ucSospendiAccount}
+\nextUcName{ucRiattivaAccount}
+\nextUcName{ucRiattivaAccountAutomatico}
+\nextUcName{ucEffettuaRegistrazione}
+\nextUcName{ucModificaProfilo}
+\nextUcName{ucEffettuaLogin}
+\nextUcName{ucEffettuaLogout}
+\nextUcName{ucOttieniCronologia}
+
+\nextUcName{ucGestisciProdotti}
+\nextUcName{ucCreaProdotto}
+\nextUcName{ucModificaInformazioniDiBase}
+\nextUcName{ucCaricaFile}
+\nextUcName{ucCambiaVisibilitaProdotto}
+\nextUcName{ucRiproduciProdotto}
+\nextUcName{ucStreamingVideo}
+\nextUcName{ucStreamingMusica}
+\nextUcName{ucPausaPlayer}
+\nextUcName{ucSpostaPuntoRiproduzionePlayer}
+\nextUcName{ucDownloadProdotto}
+\nextUcName{ucVisualizzaPubblicita}
+\nextUcName{ucRiproduciAudioInBackground}
+
+\nextUcName{ucSegnalaProdotto}
+\nextUcName{ucGestisciSegnalazioni}
+\nextUcName{ucOttieniSegnalazioni}
+\nextUcName{ucChiudiSegnalazione}
+\nextUcName{ucRiapriSegnalazione}
+\nextUcName{ucVisualizzaProdottoSegnalato}
+
+\nextUcName{ucRicercaContenuto}
+\nextUcName{ucRicercaPopolari}
+\nextUcName{ucSuggerisciContenuti}
+
+\nextUcName{ucGestisciPlaylist}
+\nextUcName{ucCreaPlaylist}
+\nextUcName{ucAggiungiProdottoPlaylist}
+\nextUcName{ucRimuoviProdottoPlaylist}
+\nextUcName{ucCambiaVisibilitaPlaylist}
+\nextUcName{ucRiproduciPlaylist}
+\nextUcName{ucCreaSerieTv}
+\nextUcName{ucCreaAlbum}
+
+\nextUcName{ucAggiungiProdottoAllaCoda}
+\nextUcName{ucRimuoviProdottoDallaCoda}
+\nextUcName{ucMostraStatoCoda}
+\nextUcName{ucRiproduciCoda}
+
+\nextUcName{ucCalcolaQualitaContenuto}
+\nextUcName{ucVotaContenuto}
+\nextUcName{ucCommentaContenuto}
+\nextUcName{ucRimuoviCommento}
 \begin{center}
 
 %======= UC relativi ai requisiti funzionali 1. ==========
@@ -165,27 +285,46 @@ Descrizione &  Rappresenta il sistema di distribuzione dei contenuti. \\\hline
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
-ID & UC\_\lastUC \\\hline
-Categoria & Management\\\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Abbonamenti \\\hline
+Nome & UC\_GestisciAbbonamenti\\\hline
+Priorità & Alta \\\hline
+Attori & ManagerAbbonamenti \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione dei piani di abbonamento\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item Il manager accede alla pagina di gestione dei piani di abbonamento
+		\item Il sistema presenta la pagina di gestione dei piani di abbonamento (usando UC\_\ucRecuperaAbbonamentiEsistenti), mostrando per ognuno le azioni possibili su di esso
+		\item Il manager seleziona l'azione da intraprendere (che può essere: attivare un abbonamento, disattivare un abbonamento, aggiungere un servizio a un abbonamento, rimuovere servizio da piano di abbonamento, creare un nuovo piano di abbonamento)
+		\item In base all'azione scelta dal manager, viene richiamato lo use case adeguato
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_CreaAbbonamento\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Crea un nuovo piano di abbonamento senza nessun servizio associato.\\\hline
-Pre-condizioni &  Nessuna\\\hline
+Pre-condizioni &  Il manager ha richiesto la creazione di un nuovo piano, ed è possibile creare un nuovo piano di abbonamento secondo alcune politiche\\\hline
 Post-condizioni &  Esiste un piano di abbonamento con il nome fornito dal manager degli abbonamenti\\\hline
 Flusso &  	\begin{enumerate}
-			\item Il manager degli abbonamenti richiede la creazione di un nuovo piano di abbonamento;
 			\item Il sistema richiede al manager degli abbonamenti il nome, il prezzo e la durata del nuovo piano di abbonamento;
-			\item Ilmanager degli abbonamenti fornisce i dati;
+			\item Il manager degli abbonamenti fornisce i dati;
 			\item Il sistema valida gli input, e:
 				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione:
+				\item \textbf{\# alt1}: Se non avvengono errori durante la validazione,  il sistema ricerca se esistono altri piani di abbonamento con il nome inserito:
 					\begin{enumerate}[label*=\arabic*.]
-					\item Il sistema ricerca se esistono altri piani di abbonamento con il nome inserito:
-						\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1}: Se non esistono altri piani di abbonamento con il nome inserito: il piano di abbonamento viene creato, con i dati inseriti dal manager degli abbonamenti, la lista dei servizi inizialmente vuota e inizialmente non sottoscrivibile
-						\item \textbf{\# alt2}: Se esistono altri piani di abbonamento con il nome inserito: la creazione viene annullata e viene comunicato al manager degli abbonamenti che esiste già un piano di abbonamento con il nome inserito	
-						\end{enumerate}
+					\item \textbf{\# alt1}: Se non esistono altri piani di abbonamento con il nome inserito: il piano di abbonamento viene creato, con i dati inseriti dal manager degli abbonamenti, la lista dei servizi inizialmente vuota e inizialmente non sottoscrivibile e il manager degli abbonamenti viene avvisato della riuscita dell'operazione
+					\item \textbf{\# alt2}: Se esistono altri piani di abbonamento con il nome inserito: la creazione viene annullata e viene comunicato al manager degli abbonamenti che esiste già un piano di abbonamento con il nome inserito	
 					\end{enumerate}
 				\item \textbf{\# alt2}: Se avvengono errori durante la validazione: il piano di abbonamento non viene creato e l'errore viene comunicato al manager degli abbonamenti
 				\end{enumerate}
@@ -201,23 +340,21 @@ Flusso &  	\begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaAbbonamentiEsistenti\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
+Priorità & Alta \\\hline
+Attori &  Staff, UtenteAttivo \\\hline
 Descrizione & Recupera tutti i piani di abbonamento attualmente esistenti.\\\hline
 Pre-condizioni &  Nessuna \\\hline
-Post-condizioni &  Tutti i piani di abbonamento esistenti vengono restituiti\\\hline
+Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i piani di abbonamento, e:
-				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovati
-				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema recupera tutti i piani di abbonamento
+			\item Viene restituita la lista dei piani di abbonamento trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
+
 
 \begin{table}[bp]
     \centering
@@ -225,19 +362,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServizi\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  Staff \\\hline
 Descrizione & Permette di recuperare la lista di tutti i servizi esistenti.\\\hline
-Pre-condizioni &  Nessuna.\\\hline
-Post-condizioni &  Tutti i servizi esistenti vengono restituiti\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i servizi, e:
-				\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1:} Se il database risponde con successo: il risultato della richiesta viene restituito
-				\item \textbf{\# alt2:} Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema recupera tutti i servizi
+			\item Viene restituita la lista dei servizi trovati
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -249,22 +383,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_DisattivaAbbonamento\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende non più sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Nessuna \\\hline
+Pre-condizioni &  Il manager ha indicato il piano di abbonamento da disattivare.\\\hline
 Post-condizioni &  Il piano di abbonamento specificato non è più sottoscrivibile\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di invalidare un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e sottoscrivibili
-			\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-			\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili
-			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento tra quelli della lista
-		\item Il piano di abbonamento scelto viene reso non sottoscrivibile
+		\item Il sistema memorizza che il piano di abbonamento specificato non è più sottoscrivibile
+		\item Il sistema comunica al manager degli abbonamenti che la modifica \'e stata memorizzata con successo
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -276,22 +404,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_AttivaAbbonamento\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Rende sottoscrivibile un piano di abbonamento esistente.\\\hline
-Pre-condizioni &  Nessuna \\\hline
-Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile\\\hline
+Pre-condizioni &  Il manager ha indicato il piano di abbonamento da attivare.\\\hline
+Post-condizioni &  Il piano di abbonamento specificato è sottoscrivibile.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di rendere sottoscrivibile un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti e non sottoscrivibili
-			\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-			\item vengono forniti nella lista solo i piani di abbonamento non sottoscrivibili
-			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento tra quelli della lista
-		\item Il piano di abbonamento scelto viene reso sottoscrivibile
+		\item Il sistema memorizza che il piano di abbonamento specificato è sottoscrivibile
+		\item Il sistema comunica al manager degli abbonamenti che la modifica \'e stata memorizzata con successo
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -304,28 +426,22 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_AggiungiServizioAbbonamento\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Permette di aggiungere un servizio all'insieme dei servizi disponibili in un piano di abbonamento.\\\hline
-Pre-condizioni & Nessuna \\\hline
-Post-condizioni &  Il servizio scelto viene aggiunto al piano di abbonamento scelto \\\hline
+Pre-condizioni & Il manager ha indicato uno specifico piano di abbonamento al quale vuole aggiungere un servizio\\\hline
+Post-condizioni & Un nuovo servizio viene aggiunto al piano di abbonamento indicato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di estendere i servizi offerti da un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
-		\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-		\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento
-		\item Il sistema mostra la lista dei servizi che possono essere aggiunti		
+		\item Il sistema mostra la lista dei servizi che possono essere aggiunti al piano di abbonamento indicato		
 			\begin{enumerate}[label*=\arabic*.]
-			\item (UC\_3) Il sistema recupera tutti i servizi disponibili
-			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item (UC\_\ucRecuperaServizi) Il sistema recupera tutti i servizi disponibili
+			\item (UC\_\ucRecuperaServiziAbbonamento) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\item La lista dei servizi sarà la differenza tra il primo e il secondo insieme calcolati
 			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un servizio dalla lista
-		\item Il sistema aggiunge il servizio scelto alla lista dei servizi per il piano di abbonamento indicato
+		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da aggiungere al piano di abbonamento
+		\item Il sistema aggiunge il servizio scelto alla lista dei servizi per il piano di abbonamento indicato e comunica al manager degli abbonamenti che l'aggiunta \'e avvenuta con successo
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -337,26 +453,20 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RimuoviServizioAbbonamento\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerAbbonamenti \\\hline
 Descrizione & Permette la rimozione di uno dei servizi forniti da un piano abbonamento.\\\hline
-Pre-condizioni &  Nessuna \\\hline
+Pre-condizioni &  Il manager ha indicato uno specifico piano di abbonamento dal quale vuole rimuovere un servizio \\\hline
 Post-condizioni &  Il servizio scelto non \'e pi\'u associato al piano di abbonamento indicato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il manager degli abbonamenti richiede di rimuovere un servizio offerto da un piano di abbonamento;
-		\item Il sistema fornisce una lista dei piani di abbonamento esistenti
-		\begin{enumerate}[  ]
-			\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-		\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un piano di abbonamento
-		\item Il sistema mostra la lista dei servizi che possono essere rimossi		
+		\item Il sistema mostra la lista dei servizi che possono essere rimossi dal piano di abbonamento indicato
 			\begin{enumerate}[label*=\arabic*.]
-			\item (UC\_8) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item (UC\_\ucRecuperaServiziAbbonamento) Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
 			\end{enumerate}
-		\item Il manager degli abbonamenti sceglie un servizio dalla lista
-		\item Il sistema rimuove il servizio scelto dalla lista dei servizi del piano di abbonamento indicato
+		\item Il manager degli abbonamenti sceglie dalla lista, il servizio da rimuovere
+		\item Il sistema rimuove il servizio scelto dalla lista dei servizi per il piano di abbonamento indicato e comunica al manager degli abbonamenti che la rimozione \'e avvenuta con successo
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -368,19 +478,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaServiziAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
+Priorità & Alta \\\hline
+Attori &  Staff, UtenteAttivo \\\hline
 Descrizione & Permette, dato un piano di abbonamento, di reperire tutti i servizi associati ad esso.\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  I servizi associati al piano di abbonamento vengono restituiti \\\hline
+Pre-condizioni &  \'E stato fornito un piano di abbonamento\\\hline
+Post-condizioni &  Nessuna \\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i servizi associati al piano di abbonamento indicato, e:
-				\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei servizi trovati
-				\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-				\end{enumerate}
+			\item Il sistema recupera tutti i servizi associati al piano di abbonamento indicato
+			\item Vengono restituiti i servizi associati al piano di abbonamento fornito
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -392,19 +499,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_RecuperaPianiAbbonamentoUtente\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
+Priorità & Alta \\\hline
+Attori &  Staff, UtenteAutenticato \\\hline
 Descrizione & Permette di recuperare la lista dei piani di abbonamento sottoscritti da un utente.\\\hline
-Pre-condizioni &  Nessuna.\\\hline
-Post-condizioni &  Viene restituita la lista dei piani di abbonamento sottoscritti dal'utente indicato\\\hline
+Pre-condizioni &  \'E stato fornito un utente\\\hline
+Post-condizioni &  Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}	
-		\item Il sistema effettua una richiesta al sistema databse per richiedere tutti i piani di abbonamento sottoscritti dall'utente indicato, e:
-			\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se il database risponde con successo: viene restituita la lista dei piani di abbonamento trovata
-			\item \textbf{\# alt2}: Se il database risponde con errori: viene mostrato l'errore all'amministratore, e la procedura viene abortita
-			\end{enumerate}
+		\item Il sistema recupera tutti i piani di abbonamento sottoscritti dall'utente indicato
+		\item Viene restituita la lista dei piani di abbonamento sottoscritti dall'utente
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -412,61 +516,37 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 %==============================
 
 
-%======= UC relativi a 2 e 3 ========
+%======= UC relativi a 2 =======
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
 Nome & UC\_EffettuaPagamentoPartner\\\hline
-Priorità & High \\\hline
-Attori &  ManagerPagamenti \\\hline
-Descrizione & Permette di effettuare un pagamento verso un utente (dal giorno dell'ultimo pagamento al momento in cui viene invocato l'use-case).\\\hline
-Pre-condizioni &  L'utente indicato ha il servizio che permette di ricevere pagamenti\\\hline
-Post-condizioni &  L'utente indicato viene pagato\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer \\\hline
+Descrizione & Effettua i pagamenti verso gli utente che hanno il servizio che permette di pubblicare prodotti\\\hline
+Pre-condizioni &  Nessuno\\\hline
+Post-condizioni &  Nessuno\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}	
-		\item L'amministratore richiede di effettuare un pagamento verso un utente
-		\item Il sistema mostra la lista degli utenti che possono ricevere un pagamento
+		\item Il sistema, alla fine di ogni mese, recupera la lista degli utenti che possono ricevere un pagamento
 			\begin{enumerate}[  ]
 			\item Il sistema recupera tutti gli utenti
-			\item (UC\_9) per ogni utente il sistema recupera i suoi piani di abbonamento e da questi (UC\_8) recupera i servizi dell'utente
+			\item per ogni utente il sistema recupera i suoi piani di abbonamento (UC\_\ucRecuperaPianiAbbonamentoUtente) e da questi recupera i servizi dell'utente (UC\_\ucRecuperaServiziAbbonamento)
 			\item Vengono restituiti gli utenti che hanno il servizio di pubblicare prodotti e il cui account è attivo
 			\end{enumerate}
-		\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
-		\item (UC\_11) Il sistema calcola l'importo da pagare all'utente
-		\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato dal sistema)
-			\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
-			\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene comunicato all'amministratore che si è verificato un errore, e viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
+		\item Per ogni utente individuato:
+		\begin{enumerate}[label*=\arabic*.]
+			\item Il sistema individua il sistema di pagamento esterno adatto ad effettuare il pagamento (sulla base dei metodi di pagamento forniti dall'utente)
+			\item Il sistema calcola l'importo da pagare all'utente (UC\_\ucCalcolaImportoDaPagare)
+			\item Il sistema richiede al sistema di pagamento di effettuare un pagamento all'utente (con i dati inseriti dall'utente e l'importo calcolato)
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene aggiornato l'ultimo giorno di pagamento per l'utente, viene inviata una mail all'utente comunicandogli che il pagamento è stato effettuato
+				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: viene inviata una mail all'utente comunicandogli che un tentativo di pagamento non è andato a buon fine
 			\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
-Nome & UC\_CalcolaImportoDaPagare\\\hline
-Priorità & High \\\hline
-Attori &  ManagerPagamenti \\\hline
-Descrizione & Calcola l'importo da pagare a un utente dall'ultima volta che ha ricevuto un pagamento fino al momento in cui viene invocato l'use-case\\\hline
-Pre-condizioni &  L'utente indicato ha il servizio che permettte di pubblicare prodotti e l'account dell'utente è attivo\\\hline
-Post-condizioni &  L'utente indicato viene pagato\\\hline
-Flusso &  	
-		\vspace{-5mm} \begin{enumerate}
-		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo che va da quell'istante fino all'istante corrente	
-		\item Il sistema effettua una richiesta al Database per calcolare il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
-		\begin{enumerate}[  ]
-			\item \textbf{\# alt1}: Se la richiesta al Database ha esito positivo: il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
-			\item \textbf{\# alt2}: Se la richiesta al Database ha esito negativo: la procedura viene abortita
 		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -479,23 +559,235 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Management\\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_CalcolaImportoDaPagare\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer \\\hline
+Descrizione & Calcola l'importo da pagare a un utente per il prossimo pagamento\\\hline
+Pre-condizioni & Viene fornito un utente, e l'utente ha il servizio che permette di pubblicare prodotti e l'account dell'utente è attivo\\\hline
+Post-condizioni &  Nessuna\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item Il sistema ottiene l'ultimo istante in cui l'utente ha ricevuto un pagamento, e considera l'intervallo:\newline $[max(adesso - 1mese, istante\ ultimo\ pagamento), adesso]$ (dove \textit{adesso} indica l'istante corrente, quando viene eseguito l'use-case)
+		\item Il sistema calcola il numero di visualizzazioni complessive ricevute dai prodotti dell'utente nell'intervallo di tempo considerato
+		\item il sistema restituisce f(numero visualizzazioni complessive), dove f è una funzione che indica come calcolare l'importo da pagare in funzione del numero di visualizzazioni
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%===========
+
+%============ UC relativi a 6 =============
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Abbonamenti \\\hline
+Nome & UC\_GestisciSottoscrizioniAbbonamenti\\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione delle sottoscrizioni ai piani di abbonamento\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente accede alla pagina di gestione delle sottoscrizioni dei piani di abbonamento
+		\item Il sistema presenta la pagina di gestione dei piani di abbonamento attivi (usando UC\_\ucRecuperaAbbonamentiEsistenti), mostrando per ognuno le azioni possibili su di esso
+		\item L'utente seleziona l'azione da intraprendere (per piani già sottoscritti, le azioni possibili saranno: disdici e cambia, per quelli non ancora sottoscritti l'unica azione possibile è la sottoscrizione)
+		\item In base all'azione scelta dall'utente, viene richiamato lo use case adeguato
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_SottoscriviAbbonamento\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, Pagamento \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
+Pre-condizioni & L'utente ha indicato un piano di abbonamento da sottoscrivere\\\hline
+Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema controlla il prezzo del piano di abbonamento:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se il piano di abbonamento è gratis, il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente e avvisa quest'ultimo che tutto è andato bene
+				\item \textbf{\# alt2}: Altrimenti, il sistema reinderizza l'utente al sistema esterno di pagamento (sulla base del metodo di pagamento scelto in fase di registrazione), e attende risposta dal sistema esterno
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: Se il pagamento va a buon fine: il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente, salvando il timestamp in cui il piano è stato attivato e attivando inizialmente il rinnovo automatico, avvisando poi l'utente che il pagamento è andato a buon fine
+					\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_DisdiciAbbonamento\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista\\\hline
+Pre-condizioni & L'utente ha indicato un piano di abbonamento sottoscritto che intende disdire\\\hline
+Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema memorizza l'annullamento del rinnovo automatico per il piano di abbonamento indicato
+			\item Il sistema comunica all'utente che il rinnovo automatico è stato correttamente disabilitato
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_CambiaAbbonamento\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, Pagamento \\\hline
+Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento in sostituzione di uno gi\'a attivo.\\\hline
+Pre-condizioni & L'utente ha indicato un piano di abbonamento sottoscritto che intende cambiare, ed esiste almeno un piano di abbonamento sostituibile a quello indicato\\\hline
+Post-condizioni &  L'utente ha sottoscritto il nuovo abbonamento e non possiede pi\'u il precedente.\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema fornisce una lista dei piani di abbonamento con cui è possibile sostituire quello indicato:
+			\begin{enumerate}[  ]
+				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_\ucRecuperaAbbonamentiEsistenti)
+				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
+				\item Il sistema fornisce solo i piani di abbonamento sottoscrivibili non ancora sottoscritti dall'utente, e per cui le politiche del sistema permettono il cambio con il piano di abbonamento indicato
+			\end{enumerate}
+			\item L'utente sceglie il nuovo abbonamento da sottoscrivere;
+			\item Il sistema controlla il prezzo dei due piani di abbonamento
+			\begin{enumerate}[  ]
+				\item \textbf{\# alt1}: Se il prezzo del nuovo abbonamento è minore o uguale al vecchio abbonamento, il cambio verrà effettuato immediatamente e l'utente viene avvisato della corretta avvenuta del cambio
+				\item \textbf{\# alt2}: Altrimenti, il sistema reinderizza l'utente al sistema esterno di pagamento per far pagare all'utente la differenza tra i due piano di abbonamento:
+					\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1}: Se il pagamento va a buon fine: viene effettuato il cambio, rimuovendo il vecchio piano di abbonamento e sottoscrivendo il nuovo piano di abbonamento e l'utente viene avvisato della corretta avvenuta del cambio
+						\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
+					\end{enumerate}
+			\end{enumerate}
+			\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Abbonamenti\\\hline
+Nome & UC\_GestisciScadenzeAbbonamenti\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer, Pagamento \\\hline
+Descrizione & Gestisce un abbonamento nel momento in cui la sottoscrizione scade: effettua un rinnovo, o lo rimuove dai piani di abbonamento dell'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessun utente ha un abbonamento sottoscritto scaduto\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno un abbonamento sottoscritto
+			\item Per ogni utente individuato, il sistema individua gli abbonamenti sottoscritti dall'utente (UC\_\ucRecuperaPianiAbbonamentoUtente)
+			\item Per ogni abbonamento sottoscritto dall'utente, il sistema verifica se la sottoscrizione è scaduta:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se l'abbonamento non è scaduto, la sottoscrizione viene lasciata inalterata
+				\item \textbf{\# alt2}: Se l'abbonamento è scaduto, allora:
+				\begin{enumerate}[label*=\arabic*.]
+					\item \textbf{\# alt1}: Se è attivo il rinnovo automatico e il piano di abbonamento è ancora sottoscrivibile, allora viene contattato il servizio di pagamento esterno per rinnovare l'abbonamento:
+					\begin{enumerate}[label*=\arabic*.]
+						\item \textbf{\# alt1}: Se il pagamento va a buon fine: la sottoscrizione dell'abbonamento viene rinnovata
+						\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente, e viene informato l'utente
+					\end{enumerate}
+					\item \textbf{\# alt2}: Altrimenti: il piano di abbonamento viene rimosso dalla lista degli abbonamenti sottoscritti dall'utente
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%========================
+
+%====== UC relativi a 3========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
 Nome & UC\_SospendiAccount\\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  ManagerSegnalazioni \\\hline
 Descrizione & Sospende l'account di un utente\\\hline
-Pre-condizioni &  Nessuna\\\hline
+Pre-condizioni &  Il manager ha indicato un utente attivo che vuole sospendere\\\hline
 Post-condizioni &  L'account dell'utente specificato è sospeso\\\hline
 Flusso &  	
 		\vspace{-5mm} \begin{enumerate}
-		\item Il manager delle segnalazioni richiede di sospendere l'account di un utente
-		\item Il sistema mostra la lista degli utenti che hanno un account attivo
-			\begin{enumerate}[  ]
-			\item Il sistema recupera tutti gli utenti
-			\item Vengono mostrati nella lista gli utenti con account attivo
-			\end{enumerate}	
-		\item Il manager delle segnalazioni sceglie un utente da sospendere
-		\item L'account dell'utente viene sospeso
+		\item Il sistema richiede al manager la durata della sospensione
+		\item Il manager fornisce la durata della sospensione
+		\item Il sistema memorizza che l'account dell'utente specificato è sospeso
+		\item Il sistema avverte il manager delle segnalazioni che la sospensione è avvenuta con successo
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
+Nome & UC\_RiattivaAccount\\\hline
+Priorità & Media \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Riattiva l'account di un utente, precedentemente sospeso\\\hline
+Pre-condizioni &  Il manager ha indicato un utente sospeso che vuole riattivare\\\hline
+Post-condizioni &  L'account dell'utente specificato è riattivato\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item Il sistema memorizza che l'account dell'utente specificato è di nuovo attivo
+		\item Il sistema avverte il manager delle segnalazioni che la riattivazione è avvenuta con successo
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Account\\\hline
+Nome & UC\_RiattivaAccountAutomatico\\\hline
+Priorità & Alta \\\hline
+Attori &  Timer \\\hline
+Descrizione & Riattiva l'account di un utente, al termine del periodo di sospensione\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Gli utenti il cui periodo di sospensione è terminato sono di nuovo attivi\\\hline
+Flusso &  	
+		\vspace{-5mm} \begin{enumerate}
+		\item All'inizio di ogni giorno, il sistema individua tutti gli utenti che hanno l'account sospeso
+		\item Per ogni utente, il sistema verifica se il periodo di sospensione è terminato:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il periodo di sospensione non è terminato, l'account viene lasciato inalterato
+			\item \textbf{\# alt2}: Se il periodo di sospensione è terminato, allora il sistema memorizza che l'account dell'utente considerato è di nuovo attivo
+		\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -510,20 +802,20 @@ Flusso &
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Autenticazione \\\hline
+Categoria & Account \\\hline
 Nome & UC\_EffettuaRegistrazione \\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Registrazione persistente di un utente all'interno della piattaforma \\\hline
-Pre-condizioni &  Non esiste un utente registrato con la stessa email dell'utente che avvia la registrazione\\\hline
-Post-condizioni &  L'utente che ha richiesto la registrazione è registrato persistentemente.\\\hline
+Descrizione & Permette a un utente non autenticato di registrarsi\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Viene creato un nuovo account\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede di registrarsi alla piattaforma;
 			\item Il sistema richiede all' utente non registrato informazioni quali: anagrafiche, email, email di recupero, password, conferma della password;
 			\item L'utente non registrato riempie i campi richiesti e li invia al sistema;
-			\item Il sistema verifica la correttezza dei dati:
+			\item Il sistema verifica la validità dei dati:
 			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se il sistema accetta i dati, l'utente viene registrato sulla piattaforma
+				\item\textbf{\# alt1}: Se il sistema accetta i dati, l'utente viene registrato sulla piattaforma e il sistema comunica a quest'utimo che la registrazione è avvenuta correttamente
 				\item\textbf{\# alt2}: Se il sistema non accetta i dati, la procedura fallisce e l'utente viene avvisato
 			\end{enumerate}
 		\end{enumerate}\\\hline
@@ -537,21 +829,21 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Autenticazione \\\hline
+Categoria & Account \\\hline
 Nome & UC\_ModificaProfilo \\\hline
-Priorità & Medium \\\hline
+Priorità & Media \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette la modifica da parte di un utente di alcuni dati ineriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
-Pre-condizioni & Nessuna\\\hline
+Descrizione & Permette la modifica da parte di un utente di alcuni dati inseriti in fase di registrazione relativi all'account dell'utente stesso  \\\hline
+Pre-condizioni & L'utente si trova sulla pagina di dettaglio del proprio profilo.\\\hline
 Post-condizioni & Le informazioni relative all'utente sono aggiornate secondo i nuovi valori forniti dall'utente.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede la modifica dei suoi dati;
-			\item Il sistema fornisce i valori attualmente memorizzati sul sistema relativi ai dati modificabili;
-			\item L'utente comunica al sistema i nuovi valori da memorizzare;
+			\item L'utente richiede la modifica dei suoi dati
+			\item Il sistema rende modificabili i campi che possono essere modificati
+			\item L'utente comunica al sistema i nuovi valori da memorizzare
 			\item Il sistema valida i dati proposti dall'utente:
 			\begin{enumerate}[  ]
-				\item\textbf{\# alt1}: Se i nuovi valori sono validi, questi vengono salvati sul sistema e quindi il profilo dell'utente viene aggiornato;
-				\item\textbf{\# alt1}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi.
+				\item\textbf{\# alt1}: Se i nuovi valori sono validi, il sistema aggiorna i dati dell'utente con quelli inseriti e l'utente viene avvisato che la modifica è avvenuta con successo
+				\item\textbf{\# alt}: Se i nuovi valori non sono validi, il salvataggio viene bloccato, l'utente viene avvisato e invitato a fornire dei valori validi
 			\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -564,21 +856,21 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Autenticazione \\\hline
+Categoria & Account \\\hline
 Nome & UC\_EffettuaLogin \\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  UtenteNonAutenticato \\\hline
-Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo delle opportune credenziali \\\hline
+Descrizione & Permette ad un utente registrato di accedere al proprio profilo fornendo le opportune credenziali \\\hline
 Pre-condizioni & Nessuna\\\hline
-Post-condizioni & L'utente è autenticato ed abilitato ai servizi che gli spettano secondo il contratto sottoscritto.\\\hline
+Post-condizioni & L'utente è autenticato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di accedere alla piattaforma;
-			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password;
-			\item L'utente riempie i campi richiesti e li invia al sistema;
-			\item Il sistema valida i dati e avvia la procedura di autenticazione interfacciandosi con il Database degli utenti:
+			\item L'utente richiede di accedere alla piattaforma
+			\item Il sistema richiede all' utente le credenziali di accesso quali: email e password
+			\item L'utente riempie i campi richiesti e li invia al sistema
+			\item Il sistema valida i dati e avvia la procedura di autenticazione:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: se il sistema risponde in maniera positiva: l'utente è autenticato ed abilitato all'utilizzo dei servizi offerti dall'abbonamento in corso; 
-				\item \textbf{\# alt2}: se il sistema risponde in maniera negativa: l'utente non viene autenticato ed è reindirizzato alla pagina di login.
+				\item \textbf{\# alt1}: se le credenziali sono corrette e l'account dell'utente non è bloccato: l'utente è autenticato e viene rediretto all'interno del proprio account
+				\item \textbf{\# alt2}: altrimenti: l'utente non viene autenticato ed è rediretto alla schermata di login
 			\end{enumerate}
 		\end{enumerate}\\\hline
 \end{tabular}
@@ -591,118 +883,47 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Autenticazione \\\hline
+Categoria & Account \\\hline
 Nome & UC\_EffettuaLogout \\\hline
-Priorità & High \\\hline
+Priorità & Alta \\\hline
 Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette ad un utente autenticato di uscrire dal proprio profilo \\\hline
+Descrizione & Permette ad un utente autenticato di uscire dal proprio profilo \\\hline
 Pre-condizioni &  Nessuna\\\hline
 Post-condizioni &  L'utente non è più autenticato.\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di uscire dalla piattaforma;
-			\item Il sistema elimina la sessione dell'utente in questione.
+			\item L'utente richiede di uscire dalla piattaforma
+			\item L'utente non è più autenticato sulla piattaforma e viene reindirizzato alla schermata principale
+			%\item Il sistema elimina la sessione dell'utente
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
 %==============================
 
-%============ UC relativi a 6 =============
+%================UC relativi a 14==========
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
-ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_SottoscriviAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento con la piattaforma.\\\hline
-Pre-condizioni & L'utente non ha sottoscritto tutti i i piani di abbonamento\\\hline
-Post-condizioni &  L'utente ha accesso a tutti i servizi offerti dal nuovo abbonamento sottoscritto.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di sottoscrivere un piano di abbonamento;
-			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili e non ancora sottoscritti dall'utente
-				\begin{enumerate}[  ]
-				\item (UC\_2): il sistema recupera i piani di abbonamento esistenti
-				\item (UC\_9): il sistema recupera i piani di abbonamento sottoscritti da un utente
-				\item vengono forniti nella lista solo i piani di abbonamento sottoscrivibili che non sono sottoscritti dall'utente
-				\end{enumerate}
-			\item L'utente sceglie il piano di abbonamento
-			\item Il sistema reinderizza l'utente al sistema esterno di pagamento (sulla base del meotodo di pagamento scelto in fase di registrazione), e attende risposta dal sistema esterno
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se il pagamento va a buon fine: il sistema aggiunge il piano di abbonamento alla lista degli abbonamenti attivi dell'utente, salvando il timestamp in cui il piano è stato attivato
-				\item \textbf{\# alt2}: Se il pagamento non va a buon fine: il sistema comunica l'errore all'utente e la procedura termina
-			\end{enumerate}
-		\end{enumerate}\\\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Account \\\hline
+Nome & UC\_OttieniCronologia\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Ottiene la cronologia degli ultimi prodotti riprodotti dall'utente\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item L'utente richiede di visualizzare la propria cronologia
+		\item Il sistema recupera i prodotti riprodotti dall'utente
+		\item Il sistema restituisce la lista dei prodotti recuperati, ordinati in ordine decrescente secondo l'istante di visione
+	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_DisdiciAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di disdire un abbonamento sottoscritto, evitando che questo si rinnovi automaticamente nella data prevista.\\\hline
-Pre-condizioni & L'utente ha almeno un piano di abbonamento sottoscritto.\\\hline
-Post-condizioni &  Il rinnovo automatico per il piano di abbonamento indicato è disattivato.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di disdire un piano di abbonamento che aveva sottoscritto
-			\item (UC\_9) Il sistema fornisce una lista dei piani di abbonamento sottoscritti dall'utente
-			\item L'utente sceglie dalla lista il piano di abbonamento da disdire
-			\item Il rinnovo automatico per il piano di abbonamento scelto viene annullato, e l'utente potrà usare i servizi del piano di abbonamento fino alla scadenza
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_CambiaAbbonamento\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente di sottoscrivere un nuovo abbonamento in sostituzione di uno gi\'a attivo.\\\hline
-Pre-condizioni & L'utente deve avere almeno un piano di abbonamento attivo.\\\hline
-Post-condizioni &  L'utente ha sottoscritto il nuovo abbonamento e non possiede pi\'u il precedente.\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di cambiare uno dei suoi abbonamenti attivi;
-			\item Il sistema fornisce una lista di tutti i piani di abbonamento attivi sottoscritti dall'utente;
-			\item L'utente sceglie l'abbonamento da sostituire;
-			\item Il sistema fornisce una lista dei piani di abbonamento sottoscrivibili:
-			\begin{enumerate}[  ]
-				\item Il sistema ottiene la lista di tutti i piani di abbonamento sottoscrivibili (UC\_2)
-				\item Il sistema ottiene la lista di tutti i piani sottoscritti dall'utente (UC\_9)
-				\item Il sistema fornisce solo i piani di abbonamento sottoscrivibili non ancora sottoscritti dall'utente
-			\end{enumerate}
-			\item L'utente sceglie il nuovo abbonamento da sottoscrivere;
-			\item Il sistema controlla le politiche di cambio;
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se queste politiche permettono il cambio di abbonamento dal vecchio al nuovo per questo utente.
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1}: Se il prezzo degli abbonamento è uguale, il cambio verra effettuato immediatamente
-					\item \textbf{\# alt2}: Altrimenti verra reindirizzato l'utente sul sistema di pagamento esterno (A\_2).
-				\end{enumerate}
-				\item \textbf{\# alt2}: Altrimenti, viene mostrato all'utente un messaggio di errore e annullata l'operazione.
-			\end{enumerate}
-			\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%========================
-
-
+%================================
 
 %======= UC relativi a 7 ===========
 \begin{table}[bp]
@@ -711,22 +932,42 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_GestisciProdotti\\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione dei prodotti\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente accede alla pagina di gestione dei prodotti
+		\item Il sistema presenta la lista dei prodotti creati dall'utente
+		\item L'utente seleziona l'azione da intraprendere (che può essere: creare un nuovo prodotto, modificare le informazioni per un prodotto esistente, caricare i file per un prodotto esistente, cambiare la visibilità di un prodotto esistente)
+		\item In base all'azione scelta dall'utente, viene richiamato lo use case adeguato
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_CreaProdotto \\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette ad un utente autenticato di caricare un nuovo prodotto \\\hline
-Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti\\\hline
-Post-condizioni &  Viene creato un nuovo prodotto con proprietario l'utente autenticato\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette ad un utente di caricare un nuovo prodotto \\\hline
+Pre-condizioni &  L'utente ha il servizio che permette di pubblicare prodotti, e ha richiesto la creazione di un prodotto\\\hline
+Post-condizioni &  Viene creato un nuovo prodotto con proprietario l'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di creare un nuovo prodotto
-			\item Il sistema chiede all'utente di fornire il titolo del prodotto
-			\item L'utente fornisce l'informazione richiesta
-			\item Il sistema chiede all'utente di scegliere tra prodotto video e prodotto musicale
-			\item L'utente sceglie il tipo di prodotto
-			\item Il sistema verifica che non esiste gi\'a un prodotto dello stesso tipo con il nome scelto dall'utente:
+			\item Il sistema chiede all'utente di fornire il titolo del prodotto e il tipo di prodotto (prodotto video o prodotto musicale)
+			\item L'utente fornisce le informazioni richieste
+			\item Il sistema verifica che, tra i prodotti dell'utente, non esista gi\'a un prodotto dello stesso tipo con il nome scelto dall'utente:
 			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}: Se non esiste il sistema lo crea
+				\item \textbf{\# alt1}: Se non esiste il sistema lo crea e alll'utente viene comunicato che la creazione è avvenuta con successo
 					\begin{enumerate}[label*=\arabic*.]
 						\item La visibilità del prodotto è inizialmente impostata come "privato"
 						\item Il proprietario del prodotto è l'utente che ha effettuato la richiesta di creazione
@@ -744,12 +985,12 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_ModificaInformazioniDiBase \\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette ad un utente autenticato di inserire informazioni di base su un prodotto \\\hline
-Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette ad un utente di inserire informazioni di base su un prodotto \\\hline
+Pre-condizioni &  L'utente ha il servizio che permette di pubblicare prodotti, l'utente ha selezionato il prodotto da modificare, l'utente è proprietario del prodotto\\\hline
 Post-condizioni &  I campi base del prodotto sono compilati\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item Il sistema richiede all'utente di inserire descrizione del prodotto, genere del prodotto (tra una lista di generi disponibili)
@@ -775,30 +1016,30 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_CaricaFile \\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, CDN \\\hline
 Descrizione & Viene completata la creazione di un prodotto, che è stato scelto come prodotto video \\\hline
-Pre-condizioni &  L'utente autenticato ha il servizio che permette di pubblicare prodotti \\\hline
-Post-condizioni & I file multimediali relativi al prodotto sono pubblicati \\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente fornisce il prodotto del quale vuole caricare il file
-			\begin{enumerate}[  ]
-				\item \textbf{\# alt1}:Se il prodotto \'e di tipo Video allora: 
-					\begin{enumerate}[label*=\arabic*.]
-						\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
-						\item L'utente carica i file sulla piattaforma
-						\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
-					\end{enumerate}
-				\item \textbf{\# alt2}:Se il prodotto \'e di tipo Musicale allora: 
-					\begin{enumerate}[label*=\arabic*.]
-						\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
-						\item L'utente carica i file sulla piattaforma
-						\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente
-					\end{enumerate}
+Pre-condizioni &  L'utente ha il servizio che permette di pubblicare prodotti, l'utente ha selezionato il prodotto sul quale caricare i/il file, l'utente è proprietario del prodotto\\\hline
+Post-condizioni & I file multimediali relativi al prodotto sono caricati \\\hline
+Flusso &  	\vspace{-5mm}  \begin{enumerate}
+			\item Il sistema analizza il tipo del prodotto, e:
+			\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se il prodotto \'e di tipo Video allora: 
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema richiede di caricare un file video (obbligatorio), almeno un file audio e per ogni file audio deve essere associata una lingua (scelta da una lista di lingue conosciute), un insieme di file dei sottotitoli (opzionali, ma per ogni file dei sottotitoli deve essere associata la lingua)
+					\item L'utente carica i file sulla piattaforma
+					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente, comunicando poi all'utente il corretto caricamente del Video
+				\end{enumerate}
+			\item \textbf{\# alt2}: Se il prodotto \'e di tipo Musicale allora: 
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema richiede un file audio obbligatorio, un file dei lyrics (opzionale), e un file del video musicale (opzionale)
+					\item L'utente carica i file sulla piattaforma
+					\item Il sistema carica i file sulla CDN esterna e li associa al prodotto creato dall'utente, comunicando poi all'utente il corretto caricamente del file Musicale
+				\end{enumerate}
 			\end{enumerate}
-		\end{enumerate}\\\hline
+			\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
@@ -809,49 +1050,84 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
-Nome & UC\_CambiaStatoPubblicazione \\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette a un utente autenticato di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
-Pre-condizioni &  L'utente deve avere il servizio per la pubblicazione di prodotti\\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_CambiaVisibilit\'aProdotto \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette a un utente di cambiare lo stato di pubblicazione di uno dei suoi prodotti\\\hline
+Pre-condizioni & L'utente ha selezionato il prodotto, l'utente \'e il proprietario del prodotto.\\\hline
 Post-condizioni &  Lo stato di pubblicazione del prodotto viene cambiato con quello scelto dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente autenticato richiede di cambiare lo stato di pubblicazione di un prodotto
-			\item Il sistema mostra all'utente la lista dei suoi prodotti
-			\item L'utente seleziona uno dei suoi prodotti
-			\item Il sistema richiede il nuovo stato di pubblicazione per il prodotto
+			\item Il sistema richiede all'utente il nuovo stato di pubblicazione del prodotto
 			\item L'utente sceglie il nuovo stato di pubblicazione tra "privato", "pubblico", e:
 				\begin{enumerate}[  ]
 					\item \textbf{\# alt1:} Se l'utente sceglie privato: il sistema cambia lo stato di pubblicazione in "privato" e il prodotto diventa accessibile solamente all'utente stesso
-					\item \textbf{\# alt2:} Se l'utente sceglie pubblico: il sistema cambia lo stato di pubblicazione in "pubblico" e il prodotto diventa accessibile a tutti gli utenti che hanno il servizio di visionare quel tipo di prodotto
+					\item \textbf{\# alt2:} Se l'utente sceglie pubblico: il sistema cambia lo stato di pubblicazione in "pubblico" e il prodotto diventa accessibile a tutti gli utenti che hanno il servizio adatto a visionare quel tipo di prodotto
 				\end{enumerate}
+			\item Il sistema comunica all'utente che la visibilità è stata aggiornata correttamente
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
 %====================
 
-
-%============ UC relativi a 8 ============= 
+%============ UC relativi a 8 =============
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_RiproduciProdotto\\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Permette di riprodurre un prodotto\\\hline
+Pre-condizioni & L'utente ha indicato uno specifico prodotto che intende riprodurre\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+	\item \textbf{\# alt1}: Se il prodotto è scaricato sul dispositivo dell'utente:
+		\begin{enumerate}[label*=\arabic*.]	
+		\item \textbf{\# alt1}: Se non è disponibile una connessione ad Internet, il prodotto viene riprodotto tramite il player della piattaforma, usando i file scaricati
+		\item \textbf{\# alt2:} Se è disponibile una connessione ad Internet, il sistema verifica che il prodotto sia ancora pubblico e che l'utente abbia ancora il servizio per guardarlo:
+			\begin{enumerate}[label*=\arabic*.]	
+			\item \textbf{\# alt1}: Se è ancora possibile visualizzare il prodotto, il prodotto viene riprodotto tramite il player della piattaforma, usando i file scaricati
+			\item \textbf{\# alt2}: Se non è più possibile visualizzare il prodotto, vengono rimossi i file scaricati relativi al prodotto, viene comunicato l'errore all'utente e la procedura termina
+			\end{enumerate}
+		\end{enumerate}
+	\item \textbf{\# alt2}: Altrimenti, se il prodotto non è scaricato sul dispositivo e l'utente ha il servizio per riprodurre il prodotto:
+		\begin{enumerate}[label*=\arabic*.]
+			\item Se i servizi dell'utente prevedono la visualizzazione di pubblicità, viene eventualmente visualizzata una pubblicità con UC\_\ucVisualizzaPubblicita
+			\item Il sistema analizza il tipo di prodotto:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se è un prodotto video, il prodotto viene riprodotto tramite UC\_\ucStreamingVideo
+				\item \textbf{\# alt2}: Se è un prodotto musicale, il prodotto viene riprodotto tramite UC\_\ucStreamingMusica
+			\end{enumerate}
+		\end{enumerate}
+	\item \textbf{\# alt3}: Altrimenti: la riproduzione non viene effettuate, e l'errore viene comunicato all'utente 
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+ 
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_RiproduciVideo\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Categoria & Prodotti\\\hline
+Nome & UC\_StreamingVideo\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, ManagerSegnalazioni, CDN \\\hline
 Descrizione & Permette di riprodurre un prodotto video.\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la riproduzione video.\\\hline
+Pre-condizioni & \'E stato fornito uno specifico prodotto video che si intende riprodurre\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente seleziona, a seguito di una ricerca, il prodotto da riprodurre (la lista di risorse riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item Il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire il prodotto 
+			\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
 			\item Il client contatta il nodo e stabiliscono una connessione
 			\item Inizia lo stream del prodotto
+			\item I pacchetti ricevuti dalla CDN vengono riprodotti dal player
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -864,26 +1140,23 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
-Nome & UC\_RiproduciMusica\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la riproduzione video.\\\hline
+Categoria & Prodotti\\\hline
+Nome & UC\_StreamingMusica\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, ManagerSegnalazioni, CDN \\\hline
+Descrizione & Riproduce un prodotto musicale, con eventuale traccia video adeguata (lyrics o video musicale).\\\hline
+Pre-condizioni & \'E stato fornito uno specifico prodotto musicale che si intende riprodurre, e si è scelto un tipo di riproduzione tra quelli disponibili (solo audio, video musicale, video lyrics)\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente selezione, a seguito di una ricerca, il prodotto da riprodurre (la lista dei prodotti riproducibili varia a seconda dell'abbonamento/i del richiedente)
-			\item Il sistema fornisce al client le informazioni sul nodo della cdn dal quale reperire il prodotto 
+			\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
 			\item Il client contatta il nodo e stabiliscono una connessione
 			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se il file ha associato un file di lyrics, verr\'a riprodotto insieme al file audio;
-				\item \textbf{\# alt2}: Altrimenti non sarà possibile visualizzare il testo del brano:
-					\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1}: Se il file ha associato un video musicale, verr\'a ripredotta insieme al file video
-						\item \textbf{\# alt2}: Altrimenti verr\'a riprodotta solo la traccia audio
-					\end{enumerate}
+				\item \textbf{\# alt1}: Se è stata scelta la riproduzione con lyrics: verr\'a riprodotto il video lyrics insieme al file audio;
+				\item \textbf{\# alt2}: Altrimenti, se se è stata scelta la riproduzione con video musicale: verr\'a riprodotto il video musicale insieme al file audio
+				\item \textbf{\# alt3}: Altrimenti, se è stata scelta la riproduzione con solo audio: verr\'a riprodotta solo la traccia audio
 			\end{enumerate}
-			\item Inizia lo stream del prodotto
+			\item Inizia lo stream del file audio e dell'eventuale file video
+			\item I pacchetti ricevuti dalla CDN vengono riprodotti dal player
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -896,16 +1169,16 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_PausaPlayer\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, CDN \\\hline
 Descrizione & Mette in pausa la visualizzazione del prodotto.\\\hline
 Pre-condizioni & L'utente sta riproducento un prodotto.\\\hline
 Post-condizioni & Nessuna\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente richiede la pausa di riproduzione al player
-			\item Il player ferma la riproduzione del prodotto ma continua a ricevere pacchetti dalla CDN 
+			\item Il player ferma la riproduzione del prodotto, ma continua a ricevere pacchetti dalla CDN (fino ad un'eventuale saturazione del buffer)
 			\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -918,16 +1191,17 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Risorse\\\hline
+Categoria & Prodotti\\\hline
 Nome & UC\_SpostaPuntoRiproduzionePlayer\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, CDN \\\hline
 Descrizione & Cambia il punto di riproduzione del prodotto (pu\'o essere spostata avanti o indietro).\\\hline
 Pre-condizioni & L'utente sta riproducento un prodotto.\\\hline
 Post-condizioni & La riproduzione continua dall'istante selezionato\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
 			\item L'utente seleziona lo spostamento di riproduzione in un certo punto compreso tra 0 e lunghezza del prodotto
 			\item Il client comunica al nodo della CDN che sta fornendo il prodotto il nuovo istante di tempo dal quale proseguire
+			\item Il player riprende la riproduzione dal punto selezionato (eventualmente usando i pacchetti che aveva già ricevuto dalla CDN, oppure aspettando i nuovi pacchetti)
 		\end{enumerate}
 			\\\hline
 \end{tabular}
@@ -935,217 +1209,30 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{table}
 %====================
 
-
-%============ UC relativi a 13 ============= 
+%================UC relativi a 15==========
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
-ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
-Nome & UC\_SegnalaProdotto\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato, Staff \\\hline
-Descrizione & Permette di segnalare un prodotto (con relativa motivazione della segnalazione).\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Il prodotto selezionato ha una segnalazione aperta\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente seleziona il prodotto da segnalare
-			\item Il sistema richiede la motivazione della segnalazione
-			\item L'utente comunica una motivazione.
-			\item Il sistema riceve il prodotto e la motivazione e provvede ad aprire la segnalazione
-			\item Viene memorizzato in modo persistente l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa.
-			\item L'utente viene avvisato dell'esito della sengalazione
-			\begin{enumerate}[label= ]
-				\item \textbf{\# alt1}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso positivo
-				\item \textbf{\# alt2}: Se il la segnalazione non è andata a buon fine, l'utente riceverà un responso negativo
-			\end{enumerate}
-			\end{enumerate}
-			\\\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_DownloadProdotto\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAttivo, CDN \\\hline
+Descrizione & Permette di scaricare un prodotto, in modo da poterlo riprodurre offline\\\hline
+Pre-condizioni & L'utente ha il servizio per scaricare prodotti, l'utente ha indicato un prodotto che intende scaricare, il prodotto \'e riproducibile dall'utente.\\\hline
+Post-condizioni & Il prodotto è scaricato sul dispositivo dell'utente\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema fornisce al client le informazioni sul nodo della CDN dal quale reperire il prodotto
+		\item Il client contatta il nodo e stabiliscono una connessione
+		\item Il client effettua il download del prodotto dal nodo della CDN, e lo memorizza sul dispositivo
+	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
-Nome & UC\_OttieniSegnalazioni\\\hline
-Priorità & High \\\hline
-Attori &  Staff \\\hline
-Descrizione & Permette ai membri dello staff di ottenere le segnalazioni.\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni.
-			\item Il sistema ricerca le segnalazioni fornisce la lista di segnalazioni all'operatore richiedente.
-			\end{enumerate}
-			\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Prodotto\\\hline
-Nome & UC\_ChiudiSegnalazione\\\hline
-Priorità & High \\\hline
-Attori &  ManagerSegnalazioni \\\hline
-Descrizione & Permette ai membri dello staff di chiudere una segnalazione.\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & La segnalazione selezionata è chiusa ed ha un esito\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'operatore dello staff richiede al sistema la lista delle segnalazioni secondo UC\_29.
-%			POTREBBE ESSERE UN ALTRO USE CASE
-%			\item L'operatore potra richiedere di visionare un elemento della lista:
-%				\begin{enumerate}
-%				\item \textbf{\# alt1}: Se è stato segnalato un profilo utente si potr\'a visionare il dettaglio di esso.
-%				\item \textbf{\# alt2}: Se è stata segnalata una risorsa sar\'a visionabile la risorsa in questione.
-%				\end{enumerate}
-			\item L'operatore seleziona il prodotto da chiudere fornendo un esito.
-			\item Il sistema riceve la segnalazione da chiudere, l'esito e chiude la segnalazione: 
-			memorizza in maniera persistente l'esito della segnalazione. 
-			\end{enumerate}
-			\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%===========================
-
-%================UC relativi a 5==========
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
-Nome & UC\_RicercaContenuto\\\hline
-Priorità & High \\\hline
-Attori &  Utente \\\hline
-Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-			\item L'utente richiede di ricercare un contenuto;
-			\item Il sistema richiede all' utente la stringa di ricerca;
-			\item L'utente fornisce al sistema la stringa;
-			\item Il sistema valida l'input e:
-			\begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1:} Se l'input supera la fase di validazione: il sistema effettua una richiesta al Database, richiedendo tutti i prodotti pubblici che contengono la stringa inserita dall'utente nel proprio nome, e tutte le serie tv e album pubblici che contengono la stringa inserita dall'utente nel proprio nome
-					\begin{enumerate}[label*=\arabic*.]
-						\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i risultati ottenuti all'utente
-						\item \textbf{\# alt2:} Se si verificano errori nella richiesta, la procedura viene annullata e si comunicano gli errori all'utente
-					\end{enumerate}
-				\item \textbf{\# alt2:} Altrimenti: la procedura viene annullata e viene comunicato all'utente che l'input non è valido
-			\end{enumerate}
-			
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
-Nome & UC\_RicercaPopolari\\\hline
-Priorità & Medium \\\hline
-Attori &  Utente \\\hline
-Descrizione & Cerca contenuti (sia prodotti che playlist) ritenuti popolari\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni &  Nessuna\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema fa una richiesta al Database per ottenere i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i video popolari all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili video popolari al momento
-				\end{enumerate}
-		\item Il sistema fa una richiesta al Database per ottenere i primi 10 prodotti musicali per numero di visualizzazioni ricevute negli ultimi 7 giorni:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le canzoni popolari all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili musicali popolari al momento
-				\end{enumerate}
-		\item Il sistema fa una richiesta al Database per ottenere le prime 10 serie tv per numero di visualizzazioni (le visualizzazioni di una serie tv sono la somma delle visualizzazioni dei singoli episodi) ricevute negli ultimi 7 giorni:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le serie tv popolari all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili serie tv popolari al momento
-				\end{enumerate}
-		\item Il sistema fa una richiesta al Database per ottenere i primi 10 album per numero di visualizzazioni (le visualizzazioni di un album sono la somma delle visualizzazioni delle singole canzoni) ricevute negli ultimi 7 giorni:
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra gli album popolari all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, si comunica che non sono disponibili album popolari al momento
-				\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-    \vspace{-4.35cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC \\\hline
-Categoria & Ricerca \\\hline
-Nome & UC\_SuggerisciContenuti\\\hline
-Priorità & Medium \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Suggerisce contenuti (sia prodotti che playlist) all'utente sulla base delle ultime visualizzazioni\\\hline
-Pre-condizioni &  Nessuna\\\hline
-Post-condizioni &  Nessuna\\\hline
-Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item Il sistema richiede al Database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti video riprodotti (o tutti i prodotti video riprodotti se l'utente ha visualizzato meno di 20 prodotti video),:
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1:} Se il Database risponde con successo, e il genere più visualizzato è @genere:
-			\begin{enumerate}[label*=\arabic*.]
-			\item Il sistema fa una richiesta al Database per ottenere 5 prodotti video (non appartententi a una serie tv) con genere @genere
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i prodotti video all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti video
-				\end{enumerate}
-			\item Il sistema fa una richiesta al Database per ottenere 5 serie tv con genere @genere
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra le serie tv all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggerite serie tv
-				\end{enumerate}
-			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti video visualizzati), vengono suggeriti solo i prodotti video restituiti dallo UC\_32
-		\end{enumerate}
-		\item Il sistema richiede al Database il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali),:
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1:} Se il Database risponde con successo, e il genere più visualizzato è @genere:
-			\begin{enumerate}[label*=\arabic*.]
-			\item Il sistema fa una richiesta al Database per ottenere 5 prodotti musicali con genere @genere
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra i prodotti musicali all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti prodotti musicali
-				\end{enumerate}
-			\item Il sistema fa una richiesta al Database per ottenere 5 album con genere @genere
-				\begin{enumerate}[label*=\arabic*.]
-					\item \textbf{\# alt1:} Se il Database risponde con successo, il sistema mostra gli album all'utente
-					\item \textbf{\# alt2:} Se si verificano errori nella richiesta, non vengono suggeriti album
-				\end{enumerate}
-			\end{enumerate}
-			\item \textbf{\# alt2:} Se si verificano errori nella richiesta (per esempio se l'utente non ha prodotti musicali visualizzati), vengono suggeriti solo i prodotti musicali restituiti dallo UC\_32
-		\end{enumerate}
-		\end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%=============================
+%================================
 
 %================UC relativi a 16==========
 \begin{table}[bp]
@@ -1154,10 +1241,10 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & Prodotti \\\hline
 Nome & UC\_VisualizzaPubblicità\\\hline
-Priorità & High \\\hline
-Attori & UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAttivo, Pubblicità \\\hline
 Descrizione & Riproduce uno spot pubblicitario\\\hline
 Pre-condizioni & Il piano di abbonamento associato all'utente non lo esenta dalla riproduzione periodica di spot pubblicitari\\\hline
 Post-condizioni & Nessuna\\\hline
@@ -1176,28 +1263,299 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \end{table}
 %======================================
 
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Prodotti \\\hline
+Nome & UC\_RiproduciAudioInBackground\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Permette la riproduzione dell'audio quando l'applicazione è in background\\\hline
+Pre-condizioni & L'applicazione è in background ed è in corso la riproduzione di un prodotto\\\hline
+Post-condizioni & Nessuno\\\hline
+Flusso &  \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema sposta la riproduzione del prodotto in background\newline\newline
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+%============ UC relativi a 13 ============= 
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Segnalazioni\\\hline
+Nome & UC\_SegnalaProdotto\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo, Staff \\\hline
+Descrizione & Permette di segnalare un prodotto (con relativa motivazione della segnalazione).\\\hline
+Pre-condizioni & \'E stato indicato il prodotto che si vuole segnalare\\\hline
+Post-condizioni & Il prodotto selezionato ha una nuova segnalazione aperta\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema richiede la motivazione della segnalazione
+			\item L'utente comunica una motivazione
+			\item Il sistema provvede ad aprire la segnalazione
+			\item Il sistema memorizza l'utente segnalatore, il prodotto segnalato, la motivazione e l'istante in cui è stata sottomessa la segnalazione
+			\item L'utente viene avvisato dell'esito della segnalazione
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se il la segnalazione è andata a buon fine, l'utente riceverà un responso positivo
+				\item \textbf{\# alt2}: Se il la segnalazione non è andata a buon fine, l'utente riceverà un responso negativo
+			\end{enumerate}
+			\end{enumerate}
+			\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Segnalazioni \\\hline
+Nome & UC\_GestisciSegnalazioni\\\hline
+Priorità & Alta \\\hline
+Attori & ManagerSegnalazioni \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione delle segnalazioni\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item Il manager accede alla pagina di gestione segnalazioni
+		\item Il sistema presenta la lista delle segnalazioni, con un pannello per filtrarle (UC\_\ucOttieniSegnalazioni)
+		\item Il manager seleziona l'azione da intraprendere (che può essere: chiudere una segnalazione, riaprire una segnalazione, sospendere un account con una segnalazione aperta, visualizza prodotto segnalato)
+		\item In base all'azione scelta dal manager, viene richiamato lo use case adeguato
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Segnalazioni\\\hline
+Nome & UC\_OttieniSegnalazioni\\\hline
+Priorità & Alta \\\hline
+Attori &  Staff \\\hline
+Descrizione & Permette ai membri dello staff di ottenere le segnalazioni.\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema ricerca tutte le segnalazioni
+			\item Viene restitita la lista di tutte le segnalazioni trovate
+			\end{enumerate}
+			\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Segnalazioni\\\hline
+Nome & UC\_ChiudiSegnalazione\\\hline
+Priorità & Alta \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Permette ai membri dello staff di chiudere una segnalazione.\\\hline
+Pre-condizioni & Il manager ha indicato una segnalazione aperta da chiudere\\\hline
+Post-condizioni & La segnalazione selezionata è chiusa ed ha un esito\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema richiede un esito per la chiusura della segnalazione
+			\item Il manager fornisce l'esito (una stringa)
+			\item Il sistema chiude la segnalazione, memorizzandone l'esito
+			\item Il sistema comunica al manager delle segnalazioni che la segnalazione in questione è stata chiusa con successo
+			\end{enumerate}
+			\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Segnalazioni\\\hline
+Nome & UC\_RiapriSegnalazione\\\hline
+Priorità & Alta \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Permette ai membri dello staff di riaprire una segnalazione.\\\hline
+Pre-condizioni & Il manager ha indicato una segnalazione chiusa da riaprire\\\hline
+Post-condizioni & La segnalazione selezionata è aperta\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item Il sistema riapre la segnalazione
+			\item Il sistema comunica al manager delle segnalazioni che la segnalazione in questione è stata riaperta con successo
+			\end{enumerate}
+			\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Segnalazioni\\\hline
+Nome & UC\_VisualizzaProdottoSegnalato\\\hline
+Priorità & Alta \\\hline
+Attori &  ManagerSegnalazioni \\\hline
+Descrizione & Permette al manager di visualizzare il prodotto relativo ad una segnalazione\\\hline
+Pre-condizioni & Il manager ha richiesto la visualizzazione di un prodotto con una segnalazione aperta\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item \textbf{\#alt1}: Se il prodotto indicato è un prodotto video, viene riprodotto con (UC\_\ucStreamingVideo)
+			\item \textbf{\#alt2}: Se il prodotto indicato è un prodotto musicale, viene riprodotto con (UC\_\ucStreamingMusica)
+			\end{enumerate}
+			\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%===========================
+
+%================UC relativi a 5==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Ricerche \\\hline
+Nome & UC\_RicercaContenuto\\\hline
+Priorità & Alta \\\hline
+Attori &  Utente \\\hline
+Descrizione & Cerca contenuti (sia prodotti che playlist) coerenti con una stringa digitata dall'utente\\\hline
+Pre-condizioni & L'utente si trova in una pagina che permette la ricerca\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+			\item L'utente fornisce al sistema la stringa di ricerca
+			\item Il sistema valida l'input e:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1:} Se l'input supera la fase di validazione: 
+				\begin{enumerate}[label*=\arabic*.]
+					\item Il sistema ricerca tutti i prodotti pubblici che contengono la stringa inserita dall'utente nel proprio nome, e tutte le serie tv e album pubblici che contengono la stringa inserita dall'utente nel proprio nome
+					\item Il sistema presenta la pagina dei risultati
+				\end{enumerate}
+				\item \textbf{\# alt2:} Altrimenti: la procedura viene annullata e viene comunicato all'utente che l'input non è valido
+			\end{enumerate}
+			
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Ricerche \\\hline
+Nome & UC\_RicercaPopolari\\\hline
+Priorità & Media \\\hline
+Attori &  Utente \\\hline
+Descrizione & Cerca contenuti (sia prodotti che playlist) ritenuti popolari\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+		\item Il sistema ricerca i primi 10 prodotti video (non appartententi a serie tv) per numero di visualizzazioni ricevute negli ultimi 7 giorni
+		\item Il sistema ricerca i primi 10 prodotti musicali per numero di visualizzazioni ricevute negli ultimi 7 giorni
+		\item Il sistema ricerca le prime 10 serie tv per numero di visualizzazioni (le visualizzazioni di una serie tv sono la somma delle visualizzazioni dei singoli episodi) ricevute negli ultimi 7 giorni
+		\item Il sistema ricerca i primi 10 album per numero di visualizzazioni (le visualizzazioni di un album sono la somma delle visualizzazioni delle singole canzoni) ricevute negli ultimi 7 giorni
+		\item Il sistema fornisce la lista dei contenuti trovati
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+    \vspace{-4.35cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC \\\hline
+Categoria & Ricerche \\\hline
+Nome & UC\_SuggerisciContenuti\\\hline
+Priorità & Media \\\hline
+Attori &  UtenteAutenticato \\\hline
+Descrizione & Suggerisce contenuti (sia prodotti che playlist) all'utente sulla base delle ultime visualizzazioni\\\hline
+Pre-condizioni &  Nessuna\\\hline
+Post-condizioni &  Nessuna\\\hline
+Flusso &  	\vspace{-5mm} \begin{enumerate}
+		\item Il sistema ricerca il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti video riprodotti (o tutti i prodotti video riprodotti se l'utente ha visualizzato meno di 20 prodotti video), sia @genere il risultato della ricerca
+		\item Il sistema cerca 5 prodotti video (non appartententi a una serie tv) con genere @genere
+		\item Il sistema cerca 5 serie tv con genere @genere
+		\item Il sistema ricerca il genere più visualizzato dall'utente considerando gli ultimi 20 prodotti musicali riprodotti (o tutti i prodotti musicali riprodotti se l'utente ha visualizzato meno di 20 prodotti musicali), sia @genere2 il risultato della ricerca
+		\item Il sistema cerca 5 prodotti musicali con genere @genere2
+		\item Il sistema cerca 5 album con genere @genere2
+		\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%=============================
+
 %================UC relativi a 9==========
 \begin{table}[bp]
     \centering
     \addtolength{\leftskip} {-2cm}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
+ID & UC\_\nextUC\\\hline
+Categoria & Playlist \\\hline
+Nome & UC\_GestisciPlaylist\\\hline
+Priorità & Alta \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Fornisce l'interfaccia per la gestione delle playlist\\\hline
+Pre-condizioni & L'utente ha il servizio per la creazione di playlist\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+		\item L'utente accede alla pagina di gestione delle playlist
+		\item Il sistema presenta la lista delle playlist
+		\item L'utente seleziona l'azione da intraprendere (che può essere: creare una nuova playlist, rimuovere un prodotto da una playlist, cambiare lo stato di pubblicazione della playlist, rendere una playlist un album o una serie tv)
+		\item In base all'azione scelta dall'utente, viene richiamato lo use case adeguato
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Permette di creare una nuova playlist (vuota)\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist\\\hline
+Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist, e ha richiesto la creazione di una nuova playlist\\\hline
 Post-condizioni & Una nuova playlist vuota è asscociata all'utente che l'ha creata\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-	\item L'utente chiede al sistema la creazione di una nuova playlist;
-	\item Il sistema richiede all'utente il nome della nuova playlist;
-	\item L'utente fornisce l'informazione richiesta;
-	\item Il sistema, dopo aver validato l'informazione fornitagli dall'utente, controlle se è già esistente una playlist con quel nome tra quelle create dallo stesso utente:
+	\item Il sistema richiede all'utente il nome della nuova playlist
+	\item L'utente fornisce l'informazione richiesta
+	\item Il sistema, dopo aver validato l'informazione fornitagli dall'utente, controlla se è già esistente una playlist con quel nome tra quelle create dallo stesso utente:
 		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se non ci sono altre playlist, il sistema procede con la creazione di una nuova con il nome fornitogli dall'utente
-			\item \textbf{\# alt2}: Se esiste almeno 1 playlist associata a quell'utente, l'operazione fallisce e il sistema chiede all'utente un nuovo nome diverso d quello appena fornito.
+			\item \textbf{\# alt1}: Se non ci sono altre playlist con quel nome, il sistema procede con la creazione di una nuova con il nome fornitogli dall'utente e comunica a quest'ultimo che la playlist è stata creata correttamente
+			\item \textbf{\# alt2}: Se esiste almeno una playlist con quel nome, l'operazione fallisce e il sistema comunica all'utente l'errore e chiede un nuovo nome diverso d quello appena fornito.
 		\end{enumerate}
 	\end{enumerate}\\\hline
 \end{tabular}
@@ -1210,20 +1568,21 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC \\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_AggiungiProdottoPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di agguingere un prodotto all'interno di una playlist esistente\\\hline
-Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist\\\hline
-Post-condizioni & Un nuovo prodotto farà parte della playlist scelta\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di aggiungere un prodotto all'interno di una playlist esistente\\\hline
+Pre-condizioni & L'utente ha il servizio che permette la creazione di playlist e ha indicato il prodotto da aggiungere\\\hline
+Post-condizioni & Il prodotto indicato fa parte della playlist scelta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-	\item L'utente chiede al sistema di aggiungere un prodotto ad una playlist;
-	\item Il sistema fornisce la lista delle playlist associate all'utente;
-	\item L'utente sceglie la playlist e la comunica al sistema;	
-	\item Il sistema fornisce la lista di prodotti che possono essere aggiunti alla playlist;
-	\item L'utente sceglie il prodotto e lo comunica al sistema;
-	\item Il sistema procede con l'aggiunta del prodotto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
+	\item Il sistema fornisce la lista delle playlist associate all'utente
+	\item L'utente sceglie la playlist e la comunica al sistema
+	\item Il sistema verifica che il prodotto può essere aggiunto alla playlist (la sua aggiunta non viola le proprietà della playlist, nel caso questa sia un album o una serie tv)
+	\begin{enumerate}[label*=\arabic*.]
+	\item \textbf{\# alt1}: Se è possibile aggiungere il prodotto alla playlist, il sistema procede con l'aggiunta del prodotto scelto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione
+	\item \textbf{\# alt2}: Se non è possibile aggiungere il prodotto alla playlist, la procedura termina e l'errore viene comunicato all'utente
+	\end{enumerate}
 	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1235,20 +1594,17 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_RimuoviProdottoPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Permette di rimuovere un prodotto all'interno di una playlist esistente\\\hline
-Pre-condizioni & L'utente \'e proprietario di almeno una playlist con almeno una risorsa associata\\\hline
-Post-condizioni & Il prodotto non far\'a pi\'u parte della playlist scelta\\\hline
+Pre-condizioni & L'utente ha indicato la playlist da cui rimuovere un prodotto tra quelle di cui \'e proprietario.\\\hline
+Post-condizioni & Il prodotto scelto non fa pi\'u parte della playlist scelta\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-	\item L'utente chiede al sistema di rimuovere un prodotto da una playlist;
-	\item Il sistema fornisce la lista delle playlist associate all'utente;
-	\item L'utente sceglie la playlist e la comunica al sistema;	
-	\item Il sistema fornisce la lista di prodotti associati alla playlist scelta;
-	\item L'utente sceglie il prodotto e lo comunica al sistema;
-	\item Il sistema procede con la rimozione del prodotto all'interno della playist scelta e avvisa l'utente della riuscita dell'operazione.
+	\item Il sistema fornisce la lista di prodotti associati alla playlist scelta
+	\item L'utente sceglie il prodotto e lo comunica al sistema
+	\item Il sistema procede con la rimozione del prodotto all'interno della playlist scelta e avvisa l'utente della riuscita dell'operazione.
 	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1260,20 +1616,17 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
-Nome & UC\_CambiaVisibilit\'aPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di rendere pubblica, privata una playlist\\\hline
-Pre-condizioni & L'utente \'e proprietario di almeno una playlist\\\hline
-Post-condizioni & La playlist avr\'a visibilit\'a aggiornata a quella fornita dall'utente\\\hline
+Categoria & Playlist \\\hline
+Nome & UC\_CambiaVisibilitaPlaylist\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di rendere pubblica o privata una playlist\\\hline
+Pre-condizioni & L'utente ha indicato la playlist da modificare tra quelle di cui \'e proprietario, e ha il servizio per la pubblicazione di playlist\\\hline
+Post-condizioni & La playlist ha visibilit\'a aggiornata a quella fornita dall'utente\\\hline
 Flusso &  	\vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di cambiare la visibilit\'a di una playlist;
-		\item Il sistema fornisce una lista di tutte le playlist associate all'utente;
-		\item L'utente sceglie la playlist da modificare dalla lista;
-		\item Il sistema chiede se impostare la visibilit\'a a pubblica o privata;
-		\item L'utente sceglie la visibilità e la comunica al sistema;
-		\item Il sistema procede con l'aggiornamento dell'informaizone secondo le scelte fatte dall'utente.
+		\item Il sistema chiede se impostare la visibilit\'a a pubblica o privata
+		\item L'utente sceglie la visibilità e la comunica al sistema
+		\item Il sistema procede con l'aggiornamento dell'informaizone secondo le scelte fatte dall'utente e comunica quest'ultimo che la visibilità è stata agigornata con successo
 	\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
@@ -1285,98 +1638,22 @@ Flusso &  	\vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_RiproduciPlaylist\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Aggiunge i prodotti associati alla playlist sulla coda di riproduzione\\\hline
-Pre-condizioni & Nessuna\\\hline
+Pre-condizioni & L'utente ha indicato la playlist da riprodurre.\\\hline
 Post-condizioni & Tutti i prodotti associati alla playlist sono inseriti all'interno della coda di riproduzione\\\hline
-Flusso &  	\begin{enumerate}
-		\item L'utente chiede al sistema di riprodurre una playlist;
-		\item Il sistema fornisce una lista di tutte le playlist riproducibili;
-		\item L'utente sceglie la playlist e la comunica al sistema;
-		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_42) procede rimuovendolo da questa coda (UC\_41);
-		\item Il sistema per ogni prodotto associata alla playlist scelta dall'utente e lo aggiunge alla coda di riproduzione (UC\_40);
+Flusso &  \vspace{-5mm}	\begin{enumerate}
+		\item Il sistema per ogni prodotto nella coda di riproduzione (UC\_\ucMostraStatoCoda) procede rimuovendolo dalla coda (UC\_\ucRimuoviProdottoDallaCoda);
+		\item Il sistema per ogni prodotto associato alla playlist scelta dall'utente, lo aggiunge alla coda di riproduzione (UC\_\ucAggiungiProdottoAllaCoda);
+		\item Viene avviata la riproduzione della coda (UC\_\ucRiproduciCoda)
 		\end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
 %=====================================
-
-%================UC relativi a 18==========
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
-Nome & UC\_AggiungiProdottoAllaCoda\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Il prodotto scelto \'e associata alla coda di riproduzione\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema l'aggiunta di un prodotto alla coda di riproduzione;
-    \item Il sistema chiede all'utente quale prodotto da aggiungere;
-    \item L'utente fornisce al sistema il prodotto da aggiungere;
-	\item Il sistema verifica che il prodotto scelto sia riproducibile:
-		\begin{enumerate}[label*=\arabic*.]
-			\item \textbf{\# alt1}: Se il prodotto non \'e riproducibile, il sistema annulla l'operazione e avvisa l'utente del fallimento;
-			\item \textbf{\# alt2}: Se il prodotto \'e riproducibile, il sistema aggiunge il prodotto alla coda di riproduzione;
-		\end{enumerate}
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
-Nome & UC\_RimuoviProdottoDallaCoda\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
-Pre-condizioni & La coda di riproduzione non \'e vuota\\\hline
-Post-condizioni & Il prodotto scelto non \'e pi\'u associata alla coda di riproduzione\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema la rimozione di una prodotto dalla coda di riproduzione;
-    \item Il sistema fornisce la lista di prodotti presenti nella coda;
-    \item L'utente sceglie il prodotto da rimuovere e lo comunica al sistema;
-    \item Il sistema rimuove il prodotto dalla coda di riproduzione;
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-
-\begin{table}[bp]
-    \centering
-    \addtolength{\leftskip} {-2cm}
-\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
-\hline
-ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
-Nome & UC\_MostraStatoCoda\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
-Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
-Pre-condizioni & Nessuna\\\hline
-Post-condizioni & Nessuna\\\hline
-Flusso &    \vspace{-5mm} \begin{enumerate}
-    \item L'utente chiede al sistema lo stato della coda di riproduzione;
-    \item Il sistema fornisce la lista di tutti i prodotti nella coda di riproduzione.
-    \end{enumerate}\\\hline
-\end{tabular}
-\label{table_use_case:\lastUC}\newline
-\end{table}
-%======================================
 
 %================UC relativi a 10, 11==========
 \begin{table}[bp]
@@ -1385,25 +1662,22 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaSerieTv\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Permette di trasformare una playlist in una serie tv\\\hline
-Pre-condizioni & L'utente ha il servizio per creare serie tv\\\hline
-Post-condizioni & Una nuova serie tv viene associata all'utente\\\hline
+Pre-condizioni & L'utente ha il servizio per creare serie tv, e ha indicato una playlist che intende trasformare in serie tv\\\hline
+Post-condizioni & La playlist indicata diventa una serie tv\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di creare una nuova serie tv
-		\item Il sistema mostra all'utente la lista delle playlist che possiede
-		\item L'utente seleziona la playlist che intende trasformare in serie tv
 		\item Il sistema verifica che:
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti video
 			\item Tutti i prodotti della playlist appartengono all'utente stesso
-			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
+			\item Per ogni prodotto della playlist, non esiste un'altra serie tv dell'utente che contiene quel prodotto
 			\end{itemize}
 			 \begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è una serie tv
+				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è una serie tv e viene comunicato all'utente che la creazione è avvenuta con successo
 				\item \textbf{\# alt2}: Se almeno una condizione non è verificata: il sistema comunica all'utente che la playlist non può essere una serie tv
 			\end{enumerate}
     \end{enumerate}\\\hline
@@ -1417,42 +1691,246 @@ Flusso &    \vspace{-5mm} \begin{enumerate}
 \begin{tabular}{ |p{2.6cm}|p{13cm}|  }
 \hline
 ID & UC\_\nextUC\\\hline
-Categoria & Prodotto \\\hline
+Categoria & Playlist \\\hline
 Nome & UC\_CreaAlbum\\\hline
-Priorità & High \\\hline
-Attori &  UtenteAutenticato \\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
 Descrizione & Permette di trasformare una playlist in un album\\\hline
-Pre-condizioni & L'utente ha il servizio per creare album\\\hline
-Post-condizioni & Un nuovo album viene associato all'utente\\\hline
+Pre-condizioni & L'utente ha il servizio per creare album, e ha indicato la playlist che intende trasformare in album\\\hline
+Post-condizioni & Se non avvengono errori, la playlist indicata diventa un album\\\hline
 Flusso &    \vspace{-5mm} \begin{enumerate}
-		\item L'utente chiede al sistema di creare un nuovo album
-		\item Il sistema mostra all'utente la lista delle playlist che possiede
-		\item L'utente seleziona la playlist che intende trasformare in album
 		\item Il sistema verifica che:
 			\begin{itemize}
 			\item Tutti i prodotti della playlist siano prodotti musicali
 			\item Tutti i prodotti della playlist appartengono all'utente stesso
-			\item Per ogni prodotto della playlist, non esiste un'altra playlist dell'utente che contiene quel prodotto
+			\item Per ogni prodotto della playlist, non esiste un'altro album dell'utente che contiene quel prodotto
 			\end{itemize}
 			 \begin{enumerate}[label*=\arabic*.]
-				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è un album
+				\item \textbf{\# alt1}: Se tutte le condizioni sono verificate: il sistema memorizza che la playlist indicata è un album e viene comunicato all'utente che la creazione è avvenuta con successo
 				\item \textbf{\# alt2}: Se almeno una condizione non è verificata: il sistema comunica all'utente che la playlist non può essere un album
 			\end{enumerate}
     \end{enumerate}\\\hline
 \end{tabular}
 \label{table_use_case:\lastUC}\newline
 \end{table}
-%================================
+%======================================
 
+%================UC relativi a 18==========
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_AggiungiProdottoAllaCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di aggiungere alla coda di riproduzione un prodotto\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto che intende aggiungere alla coda di riproduzione, l'utente ha il servizio per riprodurre il prodotto, il prodotto è pubblico\\\hline
+Post-condizioni & Il prodotto scelto è inserito in fondo alla coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Il sistema aggiunge il prodotto indicato alla fine della coda di riproduzione e comunica all'utente che l'aggiunta è avvenuta con successo
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_RimuoviProdottoDallaCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di rimuovere dalla coda di riproduzione un prodotto\\\hline
+Pre-condizioni & L'utente ha indicato un prodotto della coda di riproduzione che intende rimuovere\\\hline
+Post-condizioni & Il prodotto scelto non \'e pi\'u  nella coda di riproduzione\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Il sistema rimuove il prodotto dalla coda di riproduzione e comunica all'utente che la rimozione è avvenuta con successo \newline
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_MostraStatoCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Permette di visualizzare tutti i prodotti nella coda di riproduzione\\\hline
+Pre-condizioni & Nessuna\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+    \item Viene restituita la lista dei prodotti nella coda di riproduzione \newline \newline
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & CodaDiRiproduzione \\\hline
+Nome & UC\_RiproduciCoda\\\hline
+Priorità & Alta \\\hline
+Attori &  UtenteAttivo \\\hline
+Descrizione & Riproduce la coda di riproduzione\\\hline
+Pre-condizioni & La coda non è vuota\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} \begin{enumerate}
+	\item L'utente richiede la riproduzione della coda
+ 	\item Il sistema estrae il prossimo prodotto dalla coda di riproduzione
+	\item Il prodotto viene riprodotto con UC\_\ucRiproduciProdotto
+	\item Dopo la riproduzione del prodotto (o se la riproduzione del prodotto genera errori),
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se non \'e presente un prossimo prodotto da riprodurre, la riproduzione termina
+			\item \textbf{\# alt2}: Se \'e presente un prossimo prodotto da riprodurre, si torna al punto 2.
+		\end{enumerate}
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%======================================
+
+
+%================UC relativi a 17==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Recensioni \\\hline
+Nome & UC\_CalcolaQualit\'aContenuto\\\hline
+Priorità & Media \\\hline
+Attori & Utente, Staff \\\hline
+Descrizione & Calcola il voto di un certo contenuto, in base ai voti ricevuti\\\hline
+Pre-condizioni & Viene fornito un contenuto che ha ricevuto almeno una votazione\\\hline
+Post-condizioni & Nessuna\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema esegue il calcolo di qualit\'a in base al tipo di contenuto:
+			\begin{enumerate}[label*=\arabic*.]
+				\item \textbf{\# alt1}: Se è un prodotto Video: $ qualita = \frac{somma\_voti}{voti\_totali}. $
+				\item \textbf{\# alt2}: Se è un prodotto Musicale: $ qualita = \frac{somma\_voti}{voti\_totali}. $
+				\item \textbf{\# alt3}: Se è una Playlist: $ qualita = \frac{\sum_{p \in P} somma\_voti\_p}{\sum_{p \in P}voti\_totali\_p}$ dove $P=$ insieme dei prodotti nella playlist
+			\end{enumerate}
+		\item Il sistema restituisce la qualità calcolata
+    \end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%======================================
+
+
+%================UC relativi a 12==========
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Recensioni \\\hline
+Nome & UC\_VotaContenuto\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Permette a un utente di lasciare un feedback numerico (intero da 1 a 5) a un contenuto offerto dalla piattaforma (singolo prodotto o playlist di prodotti)\\\hline
+Pre-condizioni & L'utente ha indicato il contenuto da recensire.\\\hline
+Post-condizioni & Una nuova valutazione numerica \'e associata al contenuto scelto.\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema chiede all'utente di fornire un valore compreso tra 1 e 5
+		\item L'utente fornisce il valore richiesto
+		\item Il sistema verifica se esiste gi\'a una valutazione dell'utente a quel contenuto:
+		\begin{enumerate}[label*=\arabic*.]
+			\item \textbf{\# alt1}: Se esiste, allora il sistema la aggiorna cambiando il valore numerico gi\'a memorizzato con quello appena fornitogli dall'utente
+			\item \textbf{\# alt2}: Se non esiste, allora provvede a memorizzare il feedback
+		\end{enumerate}
+		\item Il sistema comunica all'utente la corretta memorizzazione del feedback
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Recensioni \\\hline
+Nome & UC\_CommentaContenuto\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAttivo \\\hline
+Descrizione & Permette a un utente di lasciare un commento a un contenuto offerto dalla piattaforma (singolo prodotto o playlist di prodotti)\\\hline
+Pre-condizioni & L'utente ha indicato il contenuto da recensire.\\\hline
+Post-condizioni & Un nuovo commento \'e associato al contenuto scelto.\\\hline
+Flusso &    \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema chiede all'utente di comunicare il commento relativo al contenuto scelto
+		\item L'utente fornisce l'informazione richiesta
+		\item Il sistema, dopo aver verificato l'input, memorizza il commento e comunica all'utente che il commento è stato pubblicato con successo
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+
+\begin{table}[bp]
+    \centering
+    \addtolength{\leftskip} {-2cm}
+\begin{tabular}{ |p{2.6cm}|p{13cm}|  }
+\hline
+ID & UC\_\nextUC\\\hline
+Categoria & Recensioni \\\hline
+Nome & UC\_RimuoviCommento\\\hline
+Priorità & Media \\\hline
+Attori & UtenteAutenticato \\\hline
+Descrizione & Permette a un utente di rimuovere un commento da un contenuto offerto dalla piattaforma (singolo prodotto o insieme di prodotti)\\\hline
+Pre-condizioni & L'utente ha scelto il commento da rimuovere dalla lista dei commenti da lui lasciati sotto un determinato prodotto.\\\hline
+Post-condizioni & Il commento non \'e pi\'u associato al contenuto scelto.\\\hline
+Flusso &  \vspace{-5mm} 
+	\begin{enumerate}
+		\item Il sistema cancella il commento
+		\item Il sistema comunica all'utente che il commento è stato rimosso con successo
+	\end{enumerate}\\\hline
+\end{tabular}
+\label{table_use_case:\lastUC}\newline
+\end{table}
+%===================================
+
+\setcounter{ucCounter}{0}
 \end{center}
 
 \newpage
-\noindent{\LARGE \textbf{Revisioni 8}} \\ \\
+
+\subsection{Matrice Tracciabilità}
+Viene usata una matrice di tracciabilità per tenere traccia dei requisiti e sapere da quali use case vengono catturati. La matrice è nella cartella ``Diagrams/Matrice Tracciabilità'', nella cella AxB c'è una ``x'' se e solo se lo use case A cattura il requisito B.
+
+\newpage
+\noindent{\large \textbf{Revisioni 8}} \\ \\
 \begin{tabular}{|c | c | c | c|} 
  	\hline
 	 Numero & Data & Descrizione \\ [0.5ex] 
 	\hline\hline
 	1 & 20/02/2020 & Stesura iniziale con requisiti funzionali principali \\
+	\hline
+	2 & 26/02/2020 & Revisione dei principali use case\\
+	\hline
+	3 & 12/04/2020 & Rimozione dell'attore Database \\
 	\hline
 \end{tabular}
 

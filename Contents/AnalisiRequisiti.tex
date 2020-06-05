@@ -7,7 +7,7 @@
 	\item Nome
 	\item Cognome
 	\item Data di nascita
-	\item Username
+	\item Email di registrazione
 	\item Password (hash)
 	\item Email di recupero
 	\item data di registrazione
@@ -18,6 +18,7 @@
 		\begin{enumerate}[label*=\arabic*.]
 		\item Data di sottoscrizione
 		\item \hyperlink{AnReqPianiAbb}{Piano di abbonamento a cui fa riferimento}
+		\item Se è attivo il rinnovo automatico
 		\end{enumerate}
 	\end{enumerate}
 
@@ -233,6 +234,7 @@
 		\item REQ\_F\_SuggerisciContenuti
 			\begin{itemize}	
 			\item Priorità: Secondaria
+			\item Fondamentale per architettura
 			\item Descrizione: suggerisce dei contenuti (sia \hyperlink{AnReqProdMult}{prodotti} che \hyperlink{AnReqPlaylist}{playlist})  ad un utente, in base agli ultimi contenuti \hyperlink{AnReqVisual}{visualizzati}
 			\end{itemize}
 		\end{enumerate}		
@@ -244,6 +246,12 @@
 			\begin{itemize}
 			\item Priorità: Primaria	
 			\item Descrizione: permette ad un utente registrato di sottoscrivere un nuovo abbonamento (relativo a un piano di abbonamento esistente)
+			\end{itemize}
+
+		\item REQ\_F\_GestisciScadenzeAbbonamenti
+			\begin{itemize}
+			\item Priorità: Primaria
+			\item Descrizione: gestisce un abbonamento nel momento della sua scadenza
 			\end{itemize}
 
 		\item REQ\_F\_DisdiciAbbonamento
@@ -278,6 +286,7 @@
 		\item REQ\_F\_CreaVideo
 			\begin{itemize}
 			\item Priorità: Primaria
+			\item Fondamentale per architettura
 			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare un nuovo \hyperlink{AnReqVideo}{video} da pubblicare sulla piattaforma
 			\end{itemize}
 			\begin{enumerate}[label*=\arabic*.]
@@ -296,6 +305,7 @@
 		\item REQ\_F\_CreaCanzone
 			\begin{itemize}
 			\item Priorità: Primaria
+			\item Fondamentale per architettura
 			\item Descrizione: permette agli utenti (che dispongono dell'opportuno servizio) di creare un nuovo \hyperlink{AnReqMusicali}{prodotto musicale} da pubblicare sulla piattaforma
 			\end{itemize}
 			\begin{enumerate}[label*=\arabic*.]
@@ -318,7 +328,6 @@
 			\end{itemize}		
 		\end{enumerate}
 	
-%riproduzione di risorse: chiamiamo riproduciRisorsa, poi questa penserà a usare RiproduciVideo o RiproduciMusica a seconda della risorsa, in RiproduciMusica è necessario trovare la traccia video adeguata, oppure facciamo che la musica in realtà deve essere caricata unitamente al video?
 	\item REQ\_F\_RiproduciProdotto
 		\begin{itemize}
 		\item Priorità: Primaria	
@@ -328,11 +337,13 @@
 		\item REQ\_F\_RiproduciVideo
 			\begin{itemize}
 			\item Priorità: Primaria
+			\item Fondamentale per architettura
 			\item Descrizione: riproduce una \hyperlink{AnReqVideo}{risorsa video}
 			\end{itemize}
 		\item REQ\_F\_RiproduciMusica
 			\begin{itemize}
 			\item Priorità: Primaria
+			\item Fondamentale per architettura
 			\item Descrizione: riproduce una \hyperlink{AnReqMusicali}{risorsa musicale}, con eventuale traccia video adeguata (lyrics o video musicale)
 			\end{itemize}
 			
@@ -466,17 +477,17 @@
 		\begin{enumerate}[label*=\arabic*.]
 		\item REQ\_F\_AggiungiProdottoAllaCoda
 			\begin{itemize}	
-			\item Priorità: Secondaria
+			\item Priorità: Primaria
 			\item Descrizione: aggiunge un prodotto in fondo alla coda di riproduzione
 			\end{itemize}
 		\item REQ\_F\_RimuoviProdottoDallaCoda
 			\begin{itemize}	
-			\item Priorità: Secondaria
+			\item Priorità: Primaria
 			\item Descrizione: rimuove il prodotto in testa alla coda di riproduzione
 			\end{itemize}
 		\item REQ\_F\_MostraStatoDellaCoda
 			\begin{itemize}	
-			\item Priorità: Secondaria
+			\item Priorità: Primaria
 			\item Descrizione: mostra le risorse attualmente associate alla coda di riproduzione
 			\end{itemize}
 		\end{enumerate}
@@ -519,7 +530,7 @@
 
 \end{enumerate}
 
-\noindent{\LARGE \textbf{Revisioni 6}} \\ \\
+\noindent{\large \textbf{Revisioni 6}} \\ \\
 \begin{tabular}{|c | c | c | c|} 
  	\hline
 	 Numero & Data & Descrizione \\ [0.5ex] 
@@ -527,5 +538,7 @@
 	1 & 06/02/2020 & Stesura iniziale \\ 
 	\hline
 	2 & 16/02/2020 & Spostato audio in background a requisito funzionale \\
+	\hline
+	3 & 29/02/2020 & Individuati altri requisiti funzionali \\ 
 	\hline
 \end{tabular}

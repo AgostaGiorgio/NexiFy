@@ -42,6 +42,11 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio\\ 
 	\hline
+	\textbf{Indicatori} & - Una o più funzionalità di un servizio esterno diventano deprecate\newline
+				  - \'E necessario sfruttare più funzionalità del previsto da un servizio esterno \\
+	\hline
+	\textbf{Trigger} & Le funzionalità di un servizio esterno non possono essere usare insieme alle funzionalità di un altro servizio esterno\\
+	\hline
 	\textbf{Mitigation} & Prestare attenzione durante la fase di selezione dei servizi esterni, controllando che essi si integrino bene l'uno con l'altro\\ 
 	\hline
 	\textbf{Monitoring} & Controllare periodicamente eventuali aggiornamenti nei servizi effettuati dalle aziende esterne\\ 
@@ -52,9 +57,35 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
+	\textbf{ID} & RSC\_ CambiamentoRequisiti\\ [0.5ex] 
+	\hline
+	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
+	\hline
+	\textbf{Aspetto} &  Progetto\\
+	\hline
+	\textbf{Probabilità} &  Alta \\ 
+	\hline
+	\textbf{Impatto} &  Moderato \\ 
+	\hline
+	\textbf{Indicatori} & L'insieme di alcuni requisiti può portare a casi limite indesiderati\\
+	\hline
+	\textbf{Trigger} & Il numero di casi limite indesiderati che possono avvenire supera una certa soglia\\
+	\hline
+	\textbf{Mitigation} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\%Revisionare attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
+	\hline
+	\textbf{Monitoring} & Durante le revisioni e l'analisi dei requisiti, immaginare situazioni limite che potrebbero verificarsi\\%Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
+	\hline
+	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Se dopo aver aggiunto i nuovi requisiti la durata del progetto supera di molto quella precedentemente prevista, eliminare requisiti secondari per restare nei tempi \\ 
+	\hline
+\end{tabular}
+
+
+\clearpage
+\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
+ 	\hline
 	\textbf{ID} & RSC\_ IndisponibilitàPersonale\\ [0.5ex] 
 	\hline
-	\textbf{Descrizione} & Alcuni elementi del personale potrebbero essere indisponibili in alcuni periodi del progetto\\ 
+	\textbf{Descrizione} & Non sono presenti abbastanza elementi del personale durante alcuni periodi del progetto\\ 
 	\hline
 	\textbf{Aspetto} &  Progetto \\
 	\hline
@@ -62,37 +93,23 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Incoraggiare i dipendenti a comunicare in anticipo eventuali indisponibilità già previste (tipicamente indisponibilità non dovute a malattie) \\ 
+	\textbf{Indicatori} & - Vengono richiesti permessi di assentarsi per impegni non previsti\newline
+				  - Si verificano assenze per malattia\\
 	\hline
-	\textbf{Monitoring} & Mantenere una comunicazione tra dipendenti e resto dell'azienda, per venire a conoscenza il prima possibile di indisponibilità\\ 
+	\textbf{Trigger} & - Il numero di permessi richiesti o di assenze per malattia supera una certa soglia\\
 	\hline
-	\textbf{Management} & Se l'indisponibilità è per un breve periodo, distribuire il lavoro del personale assente sugli altri dipendenti. Se l'indisponibilità si protrae troppo a lungo, assumere nuovi dipendenti per un certo periodo\\ 
+	\textbf{Mitigation} & Mantenere una comunicazione tra dipendenti e resto dell'azienda, per venire a conoscenza il prima possibile di indisponibilità \\ 
+	\hline
+	\textbf{Monitoring} & Registare i permessi richiesti e le assenze di ogni dipendente, e verificare periodicamente quanto prodotto dal dipendente rispetto a quello che avrebbero dovuto produrre secondo il piano\\ 
+	\hline
+	\textbf{Management} & Se l'indisponibilità è per un breve periodo, distribuire il lavoro del personale assente sugli altri dipendenti. Se l'indisponibilità si protrae troppo a lungo, assumere nuovi dipendenti per un certo periodo o addirittura valutare una riprogrammazione delle scadenza\\ 
 	\hline
 \end{tabular}
 
+
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
  	\hline
-	\textbf{ID} & RSC\_ CambiamentoRequisiti\\ [0.5ex] 
-	\hline
-	\textbf{Descrizione} & La specifica dei requisiti cambia durante il progetto \\ 
-	\hline
-	\textbf{Aspetto} &  Progetto, Prodotto\\
-	\hline
-	\textbf{Probabilità} &  Alta \\ 
-	\hline
-	\textbf{Impatto} &  Serio \\ 
-	\hline
-	\textbf{Mitigation} & Revisione attentamente l'analisi dei requisiti all'inizio del progetto, in modo da abbassare la probabilità di grandi cambiamenti.\\ 
-	\hline
-	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili cambiamenti nelle specifiche\\ 
-	\hline
-	\textbf{Management} & Se le modifiche ai requisiti non comportano un grande ritardo nel progetto, o si tratta di requisiti di alta priorità, allora adattare il progetto ai nuovi requisiti. Altrimenti eliminare requisiti secondari per restare nei tempi \\ 
-	\hline
-\end{tabular}
-\clearpage
-\begin{tabular}{|p{2.2cm}|p{9.6cm}| }
- 	\hline
-	\textbf{ID} & RSC\_ RequisitiFraintesi\\ [0.5ex] 
+	\textbf{ID} & RSC\_ CasiD'UsoErrati\\ [0.5ex] 
 	\hline
 	\textbf{Descrizione} & I requisiti non vengono compresi nella realizzazione dei casi d'uso.\\ 
 	\hline
@@ -102,31 +119,39 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Serio \\ 
 	\hline
-	\textbf{Mitigation} & Attenta analisi e studio dei requisiti prima di definire i casi d'uso.\\ 
+	\textbf{Indicatori} & Cambiamenti nei requisiti\\
 	\hline
-	\textbf{Monitoring} & Effettuare attenti controlli per verificare la coerenza dei casi d'uso rispetto ai requisiti di riferimento. \\ 
+	\textbf{Trigger} & Il numero di cambiamenti richiesti supera una certa soglia\\
 	\hline
-	\textbf{Management} & Nel caso in cui i requisiti vengano fraintesi è necessario ridefinire per intero i caso d'uso li realizzano. \\ 
+	\textbf{Mitigation} & Revisionare attentamente l'analisi dei requisiti prima di definire i casi d'uso.\\ 
+	\hline
+	\textbf{Monitoring} & Effettuare revisioni periodiche in modo da far emergere tempestivamente possibili fraintendimenti delle specifiche\\ 
+	\hline
+	\textbf{Management} & Ridefinire i casi d'uso in modo da renderli coerenti con i requisiti corretti. Se dopo aver modificato i casi d'uso la durata del progetto supera di molto quella precedentemente prevista, eliminare requisiti secondari per restare nei tempi \\ 
 	\hline
 \end{tabular}
 \clearpage
 \begin{tabular}{|p{2.2cm}|p{9.6cm}| }
 	\hline
-   \textbf{ID} & RSC\_ CambiamentoTecnologia\\ [0.5ex] 
+   \textbf{ID} & RSC\_ TecnologiaObsoleta\\ [0.5ex] 
    \hline
-   \textbf{Descrizione} & Le tecnologie utilizzate nel progetto vengono sostituite da nuove tecnologie  \\ 
+   \textbf{Descrizione} & Durante l'implementazione del progetto, le tecnologie che si intendono utilizzare diventano obsolete \\ 
    \hline
-   \textbf{Aspetto} &  Business \\
+   \textbf{Aspetto} &  Progetto \\
    \hline
-   \textbf{Probabilità} & Alta\\ 
+   \textbf{Probabilità} & Moderata\\ 
    \hline
    \textbf{Impatto} & Tollerabile\\
+	\hline
+	\textbf{Indicatori} & - Piattaforme con le stesse difficoltà di Nexify si preparano ad un cambio di tecnologia\\
+	\hline
+	\textbf{Trigger} & - Una tecnologia diversa da quella adottata si consolida come la più adatta\\
    \hline
    \textbf{Mitigation} & Scegliere, al momento dello sviluppo iniziale, tecnologie aggiornate e che abbiano dimostrato di essere affidabili in altri progetti \\ 
    \hline
-   \textbf{Monitoring} & Tenere traccia periodicamente delle tecnologie in uso, e di possibili nuovi aggiornamenti o cambiamenti che avvengono \\ 
+   \textbf{Monitoring} & Tenere traccia periodicamente delle tecnologie esistenti, e di possibili nuovi aggiornamenti o cambiamenti che avvengono \\ 
    \hline
-   \textbf{Management} & Adattare l'archittettura a possibili cambiamenti di tecnologia, utilizzando ove possibile, dei wrapper per le funzionalità offerte da queste \\ 
+   \textbf{Management} & Effettuare un’analisi per capire se la tecnologia originale è ancora adatta allo svolgimento del compito per cui è stata scelta. In caso negativo, deve essere sostituita con una tecnologia più adatta.\\ 
    \hline
 \end{tabular}
 
@@ -142,12 +167,16 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
    \textbf{Probabilità} & Moderata\\ 
    \hline
    \textbf{Impatto} & Serio\\
+	\hline
+	\textbf{Indicatori} & - Le stime iniziali sulla dimensione del software si rivelano non attendibili \\
+	\hline
+	\textbf{Trigger} & - L'errore effettuato durante le stime porta a superare la scadenza dell'iterazione corrente\\
    \hline
-   \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale \\ 
+   \textbf{Mitigation} & Svolgere in maniera accurata le fase di analisi e pianificazione del progetto, in modo da stimare una dimensione il più vicino possibile a quella reale. Inoltre per ogni iterazione aggiungere dei giorni aggiuntivi per fare fronte a eventuali ritardi dovuti a stime sbagliate \\ 
    \hline
    \textbf{Monitoring} & Durante lo sviluppo, controllare periodicamente che la dimensione del software rimanga contenuta, in base a quanto è stato pianificato nelle fasi iniziali\\ 
    \hline
-   \textbf{Management} & Qualora, durante lo sviluppo, il software dovesse superare la dimensione prestabilita per quello stadio, si deve effettuare una nuova stima che tenga conto delle nuove informazioni acquisite. Successivamente si deve rivedere la pianificazione del progetto, apportando modifiche laddove la dimensione del software risulta maggiore di quella stimata inizialmente \\ 
+   \textbf{Management} & Qualora, durante lo sviluppo, il software dovesse superare la dimensione prestabilita per quello stadio, si deve effettuare una nuova stima che tenga conto delle nuove informazioni acquisite. Successivamente si deve rivedere la pianificazione del progetto, eventualmente apportando modifiche laddove la dimensione del software risulta maggiore di quella stimata inizialmente \\ 
    \hline
 \end{tabular}
 
@@ -161,13 +190,19 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Probabilità} &  Moderata \\ 
 	\hline
-	\textbf{Impatto} &  Serio \\ 
+	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Prestare particolare attenzione ai paesi iniziali in cui rendere disponibile la piattaforma, in modo da ottimizzare la dislocazione dei server \\ 
+	\textbf{Indicatori} & - Il numero di richieste di contenuti contemporanee aumenta \newline
+						  - Guasti della CDN\\
 	\hline
-	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi\\ 
+	\textbf{Trigger} & - Il numero di richieste ad un nodo è maggiore delle richieste gestibili\newline
+					   - Non ci sono abbastanza nodi per gestire la richieste in una certa area\\
 	\hline
-	\textbf{Management} & In caso di nodi risultati più volte sovraccarichi, si può procedere all'ampliamento della CDN (se i profitti effettuati lo consentono), oppure ridislocare i nodi in modo da ribilanciare meglio il carico di lavoro. Se la maggior parte dei nodi risulta sovraccarica, ma non si hanno fondi per ampliare la CDN, si può restringere il territorio dove fornire la piattaforma\\ 
+	\textbf{Mitigation} & Viene sottoscritta una SLA che impone delle penali e permette di rescindere il contratto nel caso in cui la qualit\'a del servizio non venga rispettata. Inoltre si definiscono nella SLA i tempi di risoluzione del disservizio ed estensione delle capacit\'a della CDN. \\ 
+	\hline
+	\textbf{Monitoring} & Osservare periodicamente il numero di richieste ricevute, e i file di log dei nodi della CDN, in modo da individuare possibili sovraccarichi. Inoltre si valutano eventuali segnalazioni degli utenti riguardanti la qualit\'a del servizio\\ 
+	\hline
+	\textbf{Management} & Nel caso in cui la qualit\'a del servizio della CDN non rispettasse la qualit\'a definita nel contratto si richieder\'a un'incremento delle prestazioni. Se il fornitore del servizio non riuscisse a risolvere il problema si può rescindere il contratto e riscuorete le penali. \\ 
 	\hline
 \end{tabular}
 
@@ -184,11 +219,20 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} &  Tollerabile \\ 
 	\hline
-	\textbf{Mitigation} & Prestare attenzione alla quantità di contenuti di questa tipologia che vengono caricati sulla piattaforma. \\ 
+	\textbf{Indicatori} & - L'abbasssamento della quota di sottoscrizione di abbonamenti abilitati alla pubblicazione \newline
+						  - Diminuzione della popolarit\'a della piattaforma\\
 	\hline
-	\textbf{Monitoring} & Controlli periodici sui contenuti presenti sulla piattaforma. \\ 
+	\textbf{Trigger} & - La quota di iscrizione ad abbonamenti partner permette l'iscrizione a pubblicatori non affidabili\newline
+					   - La piattaforma non è popolare e ai pubblicatori di alto calibro non conviene pubblicare contenuti (affidabili) sulla piattaforma\\
 	\hline
-	\textbf{Management} & Se questa tipologia di contenuti eccede una certa soglia rispetto a quelli professionali si può limitare la quantità e/o la periodicità con cui questi possono essere caricati, oppure si può aumentare il prezzo richiesto per abilitare questa funzionalità. \\ 
+	\textbf{Mitigation} & Scegliere attentamente i costi che gli utenti devono pagare per poter pubblicare contenuti. \newline
+						  Investire nella pubblicit\'a della piattaforma \\ 
+	\hline
+	\textbf{Monitoring} & Controlli periodici sui contenuti presenti sulla piattaforma. \newline
+						  Controllare il calibro dei pubblicatori iscritti alla piattaforma \\ 
+	\hline
+	\textbf{Management} & Aumentare il prezzo richiesto per abilitare la pubblicazione di prodotti \newline
+						  Fare pubblicit\'a per nuovi abbonamenti\\ 
 	\hline
 \end{tabular}
 
@@ -204,6 +248,10 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\textbf{Probabilità} & Basso\\ 
 	\hline
 	\textbf{Impatto} & Serio\\
+	\hline
+	\textbf{Indicatori} & - Problemi emersi durante svoglimento del lavoro prefissato\\
+	\hline
+	\textbf{Trigger} & - La gestione dei problemi sorti provoca uno slittamento dei tempi che non permette di ultimare il lavoro prefissato nell'iterazione corrente\\
 	\hline
 	\textbf{Mitigation} & Lasciare qualche giorno in più del previsto in ogni iterazione, in modo da far fronte a eventuali errori di stima per una certa iterazione\\ 
 	\hline
@@ -226,7 +274,13 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 	\hline
 	\textbf{Impatto} & Catastrofico\\
 	\hline
-	\textbf{Mitigation} & Usare meno del budget iniziale a disposizione, in modo da coprire eventuali, piccole, riduzioni\\
+	\textbf{Indicatori} & - Introduzione di costi non previsti \newline
+						  - Riduzione dei finanziamenti\\
+	\hline
+	\textbf{Trigger} & - Nuovi costi emergono rispetto a quelli precedentemente stabiliti eccedendo una certa soglia\newline
+					   - L'ammontare dei finanziamenti ricevuti diminuisce rispetto al minimo previsto inizialmente\\
+	\hline
+	\textbf{Mitigation} & Richiedere inizialmente un budget leggermente più alto del necessario, in modo da coprire eventuali, piccole, riduzioni\\
 	\hline
 	\textbf{Monitoring} & Controllare periodicamente che l'avanzamento del progetto segua i costi previsti, e sfruttare eventuali condizioni che portano a risparmio\\ 
 	\hline
@@ -237,15 +291,17 @@ Identifichiamo i rischi con la convenzione RSC\_\textit{nome}. \\
 \renewcommand\theadfont{}
 
 \newpage
-\noindent{\LARGE \textbf{Revisioni 7}} \\ \\
+\noindent{\large \textbf{Revisioni 7}} \\ \\
 \begin{tabular}{|c | c | c | c|} 
  	\hline
 	 Numero & Data & Descrizione \\ [0.5ex] 
 	\hline\hline
 	1 & 07/02/2020 & Stesura iniziale \\ 
 	\hline
-	2 & 16/02/2020 & \thead{Rimossi rischi sul prodotto. In questa sezione consideriamo\\solo rischi che minano la realizzazione del progetto} \\
+	2 & 16/02/2020 & Modificato monitoring e management di REQ\_M\_DurataSottostimata \\
 	\hline
-	3 & 16/02/2020 & Modificato monitoring e management di REQ\_M\_DurataSottostimata \\
+	3 & 15/03/2020 & Aggiunti trigger e indicatori di rischio \\
+	\hline
+	4 & 22/03/2020 & \thead{Modificati indicatori e trigger di RSC\_CambiamentoRequisiti, \\RSC\_IndisponibilitàPersonale e RSC\_CasiD'usoErrati}\\
 	\hline
 \end{tabular}

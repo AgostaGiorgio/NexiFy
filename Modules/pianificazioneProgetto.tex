@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{tabularx}
+\graphicspath{ {../images/} }
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage{hyperref} %\usepackage[hidelinks]{hyperref} %per togliere bordi rossi
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage[maxfloats=256]{morefloats}
+\maxdeadcycles=1000
+
+\usepackage[official]{eurosym}
+\DeclareUnicodeCharacter{20AC}{\euro{}}
+
+\author{Agosta, Belli, Emili, Giacchini, Luciani}
+
+\begin{document}
+
+\begin{center}
+    \sffamily{\fontsize{50}{48} \selectfont \textcolor{red}{Nexi}\textcolor{green}{Fy}}
+\end{center}
+
+\begin{center}
+    \itshape{\fontsize{20}{48} \selectfont streaming to your pocket}
+\end{center}
+
+\bigskip\bigskip\bigskip
+
+\begin{flushleft}
+    \includegraphics[scale=1]{../images/worldCDN.png}
+\end{flushleft}
+
+\bigskip\bigskip\bigskip
+
+\begin{center}
+    \itshape{\fontsize{30}{48} \selectfont Pianificazione del Progetto}
+\end{center}
+
+\newpage
+\printindex
+
+\newpage
+\section{\itshape{Pianificazione del Progetto}}
+\input{../Contents/PianificazioneProgetto.tex}
+\index{Index}
+
+\end{document}
